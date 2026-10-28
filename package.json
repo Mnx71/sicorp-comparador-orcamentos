@@ -1,13 +1,24 @@
 {
   "name": "sicorp-comparador-orcamentos",
-  "version": "4.4.0-rc.16",
+  "version": "4.4.0-rc.17",
   "private": true,
   "type": "module",
-  "description": "Comparação e conferência de orçamentos de obras, com funcionamento offline.",
+  "description": "Compara\u00e7\u00e3o e confer\u00eancia de or\u00e7amentos de obras, com funcionamento offline.",
   "scripts": {
-    "validate:baseline": "node scripts/verify-baseline.mjs"
+    "validate:baseline": "node scripts/verify-baseline.mjs",
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/build.mjs --check",
+    "test": "node --test tests/historical/*.test.js tests/audit/*.test.mjs",
+    "check": "npm run validate:baseline && npm run validate && npm test && npm run qa:browser",
+    "qa:browser": "node scripts/qa-browser.mjs",
+    "regression:real": "node scripts/regression-real.mjs",
+    "fixtures:build": "node scripts/fixtures-build.mjs && node testkit/generate-matrix.mjs",
+    "audit:cases": "node scripts/audit-cases.mjs"
   },
   "engines": {
     "node": ">=20"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
   }
 }

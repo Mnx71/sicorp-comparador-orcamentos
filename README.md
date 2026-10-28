@@ -1,51 +1,42 @@
-# SICORP
+# SICORP – Sistema de Comparação de Referenciais de Preços
 
-Comparação de preços e conferência de orçamentos de obras com bases referenciais. Aplicação em HTML com funcionamento offline.
+Aplicação offline para conferir cálculos de orçamentos de obras e comparar preços sem BDI com bases referenciais.
 
-**Desenvolvido pela CGSOB, do DOH, da SNSH.**
+**Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).**
 
-## Situação do projeto
+A candidata de saída desta auditoria é **v4.4.0-rc.17**. O HTML está em [dist/](dist/sicorp_comparador_orcamento_v4.4.0-rc.17.html), com hash em [SHA256SUMS.txt](dist/SHA256SUMS.txt). Baixar e abrir o arquivo no navegador; o uso do programa não requer Node.js ou servidor. A versão continua beta, sujeita à conferência pelo analista. Não foi promovida a versão final.
 
-A versão `v4.4.0-rc.16` é a candidata de referência para a auditoria. Ainda não foi promovida à versão final. Este repositório inicia a consolidação dos fontes, dos testes e da documentação dessa candidata.
+A rc.16 e o pacote histórico da v4.3 permanecem intactos em `baseline/` e `reference/`. A extração inicial reproduziu a rc.16 byte a byte. A rc.17 contém os fontes separados, geração determinística, quatro correções documentadas e o kit sintético de auditoria.
 
-O HTML preservado está em [baseline/sicorp_comparador_orcamento_v4.4.0-rc.16.html](baseline/sicorp_comparador_orcamento_v4.4.0-rc.16.html). Baixe o arquivo e abra-o em um navegador compatível. O uso cotidiano não exige Node.js ou servidor.
-
-O programa apresenta um aviso de versão beta: os resultados devem ser conferidos pelo analista antes da utilização.
-
-## Próximo trabalho
-
-Comece pelo [handoff de consolidação e auditoria](docs/handoffs/HANDOFF_01_AUDITORIA.md). A sequência completa está no [plano mestre](docs/PLANO_MESTRE.md).
-
-O primeiro trabalho deve reconstruir os fontes correspondentes à candidata, atualizar os testes históricos e criar planilhas sintéticas com resultados conhecidos para validação manual. O tutorial e o manual serão elaborados após a estabilização das regras e dos fluxos.
-
-## Material disponível
+## Entregas
 
 | Local | Conteúdo |
 | --- | --- |
-| `baseline/` | HTML da candidata, preservado sem alterações |
-| `reference/` | Pacote histórico da v4.3 com fontes, testes e exemplos; não representa a versão atual |
-| `docs/PLANO_MESTRE.md` | Etapas, entregas e critérios de aceitação |
-| `docs/REGRAS_DE_REFERENCIA.md` | Comportamentos atuais e pontos para confirmação durante a auditoria |
-| `docs/VALIDACAO_MANUAL.md` | Especificação do kit de exemplos e das evidências a produzir |
-| `docs/handoffs/` | Continuidade sequencial dos trabalhos |
-| `scripts/verify-baseline.mjs` | Verificação de integridade dos dois arquivos de referência e sintaxe JavaScript do HTML |
+| [Plano mestre](docs/PLANO_MESTRE.md) | Situação real e critérios das próximas etapas |
+| [Arquitetura e comandos](docs/ARQUITETURA_E_COMANDOS.md) | Composição dos fontes, geração e execução |
+| [Matriz](docs/MATRIZ_AUDITORIA.md) | 114 casos, dados, mapeamentos, expectativas e contraprovas |
+| [Roteiro independente](testkit/ROTEIRO_VALIDACAO.md) | Passos e valores esperados para execução manual |
+| [Kit sintético](testkit/fixtures/) | XLSX, BIFF5/BIFF8, CSV, TXT e ORSE |
+| [Decisões e defeitos](docs/DECISOES_AUDITORIA.md) | Correções, regras preservadas e lacunas explícitas |
+| [Relatório](docs/RELATORIO_AUDITORIA_RC17.md) | Resultados e vínculo ao código testado |
+| [Handoff 02](docs/handoffs/HANDOFF_02_TUTORIAL_MANUAL.md) | Entrada da etapa de tutorial e manual |
 
-## Verificação inicial
+## Desenvolvimento
 
 Com Node.js 20 ou superior:
 
 ```bash
-npm run validate:baseline
+npm ci
+npm run build
+npx playwright install --with-deps chromium
+npm run check
+npm run audit:cases
 ```
 
-Esse comando verifica integridade e sintaxe; não representa aprovação da auditoria funcional. Ainda não há uma suíte atualizada da v4.4 integrada neste repositório nem workflow de Actions habilitado.
+`npm run build` produz um único HTML a partir de `src/`, sem usar o build histórico. `npm run validate` falha se o HTML distribuído divergir dos fontes. `npm run validate:baseline` verifica integridade e sintaxe dos arquivos preservados, sem constituir auditoria funcional.
 
-O pacote histórico deve ser usado como material para reaproveitamento. Seu comando de geração produz a v4.3, não a candidata atual.
+`npm test` executa 332 testes de domínio, leitores, integração e exportação. `npm run qa:browser` exercita o HTML efetivo com rede desabilitada. O workflow de Actions roda em push/PR, sem cron ou publicação. `SICORP_CHROMIUM_PATH` permite usar um executável local de Chromium/Chrome/Edge.
 
-## Contribuições e versões
+`npm run fixtures:build` regenera os exemplos no ambiente de autoria com Artifact Tool. `npm run regression:real` utiliza os arquivos reais do projeto, quando presentes; eles não fazem parte do repositório. Ausência de arquivo produz falha explícita.
 
-Cada correção deverá registrar o caso de teste, o comportamento esperado e a verificação executada. O pacote final terá fontes reproduzíveis, HTML, manual do usuário e evidências de validação associados à mesma versão.
-
-A inclusão do tutorial será seguida de nova regressão antes da distribuição. Novas versões não devem sobrescrever a candidata preservada em `baseline/`.
-
-As planilhas reais usadas em verificações anteriores não estão publicadas aqui. O kit público de validação será composto por exemplos sintéticos.
+Os relatórios distinguem resultado automatizado, observação do código e homologação por pessoa. A validação manual por pessoa, a conferência visual em Excel/LibreOffice e a execução no Windows permanecem pendentes. O tutorial será desenvolvido na próxima etapa, seguido de nova regressão. A escolha da licença do projeto continua separada.

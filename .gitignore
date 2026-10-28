@@ -147,3 +147,12 @@ vite.config.ts.timestamp-*
 
 # Turbo Repo
 .turbo
+
+# Auditoria local e artefatos intermediários
+.audit-history/
+.audit-tools/
+outputs/
+qa/previews/
+node_modules/
+!dist/
+!dist/**

@@ -1,0 +1,2433 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SICORP – Sistema de Comparação de Referenciais de Preços</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --panel: #111827;
+      --panel-2: #1f2937;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --line: #334155;
+      --accent: #38bdf8;
+      --accent-2: #0ea5e9;
+      --good: #075985;
+      --good-line: #0072b2;
+      --bad: #8a3b12;
+      --bad-line: #d55e00;
+      --eq: #006b52;
+      --eq-line: #009e73;
+      --none: #374151;
+      --none-line: #9ca3af;
+      --warn: #78350f;
+      --warn-line: #f59e0b;
+      --card: #0b1220;
+      --white: #ffffff;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #0f172a 0%, #111827 100%);
+      color: var(--text);
+    }
+
+    header {
+      padding: 24px 28px 16px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(15, 23, 42, 0.96);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(8px);
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      font-size: 1.55rem;
+      letter-spacing: 0.01em;
+    }
+
+    .subtitle {
+      margin: 0;
+      color: var(--muted);
+      max-width: 1100px;
+      line-height: 1.45;
+    }
+
+    main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 22px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .grid { grid-template-columns: 1fr; }
+    }
+
+    section, .panel {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(17, 24, 39, 0.94);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+      overflow: hidden;
+    }
+
+    section h2, .panel h2 {
+      font-size: 1.05rem;
+      margin: 0;
+      padding: 14px 16px;
+      background: rgba(31, 41, 55, 0.8);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .content { padding: 16px; }
+
+    label {
+      display: block;
+      font-weight: 650;
+      color: #f3f4f6;
+      font-size: 0.92rem;
+      margin: 0 0 6px;
+    }
+
+    .hint {
+      color: var(--muted);
+      font-size: 0.82rem;
+      line-height: 1.42;
+      margin-top: 6px;
+    }
+
+    input[type="file"], input[type="number"], input[type="text"], select {
+      width: 100%;
+      background: #0b1220;
+      color: var(--text);
+      border: 1px solid #475569;
+      border-radius: 10px;
+      padding: 9px 10px;
+      outline: none;
+    }
+
+    input[type="file"] { padding: 10px; }
+
+    input:focus, select:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.14);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-bottom: 12px;
+    }
+
+    .row.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .row.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+    @media (max-width: 900px) {
+      .row, .row.three, .row.four { grid-template-columns: 1fr; }
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 12px;
+    }
+
+    button {
+      border: 0;
+      border-radius: 11px;
+      padding: 10px 14px;
+      background: var(--accent-2);
+      color: var(--white);
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.08s ease, opacity 0.15s ease, background 0.15s ease;
+    }
+
+    button:hover { opacity: 0.92; }
+    button:active { transform: translateY(1px); }
+    button.secondary { background: #475569; }
+    button.warn { background: #d97706; }
+    button.danger { background: #dc2626; }
+    button:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .status-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 9px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      background: #0b1220;
+    }
+
+    .badge.ok { color: #86efac; border-color: rgba(34, 197, 94, .35); }
+    .badge.err { color: #fca5a5; border-color: rgba(239, 68, 68, .35); }
+    .badge.info { color: #93c5fd; border-color: rgba(96, 165, 250, .35); }
+
+    .checkline {
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      padding: 7px 0;
+      color: var(--text);
+      font-size: 0.9rem;
+    }
+
+    .checkline input { margin-top: 3px; }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(150px, 1fr));
+      gap: 8px;
+      margin: 12px 0 0;
+      padding-bottom: 4px;
+      overflow-x: auto;
+    }
+
+    .summary-intro { margin-bottom: 0; }
+
+    .metric {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+      padding: 9px 10px;
+      min-height: 78px;
+    }
+
+    .metric .n {
+      display: block;
+      font-size: 1.28rem;
+      font-weight: 850;
+      margin-bottom: 2px;
+    }
+
+    .metric .t { display: block; min-height: 2.15em; color: var(--muted); font-size: 0.73rem; line-height: 1.08; }
+    .metric .v { display: block; margin-top: 5px; color: #334155; font-size: .72rem; font-weight: 800; white-space: nowrap; }
+    .metric .p { display: block; margin-top: 1px; color: #64748b; font-size: .7rem; font-weight: 750; white-space: nowrap; }
+    .metric.good { border-color: rgba(0, 114, 178, .50); }
+    .metric.bad { border-color: rgba(213, 94, 0, .50); }
+    .metric.eq { border-color: rgba(0, 158, 115, .50); }
+    .metric.none { border-color: rgba(156, 163, 175, .35); }
+    .metric.warn { border-color: rgba(245, 158, 11, .35); }
+    .metric.unavailable { border-color: rgba(234, 179, 8, .45); }
+    .summary button.metric {
+      width: 100%; color: var(--text); text-align: left; font: inherit; cursor: pointer;
+      transition: border-color .15s ease, box-shadow .15s ease, transform .08s ease, background .15s ease;
+    }
+    .summary button.metric:hover { opacity: 1; background: #f8fafc; box-shadow: 0 5px 16px rgba(15, 23, 42, .08); }
+    .summary button.metric.active { box-shadow: 0 0 0 3px rgba(37, 99, 235, .16); border-color: #2563eb; }
+
+    .table-wrap {
+      overflow: auto;
+      max-height: 68vh;
+      border-top: 1px solid var(--line);
+      background: #0b1220;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.86rem;
+      min-width: 1120px;
+    }
+
+    th, td {
+      border-bottom: 1px solid rgba(51, 65, 85, 0.75);
+      padding: 9px 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    #resultTable th, #resultTable td { border-right: 1px solid rgba(100, 116, 139, .52); }
+    #resultTable th:last-child, #resultTable td:last-child { border-right: 0; }
+    #resultTable th { padding: 0; }
+    .result-sort-button {
+      display: flex; align-items: center; justify-content: space-between; gap: 8px;
+      width: 100%; min-height: 42px; padding: 9px 10px; border: 0; border-radius: 0;
+      background: transparent; color: inherit; font: inherit; font-weight: 800;
+      text-align: left; white-space: nowrap; box-shadow: none; transform: none;
+    }
+    .result-sort-button:hover, .result-sort-button:focus-visible {
+      opacity: 1; background: rgba(255, 255, 255, .10); box-shadow: none; transform: none;
+    }
+    .result-sort-indicator { min-width: 1em; color: #cbd5e1; font-size: .78rem; text-align: center; }
+    th[aria-sort="ascending"] .result-sort-indicator,
+    th[aria-sort="descending"] .result-sort-indicator { color: #fff; }
+
+    th {
+      position: sticky;
+      top: 0;
+      z-index: 4;
+      background: #1f2937;
+      color: #f8fafc;
+      white-space: nowrap;
+    }
+
+    td.num { text-align: right; white-space: nowrap; font-variant-numeric: tabular-nums; }
+
+    tr.status-abaixo { background: rgba(0, 114, 178, 0.24); }
+    tr.status-acima { background: rgba(213, 94, 0, 0.26); }
+    tr.status-igual { background: rgba(0, 158, 115, 0.24); }
+    tr.status-nao { background: rgba(55, 65, 81, 0.45); }
+
+    #resultTable td.result-field-divergence {
+      background: #fde68a !important;
+      color: #713f12;
+      box-shadow: inset 0 0 0 1px #f59e0b;
+      font-weight: 750;
+    }
+    .result-difference-legend {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: .8rem;
+      line-height: 1.4;
+    }
+    .result-difference-swatch {
+      width: 18px;
+      height: 14px;
+      flex: 0 0 auto;
+      border: 1px solid #f59e0b;
+      border-radius: 3px;
+      background: #fde68a;
+    }
+
+    .source-value-chart-card {
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--card);
+    }
+    .result-source-chart-panel { margin-top: 22px; }
+    .result-source-chart-panel > h2 { margin-bottom: 0; }
+    .source-value-chart-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 16px;
+    }
+    .source-value-chart-head h3 { margin: 0; color: var(--text); font-size: 1rem; }
+    .source-value-chart-head p { margin: 5px 0 0; color: var(--muted); font-size: .78rem; line-height: 1.45; }
+    .source-value-chart-filters { display: flex; flex-wrap: wrap; gap: 6px; }
+    .source-value-chart-filters button {
+      min-width: 48px;
+      padding: 7px 12px;
+      border: 1px solid #cbd5e1;
+      background: #fff;
+      color: #475569;
+      box-shadow: none;
+    }
+    .source-value-chart-filters button:hover,
+    .source-value-chart-filters button:focus-visible { background: #eff6ff; color: #1d4ed8; transform: none; }
+    .source-value-chart-filters button.active {
+      border-color: #2563eb;
+      background: #2563eb;
+      color: #fff;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, .14);
+    }
+    .source-value-chart-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px 16px;
+      margin: 14px 0 12px;
+      color: #475569;
+      font-size: .78rem;
+    }
+    .source-value-chart-summary strong { color: #1e3a8a; }
+    .source-value-chart-bars {
+      display: grid;
+      grid-template-columns: minmax(150px, 250px) minmax(220px, 1fr) 260px;
+      column-gap: 10px;
+      row-gap: 10px;
+      max-height: 410px;
+      padding-right: 5px;
+      overflow-y: auto;
+    }
+    .source-value-chart-row {
+      display: contents;
+    }
+    .source-value-chart-label {
+      overflow: hidden;
+      color: #334155;
+      font-size: .8rem;
+      font-weight: 800;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .source-value-chart-track {
+      display: flex;
+      height: 26px;
+      overflow: hidden;
+      border: 1px solid #cbd5e1;
+      border-radius: 7px;
+      background: #ffffff;
+    }
+    .source-value-chart-segment {
+      height: 100%;
+      flex: 0 0 auto;
+    }
+    .source-value-chart-segment.status-acima { background: #d55e00; }
+    .source-value-chart-segment.status-abaixo { background: #0072b2; }
+    .source-value-chart-segment.status-igual { background: #009e73; }
+    .source-value-chart-segment.status-nao-encontrado { background: #6b7280; }
+    .source-value-chart-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 16px;
+      margin: 0 0 13px;
+      color: #475569;
+      font-size: .76rem;
+    }
+    .source-value-chart-legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .source-value-chart-legend i {
+      width: 11px;
+      height: 11px;
+      border-radius: 3px;
+    }
+    .source-value-chart-legend .status-acima { background: #d55e00; }
+    .source-value-chart-legend .status-abaixo { background: #0072b2; }
+    .source-value-chart-legend .status-igual { background: #009e73; }
+    .source-value-chart-legend .status-nao-encontrado { background: #6b7280; }
+    }
+    .source-value-chart-value {
+      color: #475569;
+      font-size: .76rem;
+      font-variant-numeric: tabular-nums;
+      text-align: right;
+      white-space: nowrap;
+    }
+    .source-value-chart-value strong { color: #1e3a8a; }
+    .source-value-chart-empty {
+      grid-column: 1 / -1;
+      padding: 18px;
+      border: 1px dashed #cbd5e1;
+      border-radius: 10px;
+      background: #f8fafc;
+      color: #64748b;
+      font-size: .82rem;
+      text-align: center;
+    }
+    .source-value-chart-note { margin: 12px 0 0; color: #64748b; font-size: .72rem; line-height: 1.45; }
+    @media (max-width: 760px) {
+      .source-value-chart-head { flex-direction: column; }
+      .source-value-chart-bars { display: block; }
+      .source-value-chart-row { display: grid; grid-template-columns: 1fr; gap: 5px; margin-bottom: 12px; }
+      .source-value-chart-value { text-align: left; }
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    .dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 999px;
+      display: inline-block;
+      margin-right: 6px;
+      border: 1px solid rgba(255,255,255,.25);
+    }
+
+    .dot.good { background: var(--good-line); }
+    .dot.bad { background: var(--bad-line); }
+    .dot.eq { background: var(--eq-line); }
+    .dot.none { background: var(--none-line); }
+    .dot.warn { background: var(--warn-line); }
+
+    .notice {
+      border: 1px solid rgba(56, 189, 248, 0.35);
+      background: rgba(14, 165, 233, 0.09);
+      color: #bae6fd;
+      border-radius: 14px;
+      padding: 12px 14px;
+      line-height: 1.45;
+      margin: 0 0 16px;
+    }
+
+    .error-box {
+      display: none;
+      border: 1px solid rgba(239, 68, 68, .45);
+      background: rgba(127, 29, 29, .18);
+      color: #fecaca;
+      border-radius: 14px;
+      padding: 12px 14px;
+      white-space: pre-wrap;
+      margin: 16px 0;
+    }
+
+    .small { font-size: 0.8rem; color: var(--muted); }
+    .hidden { display: none !important; }
+
+    .section-spacer { margin-top: 18px; }
+
+    .base-empty {
+      border: 1px dashed #475569;
+      border-radius: 12px;
+      padding: 18px;
+      color: var(--muted);
+      text-align: center;
+      background: rgba(11, 18, 32, 0.55);
+    }
+
+    .compact-table-wrap {
+      overflow: auto;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #0b1220;
+    }
+
+    .compact-table-wrap table {
+      min-width: 940px;
+      font-size: 0.82rem;
+    }
+
+    .compact-table-wrap th,
+    .compact-table-wrap td { padding: 8px 9px; }
+
+    .table-actions {
+      display: flex;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .table-actions button {
+      padding: 6px 9px;
+      border-radius: 8px;
+      font-size: 0.78rem;
+    }
+
+    .status-filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      align-items: center;
+      margin-top: 8px;
+    }
+
+    .status-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 7px 10px;
+      background: #0b1220;
+      color: var(--text);
+      font-size: 0.84rem;
+      font-weight: 650;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .status-toggle input { margin: 0; accent-color: var(--accent-2); }
+    .status-toggle .count { color: var(--muted); font-variant-numeric: tabular-nums; }
+    .status-toggle[data-status="abaixo"] { border-color: rgba(0, 114, 178, .62); }
+    .status-toggle[data-status="acima"] { border-color: rgba(213, 94, 0, .62); }
+    .status-toggle[data-status="igual"] { border-color: rgba(0, 158, 115, .62); }
+    .status-toggle[data-status="nao-encontrado"] { border-color: rgba(156, 163, 175, .45); }
+
+    .field-message { margin-top: 6px; min-height: 1.1em; font-size: .8rem; color: #64748b; }
+    .field-message.error { color: #b91c1c; font-weight: 650; }
+
+    .source-identifiers-panel {
+      margin-top: 14px; padding: 12px 14px; border: 1px solid #cbd5e1;
+      border-radius: 12px; background: #f8fafc;
+    }
+    .source-identifiers-head {
+      display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between;
+      gap: 6px 12px; color: #334155; font-size: .84rem;
+    }
+    .source-identifiers {
+      display: flex; flex-wrap: wrap; gap: 7px; margin-top: 9px;
+    }
+    .source-identifier-chip {
+      display: inline-flex; align-items: center; min-height: 28px; padding: 5px 9px;
+      border: 1px solid #bfdbfe; border-radius: 999px; background: #eff6ff;
+      color: #1e3a8a; font-size: .8rem; font-weight: 750;
+    }
+    .source-identifiers-empty { color: #64748b; font-size: .82rem; }
+
+    .audit-summary {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    @media (max-width: 700px) { .audit-summary { grid-template-columns: 1fr; } }
+
+    .audit-message {
+      border: 1px solid rgba(34, 197, 94, .35);
+      background: rgba(20, 83, 45, .18);
+      color: #bbf7d0;
+      border-radius: 12px;
+      padding: 12px 14px;
+    }
+
+    .audit-message.warn {
+      border-color: rgba(245, 158, 11, .45);
+      background: rgba(120, 53, 15, .2);
+      color: #fde68a;
+    }
+
+    .conflict-list {
+      margin: 0;
+      padding-left: 18px;
+    }
+
+    .conflict-list li + li { margin-top: 4px; }
+
+    .conflict-scroll-window {
+      max-height: 320px;
+      overflow: auto;
+      margin-top: 14px;
+      box-shadow: inset 0 0 0 1px rgba(148, 163, 184, .08);
+    }
+
+    .conflict-scroll-window table { min-width: 980px; }
+
+    .conflict-scroll-window th {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+    }
+
+    .conflict-yes {
+      color: #fde68a;
+      font-weight: 800;
+    }
+  </style>
+  <style id="lightWizardTheme">
+    :root {
+      --bg: #f3f6fa;
+      --panel: #ffffff;
+      --panel-2: #f8fafc;
+      --text: #172033;
+      --muted: #64748b;
+      --line: #dbe3ee;
+      --accent: #2563eb;
+      --accent-2: #1d4ed8;
+      --card: #ffffff;
+      --good: #cffafe;
+      --good-line: #06b6d4;
+      --bad: #fee2e2;
+      --bad-line: #ef4444;
+      --eq: #dbeafe;
+      --eq-line: #3b82f6;
+      --none: #e5e7eb;
+      --none-line: #6b7280;
+      --warn: #fef3c7;
+      --warn-line: #f59e0b;
+      --white: #ffffff;
+    }
+
+    body { background: var(--bg); color: var(--text); min-height: 100vh; }
+    header {
+      position: static;
+      padding: 22px 28px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+      box-shadow: 0 1px 3px rgba(15, 23, 42, .04);
+      backdrop-filter: none;
+    }
+    .header-inner { max-width: 1280px; margin: 0 auto; display: flex; align-items: center; gap: 14px; }
+    .brand-mark { width: 46px; height: 46px; border-radius: 14px; display: grid; place-items: center; background: #e0e7ff; color: #1d4ed8; font-weight: 900; font-size: 1.05rem; }
+    h1 { color: #0f172a; margin: 0 0 3px; font-size: 1.35rem; }
+    .subtitle { color: var(--muted); font-size: .9rem; }
+    .offline-pill { margin-left: auto; border: 1px solid #bbf7d0; color: #166534; background: #f0fdf4; border-radius: 999px; padding: 6px 10px; font-size: .76rem; font-weight: 750; white-space: nowrap; }
+    main { max-width: 1280px; padding: 24px; }
+
+    .wizard-shell { margin-bottom: 20px; }
+    .stepper { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .step-button {
+      display: flex; align-items: center; gap: 10px; text-align: left; width: 100%;
+      padding: 12px; color: #475569; background: #ffffff; border: 1px solid var(--line);
+      border-radius: 14px; box-shadow: 0 2px 8px rgba(15, 23, 42, .04);
+    }
+    .step-button:hover { opacity: 1; border-color: #93c5fd; }
+    .step-button.active { color: #1d4ed8; border-color: #60a5fa; background: #eff6ff; }
+    .step-button.completed .step-number { background: #16a34a; }
+    .step-button:disabled { cursor: not-allowed; background: #f8fafc; color: #94a3b8; }
+    .step-number { width: 28px; height: 28px; flex: 0 0 28px; border-radius: 50%; display: grid; place-items: center; background: #64748b; color: #fff; font-size: .8rem; }
+    .step-button.active .step-number { background: #2563eb; }
+    .step-copy strong { display: block; font-size: .86rem; }
+    .step-copy small { display: block; color: inherit; opacity: .75; font-size: .72rem; margin-top: 2px; }
+    @media (max-width: 800px) { .stepper { grid-template-columns: repeat(2, 1fr); } .offline-pill { display: none; } }
+    @media (max-width: 520px) { .stepper { grid-template-columns: 1fr; } }
+
+    section, .panel { background: #fff; border-color: var(--line); box-shadow: 0 8px 26px rgba(15, 23, 42, .06); }
+    section h2, .panel h2 { color: #0f172a; background: #ffffff; border-bottom-color: var(--line); padding: 18px 20px; font-size: 1.08rem; }
+    .content { padding: 20px; }
+    label { color: #334155; }
+    input[type="file"], input[type="number"], input[type="text"], select { background: #ffffff; color: #172033; border-color: #cbd5e1; }
+    input:focus, select:focus { border-color: #60a5fa; box-shadow: 0 0 0 3px rgba(59, 130, 246, .14); }
+    button { background: #2563eb; }
+    button.secondary { background: #e2e8f0; color: #334155; }
+    button.warn { background: #d97706; }
+    button.danger { background: #dc2626; color: #fff; }
+    .notice { background: #eff6ff; border-color: #bfdbfe; color: #1e40af; }
+    .error-box { background: #fef2f2; border-color: #fecaca; color: #991b1b; }
+    .badge { background: #f8fafc; border-color: #cbd5e1; color: #64748b; }
+    .badge.ok { color: #166534; border-color: #bbf7d0; }
+    .badge.info { color: #1d4ed8; border-color: #bfdbfe; }
+    .metric { background: #fff; }
+    .metric.good { background: #e6f2f8; border-color: #0072b2; }
+    .metric.bad { background: #fbe9dd; border-color: #d55e00; }
+    .metric.eq { background: #e4f4ef; border-color: #009e73; }
+    .metric.good .n { color: #075985; }
+    .metric.bad .n { color: #8a3b12; }
+    .metric.eq .n { color: #006b52; }
+    .metric.none { background: #f3f4f6; border-color: #d1d5db; }
+    .metric.warn { background: #fffbeb; border-color: #fde68a; }
+    .metric.unavailable { background: #fefce8; border-color: #fde047; }
+    .table-wrap, .compact-table-wrap { background: #fff; border-color: var(--line); }
+    th { background: #f1f5f9; color: #334155; }
+    th, td { border-bottom-color: #e2e8f0; }
+    tr.status-abaixo { background: #e6f2f8; }
+    tr.status-acima { background: #fbe9dd; }
+    tr.status-igual { background: #e4f4ef; }
+    tr.status-nao { background: #e5e7eb; }
+    .status-toggle { background: #fff; color: #334155; }
+    .base-empty { background: #f8fafc; border-color: #cbd5e1; }
+    .audit-message { background: #f0fdf4; border-color: #bbf7d0; color: #166534; }
+    .audit-message.warn { background: #fffbeb; border-color: #fde68a; color: #92400e; }
+    .conflict-yes { color: #b45309; }
+
+    .wizard-page.page-hidden { display: none !important; }
+    #sourceGrid { display: contents; }
+    .page-actions { display: flex; justify-content: space-between; gap: 10px; margin-top: 18px; }
+    .page-actions .right { margin-left: auto; display: flex; gap: 10px; }
+    .section-intro { color: var(--muted); line-height: 1.5; margin: -4px 0 18px; }
+    .dropzone {
+      min-height: 150px; display: grid; place-items: center; text-align: center; border: 2px dashed #93c5fd;
+      border-radius: 16px; background: #f8fbff; padding: 24px; cursor: pointer; transition: .15s ease;
+    }
+    .dropzone:hover, .dropzone.dragover { border-color: #2563eb; background: #eff6ff; transform: translateY(-1px); }
+    .dropzone input { display: none; }
+    .dropzone-icon { width: 48px; height: 48px; display: grid; place-items: center; margin: 0 auto 10px; border-radius: 14px; background: #dbeafe; color: #1d4ed8; font-size: 1.4rem; font-weight: 900; }
+    .dropzone strong { display: block; color: #1e3a8a; margin-bottom: 5px; }
+    .dropzone span { color: #64748b; font-size: .84rem; }
+    .config-panel { margin-top: 18px; border-top: 1px solid var(--line); padding-top: 18px; }
+    .mapping-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+    .base-primary-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .sheet-selection-block {
+      padding: 10px 11px;
+      border: 1px solid #bfdbfe;
+      border-radius: 12px;
+      background: #eff6ff;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, .07);
+    }
+    .sheet-selection-block label { color: #1e40af; }
+    .sheet-selection-block select { background: #fff; }
+    @media (max-width: 1000px) { .mapping-grid, .base-primary-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .mapping-grid, .base-primary-grid { grid-template-columns: 1fr; } }
+    .preview-block { margin-top: 18px; }
+    .preview-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 8px; }
+    .preview-title { margin: 0; font-size: .92rem; color: #334155; }
+    .preview-table { min-width: 860px; font-size: .78rem; }
+    .preview-table td, .preview-table th { max-width: 260px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .preview-table tr.preview-header { background: #dbeafe; font-weight: 800; }
+    .preview-table tr.preview-before-header { background: #f8fafc; color: #64748b; font-style: italic; }
+    .preview-table .row-number { color: #64748b; background: #f8fafc; text-align: right; width: 54px; }
+    .preview-block .compact-table-wrap { max-height: min(54vh, 540px); }
+    .column-summary { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 9px; }
+    .column-chip {
+      display: inline-flex; align-items: center; gap: 6px; min-height: 30px; padding: 5px 9px;
+      border: 1px solid #cbd5e1; border-radius: 999px; background: #fff; color: #475569;
+      font-size: .76rem; font-weight: 750; cursor: pointer;
+    }
+    .column-chip:hover { opacity: 1; border-color: #94a3b8; background: #f8fafc; }
+    .column-chip.active {
+      border: 2px solid #f59e0b; background: #fffbeb; color: #92400e;
+      box-shadow: 0 0 0 2px rgba(245, 158, 11, .12);
+    }
+    .column-chip .column-letter { font-weight: 900; }
+    .preview-table .preview-selected-column {
+      background: #fef3c7 !important; border-left: 2px solid #f59e0b; border-right: 2px solid #f59e0b;
+    }
+    .preview-table thead .preview-selected-column { color: #92400e; }
+    .preview-field-badge {
+      display: block; margin-top: 3px; font-size: .57rem; line-height: 1; letter-spacing: .03em;
+      text-transform: uppercase; color: inherit;
+    }
+    .column-mapping-title { margin: 14px 0 8px; color: #334155; font-size: .84rem; font-weight: 800; }
+    .preview-select-menu {
+      position: fixed; z-index: 10020; max-height: 320px; overflow-y: auto; padding: 5px;
+      border: 1px solid #94a3b8; border-radius: 10px; background: #fff;
+      box-shadow: 0 14px 32px rgba(15, 23, 42, .2);
+    }
+    .preview-select-option {
+      display: block; width: 100%; padding: 8px 10px; border: 0; border-radius: 7px;
+      background: transparent; color: #1e293b; text-align: left; font: inherit; cursor: pointer;
+    }
+    .preview-select-option:hover, .preview-select-option.previewing { background: #fef3c7; color: #92400e; }
+    .preview-select-option.selected { font-weight: 800; }
+
+    .audit-controls { display: grid; grid-template-columns: 1fr auto; gap: 12px; align-items: end; }
+    @media (max-width: 700px) { .audit-controls { grid-template-columns: 1fr; } }
+    .audit-results { margin-top: 18px; }
+    .audit-summary-wide { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; margin: 14px 0; }
+    @media (max-width: 900px) { .audit-summary-wide { grid-template-columns: repeat(2, 1fr); } }
+    .audit-ok { color: #166534; font-weight: 750; }
+    .audit-fail { color: #b91c1c; font-weight: 750; }
+    .requirement-list { margin: 12px 0 0; padding-left: 20px; color: #475569; line-height: 1.6; }
+    .results-toolbar { max-width: 620px; }
+    .comparison-run-row {
+      display: grid;
+      grid-template-columns: minmax(240px, 420px) auto;
+      align-items: center;
+      gap: 12px;
+      margin-top: 6px;
+    }
+    .comparison-run-row input { min-width: 0; }
+    .comparison-run-row button { min-height: 42px; }
+    .comparison-options {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 760px;
+      margin-top: 14px;
+    }
+    .comparison-option {
+      position: relative;
+      padding: 12px 54px 12px 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+    .comparison-option .checkline { padding-top: 0; }
+    .comparison-help-button {
+      position: absolute;
+      top: 10px;
+      right: 12px;
+      display: inline-grid;
+      place-items: center;
+      width: 26px;
+      height: 26px;
+      min-width: 26px;
+      padding: 0;
+      border: 1px solid #93c5fd;
+      border-radius: 50%;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: .86rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .comparison-help-button:hover,
+    .comparison-help-button[aria-expanded="true"] { opacity: 1; background: #dbeafe; }
+    .comparison-option-help {
+      margin-top: 10px;
+      padding: 10px 12px;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      background: #fff;
+      color: #475569;
+      font-size: .8rem;
+      line-height: 1.5;
+    }
+    .comparison-option-help p { margin: 0; }
+    .comparison-option-help p + p { margin-top: 7px; }
+    @media (max-width: 560px) {
+      .comparison-run-row { grid-template-columns: 1fr; }
+      .comparison-run-row button { width: 100%; }
+    }
+    .result-search { max-width: 520px; margin-top: 16px; }
+    .result-view-options {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .result-column-count {
+      color: #475569;
+      font-size: .82rem;
+      font-weight: 750;
+    }
+    .column-selector-dialog {
+      width: min(760px, calc(100vw - 28px));
+      max-height: min(760px, calc(100vh - 28px));
+      padding: 0;
+      border: 0;
+      border-radius: 16px;
+      background: #fff;
+      color: #172033;
+      box-shadow: 0 28px 80px rgba(15, 23, 42, .38);
+    }
+    .column-selector-dialog[open] { display: flex; flex-direction: column; }
+    .column-selector-dialog::backdrop { background: rgba(15, 23, 42, .58); backdrop-filter: blur(3px); }
+    .column-selector-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 18px;
+      border-bottom: 1px solid #bfdbfe;
+      background: #eff6ff;
+    }
+    .column-selector-head h2 { margin: 0; color: #1e3a8a; font-size: 1.04rem; }
+    .column-selector-body { flex: 1; min-height: 0; padding: 18px; overflow: auto; }
+    .column-selector-body > p { margin: 0 0 14px; color: #475569; line-height: 1.5; }
+    .column-selector-tools { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; }
+    .column-selector-grid { display: flex; flex-direction: column; gap: 7px; }
+    .column-selector-option {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      min-height: 42px;
+      padding: 7px 8px;
+      border: 1px solid #dbe4f0;
+      border-radius: 10px;
+      background: #f8fafc;
+      font-weight: 720;
+    }
+    .column-selector-option:hover { border-color: #93c5fd; background: #eff6ff; }
+    .column-selector-option.dragging { opacity: .48; border-style: dashed; }
+    .column-selector-option.drag-over { border-color: #2563eb; box-shadow: 0 0 0 2px rgba(37, 99, 235, .12); }
+    .column-drag-handle {
+      color: #64748b;
+      font-size: 1.08rem;
+      letter-spacing: -3px;
+      cursor: grab;
+      user-select: none;
+    }
+    .column-selector-option:active .column-drag-handle { cursor: grabbing; }
+    .column-selector-label {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex: 1;
+      min-width: 0;
+      cursor: pointer;
+    }
+    .column-selector-label input { width: auto; margin: 0; accent-color: #2563eb; }
+    .column-selector-label span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .column-order-controls { display: flex; gap: 4px; }
+    .column-order-button {
+      display: inline-grid;
+      place-items: center;
+      width: 30px;
+      height: 30px;
+      min-width: 30px;
+      padding: 0;
+      border-radius: 8px;
+      background: #475569;
+      color: #fff;
+      font-size: .88rem;
+    }
+    .column-selector-selection-count { margin-left: auto; align-self: center; color: #475569; font-size: .82rem; font-weight: 750; }
+    .column-selector-error { min-height: 1.25em; margin-top: 10px; color: #b91c1c; font-size: .84rem; font-weight: 750; }
+    .column-selector-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 9px; margin-top: 14px; }
+    @media (max-width: 620px) {
+      .column-selector-selection-count { width: 100%; margin-left: 0; }
+      .column-selector-actions button { flex: 1 1 auto; }
+    }
+    .base-config-actions { justify-content: space-between; }
+    .base-config-actions-main,
+    .base-config-actions-end { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+    .base-config-actions-end { margin-left: auto; justify-content: flex-end; }
+    @media (max-width: 760px) {
+      .base-config-actions-end { width: 100%; margin-left: 0; justify-content: flex-start; }
+    }
+    .color-key { width: 11px; height: 11px; border-radius: 3px; display: inline-block; }
+    .color-key.below { background: #0072b2; }
+    .color-key.above { background: #d55e00; }
+    .color-key.equal { background: #009e73; }
+    .color-key.missing { background: #6b7280; }
+
+    .line-picker { display: grid; grid-template-columns: minmax(0, 1fr) 34px; gap: 6px; }
+    .line-picker input { min-width: 0; }
+    .line-picker input::-webkit-inner-spin-button,
+    .line-picker input::-webkit-outer-spin-button { appearance: none; margin: 0; }
+    .line-picker input[type="number"] { appearance: textfield; }
+    .line-arrows { display: grid; grid-template-rows: 1fr 1fr; gap: 3px; }
+    .line-arrows button {
+      min-height: 19px; padding: 0; border-radius: 6px; background: #e2e8f0; color: #334155;
+      font-size: .75rem; line-height: 1; border: 1px solid #cbd5e1;
+    }
+    .line-arrows button:hover { background: #dbeafe; color: #1d4ed8; opacity: 1; }
+
+    .preview-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+    .preview-actions button {
+      min-height: 32px;
+      padding: 6px 10px;
+      border-radius: 9px;
+      font-size: .76rem;
+    }
+    .filter-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px 14px;
+      margin: 9px 0 0;
+      color: #475569;
+      font-size: .79rem;
+      line-height: 1.4;
+    }
+    .filter-summary strong { color: #1e3a8a; }
+
+    .review-dialog {
+      width: min(1360px, calc(100vw - 24px));
+      max-height: calc(100vh - 28px);
+      padding: 0;
+      border: 0;
+      border-radius: 16px;
+      background: #fff;
+      color: #172033;
+      box-shadow: 0 28px 80px rgba(15, 23, 42, .35);
+    }
+    .review-dialog[open] { display: flex; flex-direction: column; }
+    .review-dialog::backdrop { background: rgba(15, 23, 42, .58); backdrop-filter: blur(3px); }
+    .review-dialog-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px 18px;
+      border-bottom: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    .review-dialog-head h2 { margin: 0; font-size: 1.02rem; color: #1e3a8a; }
+    .review-dialog-body {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      min-height: 0;
+      max-height: calc(100vh - 86px);
+      overflow: hidden;
+      padding: 16px 18px 18px;
+    }
+    .review-dialog-summary { margin: 0 0 12px; color: #475569; line-height: 1.45; }
+    .review-treatment-cards {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0 0 14px;
+    }
+    .review-treatment-card {
+      width: 100%;
+      min-height: 69px;
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      grid-template-areas: "number label" "number detail";
+      align-items: center;
+      column-gap: 12px;
+      padding: 8px 11px;
+      border: 1px solid #cbd5e1;
+      border-radius: 13px;
+      background: #fff;
+      color: #334155;
+      text-align: left;
+      cursor: pointer;
+      box-shadow: none;
+    }
+    .review-treatment-card:hover { opacity: 1; background: #f8fafc; transform: none; }
+    .review-treatment-card[aria-pressed="true"] {
+      border-color: var(--review-accent);
+      background: var(--review-bg);
+      box-shadow: 0 0 0 3px var(--review-ring);
+    }
+    .review-treatment-card[data-review-filter="all"] {
+      --review-accent: #2563eb; --review-bg: #eff6ff; --review-ring: rgba(37, 99, 235, .15);
+    }
+    .review-treatment-card[data-review-filter="removed"] {
+      --review-accent: #b45309; --review-bg: #fffbeb; --review-ring: rgba(180, 83, 9, .15);
+    }
+    .review-treatment-card[data-review-filter="kept"] {
+      --review-accent: #047857; --review-bg: #ecfdf5; --review-ring: rgba(4, 120, 87, .15);
+    }
+    .review-treatment-card[data-review-filter="blocker"] {
+      --review-accent: #b91c1c; --review-bg: #fef2f2; --review-ring: rgba(185, 28, 28, .14);
+    }
+    .review-treatment-card[data-review-filter="discarded"] {
+      --review-accent: #475569; --review-bg: #f8fafc; --review-ring: rgba(71, 85, 105, .14);
+    }
+    .review-treatment-number {
+      grid-area: number;
+      min-width: 2.4ch;
+      color: var(--review-accent);
+      font-size: 1.72rem;
+      font-weight: 900;
+      font-variant-numeric: tabular-nums;
+      line-height: 1;
+    }
+    .review-treatment-label { grid-area: label; color: #1e293b; font-size: .88rem; font-weight: 850; }
+    .review-treatment-detail { grid-area: detail; color: #64748b; font-size: .73rem; line-height: 1.25; }
+    @media (max-width: 680px) { .review-treatment-cards { grid-template-columns: 1fr; } }
+    .review-scroll-window { max-height: min(62vh, 620px); overflow-x: hidden; }
+    .review-table,
+    .review-table.review-table-base {
+      width: 100%;
+      min-width: 0 !important;
+      table-layout: fixed;
+      font-size: .74rem;
+    }
+    .review-table th,
+    .review-table td {
+      padding: 7px 6px;
+      vertical-align: top;
+      white-space: normal;
+      overflow-wrap: anywhere;
+    }
+    .review-table .review-kept { color: #166534; font-weight: 800; }
+    .review-table .review-removed { color: #b45309; font-weight: 800; }
+    .review-table .review-description,
+    .review-table .review-reason { min-width: 0; white-space: normal; }
+    .review-reason-main { color: #1e293b; font-weight: 850; line-height: 1.25; }
+    .review-detail-toggle {
+      margin-top: 5px;
+      padding: 3px 7px;
+      border: 1px solid #cbd5e1;
+      border-radius: 7px;
+      background: #f8fafc;
+      color: #1d4ed8;
+      font-size: .68rem;
+      font-weight: 800;
+      box-shadow: none;
+    }
+    .review-detail-toggle:hover { opacity: 1; background: #eff6ff; transform: none; }
+    .review-reason-details {
+      margin: 6px 0 0;
+      padding-left: 16px;
+      color: #475569;
+      font-size: .69rem;
+      line-height: 1.35;
+    }
+    .review-group-row td {
+      padding: 8px 10px;
+      background: #f8fafc;
+      color: #334155;
+      font-size: .78rem;
+      font-weight: 900;
+      letter-spacing: .025em;
+      text-transform: uppercase;
+    }
+    .review-group-row.review-group-removed td { border-left: 4px solid #b45309; }
+    .review-group-row.review-group-kept td { border-left: 4px solid #047857; }
+    .review-empty-row td { padding: 24px; color: #64748b; text-align: center; }
+    .review-groups, .budget-audit-groups { display: grid; min-height: 0; gap: 12px; }
+    .review-dialog-body > .review-groups,
+    .budget-audit-body > .budget-audit-groups { flex: 1 1 auto; }
+    .review-reason-group {
+      overflow: hidden; border: 1px solid #cbd5e1; border-radius: 12px; background: #fff;
+    }
+    .review-reason-head {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+      padding: 10px 12px; border-bottom: 1px solid #e2e8f0; background: #f8fafc;
+    }
+    .review-reason-head strong { color: #1e293b; font-size: .82rem; }
+    .review-reason-head span { color: #64748b; font-size: .72rem; }
+    .review-sheet-label {
+      padding: 7px 10px; border-bottom: 1px solid #e2e8f0; background: #fff;
+      color: #475569; font-size: .7rem; font-weight: 750;
+    }
+    .review-original-wrap { width: 100%; overflow-x: auto; background: #fff; }
+    .review-original-table {
+      width: max-content; min-width: 100%; border-collapse: separate; border-spacing: 0;
+      color: #334155; font-size: .7rem;
+    }
+    .review-original-table th, .review-original-table td {
+      min-width: 92px; max-width: 260px; padding: 7px 8px; border-right: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0; vertical-align: middle; white-space: pre-wrap;
+      word-break: normal; overflow-wrap: break-word;
+    }
+    .review-original-table tr > :last-child { border-right: 0; }
+    .review-original-table td[colspan] { max-width: none; }
+    .review-original-table thead th { position: sticky; top: 0; z-index: 1; background: #f1f5f9; color: #334155; font-weight: 800; }
+    .review-original-table .row-number { min-width: 52px; width: 52px; background: #f8fafc; text-align: center; font-weight: 800; }
+    .review-original-table tbody tr { cursor: pointer; }
+    .review-original-table tbody tr:nth-child(even) td { background: #f8fafc; }
+    .review-original-table tbody tr:hover td,
+    .review-original-table tbody tr.selected td,
+    .review-original-table tbody tr:focus td { background: #eff6ff; }
+    .review-original-table tbody tr:focus { outline: 2px solid #60a5fa; outline-offset: -2px; }
+    .review-original-table td.related { background: #fef3c7 !important; box-shadow: inset 0 0 0 2px #f59e0b; }
+    .review-original-table td.hidden-cell { background-image: repeating-linear-gradient(135deg, transparent 0 5px, rgba(100,116,139,.11) 5px 10px); }
+    .review-unified-panel { width: 100%; }
+    .review-unified-panel > .review-sheet-label {
+      border: 1px solid #cbd5e1; border-bottom: 0; border-radius: 12px 12px 0 0;
+    }
+    .review-unified-wrap {
+      width: 100%; max-height: min(42vh, 360px); overflow: auto;
+      border: 1px solid #cbd5e1; border-radius: 12px; background: #fff;
+    }
+    .review-unified-table { border: 0; border-radius: 0; }
+    .review-unified-table thead th { z-index: 4; }
+    .review-unified-table .review-reason-row td {
+      position: relative; padding: 8px 11px; border-right: 0; border-bottom: 1px solid #cbd5e1;
+      background: #eaf1f8 !important; color: #1e293b; font-size: .76rem; font-weight: 900;
+    }
+    .review-unified-table .review-reason-row.review-empty-or-zero td {
+      background: #fef3c7 !important; color: #92400e;
+    }
+    .review-reason-toggle {
+      display: flex; align-items: center; gap: 7px; width: 100%;
+      padding: 0; border: 0; border-radius: 0; background: transparent; color: inherit;
+      font: inherit; text-align: left; box-shadow: none;
+    }
+    .review-reason-toggle:hover,
+    .review-reason-toggle:focus-visible { background: transparent; color: #1d4ed8; opacity: 1; transform: none; }
+    .review-reason-toggle::before {
+      content: "▾"; flex: 0 0 auto; color: #64748b; font-size: .78rem;
+      transform-origin: center; transition: transform .12s ease;
+    }
+    .review-reason-toggle[aria-expanded="false"]::before { transform: rotate(-90deg); }
+    .review-unified-table .review-reason-row .review-reason-count {
+      margin-left: auto; color: #64748b; font-size: .69rem; font-weight: 700; white-space: nowrap;
+    }
+    .review-unified-table .review-schema-row td {
+      padding: 6px 10px; border-right: 0; background: #fff !important;
+      color: #475569; font-size: .68rem; font-weight: 750;
+    }
+    .review-unified-table .review-schema-header-row th {
+      position: static; padding: 6px 8px; background: #f1f5f9; color: #334155;
+    }
+    .review-unified-table tbody tr.review-related-start > * { border-top: 2px solid #93c5fd; }
+    .review-unified-table tbody tr.review-related-end > * { border-bottom-color: #93c5fd; }
+    .review-unified-table .review-summary-row td { padding: 9px 10px; background: #fff; }
+    .review-summary-grid {
+      display: grid; grid-template-columns: minmax(180px, 1.5fr) repeat(3, minmax(130px, 1fr));
+      gap: 8px; align-items: stretch;
+    }
+    .review-summary-cell {
+      padding: 8px 10px; border: 1px solid #dbe3ee; border-radius: 8px;
+      background: #f8fafc; color: #475569; font-size: .72rem;
+    }
+    .review-summary-cell strong { display: block; margin-top: 3px; color: #1e293b; font-size: .8rem; }
+    .review-summary-cell.review-summary-title { background: #eff6ff; color: #1e3a8a; font-weight: 850; }
+    .review-summary-cell.review-summary-message { grid-column: span 3; line-height: 1.4; }
+    .review-unified-table tr.review-summary-row { cursor: pointer; }
+    .review-unified-table tr.review-summary-row:hover td,
+    .review-unified-table tr.review-summary-row.selected td,
+    .review-unified-table tr.review-summary-row:focus td { background: #eff6ff; }
+    @media (max-width: 760px) {
+      .review-summary-grid { grid-template-columns: 1fr 1fr; }
+    }
+    .review-general-list { display: grid; gap: 6px; padding: 9px; }
+    .review-general-occurrence {
+      width: 100%; padding: 9px 10px; border: 1px solid #cbd5e1; border-radius: 9px;
+      background: #fff; color: #334155; text-align: left; font-size: .76rem; font-weight: 750;
+      box-shadow: none;
+    }
+    .review-general-occurrence:hover,
+    .review-general-occurrence.selected,
+    .review-general-occurrence:focus { background: #eff6ff; opacity: 1; outline: 2px solid #60a5fa; outline-offset: -2px; }
+    .review-explanation {
+      min-height: 105px; margin-top: 12px; padding: 13px 14px;
+      border: 1px solid #cbd5e1; border-radius: 12px; background: #fff;
+    }
+    .review-explanation h3 { margin: 0 0 7px; color: #1e3a8a; font-size: .9rem; }
+    .review-explanation p { margin: 4px 0; color: #475569; font-size: .8rem; line-height: 1.45; }
+    .review-dialog-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; }
+    .review-dialog-actions button { min-width: 150px; }
+
+    .audit-message-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 12px;
+    }
+    .audit-message-actions .audit-message { flex: 1 1 auto; margin: 0; }
+    .audit-message-actions button { flex: 0 0 auto; }
+    .audit-status {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 7px;
+      border-radius: 999px;
+      font-size: .69rem;
+      font-weight: 850;
+      white-space: nowrap;
+    }
+    .audit-status.blocking { background: #ffedd5; color: #9a3412; }
+    .audit-status.distinct { background: #eff6ff; color: #1d4ed8; }
+    .audit-status.consistent { background: #ecfdf5; color: #047857; }
+    @media (max-width: 720px) {
+      .audit-message-actions { align-items: stretch; flex-direction: column; }
+      .audit-message-actions button { width: 100%; }
+    }
+
+    .confirm-dialog {
+      width: min(520px, calc(100vw - 28px));
+      padding: 0;
+      border: 0;
+      border-radius: 16px;
+      background: #fff;
+      color: #172033;
+      box-shadow: 0 28px 80px rgba(15, 23, 42, .35);
+    }
+    .confirm-dialog::backdrop { background: rgba(15, 23, 42, .58); backdrop-filter: blur(3px); }
+    .confirm-dialog-head { padding: 16px 18px; border-bottom: 1px solid #e2e8f0; background: #fffbeb; }
+    .confirm-dialog-head h2 { margin: 0; color: #92400e; font-size: 1.02rem; }
+    .confirm-dialog-body { padding: 18px; }
+    .confirm-dialog-body p { margin: 0; color: #475569; line-height: 1.55; }
+    .confirm-dialog-actions { display: flex; justify-content: flex-end; gap: 9px; margin-top: 18px; }
+
+    .beta-notice-dialog {
+      width: min(590px, calc(100vw - 28px));
+      padding: 0;
+      border: 0;
+      border-radius: 16px;
+      background: #fff;
+      color: #172033;
+      box-shadow: 0 28px 80px rgba(15, 23, 42, .38);
+    }
+    .beta-notice-dialog::backdrop { background: rgba(15, 23, 42, .62); backdrop-filter: blur(3px); }
+    .beta-notice-head { padding: 18px 20px; border-bottom: 1px solid #bfdbfe; background: #eff6ff; }
+    .beta-notice-head h2 { margin: 0; color: #1e3a8a; font-size: 1.1rem; }
+    .beta-notice-body { padding: 20px; }
+    .beta-notice-body p { margin: 0; color: #475569; line-height: 1.65; }
+    .beta-notice-actions { display: flex; justify-content: flex-end; margin-top: 20px; }
+    .beta-notice-actions button { min-width: 120px; }
+
+    .loading-overlay {
+      position: fixed; inset: 0; z-index: 1000; display: grid; place-items: center;
+      padding: 24px; background: rgba(15, 23, 42, .38); backdrop-filter: blur(3px);
+    }
+    .loading-overlay.hidden { display: none; }
+    .loading-card {
+      width: min(420px, 100%); display: grid; grid-template-columns: 44px minmax(0, 1fr);
+      gap: 3px 14px; align-items: center; padding: 20px; border: 1px solid #bfdbfe;
+      border-radius: 16px; background: #fff; color: #172033; box-shadow: 0 22px 60px rgba(15, 23, 42, .22);
+    }
+    .loading-spinner {
+      grid-row: 1 / span 2; width: 38px; height: 38px; border: 4px solid #dbeafe;
+      border-top-color: #2563eb; border-radius: 50%; animation: loading-spin .8s linear infinite;
+    }
+    .loading-card strong { color: #1e3a8a; }
+    .loading-card span { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #64748b; font-size: .84rem; }
+    @keyframes loading-spin { to { transform: rotate(360deg); } }
+  
+    /* SICORP_V42_PRICE_SOURCE_STYLES_START */
+    .price-source-central {
+      margin: 0 0 22px;
+      padding: 18px;
+      border: 1px solid #bfdbfe;
+      border-radius: 16px;
+      background: linear-gradient(145deg, #eff6ff 0%, #ffffff 58%);
+    }
+    .price-source-central-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      margin-bottom: 17px;
+    }
+    .price-source-central-head h3 { margin: 0 0 5px; color: #1e3a8a; font-size: 1.02rem; }
+    .price-source-central-head p { max-width: 720px; margin: 0; color: #475569; line-height: 1.45; }
+    .price-source-portable-actions {
+      max-width: 100%;
+      display: flex;
+      flex-wrap: nowrap;
+      justify-content: flex-end;
+      gap: 6px;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+    .price-source-portable-actions button {
+      flex: 0 0 auto;
+      padding: 7.5px 10.5px;
+      border-radius: 8px;
+      font-size: .75em;
+      white-space: nowrap;
+    }
+    .price-source-search { max-width: 680px; }
+    .price-source-search label,
+    .price-source-field label {
+      display: block;
+      margin-bottom: 6px;
+      color: #334155;
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .01em;
+    }
+    .price-source-search input,
+    .price-source-field input {
+      width: 100%;
+      min-height: 44px;
+      padding: 10px 13px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+      color: #0f172a;
+      font: inherit;
+      box-shadow: 0 1px 2px rgba(15, 23, 42, .04), inset 0 1px 0 rgba(255, 255, 255, .9);
+      transition: border-color .16s ease, box-shadow .16s ease, background .16s ease;
+    }
+    .price-source-search input::placeholder,
+    .price-source-field input::placeholder { color: #94a3b8; }
+    .price-source-search input:hover,
+    .price-source-field input:hover { border-color: #94a3b8; }
+    .price-source-search input:focus,
+    .price-source-field input:focus {
+      border-color: #2563eb;
+      background: #fff;
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, .14), 0 4px 12px rgba(37, 99, 235, .08);
+    }
+    .price-source-summary { margin: 12px 0 10px; color: #475569; font-size: .82rem; }
+    .price-source-links {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 10px;
+    }
+    .price-source-card,
+    .price-source-add-wrapper {
+      position: relative;
+      min-width: 0;
+      min-height: 88px;
+    }
+    .price-source-link {
+      min-width: 0;
+      min-height: 88px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      gap: 4px;
+      padding: 14px 52px 14px 15px;
+      border: 1px solid #93c5fd;
+      border-radius: 12px;
+      background: #fff;
+      color: #1e3a8a;
+      text-decoration: none;
+      box-shadow: 0 5px 16px rgba(37, 99, 235, .08);
+      transition: border-color .16s ease, box-shadow .16s ease, transform .16s ease;
+    }
+    .price-source-link:hover, .price-source-link:focus-visible {
+      border-color: #2563eb;
+      box-shadow: 0 9px 22px rgba(37, 99, 235, .16);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .price-source-link.no-link { cursor: default; opacity: .72; }
+    .price-source-link strong { color: #1d4ed8; font-size: .94rem; line-height: 1.25; }
+    .price-source-link span { color: #475569; font-size: .78rem; line-height: 1.35; }
+    .price-source-link .price-source-match-badge {
+      align-self: flex-start;
+      margin-top: auto;
+      padding: 3px 7px;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: .65rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+    .price-source-unknown {
+      display: inline-block;
+      width: fit-content;
+      max-width: 100%;
+      margin: 8px 0 12px;
+      padding: 9px 11px;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: .75rem;
+      line-height: 1.4;
+    }
+    .price-source-settings {
+      position: absolute;
+      z-index: 2;
+      top: 8px;
+      right: 8px;
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      padding: 0;
+      border: 1px solid #dbeafe;
+      border-radius: 9px;
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 1rem;
+      line-height: 1;
+      box-shadow: none;
+    }
+    .price-source-settings:hover, .price-source-settings:focus-visible {
+      border-color: #60a5fa;
+      background: #dbeafe;
+      color: #1e40af;
+      transform: none;
+      outline: 3px solid rgba(37, 99, 235, .13);
+    }
+    .price-source-add-card {
+      width: 100%;
+      min-height: 88px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2px;
+      padding: 10px;
+      border: 1.5px dashed #60a5fa;
+      border-radius: 12px;
+      background: rgba(239, 246, 255, .7);
+      color: #2563eb;
+      box-shadow: none;
+    }
+    .price-source-add-card span { font-size: 1.9rem; font-weight: 400; line-height: 1; }
+    .price-source-add-card small { font-size: .73rem; font-weight: 800; }
+    .price-source-add-card:hover, .price-source-add-card:focus-visible {
+      border-color: #2563eb;
+      background: #dbeafe;
+      color: #1e40af;
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .price-source-empty {
+      margin-top: 10px;
+      padding: 14px;
+      border: 1px dashed #94a3b8;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, .7);
+      color: #64748b;
+      text-align: center;
+    }
+    .price-source-footer { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 12px; }
+    .price-source-status { min-height: 1.3em; margin: 10px 0 0; color: #166534; font-size: .78rem; }
+    .price-source-status.error { color: #b91c1c; }
+    .price-source-dialog {
+      width: min(640px, calc(100vw - 28px));
+      max-height: calc(100vh - 28px);
+      padding: 0;
+      border: 0;
+      border-radius: 18px;
+      background: transparent;
+      box-shadow: 0 28px 80px rgba(15, 23, 42, .34);
+      overflow: visible;
+    }
+    .price-source-dialog::backdrop { background: rgba(15, 23, 42, .56); backdrop-filter: blur(2px); }
+    .price-source-dialog-card { overflow: hidden; border: 1px solid #dbeafe; border-radius: 18px; background: #fff; }
+    .price-source-dialog-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 17px 19px;
+      border-bottom: 1px solid #dbeafe;
+      background: linear-gradient(135deg, #eff6ff, #ffffff);
+    }
+    .price-source-dialog-head h3 { margin: 0; color: #1e3a8a; font-size: 1.02rem; }
+    .price-source-dialog-close {
+      width: 34px;
+      height: 34px;
+      padding: 0;
+      border: 1px solid #dbeafe;
+      border-radius: 9px;
+      background: #fff;
+      color: #475569;
+      font-size: 1.25rem;
+      line-height: 1;
+      box-shadow: none;
+    }
+    .price-source-dialog-close:hover { background: #f1f5f9; color: #0f172a; transform: none; }
+    .price-source-dialog-body { padding: 19px; }
+    .price-source-editor-grid {
+      display: grid;
+      grid-template-columns: minmax(150px, .7fr) minmax(250px, 1.3fr);
+      gap: 14px;
+    }
+    .price-source-url-field { grid-column: 1 / -1; }
+    .price-source-field-help { display: block; margin-top: 6px; color: #64748b; font-size: .72rem; line-height: 1.4; }
+    .price-source-editor-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 9px; margin-top: 18px; }
+    .price-source-editor-actions .price-source-cancel { margin-left: auto; }
+    .price-source-editor-status { min-height: 1.3em; margin: 10px 0 0; color: #166534; font-size: .78rem; }
+    .price-source-editor-status.error { color: #b91c1c; }
+    .price-source-dialog button.hidden { display: none; }
+    .blocking-dialog {
+      width: min(560px, calc(100vw - 28px));
+      padding: 0;
+      border: 0;
+      border-radius: 18px;
+      background: transparent;
+      box-shadow: 0 28px 80px rgba(15, 23, 42, .38);
+    }
+    .blocking-dialog::backdrop { background: rgba(15, 23, 42, .58); backdrop-filter: blur(2px); }
+    .blocking-dialog-card {
+      overflow: hidden;
+      border: 1px solid #fed7aa;
+      border-radius: 18px;
+      background: #fff;
+    }
+    .blocking-dialog-head {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 18px 20px;
+      border-bottom: 1px solid #fed7aa;
+      background: linear-gradient(135deg, #fff7ed, #ffffff);
+    }
+    .blocking-dialog-icon {
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      flex: 0 0 auto;
+      border-radius: 50%;
+      background: #ffedd5;
+      color: #c2410c;
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+    .blocking-dialog-head h3 { margin: 0; color: #9a3412; font-size: 1.04rem; }
+    .blocking-dialog-body { padding: 20px; }
+    .blocking-dialog-body p { margin: 0; color: #334155; line-height: 1.55; white-space: pre-line; }
+    .blocking-dialog-actions { display: flex; justify-content: flex-end; margin-top: 20px; }
+    .blocking-dialog-actions button { min-width: 112px; }
+    @media (max-width: 760px) {
+      .price-source-central { padding: 14px; }
+      .price-source-central-head { flex-direction: column; }
+      .price-source-portable-actions { width: 100%; justify-content: flex-start; }
+      .price-source-links { grid-template-columns: 1fr; }
+      .price-source-editor-grid { grid-template-columns: 1fr; }
+      .price-source-url-field { grid-column: auto; }
+      .price-source-editor-actions button { flex: 1 1 150px; }
+      .price-source-editor-actions .price-source-cancel { margin-left: 0; }
+    }
+    /* SICORP_V44_BUDGET_AUDIT_STYLES_START */
+    .project-general-total-block {
+      min-width: 0;
+    }
+    .project-mapper {
+      margin-top: 18px;
+      padding: 15px;
+      border: 1px solid #cbd5e1;
+      border-radius: 12px;
+      background: #f8fafc;
+    }
+    .project-mapper-head {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
+    }
+    .project-mapper-head h3 { margin: 0; color: #334155; font-size: .92rem; }
+    .project-mapper-head p { margin: 4px 0 0; color: #64748b; font-size: .78rem; line-height: 1.4; }
+    .project-mapper-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 8px; }
+    .project-mapper-actions button { white-space: nowrap; }
+    .project-field-pool { display: grid; gap: 8px; min-height: 40px; }
+    .project-field-row { display: flex; flex-wrap: wrap; justify-content: flex-start; gap: 8px; }
+    .project-field-chip {
+      display: inline-flex;
+      align-items: stretch;
+      overflow: hidden;
+      border: 1px solid #cbd5e1;
+      border-radius: 999px;
+      background: #fff;
+      color: #334155;
+      font-size: .76rem;
+      font-weight: 800;
+      transition: .14s ease;
+    }
+    .project-field-chip:hover { border-color: #93c5fd; background: #f8fbff; }
+    .project-field-chip-main {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px 7px 11px;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      color: inherit;
+      font: inherit;
+      font-weight: 800;
+      box-shadow: none;
+    }
+    .project-field-chip-main:hover { transform: none; background: transparent; opacity: 1; }
+    .project-field-chip.selected {
+      border-color: #f59e0b;
+      background: #fef3c7;
+      color: #92400e;
+      box-shadow: 0 0 0 3px rgba(245, 158, 11, .16);
+    }
+    .project-field-chip.mapped { border-color: #86efac; background: #f0fdf4; color: #166534; }
+    .project-field-chip.mapped:not(.selected):hover { border-color: #4ade80; background: #ecfdf5; }
+    .project-validation-error {
+      border-color: #dc2626 !important;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, .16) !important;
+    }
+    .project-bdi-mapping-group {
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 3px;
+      border: 2px solid transparent;
+      border-radius: 999px;
+    }
+    .project-bdi-mapping-group.project-validation-error {
+      background: #fef2f2;
+    }
+    .project-prerequisite-message {
+      margin-top: 12px;
+      padding: 10px 12px;
+      border: 1px solid #fecaca;
+      border-radius: 10px;
+      background: #fef2f2;
+      color: #991b1b;
+      font-size: .78rem;
+      font-weight: 750;
+      line-height: 1.4;
+    }
+    .project-field-chip-code { font-size: .68rem; color: inherit; opacity: .78; }
+    .project-field-chip-remove {
+      display: none;
+      width: 28px;
+      padding: 0;
+      border: 0;
+      border-left: 1px solid rgba(22, 101, 52, .16);
+      border-radius: 0;
+      background: rgba(255, 255, 255, .45);
+      color: inherit;
+      font-size: 1rem;
+      font-weight: 900;
+      line-height: 1;
+      box-shadow: none;
+    }
+    .project-field-chip.mapped .project-field-chip-remove { display: block; }
+    .project-field-chip-remove:hover { transform: none; background: #fee2e2; color: #b91c1c; opacity: 1; }
+    .project-mapping-legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin-top: 10px;
+      color: #64748b;
+      font-size: .71rem;
+    }
+    .project-mapping-legend-dot {
+      display: inline-block;
+      width: 9px;
+      height: 9px;
+      margin-right: 5px;
+      border-radius: 50%;
+      vertical-align: -1px;
+    }
+    .project-mapping-legend-dot.mapped { background: #22c55e; }
+    .project-mapping-legend-dot.active { background: #f59e0b; }
+    .project-mapping-legend-dot.hover { border: 1px solid #f59e0b; background: #fde68a; }
+    .project-mapping-instruction {
+      display: block;
+      min-height: 42px;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      background: #eff6ff;
+      color: #1e40af;
+      font-size: .78rem;
+      line-height: 1.4;
+    }
+    .project-mapping-instruction.awaiting {
+      border-color: #fde68a;
+      background: #fffbeb;
+      color: #92400e;
+    }
+    .project-mapping-selects { display: none !important; }
+    #projectPreviewTable.mapping-awaiting-column [data-column-index],
+    #basePreviewTable.mapping-awaiting-column [data-column-index] { cursor: crosshair; }
+    #projectPreviewTable .project-mapping-target-column,
+    #basePreviewTable .project-mapping-target-column {
+      background: #fef3c7 !important;
+      box-shadow: inset 2px 0 #f59e0b, inset -2px 0 #f59e0b;
+    }
+    @media (max-width: 700px) {
+      .project-mapper-head { flex-direction: column; }
+      .project-mapper-actions { justify-content: flex-start; }
+    }
+
+    .budget-audit-dialog {
+      width: min(1240px, calc(100vw - 24px));
+      max-height: calc(100vh - 28px);
+      padding: 0;
+      border: 0;
+      border-radius: 16px;
+      background: #fff;
+      color: #172033;
+      box-shadow: 0 28px 80px rgba(15, 23, 42, .35);
+    }
+    .budget-audit-dialog[open] { display: flex; flex-direction: column; }
+    .budget-audit-dialog::backdrop { background: rgba(15, 23, 42, .58); backdrop-filter: blur(3px); }
+    .budget-audit-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px 18px;
+      border-bottom: 1px solid #e2e8f0;
+      background: #f8fafc;
+    }
+    .budget-audit-head h2 { margin: 0; font-size: 1.02rem; color: #1e3a8a; }
+    .budget-audit-body {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
+      min-height: 0;
+      max-height: calc(100vh - 86px);
+      overflow: hidden;
+      padding: 16px 18px 18px;
+    }
+    .budget-audit-status { margin: 0 0 12px; color: #475569; line-height: 1.45; }
+    .budget-audit-cards {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0 0 14px;
+    }
+    .budget-audit-card {
+      width: 100%; min-height: 61px; display: grid;
+      grid-template-columns: auto minmax(0, 1fr); align-items: center; gap: 11px;
+      padding: 8px 10px; border: 1px solid #cbd5e1; border-radius: 13px;
+      background: #fff; color: #334155; text-align: left; box-shadow: none;
+    }
+    .budget-audit-card:hover { opacity: 1; background: #f8fafc; transform: none; }
+    .budget-audit-card[aria-pressed="true"] { border-color: var(--audit-accent); background: var(--audit-bg); box-shadow: 0 0 0 3px var(--audit-ring); }
+    .budget-audit-card[data-budget-audit-filter="blocker"] { --audit-accent: #b91c1c; --audit-bg: #fef2f2; --audit-ring: rgba(185, 28, 28, .14); }
+    .budget-audit-card[data-budget-audit-filter="error"] { --audit-accent: #c2410c; --audit-bg: #fff7ed; --audit-ring: rgba(194, 65, 12, .14); }
+    .budget-audit-card[data-budget-audit-filter="warning"] { --audit-accent: #a16207; --audit-bg: #fefce8; --audit-ring: rgba(161, 98, 7, .14); }
+    .budget-audit-card[data-budget-audit-filter="discarded"] { --audit-accent: #475569; --audit-bg: #f8fafc; --audit-ring: rgba(71, 85, 105, .14); }
+    .budget-audit-card-number { color: var(--audit-accent); font-size: 1.65rem; font-weight: 900; font-variant-numeric: tabular-nums; line-height: 1; }
+    .budget-audit-card-label { display: block; color: #1e293b; font-size: .84rem; font-weight: 850; }
+    .budget-audit-card-detail { display: block; margin-top: 3px; color: #64748b; font-size: .7rem; line-height: 1.25; }
+    @media (max-width: 820px) { .budget-audit-cards { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 520px) { .budget-audit-cards { grid-template-columns: 1fr; } }
+    .budget-audit-table-wrap {
+      width: 100%; max-height: min(46vh, 420px); overflow: auto;
+      border: 1px solid #cbd5e1; border-radius: 12px; background: #fff;
+    }
+    .budget-audit-table { width: 100%; min-width: 980px; font-size: .76rem; }
+    .budget-audit-table th { position: sticky; top: 0; z-index: 2; background: #f1f5f9; }
+    .budget-audit-table th, .budget-audit-table td { padding: 8px 9px; vertical-align: top; }
+    .budget-audit-table td:nth-child(3) { min-width: 190px; white-space: normal; word-break: normal; overflow-wrap: break-word; }
+    .budget-audit-table tbody tr { cursor: pointer; }
+    .budget-audit-table tbody tr:nth-child(even) { background: #f8fafc; }
+    .budget-audit-table tbody tr:hover,
+    .budget-audit-table tbody tr.selected,
+    .budget-audit-table tbody tr:focus { background: #eff6ff; outline: 2px solid #60a5fa; outline-offset: -2px; }
+    .budget-audit-severity { display: inline-flex; padding: 3px 7px; border: 1px solid; border-radius: 999px; font-size: .68rem; font-weight: 850; white-space: nowrap; }
+    .budget-audit-severity.blocker { color: #991b1b; border-color: #fecaca; background: #fef2f2; }
+    .budget-audit-severity.error { color: #9a3412; border-color: #fed7aa; background: #fff7ed; }
+    .budget-audit-severity.warning { color: #854d0e; border-color: #fde68a; background: #fefce8; }
+    .budget-audit-severity.discarded { color: #475569; border-color: #cbd5e1; background: #f8fafc; }
+    .budget-audit-empty { padding: 28px !important; color: #166534; text-align: center; font-weight: 750; }
+    .budget-audit-totals {
+      display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 12px; padding: 10px 12px;
+      border: 1px solid #e2e8f0; border-radius: 10px; background: #f8fafc;
+      color: #475569; font-size: .76rem;
+    }
+    .budget-audit-totals strong { color: #1e293b; }
+    .budget-audit-explanation {
+      min-height: 112px; margin-top: 12px; padding: 13px 14px;
+      border: 1px solid #cbd5e1; border-radius: 12px; background: #fff;
+    }
+    .budget-audit-explanation h3 { margin: 0 0 7px; color: #1e3a8a; font-size: .9rem; }
+    .budget-audit-explanation p { margin: 4px 0; color: #475569; font-size: .8rem; line-height: 1.45; }
+    .budget-audit-explanation .action { color: #1e293b; font-weight: 700; }
+    .budget-audit-original { margin-top: 13px; padding-top: 12px; border-top: 1px solid #e2e8f0; }
+    .budget-audit-original-head {
+      display: flex; align-items: baseline; justify-content: space-between; gap: 12px;
+      margin-bottom: 7px;
+    }
+    .budget-audit-original-head h4 { margin: 0; color: #334155; font-size: .8rem; }
+    .budget-audit-original-head span { color: #64748b; font-size: .68rem; }
+    .budget-audit-original-wrap {
+      width: 100%; overflow-x: auto; border: 1px solid #cbd5e1; border-radius: 9px; background: #fff;
+    }
+    .budget-audit-original-table {
+      width: max-content; min-width: 100%; border-collapse: separate; border-spacing: 0;
+      color: #334155; font-size: .7rem;
+    }
+    .budget-audit-original-table th, .budget-audit-original-table td {
+      min-width: 92px; max-width: 260px; padding: 7px 8px; border-right: 1px solid #e2e8f0;
+      border-bottom: 1px solid #e2e8f0; vertical-align: middle; white-space: pre-wrap;
+      word-break: normal; overflow-wrap: break-word;
+    }
+    .budget-audit-original-table tr > :last-child { border-right: 0; }
+    .budget-audit-original-table td[colspan] { max-width: none; }
+    .budget-audit-original-table tbody tr:last-child > * { border-bottom: 0; }
+    .budget-audit-original-table thead th { background: #f1f5f9; color: #334155; font-weight: 800; }
+    .budget-audit-original-table .row-number { min-width: 52px; width: 52px; background: #f8fafc; text-align: center; font-weight: 800; }
+    .budget-audit-original-table tbody tr:nth-child(even) td { background: #f8fafc; }
+    .budget-audit-original-table tbody tr.selected td { background: #eff6ff; }
+    .budget-audit-original-table td.related { background: #fef3c7 !important; box-shadow: inset 0 0 0 2px #f59e0b; }
+    .budget-audit-original-table td.hidden-cell { background-image: repeating-linear-gradient(135deg, transparent 0 5px, rgba(100,116,139,.11) 5px 10px); }
+    .budget-audit-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; }
+    .budget-audit-actions button { min-width: 150px; }
+    /* SICORP_V44_BUDGET_AUDIT_STYLES_END */
+    /* SICORP_V42_PRICE_SOURCE_STYLES_END */
+</style>
+</head>
+<body>
+  <dialog id="betaNoticeDialog" class="beta-notice-dialog" aria-labelledby="betaNoticeTitle" aria-describedby="betaNoticeMessage">
+    <div class="beta-notice-head"><h2 id="betaNoticeTitle">Versão beta</h2></div>
+    <div class="beta-notice-body">
+      <p id="betaNoticeMessage">Esta é uma versão de teste do SICORP. Os resultados devem ser conferidos pelo analista antes de qualquer utilização. Feedbacks sobre a experiência de uso, erros ou comportamentos inesperados são muito bem-vindos.</p>
+      <div class="beta-notice-actions"><button id="betaNoticeContinue" type="button" autofocus>Continuar</button></div>
+    </div>
+  </dialog>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand-mark">SC</div>
+      <div>
+        <h1>SICORP – Sistema de Comparação de Referenciais de Preços</h1>
+        <p class="subtitle">Importe o orçamento detalhado, organize as bases referenciais e compare os preços sem BDI.</p>
+      </div>
+      <span class="offline-pill">● 4.4.0-rc.17 · Offline</span>
+    </div>
+  <p class="subtitle" style="margin-top:10px">Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).</p>
+  </header>
+
+  <main>
+    <div class="wizard-shell">
+      <nav class="stepper" aria-label="Etapas da análise">
+        <button class="step-button active" data-step-target="1"><span class="step-number">1</span><span class="step-copy"><strong>Orçamento</strong><small>Importar e mapear</small></span></button>
+        <button class="step-button" data-step-target="2"><span class="step-number">2</span><span class="step-copy"><strong>Bases</strong><small>Adicionar e auditar</small></span></button>
+        <button class="step-button" data-step-target="3"><span class="step-number">3</span><span class="step-copy"><strong>Comparação</strong><small>Analisar e exportar</small></span></button>
+      </nav>
+    </div>
+
+    <div id="errorBox" class="error-box"></div>
+
+    <div id="loadingOverlay" class="loading-overlay hidden" role="status" aria-live="polite" aria-hidden="true">
+      <div class="loading-card">
+        <div class="loading-spinner" aria-hidden="true"></div>
+        <strong id="loadingTitle">Carregando arquivo…</strong>
+        <span id="loadingDetail"></span>
+      </div>
+    </div>
+
+
+    <!-- SICORP_V43_BLOCKING_DIALOG_START -->
+    <dialog id="blockingDialog" class="blocking-dialog" aria-labelledby="blockingDialogTitle" aria-describedby="blockingDialogMessage">
+      <div class="blocking-dialog-card">
+        <div class="blocking-dialog-head">
+          <span class="blocking-dialog-icon" aria-hidden="true">!</span>
+          <h3 id="blockingDialogTitle">Não é possível continuar</h3>
+        </div>
+        <form method="dialog" class="blocking-dialog-body">
+          <p id="blockingDialogMessage"></p>
+          <div class="blocking-dialog-actions">
+            <button id="blockingDialogReturn" type="submit" value="return">Retornar</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+    <!-- SICORP_V43_BLOCKING_DIALOG_END -->
+
+    <!-- SICORP_V44_BUDGET_AUDIT_DIALOG_START -->
+    <dialog id="budgetAuditDialog" class="budget-audit-dialog" aria-labelledby="budgetAuditTitle">
+      <div class="budget-audit-head">
+        <h2 id="budgetAuditTitle">Revisão e conferência do orçamento</h2>
+        <button id="budgetAuditCloseBtn" type="button" class="secondary">Fechar</button>
+      </div>
+      <div class="budget-audit-body">
+        <div id="budgetAuditCards" class="budget-audit-cards" role="group" aria-label="Filtrar achados da auditoria"></div>
+        <div id="budgetAuditGroups" class="budget-audit-groups" role="region" aria-label="Ocorrências agrupadas da auditoria"></div>
+        <div id="budgetAuditTotals" class="budget-audit-totals"></div>
+        <div id="budgetAuditExplanation" class="budget-audit-explanation" aria-live="polite"></div>
+        <div class="budget-audit-actions">
+          <button id="budgetAuditReturnBtn" type="button" class="secondary">Retornar para corrigir</button>
+          <button id="budgetAuditProceedBtn" type="button">Continuar para as bases</button>
+        </div>
+      </div>
+    </dialog>
+    <!-- SICORP_V44_BUDGET_AUDIT_DIALOG_END -->
+    <div id="sourceGrid" class="grid">
+      <section class="wizard-page" data-page="1">
+        <h2>1. Selecione o arquivo de orçamento</h2>
+        <div class="content">
+          <p class="section-intro">Escolha a planilha orçamentária detalhada em <code>.xlsx</code>, <code>.xls</code> ou <code>.csv</code>. Os dados ficam somente neste navegador.</p>
+          <label id="projectDropzone" class="dropzone" for="projectFile">
+            <input id="projectFile" type="file" accept=".xlsx,.xls,.csv,.txt" />
+            <span><span class="dropzone-icon">↑</span><strong>Clique para selecionar ou arraste o orçamento para cá</strong><span>Planilhas XLSX, XLS, CSV ou TXT</span></span>
+          </label>
+
+          <div id="projectConfigArea" class="config-panel hidden">
+            <div id="projectStatus" class="status-bar"></div>
+            <div class="mapping-grid base-primary-grid" style="margin-top: 16px;">
+              <div class="sheet-selection-block"><label for="projectSheet">Aba do orçamento</label><select id="projectSheet" disabled></select></div>
+              <div>
+                <label for="projectHeaderRow">Linha do cabeçalho</label>
+                <div class="line-picker">
+                  <input id="projectHeaderRow" type="number" min="1" value="1" />
+                  <div class="line-arrows">
+                    <button type="button" data-line-target="projectHeaderRow" data-line-delta="-1" aria-label="Diminuir número da linha">↑</button>
+                    <button type="button" data-line-target="projectHeaderRow" data-line-delta="1" aria-label="Aumentar número da linha">↓</button>
+                  </div>
+                </div>
+              </div>
+              <div class="project-general-total-block">
+                <label for="projectGeneralTotal">Total geral do orçamento</label>
+                <input id="projectGeneralTotal" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: R$ 1.234.567,89" />
+                <div class="small" style="margin-top: 6px;">Digite o total exatamente como apresentado na planilha.</div>
+              </div>
+            </div>
+            <div class="project-mapper" aria-labelledby="projectMapperTitle">
+              <div class="project-mapper-head">
+                <div>
+                  <h3 id="projectMapperTitle">Mapeamento das colunas do orçamento</h3>
+                  <p>Escolha uma função e depois clique na coluna correspondente da pré-visualização.</p>
+                </div>
+                <div class="project-mapper-actions">
+                  <button id="projectAutoMapBtn" type="button" disabled>Mapear automaticamente</button>
+                  <button id="projectClearMappingBtn" type="button" class="secondary" disabled>Limpar tudo</button>
+                </div>
+              </div>
+              <div id="projectMappingFieldPool" class="project-field-pool">
+                <div class="project-field-row" data-project-mapping-row="identification">
+                  <div class="project-field-chip" data-project-mapping-field="code"><button type="button" class="project-field-chip-main" aria-label="Selecionar Código"><span>Código</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Código">×</button></div>
+                  <div class="project-field-chip" data-project-mapping-field="source"><button type="button" class="project-field-chip-main" aria-label="Selecionar Base"><span>Base</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Base">×</button></div>
+                  <div class="project-field-chip" data-project-mapping-field="description"><button type="button" class="project-field-chip-main" aria-label="Selecionar Descrição"><span>Descrição</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Descrição">×</button></div>
+                  <div class="project-field-chip" data-project-mapping-field="unit"><button type="button" class="project-field-chip-main" aria-label="Selecionar Unidade"><span>Unidade</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Unidade">×</button></div>
+                </div>
+                <div class="project-field-row" data-project-mapping-row="financial">
+                  <div class="project-field-chip" data-project-mapping-field="quantity"><button type="button" class="project-field-chip-main" aria-label="Selecionar Quantidade"><span>Quantidade</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Quantidade">×</button></div>
+                  <div id="projectBdiMappingGroup" class="project-bdi-mapping-group">
+                    <div class="project-field-chip" data-project-mapping-field="priceWithoutBdi"><button type="button" class="project-field-chip-main" aria-label="Selecionar Preço sem BDI"><span>Preço sem BDI</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Preço sem BDI">×</button></div>
+                    <div class="project-field-chip" data-project-mapping-field="bdi"><button type="button" class="project-field-chip-main" aria-label="Selecionar BDI"><span>BDI (%)</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de BDI">×</button></div>
+                    <div class="project-field-chip" data-project-mapping-field="priceWithBdi"><button type="button" class="project-field-chip-main" aria-label="Selecionar Preço com BDI"><span>Preço com BDI</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Preço com BDI">×</button></div>
+                  </div>
+                  <div class="project-field-chip" data-project-mapping-field="totalWithBdi"><button type="button" class="project-field-chip-main" aria-label="Selecionar Valor total com BDI"><span>Valor total com BDI</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Valor total com BDI">×</button></div>
+                </div>
+              </div>
+              <div class="project-mapping-legend" aria-hidden="true">
+                <span><i class="project-mapping-legend-dot mapped"></i>Mapeado</span>
+                <span><i class="project-mapping-legend-dot active"></i>Selecionado, aguardando coluna</span>
+                <span><i class="project-mapping-legend-dot hover"></i>Conferência por destaque</span>
+              </div>
+              <div id="projectMappingInstruction" class="project-mapping-instruction" aria-live="polite"></div>
+              <div id="projectPriceRule" class="audit-message" style="margin-top: 12px;" aria-live="polite"></div>
+              <div class="project-mapping-selects" aria-hidden="true">
+                <select id="projectCodeCol" disabled><option value=""></option></select>
+                <select id="projectSourceCol" disabled><option value=""></option></select>
+                <select id="projectDescCol" disabled><option value=""></option></select>
+                <select id="projectUnitCol" disabled><option value=""></option></select>
+                <select id="projectQuantityCol" disabled><option value=""></option></select>
+                <select id="projectWithoutBdiCol" disabled><option value=""></option></select>
+                <select id="projectBdiCol" disabled><option value=""></option></select>
+                <select id="projectWithBdiCol" disabled><option value=""></option></select>
+                <select id="projectTotalWithBdiCol" disabled><option value=""></option></select>
+              </div>
+              <div id="projectColumnSummary" class="hidden" aria-hidden="true"></div>
+            </div>
+            <div id="projectSourceIdentifiers" class="hidden" aria-hidden="true"></div>
+
+            <div class="preview-block">
+              <div class="preview-head"><h3 class="preview-title">Pré-visualização e seleção das colunas</h3><div class="preview-actions"><span class="small">Até 2 linhas anteriores + cabeçalho + até 11 itens</span></div></div>
+              <div class="compact-table-wrap"><table id="projectPreviewTable" class="preview-table"><thead></thead><tbody></tbody></table></div>
+              <div id="projectFilterSummary" class="filter-summary" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div id="projectPrerequisiteMessage" class="project-prerequisite-message hidden" role="alert">Revise os campos destacados em vermelho antes de iniciar a conferência.</div>
+          <div class="page-actions"><span></span><div class="right"><button id="projectNextBtn" data-go-page="2">Conferir e continuar</button></div></div>
+        </div>
+      </section>
+
+      <section class="wizard-page page-hidden" data-page="2">
+        <h2>2. Obtenha e adicione bases referenciais</h2>
+        <div class="content">
+          
+          
+          <!-- SICORP_V42_PRICE_SOURCE_UI_START -->
+          <div id="priceSourceCentral" class="price-source-central">
+            <div class="price-source-central-head">
+              <div>
+                <h3>Obter bases de preços</h3>
+                <p>Abra a página oficial da base, faça o download e depois carregue o arquivo manualmente no comparador abaixo.</p>
+              </div>
+              <div class="price-source-portable-actions" aria-label="Ações do catálogo">
+                <button id="priceSourceExport" type="button" class="secondary">Exportar JSON</button>
+                <button id="priceSourceImportButton" type="button" class="secondary">Importar JSON</button>
+                <input id="priceSourceImportFile" class="hidden" type="file" accept=".json,application/json" />
+                <button id="priceSourceResetAll" type="button" class="secondary">Restaurar padrão</button>
+              </div>
+            </div>
+            <div class="price-source-search">
+              <label for="priceSourceSearch">Pesquisar base de preços</label>
+              <input id="priceSourceSearch" type="search" placeholder="Pesquise pela sigla ou pelo órgão responsável" autocomplete="off" />
+            </div>
+            <div id="priceSourceSummary" class="price-source-summary" aria-live="polite"></div>
+            <div id="priceSourceUnknown" class="price-source-unknown hidden" aria-live="polite"></div>
+            <div id="priceSourceLinks" class="price-source-links" role="list"></div>
+            <div id="priceSourceEmpty" class="price-source-empty hidden">Nenhuma base cadastrada corresponde à pesquisa.</div>
+            <div class="price-source-footer">
+              <button id="priceSourceShowAll" type="button" class="secondary"></button>
+            </div>
+            <div id="priceSourceStatus" class="price-source-status" aria-live="polite"></div>
+
+            <dialog id="priceSourceEditorDialog" class="price-source-dialog" aria-labelledby="priceSourceEditorTitle">
+              <div class="price-source-dialog-card">
+                <div class="price-source-dialog-head">
+                  <h3 id="priceSourceEditorTitle">Configurar base</h3>
+                  <button id="priceSourceEditorClose" type="button" class="price-source-dialog-close" aria-label="Fechar janela">×</button>
+                </div>
+                <form id="priceSourceEditorForm" class="price-source-dialog-body">
+                  <div class="price-source-editor-grid">
+                    <div class="price-source-field">
+                      <label for="priceSourceAcronym">Sigla</label>
+                      <input id="priceSourceAcronym" type="text" required maxlength="60" autocomplete="off" placeholder="Ex.: SINAPI" />
+                    </div>
+                    <div class="price-source-field">
+                      <label for="priceSourceAgency">Órgão responsável</label>
+                      <input id="priceSourceAgency" type="text" required maxlength="180" autocomplete="off" placeholder="Nome do órgão responsável" />
+                    </div>
+                    <div class="price-source-field price-source-url-field">
+                      <label for="priceSourceUrl">Link oficial</label>
+                      <input id="priceSourceUrl" type="text" required autocomplete="off" placeholder="https://" />
+                      <small class="price-source-field-help">O conteúdo é salvo como foi digitado, sem exigir um formato específico de URL.</small>
+                    </div>
+                  </div>
+                  <div class="price-source-editor-actions">
+                    <button id="priceSourceSave" type="submit">Salvar alterações</button>
+                    <button id="priceSourceRemove" type="button" class="danger hidden">Excluir base</button>
+                    <button id="priceSourceCancel" type="button" class="secondary price-source-cancel">Cancelar</button>
+                  </div>
+                  <div id="priceSourceEditorStatus" class="price-source-editor-status" aria-live="polite"></div>
+                </form>
+              </div>
+            </dialog>
+          </div>
+          <p class="section-intro price-source-upload-intro">Adicione as bases uma por uma e associe cada uma à fonte correspondente encontrada no orçamento. Linhas estruturais e itens com preço ausente, zero, negativo ou inválido são desconsiderados antes da comparação; sem outra referência válida, o item correspondente do orçamento será tratado como “Não encontrado”.</p>
+          <!-- SICORP_V42_PRICE_SOURCE_UI_END -->
+<label id="baseDropzone" class="dropzone" for="baseFile">
+            <input id="baseFile" type="file" accept=".xlsx,.xls,.csv,.txt,.orse" />
+            <span><span class="dropzone-icon">＋</span><strong>Clique para selecionar ou arraste uma base para cá</strong><span>Planilhas XLSX, XLS, CSV, TXT ou ORSE</span></span>
+          </label>
+
+          <div id="baseConfigArea" class="config-panel hidden">
+            <div id="baseStatus" class="status-bar"></div>
+            <div class="mapping-grid base-primary-grid" style="margin-top: 16px;">
+              <div><label for="baseSourceIdentifier">Identificador da fonte</label><select id="baseSourceIdentifier" disabled></select><div id="baseSourceFeedback" class="field-message" aria-live="polite"></div></div>
+              <div class="sheet-selection-block"><label for="baseSheet">Aba da base</label><select id="baseSheet" disabled></select></div>
+              <div>
+                <label for="baseHeaderRow">Linha do cabeçalho</label>
+                <div class="line-picker">
+                  <input id="baseHeaderRow" type="number" min="1" value="1" />
+                  <div class="line-arrows">
+                    <button type="button" data-line-target="baseHeaderRow" data-line-delta="-1" aria-label="Diminuir número da linha">↑</button>
+                    <button type="button" data-line-target="baseHeaderRow" data-line-delta="1" aria-label="Aumentar número da linha">↓</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-mapper" aria-labelledby="baseMapperTitle">
+              <div class="project-mapper-head">
+                <div>
+                  <h3 id="baseMapperTitle">Mapeamento das colunas da base</h3>
+                  <p>Escolha uma função e depois clique na coluna correspondente da pré-visualização.</p>
+                </div>
+                <div class="project-mapper-actions">
+                  <button id="baseAutoMapBtn" type="button" disabled>Mapear automaticamente</button>
+                  <button id="baseClearMappingBtn" type="button" class="secondary" disabled>Limpar tudo</button>
+                </div>
+              </div>
+              <div id="baseMappingFieldPool" class="project-field-pool">
+                <div class="project-field-row" data-base-mapping-row="fields">
+                  <div class="project-field-chip" data-base-mapping-field="code"><button type="button" class="project-field-chip-main" aria-label="Selecionar Código"><span>Código</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Código">×</button></div>
+                  <div class="project-field-chip" data-base-mapping-field="description"><button type="button" class="project-field-chip-main" aria-label="Selecionar Descrição"><span>Descrição</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Descrição">×</button></div>
+                  <div class="project-field-chip" data-base-mapping-field="unit"><button type="button" class="project-field-chip-main" aria-label="Selecionar Unidade"><span>Unidade</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Unidade">×</button></div>
+                  <div class="project-field-chip" data-base-mapping-field="price"><button type="button" class="project-field-chip-main" aria-label="Selecionar Preço"><span>Preço</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Preço">×</button></div>
+                </div>
+              </div>
+              <div class="project-mapping-legend" aria-hidden="true">
+                <span><i class="project-mapping-legend-dot mapped"></i>Mapeado</span>
+                <span><i class="project-mapping-legend-dot active"></i>Selecionado, aguardando coluna</span>
+                <span><i class="project-mapping-legend-dot hover"></i>Conferência por destaque</span>
+              </div>
+              <div id="baseMappingInstruction" class="project-mapping-instruction" aria-live="polite"></div>
+              <div class="project-mapping-selects" aria-hidden="true">
+                <select id="baseCodeCol" disabled><option value=""></option></select>
+                <select id="baseDescCol" disabled><option value=""></option></select>
+                <select id="baseUnitCol" disabled><option value=""></option></select>
+                <select id="baseValueCol" disabled><option value=""></option></select>
+              </div>
+              <div id="baseColumnSummary" class="hidden" aria-hidden="true"></div>
+            </div>
+
+            <div class="preview-block">
+              <div class="preview-head"><h3 class="preview-title">Pré-visualização e seleção das colunas</h3><div class="preview-actions"><span class="small">Até 2 linhas anteriores + cabeçalho + até 11 itens</span><button id="baseReviewBtn" type="button" class="secondary" disabled>Revisar linhas (0)</button></div></div>
+              <div class="compact-table-wrap"><table id="basePreviewTable" class="preview-table"><thead></thead><tbody></tbody></table></div>
+              <div id="baseFilterSummary" class="filter-summary" aria-live="polite"></div>
+            </div>
+
+            <div id="baseAddFeedback" class="audit-message hidden" style="margin-top: 14px;" aria-live="polite"></div>
+            <div class="actions base-config-actions">
+              <div class="base-config-actions-main">
+                <button id="addBaseBtn" disabled>Adicionar configuração</button>
+                <span class="small">Após adicionar, selecione outra aba deste arquivo ou carregue uma nova base.</span>
+              </div>
+              <div class="base-config-actions-end">
+                <button id="cancelBaseBtn" class="secondary">Cancelar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="section-spacer wizard-page page-hidden" data-page="2">
+      <h2>Bases adicionadas</h2>
+      <div class="content">
+        <p class="small">A comparação procura pelo identificador da fonte e pelo código. Quando o mesmo código representar itens diferentes, a descrição será usada para localizar a ocorrência correta.</p>
+        <div id="baseListEmpty" class="base-empty">Nenhuma base adicionada.</div>
+        <div id="baseListWrap" class="compact-table-wrap hidden">
+          <table id="baseListTable">
+            <thead>
+              <tr>
+                <th>Fonte associada</th><th>Arquivo / aba</th><th>Registros válidos</th>
+                <th>Linhas desconsideradas</th><th>Ações</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-spacer wizard-page page-hidden" data-page="2">
+      <h2>Auditoria de códigos entre bases</h2>
+      <div class="content">
+        <div class="audit-summary">
+          <div class="metric"><div id="auditBases" class="n">0</div><div class="t">Bases cadastradas</div></div>
+          <div class="metric eq"><div id="auditRepeated" class="n">0</div><div class="t">Códigos repetidos na mesma fonte</div></div>
+          <div class="metric warn"><div id="auditConflicts" class="n">0</div><div class="t">Duplicidades bloqueantes</div></div>
+        </div>
+        <div class="audit-message-actions">
+          <div id="conflictMessage" class="audit-message">Adicione uma base para verificar códigos repetidos e possíveis conflitos.</div>
+          <button id="auditDetailsBtn" type="button" class="secondary hidden" aria-expanded="false">Ver detalhes das ocorrências</button>
+        </div>
+        <div id="conflictTableWrap" class="compact-table-wrap conflict-scroll-window hidden" role="region" aria-label="Ocorrências de códigos repetidos entre bases" tabindex="0">
+          <table id="conflictTable">
+            <thead><tr><th>Situação</th><th>Fonte</th><th>Código normalizado</th><th>Motivo</th><th>Ocorrências nas bases</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="page-actions"><button class="secondary" data-go-page="1">← Voltar</button><div class="right"><button id="basesNextBtn" data-go-page="3">Continuar para comparação →</button></div></div>
+      </div>
+    </section>
+
+    <section class="section-spacer wizard-page page-hidden" data-page="3">
+      <h2>3. Compare os preços</h2>
+      <div class="content">
+        <p class="section-intro">A comparação localiza cada item pelo identificador da fonte e pelo código. Quando o código se repetir, a descrição identifica o item correto.</p>
+        <div class="results-toolbar">
+          <div class="tolerance-control">
+            <label for="tolerance">Tolerância da comparação (R$)</label>
+            <div class="comparison-run-row">
+              <input id="tolerance" type="number" step="0.01" value="0.01" />
+              <button id="compareBtn" disabled>Comparar</button>
+            </div>
+            <div class="hint">Diferenças até esse valor serão classificadas como equivalentes.</div>
+          </div>
+        </div>
+
+        <div class="comparison-options">
+          <div class="comparison-option">
+            <label class="checkline"><input id="normalizeCodes" type="checkbox" checked /> Normalizar códigos removendo espaços, pontos, barras e hífens antes de comparar.</label>
+            <button type="button" class="comparison-help-button" data-comparison-help="normalizeCodesHelp" aria-expanded="false" aria-controls="normalizeCodesHelp" aria-label="Explicar a normalização dos códigos">?</button>
+            <div id="normalizeCodesHelp" class="comparison-option-help hidden">
+              <p>Remove espaços, pontos, barras e hífens somente para localizar códigos equivalentes. O código original continua visível sem alterações.</p>
+              <p>Zeros à esquerda são ignorados durante a comparação. Somente linhas válidas do orçamento e das bases participam da busca.</p>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <label class="checkline"><input id="caseInsensitive" type="checkbox" checked /> Comparar códigos sem diferenciar maiúsculas e minúsculas.</label>
+            <button type="button" class="comparison-help-button" data-comparison-help="caseInsensitiveHelp" aria-expanded="false" aria-controls="caseInsensitiveHelp" aria-label="Explicar a comparação entre maiúsculas e minúsculas">?</button>
+            <div id="caseInsensitiveHelp" class="comparison-option-help hidden">
+              <p>Considera letras maiúsculas e minúsculas equivalentes na procura pelo código. Ao alterar esta opção, os índices e a auditoria das bases são recalculados.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-actions"><button class="secondary" data-go-page="2">← Voltar</button><span></span></div>
+      </div>
+    </section>
+
+    <section id="summaryPanel" class="hidden wizard-page page-hidden" data-page="3">
+      <h2>Categorias do resultado</h2>
+      <div class="content">
+        <p class="section-intro summary-intro">Cada cartão mostra a quantidade de itens, o valor total com BDI e a porcentagem do total analisado. Clique em uma categoria para isolá-la. Um asterisco indica valor parcial, quando algum item da categoria não possui total disponível.</p>
+        <div id="summary" class="summary">
+          <button type="button" class="metric" data-summary-status="all"><span id="mTotal" class="n">0</span><span class="t">Itens analisados</span><span id="mTotalValue" class="v">R$ 0,00</span><span id="mTotalPercent" class="p">100,00%</span></button>
+          <button type="button" class="metric bad" data-summary-status="acima"><span id="mAbove" class="n">0</span><span class="t">Acima</span><span id="mAboveValue" class="v">R$ 0,00</span><span id="mAbovePercent" class="p">0,00%</span></button>
+          <button type="button" class="metric good" data-summary-status="abaixo"><span id="mBelow" class="n">0</span><span class="t">Abaixo</span><span id="mBelowValue" class="v">R$ 0,00</span><span id="mBelowPercent" class="p">0,00%</span></button>
+          <button type="button" class="metric eq" data-summary-status="igual"><span id="mEqual" class="n">0</span><span class="t">Iguais</span><span id="mEqualValue" class="v">R$ 0,00</span><span id="mEqualPercent" class="p">0,00%</span></button>
+          <button type="button" class="metric none" data-summary-status="nao-encontrado"><span id="mMissing" class="n">0</span><span class="t">Não encontrados</span><span id="mMissingValue" class="v">R$ 0,00</span><span id="mMissingPercent" class="p">0,00%</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultPanel" class="hidden wizard-page page-hidden" data-page="3">
+      <h2>Resultado da comparação</h2>
+      <div class="content">
+        <label>Quais categorias deseja visualizar e exportar?</label>
+        <div class="status-filters" id="statusFilters">
+          <label class="status-toggle" data-status="acima"><input type="checkbox" checked /><span class="color-key above"></span>Acima <span class="count" data-count="acima">(0)</span></label>
+          <label class="status-toggle" data-status="abaixo"><input type="checkbox" checked /><span class="color-key below"></span>Abaixo <span class="count" data-count="abaixo">(0)</span></label>
+          <label class="status-toggle" data-status="igual"><input type="checkbox" checked /><span class="color-key equal"></span>Igual <span class="count" data-count="igual">(0)</span></label>
+          <label class="status-toggle" data-status="nao-encontrado"><input type="checkbox" checked /><span class="color-key missing"></span>Não encontrado <span class="count" data-count="nao-encontrado">(0)</span></label>
+          <button id="showAllStatuses" class="secondary" type="button">Mostrar todos</button>
+          <button id="hideAllStatuses" class="secondary" type="button">Ocultar todos</button>
+        </div>
+        <div class="result-search">
+          <label for="searchText">Buscar no resultado</label>
+          <input id="searchText" type="text" placeholder="Código, descrição, base ou aba..." />
+        </div>
+        <div class="result-view-options">
+          <button id="selectResultColumnsBtn" class="secondary" type="button">Selecionar e ordenar colunas</button>
+          <span id="resultColumnCount" class="result-column-count" aria-live="polite"></span>
+        </div>
+        <div class="result-difference-legend"><span class="result-difference-swatch" aria-hidden="true"></span>Células amarelas indicam divergência entre a descrição ou a unidade do orçamento e da base referencial.</div>
+      </div>
+      <div class="table-wrap">
+        <table id="resultTable">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="sourceValueChartPanel" class="hidden result-source-chart-panel">
+        <h2>Participação por Fonte declarada no orçamento</h2>
+        <div class="content">
+          <div class="source-value-chart-card">
+            <div class="source-value-chart-head">
+              <div>
+                <h3>Composição do valor de cada Fonte por resultado</h3>
+                <p id="sourceValueChartDescription">Distribuição calculada pelo valor total dos itens e agrupada pela Fonte declarada no orçamento.</p>
+              </div>
+              <div id="sourceValueChartFilters" class="source-value-chart-filters" role="group" aria-label="Filtrar o gráfico por classe da Curva ABC">
+                <button type="button" class="active" data-abc-filter="all" aria-pressed="true">Todos</button>
+                <button type="button" data-abc-filter="A" aria-pressed="false">A</button>
+                <button type="button" data-abc-filter="B" aria-pressed="false">B</button>
+                <button type="button" data-abc-filter="C" aria-pressed="false">C</button>
+              </div>
+            </div>
+            <div id="sourceValueChartSummary" class="source-value-chart-summary" aria-live="polite"></div>
+            <div class="source-value-chart-legend" aria-label="Legenda dos resultados">
+              <span><i class="status-acima" aria-hidden="true"></i>Acima</span>
+              <span><i class="status-abaixo" aria-hidden="true"></i>Abaixo</span>
+              <span><i class="status-igual" aria-hidden="true"></i>Igual</span>
+              <span><i class="status-nao-encontrado" aria-hidden="true"></i>Não encontrado</span>
+            </div>
+            <div id="sourceValueChartBars" class="source-value-chart-bars" role="img" aria-label="Gráfico de barras da composição do valor de cada Fonte declarada no orçamento"></div>
+            <p class="source-value-chart-note">O comprimento colorido representa a participação da Fonte no valor total do filtro; as cores dividem essa participação pelos resultados da comparação. Curva ABC: classe A até 50% do valor acumulado, classe B acima de 50% até 80% e classe C acima de 80%, conforme o critério adotado na planilha orçamentária de referência.</p>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <p class="small">A exportação respeita as categorias, a busca e as colunas atualmente selecionadas. O arquivo .xlsx é uma planilha real do Excel.</p>
+        <div class="actions">
+          <button id="exportCsvBtn" class="secondary">Exportar seleção em CSV</button>
+          <button id="exportXlsxBtn" class="secondary">Exportar seleção em Excel (.xlsx)</button>
+          <button id="copyTableBtn" class="secondary">Copiar seleção</button>
+          <button id="clearBtn" class="danger">Limpar resultado</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="resultColumnsDialog" class="column-selector-dialog" aria-labelledby="resultColumnsDialogTitle" aria-describedby="resultColumnsDialogDescription">
+    <div class="column-selector-head">
+      <h2 id="resultColumnsDialogTitle">Selecionar e ordenar colunas</h2>
+      <div class="column-selector-actions" style="margin-top: 0; flex-shrink: 0;">
+        <button id="resultColumnsCancelBtn" type="button" class="secondary">Cancelar</button>
+        <button id="resultColumnsApplyBtn" type="button">Aplicar</button>
+      </div>
+    </div>
+    <div class="column-selector-body">
+      <p id="resultColumnsDialogDescription">Marque as colunas que deseja usar e arraste-as para definir a ordem. As setas permitem ajustes precisos. A mesma seleção e ordem serão usadas na tabela, no Excel, no CSV e em “Copiar seleção”, ficando salvas neste navegador.</p>
+      <div class="column-selector-tools">
+        <button id="resultColumnsSelectAllBtn" type="button" class="secondary">Marcar todas</button>
+        <button id="resultColumnsClearAllBtn" type="button" class="secondary">Desmarcar todas</button>
+        <button id="resultColumnsResetOrderBtn" type="button" class="secondary">Restaurar ordem padrão</button>
+        <span id="resultColumnsDialogCount" class="column-selector-selection-count" aria-live="polite"></span>
+      </div>
+      <div id="resultColumnsGrid" class="column-selector-grid"></div>
+      <div id="resultColumnsError" class="column-selector-error" role="alert" aria-live="assertive"></div>
+    </div>
+  </dialog>
+
+  <dialog id="reviewDialog" class="review-dialog" aria-labelledby="reviewDialogTitle">
+    <div class="review-dialog-head">
+      <h2 id="reviewDialogTitle">Revisão de linhas</h2>
+      <button id="reviewCloseBtn" type="button" class="secondary">Fechar</button>
+    </div>
+    <div class="review-dialog-body">
+      <div id="reviewTreatmentCards" class="review-treatment-cards" role="group" aria-label="Selecionar categoria da revisão"></div>
+      <div id="reviewGroups" class="review-groups" role="region" aria-label="Ocorrências agrupadas da revisão"></div>
+      <div id="reviewExplanation" class="review-explanation" aria-live="polite"></div>
+      <div class="review-dialog-actions">
+        <button id="reviewReturnBtn" type="button" class="secondary">Fechar</button>
+        <button id="reviewConfirmAddBtn" type="button" class="hidden">Adicionar base</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="duplicateBaseDialog" class="confirm-dialog" aria-labelledby="duplicateBaseDialogTitle">
+    <div class="confirm-dialog-head"><h2 id="duplicateBaseDialogTitle">Base já adicionada</h2></div>
+    <div class="confirm-dialog-body">
+      <p id="duplicateBaseDialogMessage"></p>
+      <div class="confirm-dialog-actions">
+        <button id="duplicateBaseCancelBtn" type="button" class="secondary">Cancelar</button>
+        <button id="duplicateBaseConfirmBtn" type="button" class="warn">Adicionar mesmo assim</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Leitor offline de XLS legado: SheetJS Community Edition 0.18.5, Apache-2.0. -->
+  <script id="legacyXlsRuntime" type="application/octet-stream">{{src/vendor/legacy-xls-runtime.b64}}</script>
+  <!-- SICORP_V42_CORE_START -->
+  <script id="sicorpV42Core">{{CORE}}</script>
+  <!-- SICORP_V42_CORE_END -->
+  <!-- SICORP_V42_PRICE_SOURCE_RUNTIME_START -->
+  <script id="sicorpV42PriceSourceUi">{{src/ui/price-source-ui.js}}</script>
+  <!-- SICORP_V42_PRICE_SOURCE_RUNTIME_END -->
+  <script>{{src/ui/app.js}}</script>
+</body>
+</html>
