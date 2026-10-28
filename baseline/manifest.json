@@ -1,0 +1,20 @@
+{
+  "candidateVersion": "v4.4.0-rc.16",
+  "candidatePath": "baseline/sicorp_comparador_orcamento_v4.4.0-rc.16.html",
+  "status": "candidate-pending-full-audit",
+  "registeredOn": "2026-10-28",
+  "files": [
+    {
+      "path": "baseline/sicorp_comparador_orcamento_v4.4.0-rc.16.html",
+      "sizeBytes": 988203,
+      "sha256": "6b7dc58fdfd79dbaec07c1004ef996b65a71f096ff5376a8860c20f14e398ac4",
+      "role": "immutable-current-candidate"
+    },
+    {
+      "path": "reference/SICORP_v4.3.0_RELEASE_FONTE_E_TESTES.zip",
+      "sizeBytes": 923465,
+      "sha256": "76d17652577eb12ab93319ae2c053fa3d09fc55e407d525c4bea8604277c7f89",
+      "role": "historical-source-and-tests-not-current-build"
+    }
+  ]
+}
