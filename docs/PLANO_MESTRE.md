@@ -28,6 +28,8 @@ A rc.16 é uma candidata preservada. Sua aprovação depende da auditoria; se ho
 
 Etapas 1 e 2 concluídas. Etapa 3 concluída no escopo automatizado documentado. A homologação por pessoa, o Excel/LibreOffice e os navegadores Windows não foram executados. O tutorial e o manual podem ser preparados a partir da saída, sem promover versão final nem converter essas pendências em aprovações. Os três pontos de regra controversa foram caracterizados e preservados em `DECISOES_AUDITORIA.md`.
 
+Código de saída validado: `90d447e32e000389ae2158c6b2260a31543b1b7b`, branch `audit/consolidacao-rc17`. Execução final: 332 testes, 114 cenários de arquivos e 103 verificações no navegador aprovados. GitHub Actions também aprovado. Continuidade: `handoffs/HANDOFF_02_TUTORIAL_MANUAL.md`.
+
 ## Etapas e critérios de aceitação
 
 ### 1. Consolidar a versão de referência

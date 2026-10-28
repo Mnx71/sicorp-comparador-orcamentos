@@ -156,3 +156,7 @@ qa/previews/
 node_modules/
 !dist/
 !dist/**
+
+# Preserve audit logs as evidence, despite the generic Node log rule.
+!qa/evidence/*.log
+!qa/evidence/**/*.log
