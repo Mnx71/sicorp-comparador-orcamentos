@@ -1,5 +1,7 @@
 # Regras de referência para iniciar a auditoria
 
+Continuidade da rc.17: a matriz executável está em `MATRIZ_AUDITORIA.md`. Resultados, quatro correções e limites constam em `RELATORIO_AUDITORIA_RC17.md` e `DECISOES_AUDITORIA.md`. O texto abaixo conserva o inventário inicial da rc.16; os três pontos de requisito aberto foram testados e preservados, sem alteração silenciosa.
+
 Versão: `v4.4.0-rc.16`. Este inventário registra comportamentos atuais para orientar a matriz de testes. Não é um relatório de aprovação nem substitui a confirmação das regras esperadas.
 
 ## Leitura e visibilidade

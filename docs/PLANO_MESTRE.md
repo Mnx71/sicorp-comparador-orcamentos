@@ -1,6 +1,10 @@
 # Plano mestre: auditoria, tutorial e documentação
 
-Referência inicial: `v4.4.0-rc.16`. Data: 28/10/2026.
+SICORP – Sistema de Comparação de Referenciais de Preços.
+
+Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).
+
+Referência inicial: `v4.4.0-rc.16`. Saída da auditoria: `v4.4.0-rc.17`. Data: 28/10/2026. Commit e evidências: `handoffs/HANDOFF_02_TUTORIAL_MANUAL.md` e `RELATORIO_AUDITORIA_RC17.md`.
 
 ## Objetivo
 
@@ -8,19 +12,23 @@ Entregar uma versão verificável do SICORP, acompanhada de fontes reproduzívei
 
 A rc.16 é uma candidata preservada. Sua aprovação depende da auditoria; se houver correções, a versão aprovada será a revisão corrigida. O tutorial exigirá nova regressão antes da distribuição final.
 
-## Situação inicial
+## Situação após a auditoria
 
 | Entrega | Situação |
 | --- | --- |
 | HTML da rc.16 e pacote histórico da v4.3 | Preservados, com integridade registrada |
-| Fontes atuais separados e geração reproduzível | Pendentes de consolidação |
-| Matriz completa das regras e casos | Pendente |
-| Testes automatizados atualizados para a rc.16 | Pendentes |
-| Kit manual com todas as detecções e contraprovas | Pendente |
-| Auditoria completa e relatório | Pendentes |
+| Fontes atuais separados e geração reproduzível | Concluídos; extração com paridade e geração rc.17 |
+| Matriz das regras e casos | 114 casos, contraprovas e lacunas explícitas |
+| Testes automatizados atualizados | 332 testes executados; navegador e regressão real registrados |
+| Kit manual e contraprovas | Produzidos; execução por pessoa pendente |
+| Auditoria e relatório | Automação concluída, quatro defeitos corrigidos; limitações documentadas |
 | Manual do usuário | Pendente |
 | Tutorial guiado | Pendente |
 | Documentação técnica final e distribuição | Pendentes |
+
+Etapas 1 e 2 concluídas. Etapa 3 concluída no escopo automatizado documentado. A homologação por pessoa, o Excel/LibreOffice e os navegadores Windows não foram executados. O tutorial e o manual podem ser preparados a partir da saída, sem promover versão final nem converter essas pendências em aprovações. Os três pontos de regra controversa foram caracterizados e preservados em `DECISOES_AUDITORIA.md`.
+
+Código de saída validado: `90d447e32e000389ae2158c6b2260a31543b1b7b`, branch `audit/consolidacao-rc17`. Execução final: 332 testes, 114 cenários de arquivos e 103 verificações no navegador aprovados. GitHub Actions também aprovado. Continuidade: `handoffs/HANDOFF_02_TUTORIAL_MANUAL.md`.
 
 ## Etapas e critérios de aceitação
 
@@ -97,4 +105,4 @@ Este documento é a referência mestre. Os handoffs são sequenciais: cada chat 
 
 ## Publicação de exemplos
 
-O kit público deve utilizar dados sintéticos e explicações técnicas. Planilhas reais usadas na análise não entram automaticamente no repositório; sua eventual inclusão deve ser decidida separadamente. A autoria deve permanecer: desenvolvido pela CGSOB, do DOH, da SNSH.
+O kit público utiliza dados sintéticos e explicações técnicas. Planilhas reais usadas na análise não entram automaticamente no repositório; sua eventual inclusão deve ser decidida separadamente. A autoria institucional completa consta no início deste documento.

@@ -1,0 +1,13 @@
+{
+  "repository": "Mnx71/sicorp-comparador-orcamentos",
+  "run_id": 40755242430,
+  "head_sha": "90d447e32e000389ae2158c6b2260a31543b1b7b",
+  "status": "completed",
+  "conclusion": "success",
+  "url": "https://github.com/Mnx71/sicorp-comparador-orcamentos/actions/runs/40755242430",
+  "job_id": 123052295225,
+  "playwright": "1.62.1",
+  "chrome_for_testing": "151.0.7922.34",
+  "validated_on": "2026-10-28",
+  "evidence": "GitHub Actions run/job metadata and downloaded job log; all steps succeeded"
+}

@@ -1,0 +1,8 @@
+# Preserve the candidate's extracted whitespace and exact fixture bytes.
+src/** whitespace=-blank-at-eol,-blank-at-eof
+dist/*.html whitespace=-blank-at-eol
+*.csv -text whitespace=cr-at-eol
+*.txt -text whitespace=cr-at-eol
+*.xlsx -text
+*.xls -text
+*.ORSE -text

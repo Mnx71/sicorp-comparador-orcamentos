@@ -1,0 +1,25 @@
+{
+  "version": "4.4.0-rc.17",
+  "parts": [
+    "src/vendor/legacy-xls-runtime.b64",
+    "CORE",
+    "src/ui/price-source-ui.js",
+    "src/ui/app.js"
+  ],
+  "output": "dist/sicorp_comparador_orcamento_v4.4.0-rc.17.html",
+  "coreParts": [
+    "src/core/00-runtime-start.part.js",
+    "src/core/01-convert-orse.part.js",
+    "src/core/02-read-workbook.part.js",
+    "src/core/03-analyze-budget.part.js",
+    "src/core/04-audit-budget.part.js",
+    "src/core/05-reference-catalog.part.js",
+    "src/core/06-compare-budget.part.js",
+    "src/core/07-adapt-comparison.part.js",
+    "src/core/08-run-comparison.part.js",
+    "src/core/09-run-audit.part.js",
+    "src/core/10-comparison-export.part.js",
+    "src/core/11-price-source-central.part.js",
+    "src/core/12-runtime-end.part.js"
+  ]
+}

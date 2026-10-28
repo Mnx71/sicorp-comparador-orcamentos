@@ -1,0 +1,5853 @@
+[
+  {
+    "id": "ORC-OK-001",
+    "title": "Fluxo válido: 2 × 100 × (1 + 20%) = 240",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-EST-1",
+    "title": "Identidade ausente: code",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "STRUCTURAL_ROW",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-EST-2",
+    "title": "Identidade ausente: source",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "STRUCTURAL_ROW",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-EST-3",
+    "title": "Identidade ausente: description",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "STRUCTURAL_ROW",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-EST-4",
+    "title": "Identidade ausente: unit",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "STRUCTURAL_ROW",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-4-VAZ",
+    "title": "quantity: VAZ",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        "",
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "BUDGET_ITEM_EMPTY_OR_ZERO",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-4-ZERO",
+    "title": "quantity: ZERO",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        0,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "BUDGET_ITEM_EMPTY_OR_ZERO",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-4-NEG",
+    "title": "quantity: NEG",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        -1,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_VALUE_NEGATIVE"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-4-TXT",
+    "title": "quantity: TXT",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        "abc",
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_VALUE_NOT_NUMERIC"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-4-ERR",
+    "title": "quantity: ERR",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        "",
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_FORMULA_ERROR"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "E2": {
+        "formula": "1/0",
+        "error": "#DIV/0!"
+      }
+    }
+  },
+  {
+    "id": "ORC-4-CACHE",
+    "title": "quantity: CACHE",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        "",
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_FORMULA_WITHOUT_VALUE"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "E2": {
+        "formula": "1+1"
+      }
+    }
+  },
+  {
+    "id": "ORC-5-VAZ",
+    "title": "priceWithoutBdi: VAZ",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        "",
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "BUDGET_ITEM_EMPTY_OR_ZERO",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-5-ZERO",
+    "title": "priceWithoutBdi: ZERO",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        0,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "BUDGET_ITEM_EMPTY_OR_ZERO",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-5-NEG",
+    "title": "priceWithoutBdi: NEG",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        -1,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_VALUE_NEGATIVE"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-5-TXT",
+    "title": "priceWithoutBdi: TXT",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        "abc",
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_VALUE_NOT_NUMERIC"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-5-ERR",
+    "title": "priceWithoutBdi: ERR",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        "",
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_FORMULA_ERROR"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "F2": {
+        "formula": "1/0",
+        "error": "#DIV/0!"
+      }
+    }
+  },
+  {
+    "id": "ORC-5-CACHE",
+    "title": "priceWithoutBdi: CACHE",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        "",
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_FORMULA_WITHOUT_VALUE"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "F2": {
+        "formula": "1+1"
+      }
+    }
+  },
+  {
+    "id": "ORC-6-VAZ",
+    "title": "bdi: VAZ",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        "",
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "BUDGET_ITEM_EMPTY_OR_ZERO",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-6-ZERO",
+    "title": "bdi: ZERO",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "BUDGET_ITEM_EMPTY_OR_ZERO",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-6-NEG",
+    "title": "bdi: NEG",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        -0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_VALUE_NEGATIVE"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-6-TXT",
+    "title": "bdi: TXT",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        "abc",
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_VALUE_NOT_NUMERIC"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-6-ERR",
+    "title": "bdi: ERR",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        "",
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_FORMULA_ERROR"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "G2": {
+        "formula": "1/0",
+        "error": "#DIV/0!"
+      }
+    }
+  },
+  {
+    "id": "ORC-6-CACHE",
+    "title": "bdi: CACHE",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        "",
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_FORMULA_WITHOUT_VALUE"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "G2": {
+        "formula": "1+1"
+      }
+    }
+  },
+  {
+    "id": "ORC-7-VAZ",
+    "title": "priceWithBdi: VAZ",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        "",
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "BUDGET_ITEM_EMPTY_OR_ZERO",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-7-ZERO",
+    "title": "priceWithBdi: ZERO",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        0,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "BUDGET_ITEM_EMPTY_OR_ZERO",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-7-NEG",
+    "title": "priceWithBdi: NEG",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        -1,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_VALUE_NEGATIVE"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-7-TXT",
+    "title": "priceWithBdi: TXT",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        "abc",
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_VALUE_NOT_NUMERIC"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-7-ERR",
+    "title": "priceWithBdi: ERR",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        "",
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_FORMULA_ERROR"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "H2": {
+        "formula": "1/0",
+        "error": "#DIV/0!"
+      }
+    }
+  },
+  {
+    "id": "ORC-7-CACHE",
+    "title": "priceWithBdi: CACHE",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        "",
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_FORMULA_WITHOUT_VALUE"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "H2": {
+        "formula": "1+1"
+      }
+    }
+  },
+  {
+    "id": "ORC-8-VAZ",
+    "title": "totalWithBdi: VAZ",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        ""
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "BUDGET_ITEM_EMPTY_OR_ZERO",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-8-ZERO",
+    "title": "totalWithBdi: ZERO",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        0
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "BUDGET_ITEM_EMPTY_OR_ZERO",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-8-NEG",
+    "title": "totalWithBdi: NEG",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        -1
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_VALUE_NEGATIVE"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-8-TXT",
+    "title": "totalWithBdi: TXT",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        "abc"
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_VALUE_NOT_NUMERIC"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-8-ERR",
+    "title": "totalWithBdi: ERR",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        ""
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_FORMULA_ERROR"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "I2": {
+        "formula": "1/0",
+        "error": "#DIV/0!"
+      }
+    }
+  },
+  {
+    "id": "ORC-8-CACHE",
+    "title": "totalWithBdi: CACHE",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        ""
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "MAPPED_FORMULA_WITHOUT_VALUE"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "I2": {
+        "formula": "1+1"
+      }
+    }
+  },
+  {
+    "id": "ORC-EXC-001",
+    "title": "Vazio/zero exclui antes de avaliar outro campo negativo",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        0,
+        -1,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "BUDGET_ITEM_EMPTY_OR_ZERO",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-EXC-002",
+    "title": "Estrutural tem precedência sobre finanças inválidas",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "",
+        "SINAPI",
+        "Título",
+        "",
+        -1,
+        "abc",
+        0,
+        0,
+        0
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "STRUCTURAL_ROW",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-EXC-003",
+    "title": "Linha vazia é ignorada",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-EXC-004",
+    "title": "Cabeçalho repetido desconsiderado",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "REPEATED_HEADER"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-EXC-005",
+    "title": "Conteúdo antes do cabeçalho desconsiderado",
+    "kind": "budget",
+    "header": 2,
+    "total": 240,
+    "rows": [
+      [
+        "Relatório sintético"
+      ],
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "BEFORE_HEADER"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-TOT-VAZ",
+    "title": "Total geral VAZ",
+    "kind": "budget",
+    "header": 1,
+    "total": "",
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "GENERAL_TOTAL_INVALID"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-TOT-TXT",
+    "title": "Total geral TXT",
+    "kind": "budget",
+    "header": 1,
+    "total": "abc",
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "GENERAL_TOTAL_INVALID"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-TOT-ZERO",
+    "title": "Total geral ZERO",
+    "kind": "budget",
+    "header": 1,
+    "total": 0,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "NON_POSITIVE_VALUE",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-TOT-NEG",
+    "title": "Total geral NEG",
+    "kind": "budget",
+    "header": 1,
+    "total": -1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "NON_POSITIVE_VALUE",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-MAP-001",
+    "title": "Menos de dois componentes mapeados",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "PRICE_COMPONENTS_INSUFFICIENT"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "mapping": {
+      "code": 0,
+      "source": 1,
+      "description": 2,
+      "unit": 3,
+      "quantity": 4,
+      "priceWithoutBdi": 5,
+      "bdi": null,
+      "priceWithBdi": null,
+      "totalWithBdi": 8
+    }
+  },
+  {
+    "id": "ORC-MAP-002",
+    "title": "Total do item não mapeado",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "ITEM_TOTAL_COLUMN_MISSING"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "mapping": {
+      "code": 0,
+      "source": 1,
+      "description": 2,
+      "unit": 3,
+      "quantity": 4,
+      "priceWithoutBdi": 5,
+      "bdi": 6,
+      "priceWithBdi": 7,
+      "totalWithBdi": null
+    }
+  },
+  {
+    "id": "ORC-DER-SEM",
+    "title": "Derivação de priceWithoutBdi",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true,
+      "prices": [
+        100,
+        0.2,
+        120
+      ]
+    },
+    "counter": "ORC-OK-001",
+    "mapping": {
+      "code": 0,
+      "source": 1,
+      "description": 2,
+      "unit": 3,
+      "quantity": 4,
+      "priceWithoutBdi": null,
+      "bdi": 6,
+      "priceWithBdi": 7,
+      "totalWithBdi": 8
+    }
+  },
+  {
+    "id": "ORC-DER-COM",
+    "title": "Derivação de priceWithBdi",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true,
+      "prices": [
+        100,
+        0.2,
+        120
+      ]
+    },
+    "counter": "ORC-OK-001",
+    "mapping": {
+      "code": 0,
+      "source": 1,
+      "description": 2,
+      "unit": 3,
+      "quantity": 4,
+      "priceWithoutBdi": 5,
+      "bdi": 6,
+      "priceWithBdi": null,
+      "totalWithBdi": 8
+    }
+  },
+  {
+    "id": "ORC-DER-BDI",
+    "title": "Derivação de bdi",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true,
+      "prices": [
+        100,
+        0.2,
+        120
+      ]
+    },
+    "counter": "ORC-OK-001",
+    "mapping": {
+      "code": 0,
+      "source": 1,
+      "description": 2,
+      "unit": 3,
+      "quantity": 4,
+      "priceWithoutBdi": 5,
+      "bdi": null,
+      "priceWithBdi": 7,
+      "totalWithBdi": 8
+    }
+  },
+  {
+    "id": "ORC-DER-ZERO",
+    "title": "Caracterização: BDI derivado ZERO",
+    "kind": "budget",
+    "header": 1,
+    "total": 200,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        100,
+        200
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true,
+      "prices": [
+        100,
+        0,
+        100
+      ]
+    },
+    "counter": "ORC-OK-001",
+    "mapping": {
+      "code": 0,
+      "source": 1,
+      "description": 2,
+      "unit": 3,
+      "quantity": 4,
+      "priceWithoutBdi": 5,
+      "bdi": null,
+      "priceWithBdi": 7,
+      "totalWithBdi": 8
+    }
+  },
+  {
+    "id": "ORC-DER-NEG",
+    "title": "Caracterização: BDI derivado NEG",
+    "kind": "budget",
+    "header": 1,
+    "total": 180,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        90,
+        180
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true,
+      "prices": [
+        100,
+        -0.1,
+        90
+      ]
+    },
+    "counter": "ORC-OK-001",
+    "mapping": {
+      "code": 0,
+      "source": 1,
+      "description": 2,
+      "unit": 3,
+      "quantity": 4,
+      "priceWithoutBdi": 5,
+      "bdi": null,
+      "priceWithBdi": 7,
+      "totalWithBdi": 8
+    }
+  },
+  {
+    "id": "ORC-DER-INF",
+    "title": "Derivação impossível por estouro numérico",
+    "kind": "budget",
+    "header": 1,
+    "total": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Estouro",
+        "m",
+        1,
+        1e+308,
+        100,
+        "",
+        1
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "PRICE_COMPONENT_DERIVATION_IMPOSSIBLE"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "mapping": {
+      "code": 0,
+      "source": 1,
+      "description": 2,
+      "unit": 3,
+      "quantity": 4,
+      "priceWithoutBdi": 5,
+      "bdi": 6,
+      "priceWithBdi": null,
+      "totalWithBdi": 8
+    }
+  },
+  {
+    "id": "ORC-ERR-BDI",
+    "title": "BDI: 100 × 1,2 = 120, informado 121",
+    "kind": "budget",
+    "header": 1,
+    "total": 242,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        121,
+        242
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "BDI_APPLICATION_MISMATCH"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-ERR-ITEM",
+    "title": "Total: 2 × 120 = 240, informado 241",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        241
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "ITEM_TOTAL_MISMATCH"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-ERR-GERAL",
+    "title": "Total geral 241 diverge da soma 240",
+    "kind": "budget",
+    "header": 1,
+    "total": 241,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-ERR-COMP",
+    "title": "Erros dos itens se compensam no geral",
+    "kind": "budget",
+    "header": 1,
+    "total": 480,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        241
+      ],
+      [
+        "2",
+        "SINAPI",
+        "Outro",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        239
+      ]
+    ],
+    "expected": {
+      "accepted": 2,
+      "codes": [
+        "ITEM_TOTAL_MISMATCH",
+        "ITEM_TOTAL_MISMATCH"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-ROUND-MEIO",
+    "title": "Arredondamento decimal no meio centavo",
+    "kind": "budget",
+    "header": 1,
+    "total": 10.08,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Meio centavo",
+        "m",
+        1,
+        10,
+        0.0075,
+        10.075,
+        10.08
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true,
+      "auditedSum": 10.08
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-ROUND-ABAIXO",
+    "title": "Arredondamento decimal no meio centavo",
+    "kind": "budget",
+    "header": 1,
+    "total": 10.07,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Meio centavo",
+        "m",
+        1,
+        10,
+        0.0075,
+        10.074999,
+        10.07
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true,
+      "auditedSum": 10.07
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-ROUND-ACIMA",
+    "title": "Arredondamento decimal no meio centavo",
+    "kind": "budget",
+    "header": 1,
+    "total": 10.08,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Meio centavo",
+        "m",
+        1,
+        10,
+        0.0075,
+        10.075001,
+        10.08
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true,
+      "auditedSum": 10.08
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-LIM-DENTRO",
+    "title": "Tolerância do total do item R$ 0,01",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240.009
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-LIM-IGUAL",
+    "title": "Tolerância do total do item R$ 0,01",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240.01
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-LIM-FORA",
+    "title": "Tolerância do total do item R$ 0,01",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240.02
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "ITEM_TOTAL_MISMATCH"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-LIM-GERAL",
+    "title": "Tolerância geral = 2 × 0,01",
+    "kind": "budget",
+    "header": 1,
+    "total": 480.02,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "2",
+        "SINAPI",
+        "Outro",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 2,
+      "codes": [],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-LIM-GERAL-FORA",
+    "title": "Tolerância geral = 2 × 0,01",
+    "kind": "budget",
+    "header": 1,
+    "total": 480.03,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "2",
+        "SINAPI",
+        "Outro",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 2,
+      "codes": [
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-AV-DUP",
+    "title": "Duplicidade física consecutiva",
+    "kind": "budget",
+    "header": 1,
+    "total": 480,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 2,
+      "codes": [
+        "CONSECUTIVE_DUPLICATE_ITEM"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-CP-DUP",
+    "title": "Duplicidade não consecutiva",
+    "kind": "budget",
+    "header": 1,
+    "total": 480,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 2,
+      "codes": [],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-AV-PRECO",
+    "title": "Mesmo item com preços diferentes",
+    "kind": "budget",
+    "header": 1,
+    "total": 504,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ]
+    ],
+    "expected": {
+      "accepted": 2,
+      "codes": [
+        "IDENTICAL_ITEM_DIFFERENT_PRICES"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-CP-PRECO",
+    "title": "Outro código permite preço diferente",
+    "kind": "budget",
+    "header": 1,
+    "total": 504,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "2",
+        "SINAPI",
+        "Outro",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ]
+    ],
+    "expected": {
+      "accepted": 2,
+      "codes": [],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-AV-BDI",
+    "title": "Descrição normalizada comum com BDI diferente",
+    "kind": "budget",
+    "header": 1,
+    "total": 500,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "2",
+        "ORSE",
+        "Túbo  PVC",
+        "un",
+        2,
+        100,
+        0.3,
+        130,
+        260
+      ]
+    ],
+    "expected": {
+      "accepted": 2,
+      "codes": [
+        "SAME_DESCRIPTION_DIFFERENT_BDI"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-AV-BDI-DER",
+    "title": "Aviso usa BDI derivado",
+    "kind": "budget",
+    "header": 1,
+    "total": 500,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "2",
+        "ORSE",
+        "Túbo  PVC",
+        "un",
+        2,
+        100,
+        "",
+        130,
+        260
+      ]
+    ],
+    "expected": {
+      "accepted": 2,
+      "codes": [
+        "SAME_DESCRIPTION_DIFFERENT_BDI"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001",
+    "mapping": {
+      "code": 0,
+      "source": 1,
+      "description": 2,
+      "unit": 3,
+      "quantity": 4,
+      "priceWithoutBdi": 5,
+      "bdi": null,
+      "priceWithBdi": 7,
+      "totalWithBdi": 8
+    }
+  },
+  {
+    "id": "ORC-CP-BDI",
+    "title": "20%, 20 e 0,2 são equivalentes",
+    "kind": "budget",
+    "header": 1,
+    "total": 720,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "2",
+        "ORSE",
+        "Tubo PVC",
+        "un",
+        2,
+        100,
+        "20%",
+        120,
+        240
+      ],
+      [
+        "3",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        20,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 3,
+      "codes": [],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001"
+  },
+  {
+    "id": "ORC-AV-MANUAL",
+    "title": "4 de 5 células calculadas e uma manual",
+    "kind": "budget",
+    "header": 1,
+    "total": 1200,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Item 1",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "2",
+        "SINAPI",
+        "Item 2",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "3",
+        "SINAPI",
+        "Item 3",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "4",
+        "SINAPI",
+        "Item 4",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "5",
+        "SINAPI",
+        "Item 5",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 5,
+      "codes": [
+        "MANUAL_VALUE_IN_FORMULA_COLUMN"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "I2": {
+        "formula": "E2*H2"
+      },
+      "I3": {
+        "formula": "E3*H3"
+      },
+      "I4": {
+        "formula": "E4*H4"
+      },
+      "I5": {
+        "formula": "E5*H5"
+      }
+    }
+  },
+  {
+    "id": "ORC-CP-MANUAL",
+    "title": "Todas as 5 fórmulas seguem o padrão",
+    "kind": "budget",
+    "header": 1,
+    "total": 1200,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Item 1",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "2",
+        "SINAPI",
+        "Item 2",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "3",
+        "SINAPI",
+        "Item 3",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "4",
+        "SINAPI",
+        "Item 4",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "5",
+        "SINAPI",
+        "Item 5",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 5,
+      "codes": [],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "I2": {
+        "formula": "E2*H2"
+      },
+      "I3": {
+        "formula": "E3*H3"
+      },
+      "I4": {
+        "formula": "E4*H4"
+      },
+      "I5": {
+        "formula": "E5*H5"
+      },
+      "I6": {
+        "formula": "E6*H6"
+      }
+    }
+  },
+  {
+    "id": "ORC-AV-PADRAO",
+    "title": "Uma fórmula diferente do padrão",
+    "kind": "budget",
+    "header": 1,
+    "total": 1200,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Item 1",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "2",
+        "SINAPI",
+        "Item 2",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "3",
+        "SINAPI",
+        "Item 3",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "4",
+        "SINAPI",
+        "Item 4",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "5",
+        "SINAPI",
+        "Item 5",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 5,
+      "codes": [
+        "FORMULA_PATTERN_MISMATCH"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001",
+    "cells": {
+      "I2": {
+        "formula": "E2*H2"
+      },
+      "I3": {
+        "formula": "E3*H3"
+      },
+      "I4": {
+        "formula": "E4*H4"
+      },
+      "I5": {
+        "formula": "E5*H5"
+      },
+      "I6": {
+        "formula": "SUM(H6,H6)"
+      }
+    }
+  },
+  {
+    "id": "ORC-VIS-001",
+    "title": "Linha oculta não participa do total",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "2",
+        "SINAPI",
+        "Oculto",
+        "m",
+        2,
+        500,
+        0.2,
+        600,
+        1200
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001",
+    "hiddenRows": [
+      2
+    ]
+  },
+  {
+    "id": "ORC-VIS-002",
+    "title": "Coluna obrigatória oculta retira identidade",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "codes": [
+        "NO_BUDGET_ITEMS",
+        "STRUCTURAL_ROW",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": false
+    },
+    "counter": "ORC-OK-001",
+    "hiddenColumns": [
+      0
+    ]
+  },
+  {
+    "id": "ORC-VIS-ANTES",
+    "title": "Linha oculta antes do cabeçalho é ignorada",
+    "kind": "budget",
+    "header": 2,
+    "total": 240,
+    "rows": [
+      [
+        "Título oculto"
+      ],
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001",
+    "hiddenRows": [
+      0
+    ]
+  },
+  {
+    "id": "ORC-VIS-INTERVALO",
+    "title": "Intervalo de linhas ocultas ignora valores inválidos",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "2",
+        "SINAPI",
+        "Oculto",
+        "m",
+        0,
+        -1,
+        0,
+        0,
+        0
+      ],
+      [
+        "3",
+        "SINAPI",
+        "Oculto",
+        "m",
+        -1,
+        10,
+        0.2,
+        12,
+        -12
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001",
+    "hiddenRows": [
+      2,
+      3
+    ]
+  },
+  {
+    "id": "ORC-VIS-MESCLA",
+    "title": "Título mesclado anterior é estrutural e mantém contexto",
+    "kind": "budget",
+    "header": 2,
+    "total": 240,
+    "rows": [
+      [
+        "Título mesclado"
+      ],
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "BEFORE_HEADER"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001",
+    "merges": [
+      "A1:I1"
+    ]
+  },
+  {
+    "id": "ORC-VIS-FORMULA",
+    "title": "Fórmula visível mantém cache mesmo referindo linha oculta",
+    "kind": "budget",
+    "header": 1,
+    "total": 240,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        500
+      ],
+      [
+        "2",
+        "SINAPI",
+        "Oculto",
+        "m",
+        1,
+        10,
+        0.2,
+        12,
+        12
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "codes": [
+        "ITEM_TOTAL_MISMATCH"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-OK-001",
+    "hiddenRows": [
+      2
+    ],
+    "cells": {
+      "I2": {
+        "formula": "E2*H2+I3"
+      }
+    }
+  },
+  {
+    "id": "ORC-AV-GRUPOS",
+    "title": "30 achados com linhas relacionadas intercaladas",
+    "kind": "budget",
+    "header": 1,
+    "total": 15120,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "g0",
+        "SINAPI",
+        "Serviço 0",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g1",
+        "SINAPI",
+        "Serviço 1",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g2",
+        "SINAPI",
+        "Serviço 2",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g3",
+        "SINAPI",
+        "Serviço 3",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g4",
+        "SINAPI",
+        "Serviço 4",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g5",
+        "SINAPI",
+        "Serviço 5",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g6",
+        "SINAPI",
+        "Serviço 6",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g7",
+        "SINAPI",
+        "Serviço 7",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g8",
+        "SINAPI",
+        "Serviço 8",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g9",
+        "SINAPI",
+        "Serviço 9",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g10",
+        "SINAPI",
+        "Serviço 10",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g11",
+        "SINAPI",
+        "Serviço 11",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g12",
+        "SINAPI",
+        "Serviço 12",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g13",
+        "SINAPI",
+        "Serviço 13",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g14",
+        "SINAPI",
+        "Serviço 14",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g15",
+        "SINAPI",
+        "Serviço 15",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g16",
+        "SINAPI",
+        "Serviço 16",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g17",
+        "SINAPI",
+        "Serviço 17",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g18",
+        "SINAPI",
+        "Serviço 18",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g19",
+        "SINAPI",
+        "Serviço 19",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g20",
+        "SINAPI",
+        "Serviço 20",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g21",
+        "SINAPI",
+        "Serviço 21",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g22",
+        "SINAPI",
+        "Serviço 22",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g23",
+        "SINAPI",
+        "Serviço 23",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g24",
+        "SINAPI",
+        "Serviço 24",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g25",
+        "SINAPI",
+        "Serviço 25",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g26",
+        "SINAPI",
+        "Serviço 26",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g27",
+        "SINAPI",
+        "Serviço 27",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g28",
+        "SINAPI",
+        "Serviço 28",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g29",
+        "SINAPI",
+        "Serviço 29",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ],
+      [
+        "g0",
+        "SINAPI",
+        "Serviço 0",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g1",
+        "SINAPI",
+        "Serviço 1",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g2",
+        "SINAPI",
+        "Serviço 2",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g3",
+        "SINAPI",
+        "Serviço 3",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g4",
+        "SINAPI",
+        "Serviço 4",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g5",
+        "SINAPI",
+        "Serviço 5",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g6",
+        "SINAPI",
+        "Serviço 6",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g7",
+        "SINAPI",
+        "Serviço 7",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g8",
+        "SINAPI",
+        "Serviço 8",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g9",
+        "SINAPI",
+        "Serviço 9",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g10",
+        "SINAPI",
+        "Serviço 10",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g11",
+        "SINAPI",
+        "Serviço 11",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g12",
+        "SINAPI",
+        "Serviço 12",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g13",
+        "SINAPI",
+        "Serviço 13",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g14",
+        "SINAPI",
+        "Serviço 14",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g15",
+        "SINAPI",
+        "Serviço 15",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g16",
+        "SINAPI",
+        "Serviço 16",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g17",
+        "SINAPI",
+        "Serviço 17",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g18",
+        "SINAPI",
+        "Serviço 18",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g19",
+        "SINAPI",
+        "Serviço 19",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g20",
+        "SINAPI",
+        "Serviço 20",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g21",
+        "SINAPI",
+        "Serviço 21",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g22",
+        "SINAPI",
+        "Serviço 22",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g23",
+        "SINAPI",
+        "Serviço 23",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g24",
+        "SINAPI",
+        "Serviço 24",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g25",
+        "SINAPI",
+        "Serviço 25",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g26",
+        "SINAPI",
+        "Serviço 26",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g27",
+        "SINAPI",
+        "Serviço 27",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g28",
+        "SINAPI",
+        "Serviço 28",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ],
+      [
+        "g29",
+        "SINAPI",
+        "Serviço 29",
+        "m",
+        2,
+        110,
+        0.2,
+        132,
+        264
+      ]
+    ],
+    "expected": {
+      "accepted": 60,
+      "codes": [
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES",
+        "IDENTICAL_ITEM_DIFFERENT_PRICES"
+      ],
+      "canProceed": true
+    },
+    "counter": "ORC-CP-PRECO"
+  },
+  {
+    "id": "BASE-OK-001",
+    "title": "Preço positivo e identidade completa",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "0001",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "reasons": [],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-VAZ",
+    "title": "Preço ausente",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        ""
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "reasons": [
+        "Preço ausente"
+      ],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-ZERO",
+    "title": "Preço zero",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        0
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "reasons": [
+        "Preço zero"
+      ],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-NEG",
+    "title": "Preço negativo",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        -1
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "reasons": [
+        "Preço negativo"
+      ],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-TXT",
+    "title": "Preço não numérico",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        "abc"
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "reasons": [
+        "Preço não numérico"
+      ],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-ERR",
+    "title": "Erro de fórmula no preço",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        ""
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "reasons": [
+        "Erro de fórmula no preço"
+      ],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001",
+    "cells": {
+      "D2": {
+        "formula": "1/0",
+        "error": "#DIV/0!"
+      }
+    }
+  },
+  {
+    "id": "BASE-CACHE",
+    "title": "Fórmula do preço sem resultado válido",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        ""
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "reasons": [
+        "Fórmula do preço sem resultado válido"
+      ],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001",
+    "cells": {
+      "D2": {
+        "formula": "1+1"
+      }
+    }
+  },
+  {
+    "id": "BASE-EST-1",
+    "title": "Identidade incompleta",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "reasons": [
+        "Linha estrutural"
+      ],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-EST-2",
+    "title": "Identidade incompleta",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "",
+        "m",
+        100
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "reasons": [
+        "Linha estrutural"
+      ],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-EST-3",
+    "title": "Identidade incompleta",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "",
+        100
+      ]
+    ],
+    "expected": {
+      "accepted": 0,
+      "reasons": [
+        "Linha estrutural"
+      ],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-CAB",
+    "title": "Cabeçalho repetido",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "reasons": [
+        "Cabeçalho repetido"
+      ],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-ANTES",
+    "title": "Linha anterior ao cabeçalho",
+    "kind": "base",
+    "header": 2,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Relatório"
+      ],
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "reasons": [
+        "Antes do cabeçalho"
+      ],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-VAZIA",
+    "title": "Linhas vazias não geram revisão",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "reasons": [],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-EQUIV",
+    "title": "Consolidar 2 origens equivalentes",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "0001",
+        "Tubo PVC",
+        "m",
+        100
+      ],
+      [
+        "1",
+        "Túbo PVC",
+        "M",
+        100
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "reasons": [],
+      "conflicts": 0,
+      "origins": 2
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-CON-PRECO",
+    "title": "Duas referências com preço diferente",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        101
+      ]
+    ],
+    "expected": {
+      "accepted": 2,
+      "reasons": [],
+      "conflicts": 1
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-CON-UNID",
+    "title": "Duas referências com unidade diferente",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "un",
+        100
+      ]
+    ],
+    "expected": {
+      "accepted": 2,
+      "reasons": [],
+      "conflicts": 1
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-CP-DESC",
+    "title": "Descrições diferentes não conflitam",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ],
+      [
+        "1",
+        "Conexão",
+        "un",
+        101
+      ]
+    ],
+    "expected": {
+      "accepted": 2,
+      "reasons": [],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001"
+  },
+  {
+    "id": "BASE-VIS",
+    "title": "Conflito somente na linha oculta é ignorado",
+    "kind": "base",
+    "header": 1,
+    "source": "SINAPI",
+    "rows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "un",
+        101
+      ]
+    ],
+    "expected": {
+      "accepted": 1,
+      "reasons": [],
+      "conflicts": 0
+    },
+    "counter": "BASE-OK-001",
+    "hiddenRows": [
+      2
+    ]
+  },
+  {
+    "id": "CMP-FLUXO",
+    "title": "Quatro resultados e ABC 50/80/95/100",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "0001",
+        "SINAPI",
+        "Descrição orçamento",
+        "m",
+        1,
+        50,
+        0.2,
+        60,
+        60
+      ],
+      [
+        "002.0",
+        "SINAPI",
+        "Conexão",
+        "un",
+        1,
+        30,
+        0.2,
+        36,
+        36
+      ],
+      [
+        "A3",
+        "SINAPI",
+        "Areia",
+        "m3",
+        1,
+        15,
+        0.2,
+        18,
+        18
+      ],
+      [
+        "404",
+        "SINAPI",
+        "Ausente",
+        "m",
+        1,
+        5,
+        0.2,
+        6,
+        6
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "0001",
+        "Descrição base",
+        "un",
+        60
+      ],
+      [
+        "002.0",
+        "Conexão",
+        "un",
+        30
+      ],
+      [
+        "A3",
+        "Areia",
+        "m3",
+        10
+      ]
+    ],
+    "source": "SINAPI",
+    "total": 120,
+    "expected": {
+      "statuses": [
+        "abaixo",
+        "igual",
+        "acima",
+        "nao-encontrado"
+      ],
+      "differences": [
+        -10,
+        0,
+        5,
+        null
+      ],
+      "total": 120,
+      "abc": [
+        "A",
+        "B",
+        "C",
+        "C"
+      ]
+    },
+    "counter": "CMP-FLUXO"
+  },
+  {
+    "id": "CMP-CRUZA-FONTES",
+    "title": "Item cruza 50% e barras usam o total do filtro",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Fonte A",
+        "m",
+        1,
+        50,
+        0.2,
+        60,
+        60
+      ],
+      [
+        "2",
+        "ORSE",
+        "Fonte B",
+        "m",
+        1,
+        33.333333,
+        0.2,
+        40,
+        40
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Fonte A",
+        "m",
+        50
+      ]
+    ],
+    "source": "SINAPI",
+    "total": 100,
+    "expected": {
+      "statuses": [
+        "igual",
+        "nao-encontrado"
+      ],
+      "total": 100,
+      "abc": [
+        "B",
+        "C"
+      ]
+    },
+    "counter": "CMP-FLUXO"
+  },
+  {
+    "id": "CMP-IGUAL",
+    "title": "Limite absoluto de comparação",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "source": "SINAPI",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "igual"
+      ]
+    },
+    "counter": "CMP-FLUXO",
+    "tolerance": 0
+  },
+  {
+    "id": "CMP-LIM",
+    "title": "Limite absoluto de comparação",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100.01,
+        0.2,
+        120.012,
+        240.024
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "source": "SINAPI",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "igual"
+      ]
+    },
+    "counter": "CMP-FLUXO",
+    "tolerance": 0.01
+  },
+  {
+    "id": "CMP-MENOS",
+    "title": "Limite absoluto de comparação",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100.009,
+        0.2,
+        120.01079999999999,
+        240.02159999999998
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "source": "SINAPI",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "igual"
+      ]
+    },
+    "counter": "CMP-FLUXO",
+    "tolerance": 0.01
+  },
+  {
+    "id": "CMP-MAIS",
+    "title": "Limite absoluto de comparação",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100.011,
+        0.2,
+        120.01319999999998,
+        240.02639999999997
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "source": "SINAPI",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "acima"
+      ]
+    },
+    "counter": "CMP-FLUXO",
+    "tolerance": 0.01
+  },
+  {
+    "id": "CMP-ABAIXO",
+    "title": "Limite absoluto de comparação",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        99,
+        0.2,
+        118.8,
+        237.6
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "source": "SINAPI",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "abaixo"
+      ]
+    },
+    "counter": "CMP-FLUXO",
+    "tolerance": 0.01
+  },
+  {
+    "id": "CMP-UNICO",
+    "title": "Busca restrita a fonte/código; descrição resolve múltiplos",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Outra",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "un",
+        100
+      ]
+    ],
+    "source": "SINAPI",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "igual"
+      ]
+    },
+    "counter": "CMP-FLUXO"
+  },
+  {
+    "id": "CMP-MULTI",
+    "title": "Busca restrita a fonte/código; descrição resolve múltiplos",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Túbo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ],
+      [
+        "1",
+        "Outro",
+        "m",
+        90
+      ]
+    ],
+    "source": "SINAPI",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "igual"
+      ]
+    },
+    "counter": "CMP-FLUXO"
+  },
+  {
+    "id": "CMP-MULTI-AUS",
+    "title": "Busca restrita a fonte/código; descrição resolve múltiplos",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Ausente",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ],
+      [
+        "1",
+        "Outro",
+        "m",
+        90
+      ]
+    ],
+    "source": "SINAPI",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "nao-encontrado"
+      ]
+    },
+    "counter": "CMP-FLUXO"
+  },
+  {
+    "id": "CMP-SEM-DESC",
+    "title": "Busca restrita a fonte/código; descrição resolve múltiplos",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "SINAPI",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "2",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "source": "SINAPI",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "nao-encontrado"
+      ]
+    },
+    "counter": "CMP-FLUXO"
+  },
+  {
+    "id": "CMP-FONTE",
+    "title": "Busca restrita a fonte/código; descrição resolve múltiplos",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "ORSE",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "source": "SINAPI",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "nao-encontrado"
+      ]
+    },
+    "counter": "CMP-FLUXO"
+  },
+  {
+    "id": "CMP-ORSE-UNICO",
+    "title": "Busca restrita a fonte/código; descrição resolve múltiplos",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "ORSE",
+        "Outra",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "un",
+        100
+      ]
+    ],
+    "source": "ORSE",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "igual"
+      ]
+    },
+    "counter": "CMP-FLUXO"
+  },
+  {
+    "id": "CMP-ORSE-MULTI",
+    "title": "Busca restrita a fonte/código; descrição resolve múltiplos",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "ORSE",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "1",
+        "Tubo PVC",
+        "m",
+        100
+      ],
+      [
+        "1",
+        "Outro",
+        "m",
+        90
+      ]
+    ],
+    "source": "ORSE",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "igual"
+      ]
+    },
+    "counter": "CMP-FLUXO"
+  },
+  {
+    "id": "CMP-ORSE-AUS",
+    "title": "Busca restrita a fonte/código; descrição resolve múltiplos",
+    "kind": "comparison",
+    "header": 1,
+    "rows": [
+      [
+        "Código",
+        "Fonte",
+        "Descrição",
+        "Unidade",
+        "Quantidade",
+        "Preço sem BDI",
+        "BDI",
+        "Preço com BDI",
+        "Total do item"
+      ],
+      [
+        "1",
+        "ORSE",
+        "Tubo PVC",
+        "m",
+        2,
+        100,
+        0.2,
+        120,
+        240
+      ]
+    ],
+    "baseRows": [
+      [
+        "Código",
+        "Descrição",
+        "Unidade",
+        "Preço"
+      ],
+      [
+        "2",
+        "Tubo PVC",
+        "m",
+        100
+      ]
+    ],
+    "source": "ORSE",
+    "total": 240,
+    "expected": {
+      "statuses": [
+        "nao-encontrado"
+      ]
+    },
+    "counter": "CMP-FLUXO"
+  }
+]

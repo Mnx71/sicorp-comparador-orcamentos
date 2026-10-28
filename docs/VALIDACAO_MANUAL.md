@@ -1,6 +1,6 @@
 # Especificação do kit de validação manual
 
-Status: especificação para implementação no Chat 1. As tabelas sintéticas e o relatório completo ainda precisam ser produzidos.
+Status: especificação atendida pelo kit em `testkit/fixtures/`, pela matriz `MATRIZ_AUDITORIA.md` e pelo roteiro `testkit/ROTEIRO_VALIDACAO.md`. Expectativas independentes e campos de registro estão disponíveis. Execução humana: não realizada nesta etapa. Evidências automatizadas e limitações: `RELATORIO_AUDITORIA_RC17.md`.
 
 ## Princípio
 
