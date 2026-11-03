@@ -45,6 +45,8 @@ npm test
 npx playwright install --with-deps chromium
 npm run qa:browser
 npm run audit:cases
+npm run audit:grouped
+npm run qa:grouped
 ```
 
 `npm run check` agrupa integridade da baseline, paridade/sintaxe do HTML, suíte e navegador. Não regenera automaticamente o HTML: uma distribuição desatualizada deve falhar. Para usar Chrome/Edge/Chromium já instalado, definir `SICORP_CHROMIUM_PATH` com seu executável. O roteiro registra a versão efetivamente iniciada.
@@ -53,6 +55,7 @@ O ambiente desta auditoria usou Playwright 1.62.1 e Chromium 141.0.7390.0, obtid
 
 ```bash
 npm run fixtures:build
+npm run fixtures:grouped
 npm run regression:real
 ```
 

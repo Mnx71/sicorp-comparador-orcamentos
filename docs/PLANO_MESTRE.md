@@ -32,6 +32,14 @@ Código de saída validado: `90d447e32e000389ae2158c6b2260a31543b1b7b`, branch `
 
 ## Etapas e critérios de aceitação
 
+### Complemento de 02/11/2026: homologação por grupos
+
+O percurso principal passa a ser `testkit/agrupados/LEIA-ME.md`: três XLSX, 15 abas (7 orçamento, 3 base, 5 comparação, incluindo duas fontes). Os 114 IDs possuem rastreabilidade em `cobertura.csv`; casos compatíveis compartilham a mesma conferência. Parâmetros globais são reconfigurados na mesma aba. As separações restantes decorrem de conflitos documentados. Os arquivos individuais e as evidências da auditoria original permanecem preservados.
+
+Nenhuma regra ou código da aplicação mudou. A versão e o SHA do HTML permanecem os da rc.17. A homologação por pessoa continua pendente; `testkit/agrupados/execucao-manual.csv` inicia sem aprovação. Geradores e novas verificações de arquivos/HTML são parte da suíte; evidências deste complemento ficam em `qa/evidence/grouped/`.
+
+Execução do complemento: `npm run check` aprovado com 363 testes, 103 verificações originais no navegador, 27 execuções agrupadas de arquivo e 27 verificações agrupadas no HTML. Relatório: `COMPLEMENTO_KIT_AGRUPADO.md`.
+
 ### 1. Consolidar a versão de referência
 
 - Conferir `baseline/manifest.json` e executar `npm run validate:baseline`.
@@ -47,7 +55,7 @@ Aceitação: comandos documentados e executáveis; fontes atuais identificados; 
 - Criar casos com identificadores estáveis e resultados esperados definidos independentemente do SICORP.
 - Produzir tabelas e arquivos sintéticos pequenos para cada aviso, erro de cálculo, impedimento, exclusão e resultado da comparação.
 - Incluir casos normais, limites, falsos positivos e combinações de problemas.
-- Separar cenários bloqueantes para que um impedimento não impeça a execução dos demais testes manuais.
+- Agrupar casos compatíveis na mesma aba. Separar impedimentos quando a soma incompleta ocultar o fechamento, fórmulas quando a proporção global mudar o aviso, ausência de itens e conflitos de base. Reutilizar a mesma aba para parâmetros globais e documentar cada configuração.
 - Vincular regra, caso, arquivo, execução e evidência. Seguir `VALIDACAO_MANUAL.md`.
 
 Aceitação: cada comportamento possui caso reproduzível ou lacuna explícita; arquivos, mapeamentos, valores esperados e consequências estão descritos; nenhuma expectativa é copiada automaticamente da saída do programa.

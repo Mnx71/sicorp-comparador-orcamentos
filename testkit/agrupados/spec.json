@@ -1,0 +1,7065 @@
+{
+  "groups": [
+    {
+      "kind": "budget",
+      "name": "01_Revisao",
+      "title": "Revisão conjunta: exclusões, erros e avisos",
+      "header": 3,
+      "rows": [
+        [
+          "Título oculto"
+        ],
+        [
+          "Revisão conjunta: exclusões, erros e avisos"
+        ],
+        [
+          "Código",
+          "Fonte",
+          "Descrição",
+          "Unidade",
+          "Quantidade",
+          "Preço sem BDI",
+          "BDI",
+          "Preço com BDI",
+          "Total do item",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "T1X1",
+          "SINAPI",
+          "T1X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-OK-001",
+          "Fluxo válido: 2 × 100 × (1 + 20%) = 240"
+        ],
+        [
+          "",
+          "SINAPI",
+          "T2X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-EST-1",
+          "Identidade ausente: code"
+        ],
+        [
+          "T3X1",
+          "",
+          "T3X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-EST-2",
+          "Identidade ausente: source"
+        ],
+        [
+          "T4X1",
+          "SINAPI",
+          "",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-EST-3",
+          "Identidade ausente: description"
+        ],
+        [
+          "T5X1",
+          "SINAPI",
+          "T5X Tubo PVC",
+          "",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-EST-4",
+          "Identidade ausente: unit"
+        ],
+        [
+          "T6X1",
+          "SINAPI",
+          "T6X Tubo PVC",
+          "m",
+          "",
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-4-VAZ",
+          "quantity: VAZ"
+        ],
+        [
+          "T7X1",
+          "SINAPI",
+          "T7X Tubo PVC",
+          "m",
+          0,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-4-ZERO",
+          "quantity: ZERO"
+        ],
+        [
+          "T12X1",
+          "SINAPI",
+          "T12X Tubo PVC",
+          "m",
+          2,
+          "",
+          0.2,
+          120,
+          240,
+          "ORC-5-VAZ",
+          "priceWithoutBdi: VAZ"
+        ],
+        [
+          "T13X1",
+          "SINAPI",
+          "T13X Tubo PVC",
+          "m",
+          2,
+          0,
+          0.2,
+          120,
+          240,
+          "ORC-5-ZERO",
+          "priceWithoutBdi: ZERO"
+        ],
+        [
+          "T18X1",
+          "SINAPI",
+          "T18X Tubo PVC",
+          "m",
+          2,
+          100,
+          "",
+          120,
+          240,
+          "ORC-6-VAZ",
+          "bdi: VAZ"
+        ],
+        [
+          "T19X1",
+          "SINAPI",
+          "T19X Tubo PVC",
+          "m",
+          2,
+          100,
+          0,
+          120,
+          240,
+          "ORC-6-ZERO",
+          "bdi: ZERO"
+        ],
+        [
+          "T24X1",
+          "SINAPI",
+          "T24X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          "",
+          240,
+          "ORC-7-VAZ",
+          "priceWithBdi: VAZ"
+        ],
+        [
+          "T25X1",
+          "SINAPI",
+          "T25X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          0,
+          240,
+          "ORC-7-ZERO",
+          "priceWithBdi: ZERO"
+        ],
+        [
+          "T30X1",
+          "SINAPI",
+          "T30X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          "",
+          "ORC-8-VAZ",
+          "totalWithBdi: VAZ"
+        ],
+        [
+          "T31X1",
+          "SINAPI",
+          "T31X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          0,
+          "ORC-8-ZERO",
+          "totalWithBdi: ZERO"
+        ],
+        [
+          "T36X1",
+          "SINAPI",
+          "T36X Tubo PVC",
+          "m",
+          0,
+          -1,
+          0.2,
+          120,
+          240,
+          "ORC-EXC-001",
+          "Vazio/zero exclui antes de avaliar outro campo negativo"
+        ],
+        [
+          "",
+          "SINAPI",
+          "T37X Título",
+          "",
+          -1,
+          "abc",
+          0,
+          0,
+          0,
+          "ORC-EXC-002",
+          "Estrutural tem precedência sobre finanças inválidas"
+        ],
+        [],
+        [
+          "T38X1",
+          "SINAPI",
+          "T38X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-EXC-003",
+          "Linha vazia é ignorada"
+        ],
+        [
+          "Código",
+          "Fonte",
+          "Descrição",
+          "Unidade",
+          "Quantidade",
+          "Preço sem BDI",
+          "BDI",
+          "Preço com BDI",
+          "Total do item",
+          "ORC-EXC-004",
+          "Cabeçalho repetido desconsiderado"
+        ],
+        [
+          "T39X1",
+          "SINAPI",
+          "T39X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-EXC-004",
+          "Cabeçalho repetido desconsiderado"
+        ],
+        [
+          "T40X1",
+          "SINAPI",
+          "T40X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-EXC-005",
+          "Conteúdo antes do cabeçalho desconsiderado"
+        ],
+        [
+          "T53X1",
+          "SINAPI",
+          "T53X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          121,
+          242,
+          "ORC-ERR-BDI",
+          "BDI: 100 × 1,2 = 120, informado 121"
+        ],
+        [
+          "T54X1",
+          "SINAPI",
+          "T54X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          241,
+          "ORC-ERR-ITEM",
+          "Total: 2 × 120 = 240, informado 241"
+        ],
+        [
+          "T56X1",
+          "SINAPI",
+          "T56X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          241,
+          "ORC-ERR-COMP",
+          "Erros dos itens se compensam no geral"
+        ],
+        [
+          "T56X2",
+          "SINAPI",
+          "T56X Outro",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          239,
+          "ORC-ERR-COMP",
+          "Erros dos itens se compensam no geral"
+        ],
+        [
+          "T57X1",
+          "SINAPI",
+          "T57X Meio centavo",
+          "m",
+          1,
+          10,
+          0.0075,
+          10.075,
+          10.08,
+          "ORC-ROUND-MEIO",
+          "Arredondamento decimal no meio centavo"
+        ],
+        [
+          "T58X1",
+          "SINAPI",
+          "T58X Meio centavo",
+          "m",
+          1,
+          10,
+          0.0075,
+          10.074999,
+          10.07,
+          "ORC-ROUND-ABAIXO",
+          "Arredondamento decimal no meio centavo"
+        ],
+        [
+          "T59X1",
+          "SINAPI",
+          "T59X Meio centavo",
+          "m",
+          1,
+          10,
+          0.0075,
+          10.075001,
+          10.08,
+          "ORC-ROUND-ACIMA",
+          "Arredondamento decimal no meio centavo"
+        ],
+        [
+          "T60X1",
+          "SINAPI",
+          "T60X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240.009,
+          "ORC-LIM-DENTRO",
+          "Tolerância do total do item R$ 0,01"
+        ],
+        [
+          "T61X1",
+          "SINAPI",
+          "T61X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240.01,
+          "ORC-LIM-IGUAL",
+          "Tolerância do total do item R$ 0,01"
+        ],
+        [
+          "T62X1",
+          "SINAPI",
+          "T62X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240.02,
+          "ORC-LIM-FORA",
+          "Tolerância do total do item R$ 0,01"
+        ],
+        [
+          "T65X1",
+          "SINAPI",
+          "T65X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-DUP",
+          "Duplicidade física consecutiva"
+        ],
+        [
+          "T65X1",
+          "SINAPI",
+          "T65X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-DUP",
+          "Duplicidade física consecutiva"
+        ],
+        [
+          "T66X1",
+          "SINAPI",
+          "T66X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-CP-DUP",
+          "Duplicidade não consecutiva"
+        ],
+        [],
+        [
+          "T66X1",
+          "SINAPI",
+          "T66X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-CP-DUP",
+          "Duplicidade não consecutiva"
+        ],
+        [
+          "T67X1",
+          "SINAPI",
+          "T67X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-PRECO",
+          "Mesmo item com preços diferentes"
+        ],
+        [
+          "T67X1",
+          "SINAPI",
+          "T67X Tubo PVC",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-PRECO",
+          "Mesmo item com preços diferentes"
+        ],
+        [
+          "T68X1",
+          "SINAPI",
+          "T68X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-CP-PRECO",
+          "Outro código permite preço diferente"
+        ],
+        [
+          "T68X2",
+          "SINAPI",
+          "T68X Outro",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-CP-PRECO",
+          "Outro código permite preço diferente"
+        ],
+        [
+          "T69X1",
+          "SINAPI",
+          "T69X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-BDI",
+          "Descrição normalizada comum com BDI diferente"
+        ],
+        [
+          "T69X2",
+          "ORSE",
+          "T69X Túbo  PVC",
+          "un",
+          2,
+          100,
+          0.3,
+          130,
+          260,
+          "ORC-AV-BDI",
+          "Descrição normalizada comum com BDI diferente"
+        ],
+        [
+          "T71X1",
+          "SINAPI",
+          "T71X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-CP-BDI",
+          "20%, 20 e 0,2 são equivalentes"
+        ],
+        [
+          "T71X2",
+          "ORSE",
+          "T71X Tubo PVC",
+          "un",
+          2,
+          100,
+          "20%",
+          120,
+          240,
+          "ORC-CP-BDI",
+          "20%, 20 e 0,2 são equivalentes"
+        ],
+        [
+          "T71X3",
+          "SINAPI",
+          "T71X Tubo PVC",
+          "m",
+          2,
+          100,
+          20,
+          120,
+          240,
+          "ORC-CP-BDI",
+          "20%, 20 e 0,2 são equivalentes"
+        ],
+        [
+          "T75X1",
+          "SINAPI",
+          "T75X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-VIS-001",
+          "Linha oculta não participa do total"
+        ],
+        [
+          "T75X2",
+          "SINAPI",
+          "T75X Oculto",
+          "m",
+          2,
+          500,
+          0.2,
+          600,
+          1200,
+          "ORC-VIS-001",
+          "Linha oculta não participa do total"
+        ],
+        [
+          "T77X1",
+          "SINAPI",
+          "T77X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-VIS-ANTES",
+          "Linha oculta antes do cabeçalho é ignorada"
+        ],
+        [
+          "T78X1",
+          "SINAPI",
+          "T78X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-VIS-INTERVALO",
+          "Intervalo de linhas ocultas ignora valores inválidos"
+        ],
+        [
+          "T78X2",
+          "SINAPI",
+          "T78X Oculto",
+          "m",
+          0,
+          -1,
+          0,
+          0,
+          0,
+          "ORC-VIS-INTERVALO",
+          "Intervalo de linhas ocultas ignora valores inválidos"
+        ],
+        [
+          "T78X3",
+          "SINAPI",
+          "T78X Oculto",
+          "m",
+          -1,
+          10,
+          0.2,
+          12,
+          -12,
+          "ORC-VIS-INTERVALO",
+          "Intervalo de linhas ocultas ignora valores inválidos"
+        ],
+        [
+          "T79X1",
+          "SINAPI",
+          "T79X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-VIS-MESCLA",
+          "Título mesclado anterior é estrutural e mantém contexto"
+        ],
+        [
+          "T80X1",
+          "SINAPI",
+          "T80X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          500,
+          "ORC-VIS-FORMULA",
+          "Fórmula visível mantém cache mesmo referindo linha oculta"
+        ],
+        [
+          "T80X2",
+          "SINAPI",
+          "T80X Oculto",
+          "m",
+          1,
+          10,
+          0.2,
+          12,
+          12,
+          "ORC-VIS-FORMULA",
+          "Fórmula visível mantém cache mesmo referindo linha oculta"
+        ],
+        [
+          "T81XG0",
+          "SINAPI",
+          "T81X Serviço 0",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG1",
+          "SINAPI",
+          "T81X Serviço 1",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG2",
+          "SINAPI",
+          "T81X Serviço 2",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG3",
+          "SINAPI",
+          "T81X Serviço 3",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG4",
+          "SINAPI",
+          "T81X Serviço 4",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG5",
+          "SINAPI",
+          "T81X Serviço 5",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG6",
+          "SINAPI",
+          "T81X Serviço 6",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG7",
+          "SINAPI",
+          "T81X Serviço 7",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG8",
+          "SINAPI",
+          "T81X Serviço 8",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG9",
+          "SINAPI",
+          "T81X Serviço 9",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG10",
+          "SINAPI",
+          "T81X Serviço 10",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG11",
+          "SINAPI",
+          "T81X Serviço 11",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG12",
+          "SINAPI",
+          "T81X Serviço 12",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG13",
+          "SINAPI",
+          "T81X Serviço 13",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG14",
+          "SINAPI",
+          "T81X Serviço 14",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG15",
+          "SINAPI",
+          "T81X Serviço 15",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG16",
+          "SINAPI",
+          "T81X Serviço 16",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG17",
+          "SINAPI",
+          "T81X Serviço 17",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG18",
+          "SINAPI",
+          "T81X Serviço 18",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG19",
+          "SINAPI",
+          "T81X Serviço 19",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG20",
+          "SINAPI",
+          "T81X Serviço 20",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG21",
+          "SINAPI",
+          "T81X Serviço 21",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG22",
+          "SINAPI",
+          "T81X Serviço 22",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG23",
+          "SINAPI",
+          "T81X Serviço 23",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG24",
+          "SINAPI",
+          "T81X Serviço 24",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG25",
+          "SINAPI",
+          "T81X Serviço 25",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG26",
+          "SINAPI",
+          "T81X Serviço 26",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG27",
+          "SINAPI",
+          "T81X Serviço 27",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG28",
+          "SINAPI",
+          "T81X Serviço 28",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG29",
+          "SINAPI",
+          "T81X Serviço 29",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG0",
+          "SINAPI",
+          "T81X Serviço 0",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG1",
+          "SINAPI",
+          "T81X Serviço 1",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG2",
+          "SINAPI",
+          "T81X Serviço 2",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG3",
+          "SINAPI",
+          "T81X Serviço 3",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG4",
+          "SINAPI",
+          "T81X Serviço 4",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG5",
+          "SINAPI",
+          "T81X Serviço 5",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG6",
+          "SINAPI",
+          "T81X Serviço 6",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG7",
+          "SINAPI",
+          "T81X Serviço 7",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG8",
+          "SINAPI",
+          "T81X Serviço 8",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG9",
+          "SINAPI",
+          "T81X Serviço 9",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG10",
+          "SINAPI",
+          "T81X Serviço 10",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG11",
+          "SINAPI",
+          "T81X Serviço 11",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG12",
+          "SINAPI",
+          "T81X Serviço 12",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG13",
+          "SINAPI",
+          "T81X Serviço 13",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG14",
+          "SINAPI",
+          "T81X Serviço 14",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG15",
+          "SINAPI",
+          "T81X Serviço 15",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG16",
+          "SINAPI",
+          "T81X Serviço 16",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG17",
+          "SINAPI",
+          "T81X Serviço 17",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG18",
+          "SINAPI",
+          "T81X Serviço 18",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG19",
+          "SINAPI",
+          "T81X Serviço 19",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG20",
+          "SINAPI",
+          "T81X Serviço 20",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG21",
+          "SINAPI",
+          "T81X Serviço 21",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG22",
+          "SINAPI",
+          "T81X Serviço 22",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG23",
+          "SINAPI",
+          "T81X Serviço 23",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG24",
+          "SINAPI",
+          "T81X Serviço 24",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG25",
+          "SINAPI",
+          "T81X Serviço 25",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG26",
+          "SINAPI",
+          "T81X Serviço 26",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG27",
+          "SINAPI",
+          "T81X Serviço 27",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG28",
+          "SINAPI",
+          "T81X Serviço 28",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ],
+        [
+          "T81XG29",
+          "SINAPI",
+          "T81X Serviço 29",
+          "m",
+          2,
+          110,
+          0.2,
+          132,
+          264,
+          "ORC-AV-GRUPOS",
+          "30 achados com linhas relacionadas intercaladas"
+        ]
+      ],
+      "cells": {
+        "I57": {
+          "formula": "E57*H57+I58"
+        }
+      },
+      "hiddenRows": [
+        50,
+        53,
+        54,
+        57,
+        0
+      ],
+      "hiddenColumns": [],
+      "merges": [
+        "A2:I2"
+      ],
+      "members": [
+        {
+          "id": "ORC-OK-001",
+          "rows": [
+            4
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-EST-1",
+          "rows": [
+            5
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "STRUCTURAL_ROW",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-EST-2",
+          "rows": [
+            6
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "STRUCTURAL_ROW",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-EST-3",
+          "rows": [
+            7
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "STRUCTURAL_ROW",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-EST-4",
+          "rows": [
+            8
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "STRUCTURAL_ROW",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-4-VAZ",
+          "rows": [
+            9
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "BUDGET_ITEM_EMPTY_OR_ZERO",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-4-ZERO",
+          "rows": [
+            10
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "BUDGET_ITEM_EMPTY_OR_ZERO",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-5-VAZ",
+          "rows": [
+            11
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "BUDGET_ITEM_EMPTY_OR_ZERO",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-5-ZERO",
+          "rows": [
+            12
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "BUDGET_ITEM_EMPTY_OR_ZERO",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-6-VAZ",
+          "rows": [
+            13
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "BUDGET_ITEM_EMPTY_OR_ZERO",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-6-ZERO",
+          "rows": [
+            14
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "BUDGET_ITEM_EMPTY_OR_ZERO",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-7-VAZ",
+          "rows": [
+            15
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "BUDGET_ITEM_EMPTY_OR_ZERO",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-7-ZERO",
+          "rows": [
+            16
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "BUDGET_ITEM_EMPTY_OR_ZERO",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-8-VAZ",
+          "rows": [
+            17
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "BUDGET_ITEM_EMPTY_OR_ZERO",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-8-ZERO",
+          "rows": [
+            18
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "BUDGET_ITEM_EMPTY_OR_ZERO",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-EXC-001",
+          "rows": [
+            19
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "BUDGET_ITEM_EMPTY_OR_ZERO",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-EXC-002",
+          "rows": [
+            20
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "STRUCTURAL_ROW",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-EXC-003",
+          "rows": [
+            21,
+            22
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-EXC-004",
+          "rows": [
+            23,
+            24
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "REPEATED_HEADER"
+            ],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-EXC-005",
+          "rows": [
+            25
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "BEFORE_HEADER"
+            ],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-ERR-BDI",
+          "rows": [
+            26
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "BDI_APPLICATION_MISMATCH"
+            ],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-ERR-ITEM",
+          "rows": [
+            27
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "ITEM_TOTAL_MISMATCH"
+            ],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-ERR-COMP",
+          "rows": [
+            28,
+            29
+          ],
+          "originalExpected": {
+            "accepted": 2,
+            "codes": [
+              "ITEM_TOTAL_MISMATCH",
+              "ITEM_TOTAL_MISMATCH"
+            ],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-ROUND-MEIO",
+          "rows": [
+            30
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [],
+            "canProceed": true,
+            "auditedSum": 10.08
+          }
+        },
+        {
+          "id": "ORC-ROUND-ABAIXO",
+          "rows": [
+            31
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [],
+            "canProceed": true,
+            "auditedSum": 10.07
+          }
+        },
+        {
+          "id": "ORC-ROUND-ACIMA",
+          "rows": [
+            32
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [],
+            "canProceed": true,
+            "auditedSum": 10.08
+          }
+        },
+        {
+          "id": "ORC-LIM-DENTRO",
+          "rows": [
+            33
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-LIM-IGUAL",
+          "rows": [
+            34
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-LIM-FORA",
+          "rows": [
+            35
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "ITEM_TOTAL_MISMATCH"
+            ],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-AV-DUP",
+          "rows": [
+            36,
+            37
+          ],
+          "originalExpected": {
+            "accepted": 2,
+            "codes": [
+              "CONSECUTIVE_DUPLICATE_ITEM"
+            ],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-CP-DUP",
+          "rows": [
+            38,
+            39,
+            40
+          ],
+          "originalExpected": {
+            "accepted": 2,
+            "codes": [],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-AV-PRECO",
+          "rows": [
+            41,
+            42
+          ],
+          "originalExpected": {
+            "accepted": 2,
+            "codes": [
+              "IDENTICAL_ITEM_DIFFERENT_PRICES"
+            ],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-CP-PRECO",
+          "rows": [
+            43,
+            44
+          ],
+          "originalExpected": {
+            "accepted": 2,
+            "codes": [],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-AV-BDI",
+          "rows": [
+            45,
+            46
+          ],
+          "originalExpected": {
+            "accepted": 2,
+            "codes": [
+              "SAME_DESCRIPTION_DIFFERENT_BDI"
+            ],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-CP-BDI",
+          "rows": [
+            47,
+            48,
+            49
+          ],
+          "originalExpected": {
+            "accepted": 3,
+            "codes": [],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-VIS-001",
+          "rows": [
+            50,
+            51
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-VIS-ANTES",
+          "rows": [
+            52
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-VIS-INTERVALO",
+          "rows": [
+            53,
+            54,
+            55
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-VIS-MESCLA",
+          "rows": [
+            56
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "BEFORE_HEADER"
+            ],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-VIS-FORMULA",
+          "rows": [
+            57,
+            58
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "ITEM_TOTAL_MISMATCH"
+            ],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-AV-GRUPOS",
+          "rows": [
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118
+          ],
+          "originalExpected": {
+            "accepted": 60,
+            "codes": [
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES",
+              "IDENTICAL_ITEM_DIFFERENT_PRICES"
+            ],
+            "canProceed": true
+          }
+        }
+      ],
+      "expected": {
+        "accepted": 92,
+        "codes": [
+          "STRUCTURAL_ROW",
+          "STRUCTURAL_ROW",
+          "STRUCTURAL_ROW",
+          "STRUCTURAL_ROW",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "STRUCTURAL_ROW",
+          "REPEATED_HEADER",
+          "BDI_APPLICATION_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "CONSECUTIVE_DUPLICATE_ITEM",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "SAME_DESCRIPTION_DIFFERENT_BDI",
+          "ITEM_TOTAL_MISMATCH",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "BEFORE_HEADER",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "reasons": [],
+        "conflicts": 0,
+        "canProceed": true,
+        "auditedSum": 22180.23
+      },
+      "total": 22190.23
+    },
+    {
+      "kind": "budget",
+      "name": "02_Impedimentos",
+      "title": "Impedimentos simultâneos",
+      "header": 1,
+      "rows": [
+        [
+          "Código",
+          "Fonte",
+          "Descrição",
+          "Unidade",
+          "Quantidade",
+          "Preço sem BDI",
+          "BDI",
+          "Preço com BDI",
+          "Total do item",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "T8X1",
+          "SINAPI",
+          "T8X Tubo PVC",
+          "m",
+          -1,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-4-NEG",
+          "quantity: NEG"
+        ],
+        [
+          "T9X1",
+          "SINAPI",
+          "T9X Tubo PVC",
+          "m",
+          "abc",
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-4-TXT",
+          "quantity: TXT"
+        ],
+        [
+          "T10X1",
+          "SINAPI",
+          "T10X Tubo PVC",
+          "m",
+          "",
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-4-ERR",
+          "quantity: ERR"
+        ],
+        [
+          "T11X1",
+          "SINAPI",
+          "T11X Tubo PVC",
+          "m",
+          "",
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-4-CACHE",
+          "quantity: CACHE"
+        ],
+        [
+          "T14X1",
+          "SINAPI",
+          "T14X Tubo PVC",
+          "m",
+          2,
+          -1,
+          0.2,
+          120,
+          240,
+          "ORC-5-NEG",
+          "priceWithoutBdi: NEG"
+        ],
+        [
+          "T15X1",
+          "SINAPI",
+          "T15X Tubo PVC",
+          "m",
+          2,
+          "abc",
+          0.2,
+          120,
+          240,
+          "ORC-5-TXT",
+          "priceWithoutBdi: TXT"
+        ],
+        [
+          "T16X1",
+          "SINAPI",
+          "T16X Tubo PVC",
+          "m",
+          2,
+          "",
+          0.2,
+          120,
+          240,
+          "ORC-5-ERR",
+          "priceWithoutBdi: ERR"
+        ],
+        [
+          "T17X1",
+          "SINAPI",
+          "T17X Tubo PVC",
+          "m",
+          2,
+          "",
+          0.2,
+          120,
+          240,
+          "ORC-5-CACHE",
+          "priceWithoutBdi: CACHE"
+        ],
+        [
+          "T20X1",
+          "SINAPI",
+          "T20X Tubo PVC",
+          "m",
+          2,
+          100,
+          -0.2,
+          120,
+          240,
+          "ORC-6-NEG",
+          "bdi: NEG"
+        ],
+        [
+          "T21X1",
+          "SINAPI",
+          "T21X Tubo PVC",
+          "m",
+          2,
+          100,
+          "abc",
+          120,
+          240,
+          "ORC-6-TXT",
+          "bdi: TXT"
+        ],
+        [
+          "T22X1",
+          "SINAPI",
+          "T22X Tubo PVC",
+          "m",
+          2,
+          100,
+          "",
+          120,
+          240,
+          "ORC-6-ERR",
+          "bdi: ERR"
+        ],
+        [
+          "T23X1",
+          "SINAPI",
+          "T23X Tubo PVC",
+          "m",
+          2,
+          100,
+          "",
+          120,
+          240,
+          "ORC-6-CACHE",
+          "bdi: CACHE"
+        ],
+        [
+          "T26X1",
+          "SINAPI",
+          "T26X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          -1,
+          240,
+          "ORC-7-NEG",
+          "priceWithBdi: NEG"
+        ],
+        [
+          "T27X1",
+          "SINAPI",
+          "T27X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          "abc",
+          240,
+          "ORC-7-TXT",
+          "priceWithBdi: TXT"
+        ],
+        [
+          "T28X1",
+          "SINAPI",
+          "T28X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          "",
+          240,
+          "ORC-7-ERR",
+          "priceWithBdi: ERR"
+        ],
+        [
+          "T29X1",
+          "SINAPI",
+          "T29X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          "",
+          240,
+          "ORC-7-CACHE",
+          "priceWithBdi: CACHE"
+        ],
+        [
+          "T32X1",
+          "SINAPI",
+          "T32X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          -1,
+          "ORC-8-NEG",
+          "totalWithBdi: NEG"
+        ],
+        [
+          "T33X1",
+          "SINAPI",
+          "T33X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          "abc",
+          "ORC-8-TXT",
+          "totalWithBdi: TXT"
+        ],
+        [
+          "T34X1",
+          "SINAPI",
+          "T34X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          "",
+          "ORC-8-ERR",
+          "totalWithBdi: ERR"
+        ],
+        [
+          "T35X1",
+          "SINAPI",
+          "T35X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          "",
+          "ORC-8-CACHE",
+          "totalWithBdi: CACHE"
+        ]
+      ],
+      "cells": {
+        "E4": {
+          "formula": "1/0",
+          "error": "#DIV/0!"
+        },
+        "E5": {
+          "formula": "1+1"
+        },
+        "F8": {
+          "formula": "1/0",
+          "error": "#DIV/0!"
+        },
+        "F9": {
+          "formula": "1+1"
+        },
+        "G12": {
+          "formula": "1/0",
+          "error": "#DIV/0!"
+        },
+        "G13": {
+          "formula": "1+1"
+        },
+        "H16": {
+          "formula": "1/0",
+          "error": "#DIV/0!"
+        },
+        "H17": {
+          "formula": "1+1"
+        },
+        "I20": {
+          "formula": "1/0",
+          "error": "#DIV/0!"
+        },
+        "I21": {
+          "formula": "1+1"
+        }
+      },
+      "hiddenRows": [],
+      "hiddenColumns": [],
+      "merges": [],
+      "members": [
+        {
+          "id": "ORC-4-NEG",
+          "rows": [
+            2
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_VALUE_NEGATIVE"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-4-TXT",
+          "rows": [
+            3
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_VALUE_NOT_NUMERIC"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-4-ERR",
+          "rows": [
+            4
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_FORMULA_ERROR"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-4-CACHE",
+          "rows": [
+            5
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_FORMULA_WITHOUT_VALUE"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-5-NEG",
+          "rows": [
+            6
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_VALUE_NEGATIVE"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-5-TXT",
+          "rows": [
+            7
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_VALUE_NOT_NUMERIC"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-5-ERR",
+          "rows": [
+            8
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_FORMULA_ERROR"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-5-CACHE",
+          "rows": [
+            9
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_FORMULA_WITHOUT_VALUE"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-6-NEG",
+          "rows": [
+            10
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_VALUE_NEGATIVE"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-6-TXT",
+          "rows": [
+            11
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_VALUE_NOT_NUMERIC"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-6-ERR",
+          "rows": [
+            12
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_FORMULA_ERROR"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-6-CACHE",
+          "rows": [
+            13
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_FORMULA_WITHOUT_VALUE"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-7-NEG",
+          "rows": [
+            14
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_VALUE_NEGATIVE"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-7-TXT",
+          "rows": [
+            15
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_VALUE_NOT_NUMERIC"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-7-ERR",
+          "rows": [
+            16
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_FORMULA_ERROR"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-7-CACHE",
+          "rows": [
+            17
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_FORMULA_WITHOUT_VALUE"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-8-NEG",
+          "rows": [
+            18
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_VALUE_NEGATIVE"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-8-TXT",
+          "rows": [
+            19
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_VALUE_NOT_NUMERIC"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-8-ERR",
+          "rows": [
+            20
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_FORMULA_ERROR"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-8-CACHE",
+          "rows": [
+            21
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "MAPPED_FORMULA_WITHOUT_VALUE"
+            ],
+            "canProceed": false
+          }
+        }
+      ],
+      "expected": {
+        "accepted": 20,
+        "codes": [
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_WITHOUT_VALUE"
+        ],
+        "reasons": [],
+        "conflicts": 0,
+        "canProceed": false
+      },
+      "total": 240
+    },
+    {
+      "kind": "budget",
+      "name": "03_Formulas",
+      "title": "Predominância e padrão de fórmulas",
+      "header": 1,
+      "rows": [
+        [
+          "Código",
+          "Fonte",
+          "Descrição",
+          "Unidade",
+          "Quantidade",
+          "Preço sem BDI",
+          "BDI",
+          "Preço com BDI",
+          "Total do item",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "T72X1",
+          "SINAPI",
+          "T72X Item 1",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-MANUAL",
+          "4 de 5 células calculadas e uma manual"
+        ],
+        [
+          "T72X2",
+          "SINAPI",
+          "T72X Item 2",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-MANUAL",
+          "4 de 5 células calculadas e uma manual"
+        ],
+        [
+          "T72X3",
+          "SINAPI",
+          "T72X Item 3",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-MANUAL",
+          "4 de 5 células calculadas e uma manual"
+        ],
+        [
+          "T72X4",
+          "SINAPI",
+          "T72X Item 4",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-MANUAL",
+          "4 de 5 células calculadas e uma manual"
+        ],
+        [
+          "T72X5",
+          "SINAPI",
+          "T72X Item 5",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-MANUAL",
+          "4 de 5 células calculadas e uma manual"
+        ],
+        [
+          "T73X1",
+          "SINAPI",
+          "T73X Item 1",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-CP-MANUAL",
+          "Todas as 5 fórmulas seguem o padrão"
+        ],
+        [
+          "T73X2",
+          "SINAPI",
+          "T73X Item 2",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-CP-MANUAL",
+          "Todas as 5 fórmulas seguem o padrão"
+        ],
+        [
+          "T73X3",
+          "SINAPI",
+          "T73X Item 3",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-CP-MANUAL",
+          "Todas as 5 fórmulas seguem o padrão"
+        ],
+        [
+          "T73X4",
+          "SINAPI",
+          "T73X Item 4",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-CP-MANUAL",
+          "Todas as 5 fórmulas seguem o padrão"
+        ],
+        [
+          "T73X5",
+          "SINAPI",
+          "T73X Item 5",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-CP-MANUAL",
+          "Todas as 5 fórmulas seguem o padrão"
+        ],
+        [
+          "T74X1",
+          "SINAPI",
+          "T74X Item 1",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-PADRAO",
+          "Uma fórmula diferente do padrão"
+        ],
+        [
+          "T74X2",
+          "SINAPI",
+          "T74X Item 2",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-PADRAO",
+          "Uma fórmula diferente do padrão"
+        ],
+        [
+          "T74X3",
+          "SINAPI",
+          "T74X Item 3",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-PADRAO",
+          "Uma fórmula diferente do padrão"
+        ],
+        [
+          "T74X4",
+          "SINAPI",
+          "T74X Item 4",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-PADRAO",
+          "Uma fórmula diferente do padrão"
+        ],
+        [
+          "T74X5",
+          "SINAPI",
+          "T74X Item 5",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-PADRAO",
+          "Uma fórmula diferente do padrão"
+        ]
+      ],
+      "cells": {
+        "I2": {
+          "formula": "E2*H2"
+        },
+        "I3": {
+          "formula": "E3*H3"
+        },
+        "I4": {
+          "formula": "E4*H4"
+        },
+        "I5": {
+          "formula": "E5*H5"
+        },
+        "I7": {
+          "formula": "E7*H7"
+        },
+        "I8": {
+          "formula": "E8*H8"
+        },
+        "I9": {
+          "formula": "E9*H9"
+        },
+        "I10": {
+          "formula": "E10*H10"
+        },
+        "I11": {
+          "formula": "E11*H11"
+        },
+        "I12": {
+          "formula": "E12*H12"
+        },
+        "I13": {
+          "formula": "E13*H13"
+        },
+        "I14": {
+          "formula": "E14*H14"
+        },
+        "I15": {
+          "formula": "E15*H15"
+        },
+        "I16": {
+          "formula": "SUM(H16,H16)"
+        }
+      },
+      "hiddenRows": [],
+      "hiddenColumns": [],
+      "merges": [],
+      "members": [
+        {
+          "id": "ORC-AV-MANUAL",
+          "rows": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "originalExpected": {
+            "accepted": 5,
+            "codes": [
+              "MANUAL_VALUE_IN_FORMULA_COLUMN"
+            ],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-CP-MANUAL",
+          "rows": [
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "originalExpected": {
+            "accepted": 5,
+            "codes": [],
+            "canProceed": true
+          }
+        },
+        {
+          "id": "ORC-AV-PADRAO",
+          "rows": [
+            12,
+            13,
+            14,
+            15,
+            16
+          ],
+          "originalExpected": {
+            "accepted": 5,
+            "codes": [
+              "FORMULA_PATTERN_MISMATCH"
+            ],
+            "canProceed": true
+          }
+        }
+      ],
+      "expected": {
+        "accepted": 15,
+        "codes": [
+          "MANUAL_VALUE_IN_FORMULA_COLUMN",
+          "FORMULA_PATTERN_MISMATCH"
+        ],
+        "reasons": [],
+        "conflicts": 0,
+        "canProceed": true,
+        "auditedSum": 3600
+      },
+      "total": 3600
+    },
+    {
+      "kind": "budget",
+      "name": "04_Sem_itens",
+      "title": "Somente linhas desconsideradas",
+      "header": 1,
+      "rows": [
+        [
+          "Código",
+          "Fonte",
+          "Descrição",
+          "Unidade",
+          "Quantidade",
+          "Preço sem BDI",
+          "BDI",
+          "Preço com BDI",
+          "Total do item",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "T6X1",
+          "SINAPI",
+          "T6X Tubo PVC",
+          "m",
+          "",
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-4-VAZ",
+          "quantity: VAZ"
+        ],
+        [
+          "",
+          "SINAPI",
+          "T2X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-EST-1",
+          "Identidade ausente: code"
+        ]
+      ],
+      "cells": {},
+      "hiddenRows": [],
+      "hiddenColumns": [],
+      "merges": [],
+      "members": [
+        {
+          "id": "ORC-4-VAZ",
+          "rows": [
+            2
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "BUDGET_ITEM_EMPTY_OR_ZERO",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-EST-1",
+          "rows": [
+            3
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "STRUCTURAL_ROW",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        }
+      ],
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "STRUCTURAL_ROW",
+          "NO_BUDGET_ITEMS",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false,
+        "auditedSum": 0
+      },
+      "total": 240
+    },
+    {
+      "kind": "budget",
+      "name": "05_Derivados",
+      "title": "BDI derivado zero/negativo e estouro",
+      "header": 1,
+      "rows": [
+        [
+          "Código",
+          "Fonte",
+          "Descrição",
+          "Unidade",
+          "Quantidade",
+          "Preço sem BDI",
+          "BDI",
+          "Preço com BDI",
+          "Total do item",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "T50X1",
+          "SINAPI",
+          "T50X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          100,
+          200,
+          "ORC-DER-ZERO",
+          "Caracterização: BDI derivado ZERO"
+        ],
+        [
+          "T51X1",
+          "SINAPI",
+          "T51X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          90,
+          180,
+          "ORC-DER-NEG",
+          "Caracterização: BDI derivado NEG"
+        ],
+        [
+          "T52X1",
+          "SINAPI",
+          "T52X Estouro",
+          "m",
+          1,
+          1e+308,
+          100,
+          1,
+          1,
+          "ORC-DER-INF",
+          "Derivação impossível por estouro numérico"
+        ],
+        [
+          "T70X1",
+          "SINAPI",
+          "T70X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-AV-BDI-DER",
+          "Aviso usa BDI derivado"
+        ],
+        [
+          "T70X2",
+          "ORSE",
+          "T70X Túbo  PVC",
+          "un",
+          2,
+          100,
+          0.2,
+          130,
+          260,
+          "ORC-AV-BDI-DER",
+          "Aviso usa BDI derivado"
+        ]
+      ],
+      "cells": {},
+      "hiddenRows": [],
+      "hiddenColumns": [],
+      "merges": [],
+      "members": [
+        {
+          "id": "ORC-DER-ZERO",
+          "rows": [
+            2
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [],
+            "canProceed": true,
+            "prices": [
+              100,
+              0,
+              100
+            ]
+          }
+        },
+        {
+          "id": "ORC-DER-NEG",
+          "rows": [
+            3
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [],
+            "canProceed": true,
+            "prices": [
+              100,
+              -0.1,
+              90
+            ]
+          }
+        },
+        {
+          "id": "ORC-DER-INF",
+          "rows": [
+            4
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "codes": [
+              "PRICE_COMPONENT_DERIVATION_IMPOSSIBLE"
+            ],
+            "canProceed": false
+          }
+        },
+        {
+          "id": "ORC-AV-BDI-DER",
+          "rows": [
+            5,
+            6
+          ],
+          "originalExpected": {
+            "accepted": 2,
+            "codes": [
+              "SAME_DESCRIPTION_DIFFERENT_BDI"
+            ],
+            "canProceed": true
+          }
+        }
+      ],
+      "expected": {
+        "accepted": 5,
+        "codes": [
+          "SAME_DESCRIPTION_DIFFERENT_BDI"
+        ],
+        "canProceed": true,
+        "auditedSum": 881
+      },
+      "total": 881,
+      "mapping": {
+        "code": 0,
+        "source": 1,
+        "description": 2,
+        "unit": 3,
+        "quantity": 4,
+        "priceWithoutBdi": 5,
+        "bdi": null,
+        "priceWithBdi": 7,
+        "totalWithBdi": 8
+      }
+    },
+    {
+      "kind": "budget",
+      "name": "06_Controle",
+      "title": "Contraprova limpa e parâmetros globais",
+      "header": 1,
+      "rows": [
+        [
+          "Código",
+          "Fonte",
+          "Descrição",
+          "Unidade",
+          "Quantidade",
+          "Preço sem BDI",
+          "BDI",
+          "Preço com BDI",
+          "Total do item",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "C1",
+          "SINAPI",
+          "Controle A",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "CONTROLE",
+          "Sem ocorrência"
+        ],
+        [
+          "C2",
+          "SINAPI",
+          "Controle B",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "CONTROLE",
+          "Sem ocorrência"
+        ]
+      ],
+      "cells": {},
+      "hiddenRows": [],
+      "hiddenColumns": [],
+      "merges": [],
+      "members": [],
+      "expected": {
+        "accepted": 2,
+        "codes": [],
+        "canProceed": true,
+        "auditedSum": 480
+      },
+      "total": 480
+    },
+    {
+      "kind": "budget",
+      "name": "07_Coluna_oculta",
+      "title": "Coluna A oculta não pode ser mapeada",
+      "header": 1,
+      "rows": [
+        [
+          "Código",
+          "Fonte",
+          "Descrição",
+          "Unidade",
+          "Quantidade",
+          "Preço sem BDI",
+          "BDI",
+          "Preço com BDI",
+          "Total do item",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "T76X1",
+          "SINAPI",
+          "T76X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "ORC-VIS-002",
+          "Coluna obrigatória oculta retira identidade"
+        ]
+      ],
+      "cells": {},
+      "hiddenRows": [],
+      "hiddenColumns": [
+        0
+      ],
+      "merges": [],
+      "members": [
+        {
+          "id": "ORC-VIS-002",
+          "rows": [
+            2
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "codes": [
+              "NO_BUDGET_ITEMS",
+              "STRUCTURAL_ROW",
+              "GENERAL_TOTAL_AUDITED_MISMATCH"
+            ],
+            "canProceed": false
+          }
+        }
+      ],
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "STRUCTURAL_ROW",
+          "NO_BUDGET_ITEMS",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false,
+        "auditedSum": 0
+      },
+      "total": 240
+    },
+    {
+      "kind": "base",
+      "name": "01_Revisao",
+      "title": "Todas as exclusões e contraprovas de base",
+      "header": 2,
+      "rows": [
+        [
+          "Todas as exclusões e contraprovas de base"
+        ],
+        [
+          "Código",
+          "Descrição",
+          "Unidade",
+          "Preço",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "T82X1",
+          "T82X Tubo PVC",
+          "m",
+          100,
+          "BASE-OK-001",
+          "Preço positivo e identidade completa"
+        ],
+        [
+          "T83X1",
+          "T83X Tubo PVC",
+          "m",
+          "",
+          "BASE-VAZ",
+          "Preço ausente"
+        ],
+        [
+          "T84X1",
+          "T84X Tubo PVC",
+          "m",
+          0,
+          "BASE-ZERO",
+          "Preço zero"
+        ],
+        [
+          "T85X1",
+          "T85X Tubo PVC",
+          "m",
+          -1,
+          "BASE-NEG",
+          "Preço negativo"
+        ],
+        [
+          "T86X1",
+          "T86X Tubo PVC",
+          "m",
+          "abc",
+          "BASE-TXT",
+          "Preço não numérico"
+        ],
+        [
+          "T87X1",
+          "T87X Tubo PVC",
+          "m",
+          "",
+          "BASE-ERR",
+          "Erro de fórmula no preço"
+        ],
+        [
+          "T88X1",
+          "T88X Tubo PVC",
+          "m",
+          "",
+          "BASE-CACHE",
+          "Fórmula do preço sem resultado válido"
+        ],
+        [
+          "",
+          "T89X Tubo PVC",
+          "m",
+          100,
+          "BASE-EST-1",
+          "Identidade incompleta"
+        ],
+        [
+          "T90X1",
+          "",
+          "m",
+          100,
+          "BASE-EST-2",
+          "Identidade incompleta"
+        ],
+        [
+          "T91X1",
+          "T91X Tubo PVC",
+          "",
+          100,
+          "BASE-EST-3",
+          "Identidade incompleta"
+        ],
+        [
+          "Código",
+          "Descrição",
+          "Unidade",
+          "Preço",
+          "BASE-CAB",
+          "Cabeçalho repetido"
+        ],
+        [
+          "T92X1",
+          "T92X Tubo PVC",
+          "m",
+          100,
+          "BASE-CAB",
+          "Cabeçalho repetido"
+        ],
+        [
+          "T93X1",
+          "T93X Tubo PVC",
+          "m",
+          100,
+          "BASE-ANTES",
+          "Linha anterior ao cabeçalho"
+        ],
+        [],
+        [
+          "T94X1",
+          "T94X Tubo PVC",
+          "m",
+          100,
+          "BASE-VAZIA",
+          "Linhas vazias não geram revisão"
+        ],
+        [
+          "T95X1",
+          "T95X Tubo PVC",
+          "m",
+          100,
+          "BASE-EQUIV",
+          "Consolidar 2 origens equivalentes"
+        ],
+        [
+          "T95X1",
+          "T95X Túbo PVC",
+          "M",
+          100,
+          "BASE-EQUIV",
+          "Consolidar 2 origens equivalentes"
+        ],
+        [
+          "T98X1",
+          "T98X Tubo PVC",
+          "m",
+          100,
+          "BASE-CP-DESC",
+          "Descrições diferentes não conflitam"
+        ],
+        [
+          "T98X1",
+          "T98X Conexão",
+          "un",
+          101,
+          "BASE-CP-DESC",
+          "Descrições diferentes não conflitam"
+        ],
+        [
+          "T99X1",
+          "T99X Tubo PVC",
+          "m",
+          100,
+          "BASE-VIS",
+          "Conflito somente na linha oculta é ignorado"
+        ],
+        [
+          "T99X1",
+          "T99X Tubo PVC",
+          "un",
+          101,
+          "BASE-VIS",
+          "Conflito somente na linha oculta é ignorado"
+        ]
+      ],
+      "cells": {
+        "D8": {
+          "formula": "1/0",
+          "error": "#DIV/0!"
+        },
+        "D9": {
+          "formula": "1+1"
+        }
+      },
+      "hiddenRows": [
+        22
+      ],
+      "hiddenColumns": [],
+      "merges": [
+        "A1:D1"
+      ],
+      "members": [
+        {
+          "id": "BASE-OK-001",
+          "rows": [
+            3
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "reasons": [],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-VAZ",
+          "rows": [
+            4
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Preço ausente"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-ZERO",
+          "rows": [
+            5
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Preço zero"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-NEG",
+          "rows": [
+            6
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Preço negativo"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-TXT",
+          "rows": [
+            7
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Preço não numérico"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-ERR",
+          "rows": [
+            8
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Erro de fórmula no preço"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-CACHE",
+          "rows": [
+            9
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Fórmula do preço sem resultado válido"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-EST-1",
+          "rows": [
+            10
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Linha estrutural"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-EST-2",
+          "rows": [
+            11
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Linha estrutural"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-EST-3",
+          "rows": [
+            12
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Linha estrutural"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-CAB",
+          "rows": [
+            13,
+            14
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "reasons": [
+              "Cabeçalho repetido"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-ANTES",
+          "rows": [
+            15
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "reasons": [
+              "Antes do cabeçalho"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-VAZIA",
+          "rows": [
+            16,
+            17
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "reasons": [],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-EQUIV",
+          "rows": [
+            18,
+            19
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "reasons": [],
+            "conflicts": 0,
+            "origins": 2
+          }
+        },
+        {
+          "id": "BASE-CP-DESC",
+          "rows": [
+            20,
+            21
+          ],
+          "originalExpected": {
+            "accepted": 2,
+            "reasons": [],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-VIS",
+          "rows": [
+            22,
+            23
+          ],
+          "originalExpected": {
+            "accepted": 1,
+            "reasons": [],
+            "conflicts": 0
+          }
+        }
+      ],
+      "expected": {
+        "accepted": 8,
+        "codes": [],
+        "reasons": [
+          "Preço ausente",
+          "Preço zero",
+          "Preço negativo",
+          "Preço não numérico",
+          "Erro de fórmula no preço",
+          "Fórmula do preço sem resultado válido",
+          "Linha estrutural",
+          "Linha estrutural",
+          "Linha estrutural",
+          "Cabeçalho repetido",
+          "Antes do cabeçalho"
+        ],
+        "conflicts": 0,
+        "canProceed": true
+      },
+      "total": 0
+    },
+    {
+      "kind": "base",
+      "name": "02_Conflitos",
+      "title": "Conflitos de preço e unidade",
+      "header": 1,
+      "rows": [
+        [
+          "Código",
+          "Descrição",
+          "Unidade",
+          "Preço",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "T96X1",
+          "T96X Tubo PVC",
+          "m",
+          100,
+          "BASE-CON-PRECO",
+          "Duas referências com preço diferente"
+        ],
+        [
+          "T96X1",
+          "T96X Tubo PVC",
+          "m",
+          101,
+          "BASE-CON-PRECO",
+          "Duas referências com preço diferente"
+        ],
+        [
+          "T97X1",
+          "T97X Tubo PVC",
+          "m",
+          100,
+          "BASE-CON-UNID",
+          "Duas referências com unidade diferente"
+        ],
+        [
+          "T97X1",
+          "T97X Tubo PVC",
+          "un",
+          100,
+          "BASE-CON-UNID",
+          "Duas referências com unidade diferente"
+        ]
+      ],
+      "cells": {},
+      "hiddenRows": [],
+      "hiddenColumns": [],
+      "merges": [],
+      "members": [
+        {
+          "id": "BASE-CON-PRECO",
+          "rows": [
+            2,
+            3
+          ],
+          "originalExpected": {
+            "accepted": 2,
+            "reasons": [],
+            "conflicts": 1
+          }
+        },
+        {
+          "id": "BASE-CON-UNID",
+          "rows": [
+            4,
+            5
+          ],
+          "originalExpected": {
+            "accepted": 2,
+            "reasons": [],
+            "conflicts": 1
+          }
+        }
+      ],
+      "expected": {
+        "accepted": 4,
+        "codes": [],
+        "reasons": [],
+        "conflicts": 2,
+        "canProceed": true
+      },
+      "total": 0
+    },
+    {
+      "kind": "base",
+      "name": "03_Sem_validos",
+      "title": "Todos os preços excluídos",
+      "header": 1,
+      "rows": [
+        [
+          "Código",
+          "Descrição",
+          "Unidade",
+          "Preço",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "T83X1",
+          "T83X Tubo PVC",
+          "m",
+          "",
+          "BASE-VAZ",
+          "Preço ausente"
+        ],
+        [
+          "T84X1",
+          "T84X Tubo PVC",
+          "m",
+          0,
+          "BASE-ZERO",
+          "Preço zero"
+        ],
+        [
+          "T85X1",
+          "T85X Tubo PVC",
+          "m",
+          -1,
+          "BASE-NEG",
+          "Preço negativo"
+        ],
+        [
+          "T86X1",
+          "T86X Tubo PVC",
+          "m",
+          "abc",
+          "BASE-TXT",
+          "Preço não numérico"
+        ],
+        [
+          "T87X1",
+          "T87X Tubo PVC",
+          "m",
+          "",
+          "BASE-ERR",
+          "Erro de fórmula no preço"
+        ],
+        [
+          "T88X1",
+          "T88X Tubo PVC",
+          "m",
+          "",
+          "BASE-CACHE",
+          "Fórmula do preço sem resultado válido"
+        ],
+        [
+          "",
+          "T89X Tubo PVC",
+          "m",
+          100,
+          "BASE-EST-1",
+          "Identidade incompleta"
+        ],
+        [
+          "T90X1",
+          "",
+          "m",
+          100,
+          "BASE-EST-2",
+          "Identidade incompleta"
+        ],
+        [
+          "T91X1",
+          "T91X Tubo PVC",
+          "",
+          100,
+          "BASE-EST-3",
+          "Identidade incompleta"
+        ]
+      ],
+      "cells": {
+        "D6": {
+          "formula": "1/0",
+          "error": "#DIV/0!"
+        },
+        "D7": {
+          "formula": "1+1"
+        }
+      },
+      "hiddenRows": [],
+      "hiddenColumns": [],
+      "merges": [],
+      "members": [
+        {
+          "id": "BASE-VAZ",
+          "rows": [
+            2
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Preço ausente"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-ZERO",
+          "rows": [
+            3
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Preço zero"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-NEG",
+          "rows": [
+            4
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Preço negativo"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-TXT",
+          "rows": [
+            5
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Preço não numérico"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-ERR",
+          "rows": [
+            6
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Erro de fórmula no preço"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-CACHE",
+          "rows": [
+            7
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Fórmula do preço sem resultado válido"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-EST-1",
+          "rows": [
+            8
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Linha estrutural"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-EST-2",
+          "rows": [
+            9
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Linha estrutural"
+            ],
+            "conflicts": 0
+          }
+        },
+        {
+          "id": "BASE-EST-3",
+          "rows": [
+            10
+          ],
+          "originalExpected": {
+            "accepted": 0,
+            "reasons": [
+              "Linha estrutural"
+            ],
+            "conflicts": 0
+          }
+        }
+      ],
+      "expected": {
+        "accepted": 0,
+        "codes": [],
+        "reasons": [
+          "Preço ausente",
+          "Preço zero",
+          "Preço negativo",
+          "Preço não numérico",
+          "Erro de fórmula no preço",
+          "Fórmula do preço sem resultado válido",
+          "Linha estrutural",
+          "Linha estrutural",
+          "Linha estrutural"
+        ],
+        "conflicts": 0,
+        "canProceed": true
+      },
+      "total": 0
+    },
+    {
+      "kind": "comparison",
+      "name": "01_Comparacao",
+      "title": "Resultados de comparação e contraprovas",
+      "header": 1,
+      "rows": [
+        [
+          "Código",
+          "Fonte",
+          "Descrição",
+          "Unidade",
+          "Quantidade",
+          "Preço sem BDI",
+          "BDI",
+          "Preço com BDI",
+          "Total do item",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "0001",
+          "SINAPI",
+          "Descrição orçamento",
+          "m",
+          1,
+          50,
+          0.2,
+          60,
+          60,
+          "CMP-FLUXO",
+          "Quatro resultados e ABC 50/80/95/100"
+        ],
+        [
+          "002.0",
+          "SINAPI",
+          "Conexão",
+          "un",
+          1,
+          30,
+          0.2,
+          36,
+          36,
+          "CMP-FLUXO",
+          "Quatro resultados e ABC 50/80/95/100"
+        ],
+        [
+          "A3",
+          "SINAPI",
+          "Areia",
+          "m3",
+          1,
+          15,
+          0.2,
+          18,
+          18,
+          "CMP-FLUXO",
+          "Quatro resultados e ABC 50/80/95/100"
+        ],
+        [
+          "404",
+          "SINAPI",
+          "Ausente",
+          "m",
+          1,
+          5,
+          0.2,
+          6,
+          6,
+          "CMP-FLUXO",
+          "Quatro resultados e ABC 50/80/95/100"
+        ],
+        [
+          "T101X1",
+          "SINAPI",
+          "T101X Fonte A",
+          "m",
+          1,
+          50,
+          0.2,
+          60,
+          60,
+          "CMP-CRUZA-FONTES",
+          "Item cruza 50% e barras usam o total do filtro"
+        ],
+        [
+          "T101X2",
+          "ORSE",
+          "T101X Fonte B",
+          "m",
+          1,
+          33.333333,
+          0.2,
+          40,
+          40,
+          "CMP-CRUZA-FONTES",
+          "Item cruza 50% e barras usam o total do filtro"
+        ],
+        [
+          "T102X1",
+          "SINAPI",
+          "T102X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "CMP-IGUAL",
+          "Limite absoluto de comparação"
+        ],
+        [
+          "T103X1",
+          "SINAPI",
+          "T103X Tubo PVC",
+          "m",
+          2,
+          100.01,
+          0.2,
+          120.012,
+          240.024,
+          "CMP-LIM",
+          "Limite absoluto de comparação"
+        ],
+        [
+          "T104X1",
+          "SINAPI",
+          "T104X Tubo PVC",
+          "m",
+          2,
+          100.009,
+          0.2,
+          120.01079999999999,
+          240.02159999999998,
+          "CMP-MENOS",
+          "Limite absoluto de comparação"
+        ],
+        [
+          "T105X1",
+          "SINAPI",
+          "T105X Tubo PVC",
+          "m",
+          2,
+          100.011,
+          0.2,
+          120.01319999999998,
+          240.02639999999997,
+          "CMP-MAIS",
+          "Limite absoluto de comparação"
+        ],
+        [
+          "T106X1",
+          "SINAPI",
+          "T106X Tubo PVC",
+          "m",
+          2,
+          99,
+          0.2,
+          118.8,
+          237.6,
+          "CMP-ABAIXO",
+          "Limite absoluto de comparação"
+        ],
+        [
+          "T107X1",
+          "SINAPI",
+          "T107X Outra",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "CMP-UNICO",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T108X1",
+          "SINAPI",
+          "T108X Túbo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "CMP-MULTI",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T109X1",
+          "SINAPI",
+          "T109X Ausente",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "CMP-MULTI-AUS",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T110X1",
+          "SINAPI",
+          "T110X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "CMP-SEM-DESC",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T111X1",
+          "ORSE",
+          "T111X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "CMP-FONTE",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T112X1",
+          "ORSE",
+          "T112X Outra",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "CMP-ORSE-UNICO",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T113X1",
+          "ORSE",
+          "T113X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "CMP-ORSE-MULTI",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T114X1",
+          "ORSE",
+          "T114X Tubo PVC",
+          "m",
+          2,
+          100,
+          0.2,
+          120,
+          240,
+          "CMP-ORSE-AUS",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ]
+      ],
+      "cells": {},
+      "hiddenRows": [],
+      "hiddenColumns": [],
+      "merges": [],
+      "members": [
+        {
+          "id": "CMP-FLUXO",
+          "rows": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "originalExpected": {
+            "statuses": [
+              "abaixo",
+              "igual",
+              "acima",
+              "nao-encontrado"
+            ],
+            "differences": [
+              -10,
+              0,
+              5,
+              null
+            ],
+            "total": 120,
+            "abc": [
+              "A",
+              "B",
+              "C",
+              "C"
+            ]
+          }
+        },
+        {
+          "id": "CMP-CRUZA-FONTES",
+          "rows": [
+            6,
+            7
+          ],
+          "originalExpected": {
+            "statuses": [
+              "igual",
+              "nao-encontrado"
+            ],
+            "total": 100,
+            "abc": [
+              "B",
+              "C"
+            ]
+          }
+        },
+        {
+          "id": "CMP-IGUAL",
+          "rows": [
+            8
+          ],
+          "originalExpected": {
+            "statuses": [
+              "igual"
+            ]
+          }
+        },
+        {
+          "id": "CMP-LIM",
+          "rows": [
+            9
+          ],
+          "originalExpected": {
+            "statuses": [
+              "igual"
+            ]
+          }
+        },
+        {
+          "id": "CMP-MENOS",
+          "rows": [
+            10
+          ],
+          "originalExpected": {
+            "statuses": [
+              "igual"
+            ]
+          }
+        },
+        {
+          "id": "CMP-MAIS",
+          "rows": [
+            11
+          ],
+          "originalExpected": {
+            "statuses": [
+              "acima"
+            ]
+          }
+        },
+        {
+          "id": "CMP-ABAIXO",
+          "rows": [
+            12
+          ],
+          "originalExpected": {
+            "statuses": [
+              "abaixo"
+            ]
+          }
+        },
+        {
+          "id": "CMP-UNICO",
+          "rows": [
+            13
+          ],
+          "originalExpected": {
+            "statuses": [
+              "igual"
+            ]
+          }
+        },
+        {
+          "id": "CMP-MULTI",
+          "rows": [
+            14
+          ],
+          "originalExpected": {
+            "statuses": [
+              "igual"
+            ]
+          }
+        },
+        {
+          "id": "CMP-MULTI-AUS",
+          "rows": [
+            15
+          ],
+          "originalExpected": {
+            "statuses": [
+              "nao-encontrado"
+            ]
+          }
+        },
+        {
+          "id": "CMP-SEM-DESC",
+          "rows": [
+            16
+          ],
+          "originalExpected": {
+            "statuses": [
+              "nao-encontrado"
+            ]
+          }
+        },
+        {
+          "id": "CMP-FONTE",
+          "rows": [
+            17
+          ],
+          "originalExpected": {
+            "statuses": [
+              "nao-encontrado"
+            ]
+          }
+        },
+        {
+          "id": "CMP-ORSE-UNICO",
+          "rows": [
+            18
+          ],
+          "originalExpected": {
+            "statuses": [
+              "igual"
+            ]
+          }
+        },
+        {
+          "id": "CMP-ORSE-MULTI",
+          "rows": [
+            19
+          ],
+          "originalExpected": {
+            "statuses": [
+              "igual"
+            ]
+          }
+        },
+        {
+          "id": "CMP-ORSE-AUS",
+          "rows": [
+            20
+          ],
+          "originalExpected": {
+            "statuses": [
+              "nao-encontrado"
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "statuses": [
+          "abaixo",
+          "igual",
+          "acima",
+          "nao-encontrado",
+          "igual",
+          "nao-encontrado",
+          "igual",
+          "igual",
+          "igual",
+          "acima",
+          "abaixo",
+          "igual",
+          "igual",
+          "nao-encontrado",
+          "nao-encontrado",
+          "nao-encontrado",
+          "igual",
+          "igual",
+          "nao-encontrado"
+        ],
+        "total": 3337.67
+      },
+      "total": 3337.67,
+      "tolerance": 0.01
+    },
+    {
+      "kind": "comparison-base",
+      "name": "SINAPI",
+      "source": "SINAPI",
+      "rows": [
+        [
+          "Código",
+          "Descrição",
+          "Unidade",
+          "Preço",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "0001",
+          "Descrição base",
+          "un",
+          60,
+          "CMP-FLUXO",
+          "Quatro resultados e ABC 50/80/95/100"
+        ],
+        [
+          "002.0",
+          "Conexão",
+          "un",
+          30,
+          "CMP-FLUXO",
+          "Quatro resultados e ABC 50/80/95/100"
+        ],
+        [
+          "A3",
+          "Areia",
+          "m3",
+          10,
+          "CMP-FLUXO",
+          "Quatro resultados e ABC 50/80/95/100"
+        ],
+        [
+          "T101X1",
+          "T101X Fonte A",
+          "m",
+          50,
+          "CMP-CRUZA-FONTES",
+          "Item cruza 50% e barras usam o total do filtro"
+        ],
+        [
+          "T102X1",
+          "T102X Tubo PVC",
+          "m",
+          100,
+          "CMP-IGUAL",
+          "Limite absoluto de comparação"
+        ],
+        [
+          "T103X1",
+          "T103X Tubo PVC",
+          "m",
+          100,
+          "CMP-LIM",
+          "Limite absoluto de comparação"
+        ],
+        [
+          "T104X1",
+          "T104X Tubo PVC",
+          "m",
+          100,
+          "CMP-MENOS",
+          "Limite absoluto de comparação"
+        ],
+        [
+          "T105X1",
+          "T105X Tubo PVC",
+          "m",
+          100,
+          "CMP-MAIS",
+          "Limite absoluto de comparação"
+        ],
+        [
+          "T106X1",
+          "T106X Tubo PVC",
+          "m",
+          100,
+          "CMP-ABAIXO",
+          "Limite absoluto de comparação"
+        ],
+        [
+          "T107X1",
+          "T107X Tubo PVC",
+          "un",
+          100,
+          "CMP-UNICO",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T108X1",
+          "T108X Tubo PVC",
+          "m",
+          100,
+          "CMP-MULTI",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T108X1",
+          "T108X Outro",
+          "m",
+          90,
+          "CMP-MULTI",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T109X1",
+          "T109X Tubo PVC",
+          "m",
+          100,
+          "CMP-MULTI-AUS",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T109X1",
+          "T109X Outro",
+          "m",
+          90,
+          "CMP-MULTI-AUS",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T110X2",
+          "T110X Tubo PVC",
+          "m",
+          100,
+          "CMP-SEM-DESC",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T111X1",
+          "T111X Tubo PVC",
+          "m",
+          100,
+          "CMP-FONTE",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ]
+      ],
+      "header": 1,
+      "cells": {},
+      "hiddenRows": [],
+      "hiddenColumns": [],
+      "merges": [],
+      "members": []
+    },
+    {
+      "kind": "comparison-base",
+      "name": "ORSE",
+      "source": "ORSE",
+      "rows": [
+        [
+          "Código",
+          "Descrição",
+          "Unidade",
+          "Preço",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "T112X1",
+          "T112X Tubo PVC",
+          "un",
+          100,
+          "CMP-ORSE-UNICO",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T113X1",
+          "T113X Tubo PVC",
+          "m",
+          100,
+          "CMP-ORSE-MULTI",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T113X1",
+          "T113X Outro",
+          "m",
+          90,
+          "CMP-ORSE-MULTI",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ],
+        [
+          "T114X2",
+          "T114X Tubo PVC",
+          "m",
+          100,
+          "CMP-ORSE-AUS",
+          "Busca restrita a fonte/código; descrição resolve múltiplos"
+        ]
+      ],
+      "header": 1,
+      "cells": {},
+      "hiddenRows": [],
+      "hiddenColumns": [],
+      "merges": [],
+      "members": []
+    },
+    {
+      "kind": "comparison",
+      "name": "02_ABC_limites",
+      "title": "Quatro resultados e ABC 50/80/95/100",
+      "header": 1,
+      "rows": [
+        [
+          "Código",
+          "Fonte",
+          "Descrição",
+          "Unidade",
+          "Quantidade",
+          "Preço sem BDI",
+          "BDI",
+          "Preço com BDI",
+          "Total do item",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "0001",
+          "SINAPI",
+          "Descrição orçamento",
+          "m",
+          1,
+          50,
+          0.2,
+          60,
+          60,
+          "CMP-FLUXO",
+          "Quatro resultados e ABC 50/80/95/100"
+        ],
+        [
+          "002.0",
+          "SINAPI",
+          "Conexão",
+          "un",
+          1,
+          30,
+          0.2,
+          36,
+          36,
+          "CMP-FLUXO",
+          "Quatro resultados e ABC 50/80/95/100"
+        ],
+        [
+          "A3",
+          "SINAPI",
+          "Areia",
+          "m3",
+          1,
+          15,
+          0.2,
+          18,
+          18,
+          "CMP-FLUXO",
+          "Quatro resultados e ABC 50/80/95/100"
+        ],
+        [
+          "404",
+          "SINAPI",
+          "Ausente",
+          "m",
+          1,
+          5,
+          0.2,
+          6,
+          6,
+          "CMP-FLUXO",
+          "Quatro resultados e ABC 50/80/95/100"
+        ]
+      ],
+      "cells": {},
+      "hiddenRows": [],
+      "hiddenColumns": [],
+      "merges": [],
+      "members": [
+        {
+          "id": "CMP-FLUXO",
+          "rows": [
+            2,
+            3,
+            4,
+            5
+          ],
+          "originalExpected": {
+            "statuses": [
+              "abaixo",
+              "igual",
+              "acima",
+              "nao-encontrado"
+            ],
+            "differences": [
+              -10,
+              0,
+              5,
+              null
+            ],
+            "total": 120,
+            "abc": [
+              "A",
+              "B",
+              "C",
+              "C"
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "statuses": [
+          "abaixo",
+          "igual",
+          "acima",
+          "nao-encontrado"
+        ],
+        "differences": [
+          -10,
+          0,
+          5,
+          null
+        ],
+        "total": 120,
+        "abc": [
+          "A",
+          "B",
+          "C",
+          "C"
+        ]
+      },
+      "total": 120,
+      "tolerance": 0
+    },
+    {
+      "kind": "comparison",
+      "name": "03_ABC_cruzamento",
+      "title": "Item cruza 50% e barras usam o total do filtro",
+      "header": 1,
+      "rows": [
+        [
+          "Código",
+          "Fonte",
+          "Descrição",
+          "Unidade",
+          "Quantidade",
+          "Preço sem BDI",
+          "BDI",
+          "Preço com BDI",
+          "Total do item",
+          "Caso",
+          "Objetivo"
+        ],
+        [
+          "T101X1",
+          "SINAPI",
+          "T101X Fonte A",
+          "m",
+          1,
+          50,
+          0.2,
+          60,
+          60,
+          "CMP-CRUZA-FONTES",
+          "Item cruza 50% e barras usam o total do filtro"
+        ],
+        [
+          "T101X2",
+          "ORSE",
+          "T101X Fonte B",
+          "m",
+          1,
+          33.333333,
+          0.2,
+          40,
+          40,
+          "CMP-CRUZA-FONTES",
+          "Item cruza 50% e barras usam o total do filtro"
+        ]
+      ],
+      "cells": {},
+      "hiddenRows": [],
+      "hiddenColumns": [],
+      "merges": [],
+      "members": [
+        {
+          "id": "CMP-CRUZA-FONTES",
+          "rows": [
+            2,
+            3
+          ],
+          "originalExpected": {
+            "statuses": [
+              "igual",
+              "nao-encontrado"
+            ],
+            "total": 100,
+            "abc": [
+              "B",
+              "C"
+            ]
+          }
+        }
+      ],
+      "expected": {
+        "statuses": [
+          "igual",
+          "nao-encontrado"
+        ],
+        "total": 100,
+        "abc": [
+          "B",
+          "C"
+        ]
+      },
+      "total": 100,
+      "tolerance": 0
+    }
+  ],
+  "runs": [
+    {
+      "id": "CTRL-OK",
+      "sheet": "06_Controle",
+      "total": 480,
+      "covers": [
+        "ORC-OK-001"
+      ],
+      "codes": [],
+      "canProceed": true
+    },
+    {
+      "id": "CTRL-DER-SEM",
+      "sheet": "06_Controle",
+      "total": 480,
+      "mapping": {
+        "code": 0,
+        "source": 1,
+        "description": 2,
+        "unit": 3,
+        "quantity": 4,
+        "priceWithoutBdi": null,
+        "bdi": 6,
+        "priceWithBdi": 7,
+        "totalWithBdi": 8
+      },
+      "covers": [
+        "ORC-DER-SEM"
+      ],
+      "codes": [],
+      "canProceed": true
+    },
+    {
+      "id": "CTRL-DER-COM",
+      "sheet": "06_Controle",
+      "total": 480,
+      "mapping": {
+        "code": 0,
+        "source": 1,
+        "description": 2,
+        "unit": 3,
+        "quantity": 4,
+        "priceWithoutBdi": 5,
+        "bdi": 6,
+        "priceWithBdi": null,
+        "totalWithBdi": 8
+      },
+      "covers": [
+        "ORC-DER-COM"
+      ],
+      "codes": [],
+      "canProceed": true
+    },
+    {
+      "id": "CTRL-DER-BDI",
+      "sheet": "06_Controle",
+      "total": 480,
+      "mapping": {
+        "code": 0,
+        "source": 1,
+        "description": 2,
+        "unit": 3,
+        "quantity": 4,
+        "priceWithoutBdi": 5,
+        "bdi": null,
+        "priceWithBdi": 7,
+        "totalWithBdi": 8
+      },
+      "covers": [
+        "ORC-DER-BDI"
+      ],
+      "codes": [],
+      "canProceed": true
+    },
+    {
+      "id": "CTRL-TOT-VAZ",
+      "sheet": "06_Controle",
+      "total": "",
+      "covers": [
+        "ORC-TOT-VAZ"
+      ],
+      "codes": [
+        "GENERAL_TOTAL_INVALID"
+      ],
+      "canProceed": false,
+      "prerequisite": true
+    },
+    {
+      "id": "CTRL-TOT-TXT",
+      "sheet": "06_Controle",
+      "total": "abc",
+      "covers": [
+        "ORC-TOT-TXT"
+      ],
+      "codes": [
+        "GENERAL_TOTAL_INVALID"
+      ],
+      "canProceed": false,
+      "prerequisite": true
+    },
+    {
+      "id": "CTRL-TOT-ZERO",
+      "sheet": "06_Controle",
+      "total": 0,
+      "covers": [
+        "ORC-TOT-ZERO"
+      ],
+      "codes": [
+        "NON_POSITIVE_VALUE",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": true,
+      "prerequisite": false
+    },
+    {
+      "id": "CTRL-TOT-NEG",
+      "sheet": "06_Controle",
+      "total": -1,
+      "covers": [
+        "ORC-TOT-NEG"
+      ],
+      "codes": [
+        "NON_POSITIVE_VALUE",
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": true,
+      "prerequisite": false
+    },
+    {
+      "id": "CTRL-ORC-LIM-GERAL",
+      "sheet": "06_Controle",
+      "total": 480.02,
+      "covers": [
+        "ORC-LIM-GERAL"
+      ],
+      "codes": [],
+      "canProceed": true
+    },
+    {
+      "id": "CTRL-ORC-LIM-GERAL-FORA",
+      "sheet": "06_Controle",
+      "total": 480.03,
+      "covers": [
+        "ORC-LIM-GERAL-FORA"
+      ],
+      "codes": [
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": true
+    },
+    {
+      "id": "CTRL-ORC-ERR-GERAL",
+      "sheet": "06_Controle",
+      "total": 481,
+      "covers": [
+        "ORC-ERR-GERAL"
+      ],
+      "codes": [
+        "GENERAL_TOTAL_AUDITED_MISMATCH"
+      ],
+      "canProceed": true
+    },
+    {
+      "id": "CTRL-MAP-001",
+      "sheet": "06_Controle",
+      "total": 480,
+      "mapping": {
+        "code": 0,
+        "source": 1,
+        "description": 2,
+        "unit": 3,
+        "quantity": 4,
+        "priceWithoutBdi": 5,
+        "bdi": null,
+        "priceWithBdi": null,
+        "totalWithBdi": 8
+      },
+      "covers": [
+        "ORC-MAP-001"
+      ],
+      "codes": [
+        "PRICE_COMPONENTS_INSUFFICIENT"
+      ],
+      "canProceed": false,
+      "prerequisite": true
+    },
+    {
+      "id": "CTRL-MAP-002",
+      "sheet": "06_Controle",
+      "total": 480,
+      "mapping": {
+        "code": 0,
+        "source": 1,
+        "description": 2,
+        "unit": 3,
+        "quantity": 4,
+        "priceWithoutBdi": 5,
+        "bdi": 6,
+        "priceWithBdi": 7,
+        "totalWithBdi": null
+      },
+      "covers": [
+        "ORC-MAP-002"
+      ],
+      "codes": [
+        "ITEM_TOTAL_COLUMN_MISSING"
+      ],
+      "canProceed": false,
+      "prerequisite": true
+    },
+    {
+      "id": "DER-ESTOURO",
+      "sheet": "05_Derivados",
+      "total": 881,
+      "mapping": {
+        "code": 0,
+        "source": 1,
+        "description": 2,
+        "unit": 3,
+        "quantity": 4,
+        "priceWithoutBdi": 5,
+        "bdi": 6,
+        "priceWithBdi": null,
+        "totalWithBdi": 8
+      },
+      "covers": [
+        "ORC-DER-INF"
+      ],
+      "codes": [
+        "PRICE_COMPONENT_DERIVATION_IMPOSSIBLE",
+        "ITEM_TOTAL_MISMATCH",
+        "ITEM_TOTAL_MISMATCH",
+        "ITEM_TOTAL_MISMATCH"
+      ],
+      "canProceed": false
+    }
+  ],
+  "coverage": [
+    {
+      "id": "ORC-OK-001",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            4
+          ]
+        }
+      ],
+      "runs": [
+        "CTRL-OK"
+      ]
+    },
+    {
+      "id": "ORC-EST-1",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            5
+          ]
+        },
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "04_Sem_itens",
+          "rows": [
+            3
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-EST-2",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            6
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-EST-3",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            7
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-EST-4",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            8
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-4-VAZ",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            9
+          ]
+        },
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "04_Sem_itens",
+          "rows": [
+            2
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-4-ZERO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            10
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-4-NEG",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            2
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-4-TXT",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            3
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-4-ERR",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            4
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-4-CACHE",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            5
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-5-VAZ",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            11
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-5-ZERO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            12
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-5-NEG",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            6
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-5-TXT",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            7
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-5-ERR",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            8
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-5-CACHE",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            9
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-6-VAZ",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            13
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-6-ZERO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            14
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-6-NEG",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            10
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-6-TXT",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            11
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-6-ERR",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            12
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-6-CACHE",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            13
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-7-VAZ",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            15
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-7-ZERO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            16
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-7-NEG",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            14
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-7-TXT",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            15
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-7-ERR",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            16
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-7-CACHE",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            17
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-8-VAZ",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            17
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-8-ZERO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            18
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-8-NEG",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            18
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-8-TXT",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            19
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-8-ERR",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            20
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-8-CACHE",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "02_Impedimentos",
+          "rows": [
+            21
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-EXC-001",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            19
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-EXC-002",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            20
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-EXC-003",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            21,
+            22
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-EXC-004",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            23,
+            24
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-EXC-005",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            25
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-TOT-VAZ",
+      "locations": [],
+      "runs": [
+        "CTRL-TOT-VAZ"
+      ]
+    },
+    {
+      "id": "ORC-TOT-TXT",
+      "locations": [],
+      "runs": [
+        "CTRL-TOT-TXT"
+      ]
+    },
+    {
+      "id": "ORC-TOT-ZERO",
+      "locations": [],
+      "runs": [
+        "CTRL-TOT-ZERO"
+      ]
+    },
+    {
+      "id": "ORC-TOT-NEG",
+      "locations": [],
+      "runs": [
+        "CTRL-TOT-NEG"
+      ]
+    },
+    {
+      "id": "ORC-MAP-001",
+      "locations": [],
+      "runs": [
+        "CTRL-MAP-001"
+      ]
+    },
+    {
+      "id": "ORC-MAP-002",
+      "locations": [],
+      "runs": [
+        "CTRL-MAP-002"
+      ]
+    },
+    {
+      "id": "ORC-DER-SEM",
+      "locations": [],
+      "runs": [
+        "CTRL-DER-SEM"
+      ]
+    },
+    {
+      "id": "ORC-DER-COM",
+      "locations": [],
+      "runs": [
+        "CTRL-DER-COM"
+      ]
+    },
+    {
+      "id": "ORC-DER-BDI",
+      "locations": [],
+      "runs": [
+        "CTRL-DER-BDI"
+      ]
+    },
+    {
+      "id": "ORC-DER-ZERO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "05_Derivados",
+          "rows": [
+            2
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-DER-NEG",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "05_Derivados",
+          "rows": [
+            3
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-DER-INF",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "05_Derivados",
+          "rows": [
+            4
+          ]
+        }
+      ],
+      "runs": [
+        "DER-ESTOURO"
+      ]
+    },
+    {
+      "id": "ORC-ERR-BDI",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            26
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-ERR-ITEM",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            27
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-ERR-GERAL",
+      "locations": [],
+      "runs": [
+        "CTRL-ORC-ERR-GERAL"
+      ]
+    },
+    {
+      "id": "ORC-ERR-COMP",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            28,
+            29
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-ROUND-MEIO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            30
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-ROUND-ABAIXO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            31
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-ROUND-ACIMA",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            32
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-LIM-DENTRO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            33
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-LIM-IGUAL",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            34
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-LIM-FORA",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            35
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-LIM-GERAL",
+      "locations": [],
+      "runs": [
+        "CTRL-ORC-LIM-GERAL"
+      ]
+    },
+    {
+      "id": "ORC-LIM-GERAL-FORA",
+      "locations": [],
+      "runs": [
+        "CTRL-ORC-LIM-GERAL-FORA"
+      ]
+    },
+    {
+      "id": "ORC-AV-DUP",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            36,
+            37
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-CP-DUP",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            38,
+            39,
+            40
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-AV-PRECO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            41,
+            42
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-CP-PRECO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            43,
+            44
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-AV-BDI",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            45,
+            46
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-AV-BDI-DER",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "05_Derivados",
+          "rows": [
+            5,
+            6
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-CP-BDI",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            47,
+            48,
+            49
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-AV-MANUAL",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "03_Formulas",
+          "rows": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-CP-MANUAL",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "03_Formulas",
+          "rows": [
+            7,
+            8,
+            9,
+            10,
+            11
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-AV-PADRAO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "03_Formulas",
+          "rows": [
+            12,
+            13,
+            14,
+            15,
+            16
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-VIS-001",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            50,
+            51
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-VIS-002",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "07_Coluna_oculta",
+          "rows": [
+            2
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-VIS-ANTES",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            52
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-VIS-INTERVALO",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            53,
+            54,
+            55
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-VIS-MESCLA",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            56
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-VIS-FORMULA",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            57,
+            58
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "ORC-AV-GRUPOS",
+      "locations": [
+        {
+          "file": "orcamento-agrupado.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-OK-001",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            3
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-VAZ",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            4
+          ]
+        },
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "03_Sem_validos",
+          "rows": [
+            2
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-ZERO",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            5
+          ]
+        },
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "03_Sem_validos",
+          "rows": [
+            3
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-NEG",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            6
+          ]
+        },
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "03_Sem_validos",
+          "rows": [
+            4
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-TXT",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            7
+          ]
+        },
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "03_Sem_validos",
+          "rows": [
+            5
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-ERR",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            8
+          ]
+        },
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "03_Sem_validos",
+          "rows": [
+            6
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-CACHE",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            9
+          ]
+        },
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "03_Sem_validos",
+          "rows": [
+            7
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-EST-1",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            10
+          ]
+        },
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "03_Sem_validos",
+          "rows": [
+            8
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-EST-2",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            11
+          ]
+        },
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "03_Sem_validos",
+          "rows": [
+            9
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-EST-3",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            12
+          ]
+        },
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "03_Sem_validos",
+          "rows": [
+            10
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-CAB",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            13,
+            14
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-ANTES",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            15
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-VAZIA",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            16,
+            17
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-EQUIV",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            18,
+            19
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-CON-PRECO",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "02_Conflitos",
+          "rows": [
+            2,
+            3
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-CON-UNID",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "02_Conflitos",
+          "rows": [
+            4,
+            5
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-CP-DESC",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            20,
+            21
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "BASE-VIS",
+      "locations": [
+        {
+          "file": "bases-agrupadas.xlsx",
+          "sheet": "01_Revisao",
+          "rows": [
+            22,
+            23
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-FLUXO",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "02_ABC_limites",
+          "rows": [
+            2,
+            3,
+            4,
+            5
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-CRUZA-FONTES",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            6,
+            7
+          ]
+        },
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "03_ABC_cruzamento",
+          "rows": [
+            2,
+            3
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-IGUAL",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            8
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-LIM",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            9
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-MENOS",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            10
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-MAIS",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            11
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-ABAIXO",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            12
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-UNICO",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            13
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-MULTI",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            14
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-MULTI-AUS",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            15
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-SEM-DESC",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            16
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-FONTE",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            17
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-ORSE-UNICO",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            18
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-ORSE-MULTI",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            19
+          ]
+        }
+      ],
+      "runs": []
+    },
+    {
+      "id": "CMP-ORSE-AUS",
+      "locations": [
+        {
+          "file": "comparacao-agrupada.xlsx",
+          "sheet": "01_Comparacao",
+          "rows": [
+            20
+          ]
+        }
+      ],
+      "runs": []
+    }
+  ]
+}

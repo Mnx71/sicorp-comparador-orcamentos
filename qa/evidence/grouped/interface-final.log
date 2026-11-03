@@ -1,0 +1,33 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> sicorp-comparador-orcamentos@4.4.0-rc.17 qa:grouped
+> node scripts/qa-grouped-browser.mjs
+
+PASS UI/01_Revisao
+PASS UI/02_Impedimentos
+PASS UI/03_Formulas
+PASS UI/04_Sem_itens
+PASS UI/05_Derivados
+PASS UI/06_Controle
+PASS UI/07_Coluna_oculta
+PASS UI/CTRL-OK
+PASS UI/CTRL-DER-SEM
+PASS UI/CTRL-DER-COM
+PASS UI/CTRL-DER-BDI
+PASS UI/CTRL-TOT-VAZ
+PASS UI/CTRL-TOT-TXT
+PASS UI/CTRL-TOT-ZERO
+PASS UI/CTRL-TOT-NEG
+PASS UI/CTRL-ORC-LIM-GERAL
+PASS UI/CTRL-ORC-LIM-GERAL-FORA
+PASS UI/CTRL-ORC-ERR-GERAL
+PASS UI/CTRL-MAP-001
+PASS UI/CTRL-MAP-002
+PASS UI/DER-ESTOURO
+PASS UI/BASE/01_Revisao
+PASS UI/BASE/02_Conflitos
+PASS UI/BASE/03_Sem_validos
+PASS UI/CMP/01_Comparacao
+PASS UI/CMP/02_ABC_limites
+PASS UI/CMP/03_ABC_cruzamento
+27 verificações agrupadas no HTML efetivo.

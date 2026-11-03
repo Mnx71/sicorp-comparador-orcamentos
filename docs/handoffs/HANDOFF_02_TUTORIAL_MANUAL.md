@@ -6,6 +6,10 @@ Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Depart
 
 ## Ponto de continuidade
 
+**Complemento de 02/11/2026:** o usuário solicitou testes manuais agrupados. Ler primeiro `testkit/agrupados/LEIA-ME.md` e `docs/COMPLEMENTO_KIT_AGRUPADO.md`. Os três novos XLSX agrupam os 114 IDs em 15 abas, com configuração, localização por linha e contraprovas. O kit individual foi preservado para diagnóstico. Este complemento altera o kit, comandos e documentação; o código/HTML continua no commit validado abaixo. Usar a ponta atual da branch para obter os arquivos agrupados. Os hashes e resultados do complemento constam em `qa/evidence/grouped/`; não substituir as evidências históricas.
+
+O complemento passou em `npm run check`: 363 testes, 103 verificações originais no navegador, 27 execuções agrupadas de arquivo e 27 verificações agrupadas no HTML. A homologação por pessoa continua pendente. O primeiro exemplo do tutorial pode usar a aba agrupada `02_ABC_limites`, que conserva os números de `CMP-FLUXO`.
+
 - Repositório: https://github.com/Mnx71/sicorp-comparador-orcamentos.
 - Branch: `audit/consolidacao-rc17`.
 - Main de partida: `a519fc49b78ea06fe37ac4f13c3555e143651c52`.

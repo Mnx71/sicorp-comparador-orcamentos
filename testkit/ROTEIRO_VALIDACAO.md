@@ -8,6 +8,8 @@ Este roteiro valida o programa. O tutorial e o manual do usuário pertencem à p
 
 ## Preparação
 
+**Percurso principal atualizado:** usar primeiro [o kit agrupado](agrupados/LEIA-ME.md). Ele concentra os 114 IDs em revisões conjuntas, com separações justificadas por mapeamento, predominância de fórmulas, ausência de itens e conflitos. As instruções abaixo, com uma aba por caso, ficam como diagnóstico isolado e complemento para leitores, exportação e persistência.
+
 1. Baixar o repositório da branch de auditoria. Conferir a versão e o SHA-256 do HTML em `dist/SHA256SUMS.txt`.
 2. Abrir `dist/sicorp_comparador_orcamento_v4.4.0-rc.17.html` no Chrome ou Edge. Fechar o aviso beta com Continuar.
 3. Desconectar a rede para validar a operação offline. Links externos da Central de Bases exigem rede; não são necessários para importar e comparar.

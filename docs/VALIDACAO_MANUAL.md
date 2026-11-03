@@ -4,6 +4,8 @@ Status: especificação atendida pelo kit em `testkit/fixtures/`, pela matriz `M
 
 ## Princípio
 
+Atualização de 02/11/2026: o percurso principal é `testkit/agrupados/LEIA-ME.md`, com casos compatíveis na mesma aba e rastreabilidade dos 114 IDs. O kit em `fixtures/` continua para diagnóstico individual e formatos de arquivo. O registro humano agrupado está em `testkit/agrupados/execucao-manual.csv`, sem aprovação preenchida.
+
 Uma pessoa deve conseguir baixar uma versão do HTML e os exemplos, seguir instruções e confrontar a saída com um resultado conhecido, sem precisar ler o código ou os chats.
 
 ## Matriz por caso
@@ -31,7 +33,7 @@ O cálculo esperado deve ser explicado, incluindo a política de arredondamento.
 
 1. **Fluxo válido:** orçamento e bases mínimos, com correspondências e resultados financeiros calculáveis à mão.
 2. **Classificação e exclusões:** linhas vazias, anteriores ao cabeçalho, estruturais, cabeçalhos repetidos e itens com campos vazios/zero.
-3. **Impedimentos:** um cenário isolado por tipo de falha, sem impedir a observação de outros cenários.
+3. **Impedimentos:** agrupar os tipos de falha na mesma conferência e separar apenas quando ocultarem outros resultados, como o fechamento geral.
 4. **Erros de cálculo:** aplicação de BDI, total do item e fechamento geral, incluindo diferenças que se compensam.
 5. **Avisos:** um caso positivo e uma contraprova para cada aviso atual.
 6. **Bases:** exclusões, consolidação equivalente e conflitos de unidade/preço dentro da base e entre bases.
@@ -40,7 +42,7 @@ O cálculo esperado deve ser explicado, incluindo a política de arredondamento.
 9. **Resultados e exportação:** categorias, filtros, ordenação, gráfico por fonte, ABC, cores, códigos e seleção/ordem de colunas.
 10. **Leitores e visibilidade:** XLSX, XLS com BIFF5/BIFF8, CSV/TXT e ORSE; metadados de ocultação onde o formato os suporta.
 
-Os arquivos podem ter abas independentes para reduzir a quantidade de downloads. Casos que se influenciam devem ser separados e sua ordem de execução deve estar explícita.
+Agrupar casos compatíveis por linha na mesma aba. Casos que se influenciam devem ser separados com justificativa observável. Preferir reconfigurar a mesma aba para parâmetros globais, indicando a ordem e a restauração dos valores.
 
 Cada arquivo de exemplo deve conter uma tabela de identificação dos casos ou permitir vinculá-los claramente pela matriz, sem confundir essa tabela com dados de entrada. Definir exatamente a aba e o cabeçalho a mapear.
 

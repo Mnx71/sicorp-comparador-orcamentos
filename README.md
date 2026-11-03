@@ -15,6 +15,7 @@ A rc.16 e o pacote histórico da v4.3 permanecem intactos em `baseline/` e `refe
 | [Plano mestre](docs/PLANO_MESTRE.md) | Situação real e critérios das próximas etapas |
 | [Arquitetura e comandos](docs/ARQUITETURA_E_COMANDOS.md) | Composição dos fontes, geração e execução |
 | [Matriz](docs/MATRIZ_AUDITORIA.md) | 114 casos, dados, mapeamentos, expectativas e contraprovas |
+| [Testes agrupados — começar aqui](testkit/agrupados/LEIA-ME.md) | Casos simultâneos por aba, três XLSX e rastreabilidade dos 114 IDs |
 | [Roteiro independente](testkit/ROTEIRO_VALIDACAO.md) | Passos e valores esperados para execução manual |
 | [Kit sintético](testkit/fixtures/) | XLSX, BIFF5/BIFF8, CSV, TXT e ORSE |
 | [Decisões e defeitos](docs/DECISOES_AUDITORIA.md) | Correções, regras preservadas e lacunas explícitas |
@@ -35,8 +36,8 @@ npm run audit:cases
 
 `npm run build` produz um único HTML a partir de `src/`, sem usar o build histórico. `npm run validate` falha se o HTML distribuído divergir dos fontes. `npm run validate:baseline` verifica integridade e sintaxe dos arquivos preservados, sem constituir auditoria funcional.
 
-`npm test` executa 332 testes de domínio, leitores, integração e exportação. `npm run qa:browser` exercita o HTML efetivo com rede desabilitada. O workflow de Actions roda em push/PR, sem cron ou publicação. `SICORP_CHROMIUM_PATH` permite usar um executável local de Chromium/Chrome/Edge.
+`npm test` executa os testes de domínio, leitores, integração e exportação, incluindo os agrupados. `npm run qa:browser` exercita o HTML efetivo com rede desabilitada. `npm run audit:grouped` e `npm run qa:grouped` verificam os novos arquivos e seu uso na interface; ambos estão em `npm run check`. O workflow de Actions roda em push/PR, sem cron ou publicação. `SICORP_CHROMIUM_PATH` permite usar um executável local de Chromium/Chrome/Edge.
 
-`npm run fixtures:build` regenera os exemplos no ambiente de autoria com Artifact Tool. `npm run regression:real` utiliza os arquivos reais do projeto, quando presentes; eles não fazem parte do repositório. Ausência de arquivo produz falha explícita.
+`npm run fixtures:build` regenera os exemplos individuais no ambiente de autoria com Artifact Tool. `npm run fixtures:grouped` gera o percurso principal de testes agrupados e seu roteiro. `npm run regression:real` utiliza os arquivos reais do projeto, quando presentes; eles não fazem parte do repositório. Ausência de arquivo produz falha explícita.
 
 Os relatórios distinguem resultado automatizado, observação do código e homologação por pessoa. A validação manual por pessoa, a conferência visual em Excel/LibreOffice e a execução no Windows permanecem pendentes. O tutorial será desenvolvido na próxima etapa, seguido de nova regressão. A escolha da licença do projeto continua separada.
