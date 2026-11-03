@@ -14,7 +14,7 @@ A rc.16 é uma candidata preservada. Sua aprovação depende da auditoria; se ho
 
 ## Situação após a auditoria
 
-Atualização de 02/11/2026: candidata atual **v4.4.0-rc.18**, com correção de rolagem, altura da explicação e remoção do botão superior “Fechar” na revisão do orçamento. A rc.17 permanece em `dist/`. As regras e os XLSX agrupados foram preservados. Validação local: 363 testes, 103 verificações originais de navegador, 27 execuções agrupadas de arquivo, 27 verificações agrupadas de navegador e 56 combinações de layout aprovadas, além dos 114 casos individuais. Ver `CORRECAO_REVISAO_RC18.md`. Homologação humana e Windows continuam pendentes.
+Atualização de 02/11/2026: candidata atual **v4.4.0-rc.18**, com correção de rolagem, altura da explicação e remoção do botão superior “Fechar” na revisão do orçamento. A rc.17 permanece em `dist/`. As regras e os XLSX agrupados foram preservados. Validação local: 363 testes, 103 verificações originais de navegador, 27 execuções agrupadas de arquivo, 27 verificações agrupadas de navegador e 56 combinações de layout aprovadas, além dos 114 casos individuais. Commit dos fontes e evidências: `c9f81374a4bb37958d05563f4c82d692d380648c`. Ver `CORRECAO_REVISAO_RC18.md`. Homologação humana e Windows continuam pendentes.
 
 | Entrega | Situação |
 | --- | --- |

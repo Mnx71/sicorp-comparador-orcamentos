@@ -6,6 +6,8 @@ SICORP – Sistema de Comparação de Referenciais de Preços.
 
 Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).
 
+Commit dos fontes e evidências da rc.18: `c9f81374a4bb37958d05563f4c82d692d380648c`. HTML SHA-256: `ab592a50b2fc462672b792adb0d417f6a30a3edc9de46e4d528871ba68e4f55e`. A execução local ocorreu antes do commit, com o mesmo conteúdo do HTML; os relatórios originais registram a revisão de partida e o estado de trabalho quando aplicável.
+
 ## Problema e correção
 
 A janela de revisão do orçamento limitava a altura do corpo com `overflow: hidden` e permitia que seus filhos fossem comprimidos. Em alturas menores, isso recortava a tabela, suas barras de rolagem e a explicação. Na rc.17, o novo ensaio reproduziu a compressão da explicação em 1366×768: apenas 10,52 px entre o texto da ação e o limite inferior, em vez do espaço interno de pelo menos 13 px.
@@ -40,3 +42,7 @@ Evidências: `qa/evidence/budget-layout/report.json` e capturas da tabela/explic
 4. Confira as outras categorias e os botões no fim do corpo. “Retornar para corrigir” deve fechar a janela. Não deve existir o botão superior “Fechar”.
 
 Em telas menores, é esperado rolar o corpo da janela para alcançar os blocos inferiores e rolar a própria tabela para percorrer linhas e colunas. Nada deve ficar inacessível por recorte.
+
+## Rastreabilidade da publicação
+
+A publicação pela conexão GitHub criou identificadores distintos dos commits locais. O commit remoto `c9f81374a4bb37958d05563f4c82d692d380648c` possui exatamente a mesma árvore Git do commit local `a336878b491493fc552ca01a182d0660e3e3f12e` (árvore `b2540b36c934e777b0fe4983dc2de327afec52c2`). Os resultados locais e o SHA-256 do HTML permanecem válidos. O commit documental remoto substitui as referências de saída da rc.18 pelo identificador publicado; os commits locais originais foram preservados para rastreabilidade.
