@@ -5248,7 +5248,6 @@
       if (!cell) return;
       assignBaseMappingColumn(state.baseMappingSelectedField, Number(cell.dataset.columnIndex));
     });
-    el("budgetAuditCloseBtn").addEventListener("click", () => el("budgetAuditDialog").close());
     el("budgetAuditReturnBtn").addEventListener("click", () => el("budgetAuditDialog").close());
     el("budgetAuditProceedBtn").addEventListener("click", () => {
       if (!state.budgetAudit?.canProceed) return;

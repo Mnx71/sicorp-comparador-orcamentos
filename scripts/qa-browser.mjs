@@ -88,7 +88,7 @@ try {
   if(['ORC-EXC-004','ORC-EXC-005','ORC-EST-1','ORC-AV-DUP'].includes(c.id)) assert.equal(await page.locator('#budgetAuditGroups .related').count(),0);
   if(c.id==='ORC-AV-BDI') assert.equal(await page.locator('[data-budget-audit-category-panel="warning"] .related').count(),2);
   if(['ORC-AV-BDI','ORC-4-NEG','ORC-ERR-ITEM','ORC-EXC-004'].includes(c.id)) await page.locator('#budgetAuditDialog').screenshot({path:`${output}/${c.id}.png`});
-  await page.click('#budgetAuditCloseBtn');return actual;
+  await page.click('#budgetAuditReturnBtn');return actual;
  });
  await record('UI-MAP-PREVIEW',async()=>{
   await configure(cases.find(c=>c.id==='ORC-OK-001'));
@@ -111,7 +111,7 @@ try {
   assert.equal(await selected.count(),1);assert.notEqual(await selected.getAttribute('data-budget-audit-row-key'),await row.getAttribute('data-budget-audit-row-key'));
   const visibility=await selected.evaluate(e=>{const r=e.getBoundingClientRect(),p=e.closest('.review-unified-wrap').getBoundingClientRect();return r.bottom<=p.bottom+1&&r.top>=p.top;});assert.equal(visibility,true);
   const toggle=page.locator('[data-budget-audit-category-panel="warning"] [data-review-reason-toggle]');await toggle.click();assert.equal(await rows.first().isVisible(),false);await toggle.click();assert.equal(await rows.first().isVisible(),true);
-  await page.locator('#budgetAuditDialog').screenshot({path:`${output}/grupos.png`});await page.click('#budgetAuditCloseBtn');
+  await page.locator('#budgetAuditDialog').screenshot({path:`${output}/grupos.png`});await page.click('#budgetAuditReturnBtn');
  });
  await loadBudget('testkit/fixtures/comparison.xlsx','CMP-FLUXO',120);await auditAndProceed();
  await record('UI-BASE-PREREQ',async()=>{await page.click('#basesNextBtn');await page.locator('#blockingDialog[open]').waitFor();assert.match(await page.locator('#blockingDialogMessage').textContent(),/Adicione pelo menos/);await page.click('#blockingDialogReturn');});
@@ -197,7 +197,7 @@ try {
   await page.waitForFunction(name=>state.projectWorkbook?.fileName===name,path.basename(file));
   const c=format==='txt'||format==='csv'?{...cases.find(c=>c.id==='CMP-FLUXO'),id:'CSV',total:120}:cases.find(c=>c.id==='ORC-OK-001');
   await configure(c);await page.click('#projectNextBtn');await page.locator('#budgetAuditDialog[open]').waitFor();
-  assert.equal(await page.evaluate(()=>state.budgetAudit.canProceed),true);assert.equal(await page.evaluate(()=>state.budgetAuditBudget.items.length),format==='txt'||format==='csv'?4:1);await page.click('#budgetAuditCloseBtn');
+  assert.equal(await page.evaluate(()=>state.budgetAudit.canProceed),true);assert.equal(await page.evaluate(()=>state.budgetAuditBudget.items.length),format==='txt'||format==='csv'?4:1);await page.click('#budgetAuditReturnBtn');
  });
  await record('UI-ARMAZENAMENTO-FALHA',async()=>{
   const isolated=await browser.newContext();await isolated.setOffline(true);

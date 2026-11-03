@@ -1784,6 +1784,7 @@
     .budget-audit-dialog {
       width: min(1240px, calc(100vw - 24px));
       max-height: calc(100vh - 28px);
+      max-height: calc(100dvh - 28px);
       padding: 0;
       border: 0;
       border-radius: 16px;
@@ -1795,6 +1796,7 @@
     .budget-audit-dialog::backdrop { background: rgba(15, 23, 42, .58); backdrop-filter: blur(3px); }
     .budget-audit-head {
       display: flex;
+      flex: 0 0 auto;
       align-items: center;
       justify-content: space-between;
       gap: 16px;
@@ -1808,10 +1810,13 @@
       flex: 1 1 auto;
       flex-direction: column;
       min-height: 0;
-      max-height: calc(100vh - 86px);
-      overflow: hidden;
+      overflow: auto;
       padding: 16px 18px 18px;
     }
+    /* Keep intrinsic block heights; scroll the body instead of clipping its children. */
+    .budget-audit-body > * { flex: 0 0 auto; min-width: 0; }
+    .budget-audit-body > .budget-audit-groups { flex: 0 0 auto; }
+    .budget-audit-groups > section { min-width: 0; }
     .budget-audit-status { margin: 0 0 12px; color: #475569; line-height: 1.45; }
     .budget-audit-cards {
       display: grid;
@@ -1864,6 +1869,7 @@
     .budget-audit-explanation {
       min-height: 112px; margin-top: 12px; padding: 13px 14px;
       border: 1px solid #cbd5e1; border-radius: 12px; background: #fff;
+      overflow-wrap: anywhere;
     }
     .budget-audit-explanation h3 { margin: 0 0 7px; color: #1e3a8a; font-size: .9rem; }
     .budget-audit-explanation p { margin: 4px 0; color: #475569; font-size: .8rem; line-height: 1.45; }
@@ -1896,8 +1902,8 @@
     .budget-audit-original-table tbody tr.selected td { background: #eff6ff; }
     .budget-audit-original-table td.related { background: #fef3c7 !important; box-shadow: inset 0 0 0 2px #f59e0b; }
     .budget-audit-original-table td.hidden-cell { background-image: repeating-linear-gradient(135deg, transparent 0 5px, rgba(100,116,139,.11) 5px 10px); }
-    .budget-audit-actions { display: flex; justify-content: flex-end; gap: 10px; margin-top: 16px; }
-    .budget-audit-actions button { min-width: 150px; }
+    .budget-audit-actions { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; margin-top: 16px; }
+    .budget-audit-actions button { min-width: 150px; max-width: 100%; }
     /* SICORP_V44_BUDGET_AUDIT_STYLES_END */
     /* SICORP_V42_PRICE_SOURCE_STYLES_END */
 </style>
@@ -1918,7 +1924,7 @@
         <h1>SICORP – Sistema de Comparação de Referenciais de Preços</h1>
         <p class="subtitle">Importe o orçamento detalhado, organize as bases referenciais e compare os preços sem BDI.</p>
       </div>
-      <span class="offline-pill">● 4.4.0-rc.17 · Offline</span>
+      <span class="offline-pill">● 4.4.0-rc.18 · Offline</span>
     </div>
   <p class="subtitle" style="margin-top:10px">Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).</p>
   </header>
@@ -1964,7 +1970,6 @@
     <dialog id="budgetAuditDialog" class="budget-audit-dialog" aria-labelledby="budgetAuditTitle">
       <div class="budget-audit-head">
         <h2 id="budgetAuditTitle">Revisão e conferência do orçamento</h2>
-        <button id="budgetAuditCloseBtn" type="button" class="secondary">Fechar</button>
       </div>
       <div class="budget-audit-body">
         <div id="budgetAuditCards" class="budget-audit-cards" role="group" aria-label="Filtrar achados da auditoria"></div>

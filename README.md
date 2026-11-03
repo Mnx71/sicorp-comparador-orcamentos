@@ -4,7 +4,9 @@ Aplicação offline para conferir cálculos de orçamentos de obras e comparar p
 
 **Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).**
 
-A candidata de saída desta auditoria é **v4.4.0-rc.17**. O HTML está em [dist/](dist/sicorp_comparador_orcamento_v4.4.0-rc.17.html), com hash em [SHA256SUMS.txt](dist/SHA256SUMS.txt). Baixar e abrir o arquivo no navegador; o uso do programa não requer Node.js ou servidor. A versão continua beta, sujeita à conferência pelo analista. Não foi promovida a versão final.
+A candidata atual é **v4.4.0-rc.18**. O HTML está em [dist/](dist/sicorp_comparador_orcamento_v4.4.0-rc.18.html), com hash em [SHA256SUMS.txt](dist/SHA256SUMS.txt). Baixar e abrir o arquivo no navegador; o uso do programa não requer Node.js ou servidor. A versão continua beta, sujeita à conferência pelo analista. Não foi promovida a versão final.
+
+A rc.18 corrige o recorte da revisão do orçamento em telas menores, preserva o espaço da explicação e remove o botão superior “Fechar”. Ver [correção e evidências](docs/CORRECAO_REVISAO_RC18.md). O HTML da rc.17 permanece em `dist/`; os três XLSX agrupados continuam válidos.
 
 A rc.16 e o pacote histórico da v4.3 permanecem intactos em `baseline/` e `reference/`. A extração inicial reproduziu a rc.16 byte a byte. A rc.17 contém os fontes separados, geração determinística, quatro correções documentadas e o kit sintético de auditoria.
 
@@ -36,7 +38,7 @@ npm run audit:cases
 
 `npm run build` produz um único HTML a partir de `src/`, sem usar o build histórico. `npm run validate` falha se o HTML distribuído divergir dos fontes. `npm run validate:baseline` verifica integridade e sintaxe dos arquivos preservados, sem constituir auditoria funcional.
 
-`npm test` executa os testes de domínio, leitores, integração e exportação, incluindo os agrupados. `npm run qa:browser` exercita o HTML efetivo com rede desabilitada. `npm run audit:grouped` e `npm run qa:grouped` verificam os novos arquivos e seu uso na interface; ambos estão em `npm run check`. O workflow de Actions roda em push/PR, sem cron ou publicação. `SICORP_CHROMIUM_PATH` permite usar um executável local de Chromium/Chrome/Edge.
+`npm test` executa os testes de domínio, leitores, integração e exportação, incluindo os agrupados. `npm run qa:browser` exercita o HTML efetivo com rede desabilitada. `npm run audit:grouped` e `npm run qa:grouped` verificam os novos arquivos e seu uso na interface. `npm run qa:layout` verifica a revisão do orçamento em sete tamanhos de tela. Todos estão em `npm run check`. O workflow de Actions roda em push/PR, sem cron ou publicação. `SICORP_CHROMIUM_PATH` permite usar um executável local de Chromium/Chrome/Edge.
 
 `npm run fixtures:build` regenera os exemplos individuais no ambiente de autoria com Artifact Tool. `npm run fixtures:grouped` gera o percurso principal de testes agrupados e seu roteiro. `npm run regression:real` utiliza os arquivos reais do projeto, quando presentes; eles não fazem parte do repositório. Ausência de arquivo produz falha explícita.
 

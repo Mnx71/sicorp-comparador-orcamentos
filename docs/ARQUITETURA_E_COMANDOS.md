@@ -1,4 +1,6 @@
-# Fontes e execução da rc.17
+# Fontes e execução do SICORP
+
+Candidata atual: rc.18. A composição permanece a da rc.17; as correções posteriores estão em `CORRECAO_REVISAO_RC18.md`. `npm run qa:layout` integra o comando `npm run check`.
 
 SICORP – Sistema de Comparação de Referenciais de Preços.
 
