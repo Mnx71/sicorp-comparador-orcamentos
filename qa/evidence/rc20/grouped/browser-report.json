@@ -1,0 +1,539 @@
+{
+  "date": "2026-11-04T15:43:34.055Z",
+  "version": "4.4.0-rc.20",
+  "browser": "141.0.7390.0",
+  "platform": "linux",
+  "node": "v24.22.1",
+  "htmlSha256": "fe75bc7f44acb2c441d0a5d065a3bc6789270284966578797f7cb279611a094c",
+  "inputs": {
+    "orcamento-agrupado.xlsx": "eababacc0507bdc0817460e75bfcd0d0dd7ed2812caad562ae39d5ed8ee12566",
+    "bases-agrupadas.xlsx": "311b0e60db96e0b443639e7f15c1522a67ef00921cda625a06a9aeba74c1b038",
+    "comparacao-agrupada.xlsx": "d41c5a1d14c953697b84c7bef7efa90042b60b8f3acf511abbd919d5dafa35dc"
+  },
+  "results": [
+    {
+      "id": "UI/01_Revisao",
+      "status": "passed",
+      "observed": {
+        "accepted": 92,
+        "codes": [
+          "BDI_APPLICATION_MISMATCH",
+          "BEFORE_HEADER",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "CONSECUTIVE_DUPLICATE_ITEM",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "REPEATED_HEADER",
+          "SAME_DESCRIPTION_DIFFERENT_BDI",
+          "STRUCTURAL_ROW",
+          "STRUCTURAL_ROW",
+          "STRUCTURAL_ROW",
+          "STRUCTURAL_ROW",
+          "STRUCTURAL_ROW"
+        ],
+        "canProceed": true,
+        "summary": {
+          "total": 58,
+          "blockers": 0,
+          "errors": 7,
+          "warnings": 33,
+          "discarded": 18
+        }
+      }
+    },
+    {
+      "id": "UI/02_Impedimentos",
+      "status": "passed",
+      "observed": {
+        "accepted": 20,
+        "codes": [
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_VALUE_NOT_NUMERIC"
+        ],
+        "canProceed": false,
+        "summary": {
+          "total": 20,
+          "blockers": 20,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/03_Formulas",
+      "status": "passed",
+      "observed": {
+        "accepted": 15,
+        "codes": [
+          "FORMULA_PATTERN_MISMATCH",
+          "MANUAL_VALUE_IN_FORMULA_COLUMN"
+        ],
+        "canProceed": true,
+        "summary": {
+          "total": 2,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 2,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/04_Sem_itens",
+      "status": "passed",
+      "observed": {
+        "accepted": 0,
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS",
+          "STRUCTURAL_ROW"
+        ],
+        "canProceed": false,
+        "summary": {
+          "total": 4,
+          "blockers": 1,
+          "errors": 1,
+          "warnings": 0,
+          "discarded": 2
+        }
+      }
+    },
+    {
+      "id": "UI/05_Derivados",
+      "status": "passed",
+      "observed": {
+        "accepted": 5,
+        "codes": [
+          "SAME_DESCRIPTION_DIFFERENT_BDI"
+        ],
+        "canProceed": true,
+        "summary": {
+          "total": 1,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 1,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/06_Controle",
+      "status": "passed",
+      "observed": {
+        "accepted": 2,
+        "codes": [],
+        "canProceed": true,
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/07_Coluna_oculta",
+      "status": "passed",
+      "observed": {
+        "prerequisite": true
+      }
+    },
+    {
+      "id": "UI/CTRL-OK",
+      "status": "passed",
+      "observed": {
+        "accepted": 2,
+        "codes": [],
+        "canProceed": true,
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/CTRL-DER-SEM",
+      "status": "passed",
+      "observed": {
+        "accepted": 2,
+        "codes": [],
+        "canProceed": true,
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/CTRL-DER-COM",
+      "status": "passed",
+      "observed": {
+        "accepted": 2,
+        "codes": [],
+        "canProceed": true,
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/CTRL-DER-BDI",
+      "status": "passed",
+      "observed": {
+        "accepted": 2,
+        "codes": [],
+        "canProceed": true,
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/CTRL-TOT-VAZ",
+      "status": "passed",
+      "observed": {
+        "prerequisite": true
+      }
+    },
+    {
+      "id": "UI/CTRL-TOT-TXT",
+      "status": "passed",
+      "observed": {
+        "prerequisite": true
+      }
+    },
+    {
+      "id": "UI/CTRL-TOT-ZERO",
+      "status": "passed",
+      "observed": {
+        "accepted": 2,
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NON_POSITIVE_VALUE"
+        ],
+        "canProceed": true,
+        "summary": {
+          "total": 2,
+          "blockers": 0,
+          "errors": 1,
+          "warnings": 1,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/CTRL-TOT-NEG",
+      "status": "passed",
+      "observed": {
+        "accepted": 2,
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NON_POSITIVE_VALUE"
+        ],
+        "canProceed": true,
+        "summary": {
+          "total": 2,
+          "blockers": 0,
+          "errors": 1,
+          "warnings": 1,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/CTRL-ORC-LIM-GERAL",
+      "status": "passed",
+      "observed": {
+        "accepted": 2,
+        "codes": [],
+        "canProceed": true,
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/CTRL-ORC-LIM-GERAL-FORA",
+      "status": "passed",
+      "observed": {
+        "accepted": 2,
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": true,
+        "summary": {
+          "total": 1,
+          "blockers": 0,
+          "errors": 1,
+          "warnings": 0,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/CTRL-ORC-ERR-GERAL",
+      "status": "passed",
+      "observed": {
+        "accepted": 2,
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": true,
+        "summary": {
+          "total": 1,
+          "blockers": 0,
+          "errors": 1,
+          "warnings": 0,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/CTRL-MAP-001",
+      "status": "passed",
+      "observed": {
+        "prerequisite": true
+      }
+    },
+    {
+      "id": "UI/CTRL-MAP-002",
+      "status": "passed",
+      "observed": {
+        "prerequisite": true
+      }
+    },
+    {
+      "id": "UI/DER-ESTOURO",
+      "status": "passed",
+      "observed": {
+        "accepted": 5,
+        "codes": [
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "PRICE_COMPONENT_DERIVATION_IMPOSSIBLE"
+        ],
+        "canProceed": false,
+        "summary": {
+          "total": 4,
+          "blockers": 1,
+          "errors": 3,
+          "warnings": 0,
+          "discarded": 0
+        }
+      }
+    },
+    {
+      "id": "UI/BASE/01_Revisao",
+      "status": "passed",
+      "observed": {
+        "reasons": [
+          "Antes do cabeçalho",
+          "Preço ausente",
+          "Preço zero",
+          "Preço negativo",
+          "Preço não numérico",
+          "Erro de fórmula no preço",
+          "Fórmula do preço sem resultado válido",
+          "Linha estrutural",
+          "Linha estrutural",
+          "Linha estrutural",
+          "Cabeçalho repetido"
+        ],
+        "conflicts": 0
+      }
+    },
+    {
+      "id": "UI/BASE/02_Conflitos",
+      "status": "passed",
+      "observed": {
+        "reasons": [],
+        "conflicts": 2
+      }
+    },
+    {
+      "id": "UI/BASE/03_Sem_validos",
+      "status": "passed",
+      "observed": {
+        "reasons": [
+          "Preço ausente",
+          "Preço zero",
+          "Preço negativo",
+          "Preço não numérico",
+          "Erro de fórmula no preço",
+          "Fórmula do preço sem resultado válido",
+          "Linha estrutural",
+          "Linha estrutural",
+          "Linha estrutural"
+        ],
+        "conflicts": 0
+      }
+    },
+    {
+      "id": "UI/CMP/01_Comparacao",
+      "status": "passed",
+      "observed": {
+        "statuses": [
+          "abaixo",
+          "igual",
+          "acima",
+          "nao-encontrado",
+          "igual",
+          "nao-encontrado",
+          "igual",
+          "igual",
+          "igual",
+          "acima",
+          "abaixo",
+          "igual",
+          "igual",
+          "nao-encontrado",
+          "nao-encontrado",
+          "nao-encontrado",
+          "igual",
+          "igual",
+          "nao-encontrado"
+        ],
+        "abc": [
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "A",
+          "B",
+          "B",
+          "B",
+          "B",
+          "B",
+          "C",
+          "C",
+          "C",
+          "C",
+          "C",
+          "C",
+          "C",
+          "C"
+        ]
+      }
+    },
+    {
+      "id": "UI/CMP/02_ABC_limites",
+      "status": "passed",
+      "observed": {
+        "statuses": [
+          "abaixo",
+          "igual",
+          "acima",
+          "nao-encontrado"
+        ],
+        "abc": [
+          "A",
+          "B",
+          "C",
+          "C"
+        ]
+      }
+    },
+    {
+      "id": "UI/CMP/03_ABC_cruzamento",
+      "status": "passed",
+      "observed": {
+        "statuses": [
+          "igual",
+          "nao-encontrado"
+        ],
+        "abc": [
+          "B",
+          "C"
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "requests": []
+}

@@ -17,7 +17,7 @@ async function fresh() {
  const p=await ctx.newPage();p.setDefaultTimeout(10000);
  p.on('pageerror',e=>errors.push(e.message));p.on('dialog',d=>d.accept());
  p.on('request',r=>{if(/^https?:/.test(r.url()))requests.push(r.url());});
- await p.goto(pathToFileURL(path.resolve(manifest.output)).href);await p.click('#betaNoticeContinue');return p;
+ await p.goto(pathToFileURL(path.resolve(manifest.output)).href);return p;
 }
 async function budget(p,g,run) {
  await p.setInputFiles('#projectFile',path.resolve('testkit/agrupados/'+books[g.kind]));

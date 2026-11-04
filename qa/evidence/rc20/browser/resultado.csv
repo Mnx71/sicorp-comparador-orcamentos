@@ -1,0 +1,5 @@
+﻿"Status";"Linha orçamento";"Código";"Base / referência";"Descrição orçamento";"Unid. orçamento";"Preço sem BDI";"BDI";"Quantidade";"Valor total com BDI";"Participação (%)";"Origem / linha da base";"Descrição base";"Unid. base";"Preço base";"Diferença";"Diferença %"
+"Abaixo";"2";"0001";"SINAPI";"Descrição orçamento";"m";"50,00";"20,00%";"1";"60,00";"50,00%";"comparison.xlsx / CMP-FLUXO-BASE, linha 2";"Descrição base";"un";"60,00";"-10,00";"-16,67%"
+"Igual";"3";"002.0";"SINAPI";"Conexão";"un";"30,00";"20,00%";"1";"36,00";"30,00%";"comparison.xlsx / CMP-FLUXO-BASE, linha 3";"Conexão";"un";"30,00";"0,00";"0,00%"
+"Acima";"4";"A3";"SINAPI";"Areia";"m3";"15,00";"20,00%";"1";"18,00";"15,00%";"comparison.xlsx / CMP-FLUXO-BASE, linha 4";"Areia";"m3";"10,00";"5,00";"50,00%"
+"Não encontrado";"5";"404";"SINAPI";"Ausente";"m";"5,00";"20,00%";"1";"6,00";"5,00%";"";"";"";"";"";""

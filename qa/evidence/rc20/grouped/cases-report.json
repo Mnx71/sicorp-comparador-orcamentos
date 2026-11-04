@@ -1,0 +1,4604 @@
+{
+  "date": "2026-11-04T15:43:09.494Z",
+  "version": "4.4.0-rc.20",
+  "applicationCommit": "90d447e32e000389ae2158c6b2260a31543b1b7b",
+  "node": "v24.22.1",
+  "htmlSha256": "fe75bc7f44acb2c441d0a5d065a3bc6789270284966578797f7cb279611a094c",
+  "inputs": {
+    "orcamento-agrupado.xlsx": "eababacc0507bdc0817460e75bfcd0d0dd7ed2812caad562ae39d5ed8ee12566",
+    "bases-agrupadas.xlsx": "311b0e60db96e0b443639e7f15c1522a67ef00921cda625a06a9aeba74c1b038",
+    "comparacao-agrupada.xlsx": "d41c5a1d14c953697b84c7bef7efa90042b60b8f3acf511abbd919d5dafa35dc"
+  },
+  "results": [
+    {
+      "id": "budget/01_Revisao",
+      "status": "passed",
+      "expected": {
+        "accepted": 92,
+        "codes": [
+          "STRUCTURAL_ROW",
+          "STRUCTURAL_ROW",
+          "STRUCTURAL_ROW",
+          "STRUCTURAL_ROW",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "STRUCTURAL_ROW",
+          "REPEATED_HEADER",
+          "BDI_APPLICATION_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "CONSECUTIVE_DUPLICATE_ITEM",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "SAME_DESCRIPTION_DIFFERENT_BDI",
+          "ITEM_TOTAL_MISMATCH",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "BEFORE_HEADER",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "reasons": [],
+        "conflicts": 0,
+        "canProceed": true,
+        "auditedSum": 22180.23
+      },
+      "observed": {
+        "summary": {
+          "total": 58,
+          "blockers": 0,
+          "errors": 7,
+          "warnings": 33,
+          "discarded": 18
+        },
+        "totals": {
+          "declared": 22190.23,
+          "informedSum": 22441.27,
+          "auditedSum": 22180.23,
+          "differenceFromInformed": -251.04,
+          "differenceFromAudited": 10,
+          "absoluteItemDifferenceSum": 263.04,
+          "itemCount": 92,
+          "generalTotalTolerance": 0.92,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "error",
+            "code": "BDI_APPLICATION_MISMATCH",
+            "title": "Aplicação do BDI divergente",
+            "message": "O valor de \"Preço com BDI\" não corresponde à aplicação de \"BDI\" sobre \"Preço sem BDI\".",
+            "action": "Revise as colunas \"Preço sem BDI\", \"BDI\", \"Preço com BDI\" na planilha. O SICORP preservará os valores informados.",
+            "rowNumber": 26,
+            "sheet": "01_Revisao",
+            "itemCode": "T53X1",
+            "description": "T53X Tubo PVC",
+            "field": "priceWithBdi",
+            "fieldLabel": "Preço com BDI",
+            "relatedFields": [
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": 121,
+            "expected": 120,
+            "difference": 1,
+            "details": null,
+            "category": "error"
+          },
+          {
+            "id": "AUD-0002",
+            "severity": "error",
+            "code": "ITEM_TOTAL_MISMATCH",
+            "title": "Valor total do item divergente",
+            "message": "O valor de \"Total do item\" não corresponde a \"Quantidade\" multiplicada por \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" na planilha.",
+            "rowNumber": 27,
+            "sheet": "01_Revisao",
+            "itemCode": "T54X1",
+            "description": "T54X Tubo PVC",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 241,
+            "expected": 240,
+            "difference": 1,
+            "details": null,
+            "category": "error"
+          },
+          {
+            "id": "AUD-0003",
+            "severity": "error",
+            "code": "ITEM_TOTAL_MISMATCH",
+            "title": "Valor total do item divergente",
+            "message": "O valor de \"Total do item\" não corresponde a \"Quantidade\" multiplicada por \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" na planilha.",
+            "rowNumber": 28,
+            "sheet": "01_Revisao",
+            "itemCode": "T56X1",
+            "description": "T56X Tubo PVC",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 241,
+            "expected": 240,
+            "difference": 1,
+            "details": null,
+            "category": "error"
+          },
+          {
+            "id": "AUD-0004",
+            "severity": "error",
+            "code": "ITEM_TOTAL_MISMATCH",
+            "title": "Valor total do item divergente",
+            "message": "O valor de \"Total do item\" não corresponde a \"Quantidade\" multiplicada por \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" na planilha.",
+            "rowNumber": 29,
+            "sheet": "01_Revisao",
+            "itemCode": "T56X2",
+            "description": "T56X Outro",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 239,
+            "expected": 240,
+            "difference": -1,
+            "details": null,
+            "category": "error"
+          },
+          {
+            "id": "AUD-0005",
+            "severity": "error",
+            "code": "ITEM_TOTAL_MISMATCH",
+            "title": "Valor total do item divergente",
+            "message": "O valor de \"Total do item\" não corresponde a \"Quantidade\" multiplicada por \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" na planilha.",
+            "rowNumber": 35,
+            "sheet": "01_Revisao",
+            "itemCode": "T62X1",
+            "description": "T62X Tubo PVC",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 240.02,
+            "expected": 240,
+            "difference": 0.02,
+            "details": null,
+            "category": "error"
+          },
+          {
+            "id": "AUD-0006",
+            "severity": "error",
+            "code": "ITEM_TOTAL_MISMATCH",
+            "title": "Valor total do item divergente",
+            "message": "O valor de \"Total do item\" não corresponde a \"Quantidade\" multiplicada por \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" na planilha.",
+            "rowNumber": 57,
+            "sheet": "01_Revisao",
+            "itemCode": "T80X1",
+            "description": "T80X Tubo PVC",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 500,
+            "expected": 240,
+            "difference": 260,
+            "details": null,
+            "category": "error"
+          },
+          {
+            "id": "AUD-0007",
+            "severity": "warning",
+            "code": "CONSECUTIVE_DUPLICATE_ITEM",
+            "title": "Possível item duplicado em linhas consecutivas",
+            "message": "A linha 37 repete a identificação, a quantidade e os valores da linha 36.",
+            "action": "Confirme se a repetição consecutiva é intencional. Se não for, corrija a planilha original e carregue-a novamente.",
+            "rowNumber": 37,
+            "sheet": "01_Revisao",
+            "itemCode": "T65X1",
+            "description": "T65X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "quantity",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "previousRowNumber": 36
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0008",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 41, 42 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 41,
+            "sheet": "01_Revisao",
+            "itemCode": "T67X1",
+            "description": "T67X Tubo PVC",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                41,
+                42
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0009",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 59, 89 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 59,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG0",
+            "description": "T81X Serviço 0",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                59,
+                89
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0010",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 60, 90 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 60,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG1",
+            "description": "T81X Serviço 1",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                60,
+                90
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0011",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 61, 91 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 61,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG2",
+            "description": "T81X Serviço 2",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                61,
+                91
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0012",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 62, 92 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 62,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG3",
+            "description": "T81X Serviço 3",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                62,
+                92
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0013",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 63, 93 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 63,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG4",
+            "description": "T81X Serviço 4",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                63,
+                93
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0014",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 64, 94 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 64,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG5",
+            "description": "T81X Serviço 5",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                64,
+                94
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0015",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 65, 95 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 65,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG6",
+            "description": "T81X Serviço 6",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                65,
+                95
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0016",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 66, 96 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 66,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG7",
+            "description": "T81X Serviço 7",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                66,
+                96
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0017",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 67, 97 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 67,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG8",
+            "description": "T81X Serviço 8",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                67,
+                97
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0018",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 68, 98 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 68,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG9",
+            "description": "T81X Serviço 9",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                68,
+                98
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0019",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 69, 99 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 69,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG10",
+            "description": "T81X Serviço 10",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                69,
+                99
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0020",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 70, 100 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 70,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG11",
+            "description": "T81X Serviço 11",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                70,
+                100
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0021",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 71, 101 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 71,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG12",
+            "description": "T81X Serviço 12",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                71,
+                101
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0022",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 72, 102 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 72,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG13",
+            "description": "T81X Serviço 13",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                72,
+                102
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0023",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 73, 103 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 73,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG14",
+            "description": "T81X Serviço 14",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                73,
+                103
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0024",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 74, 104 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 74,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG15",
+            "description": "T81X Serviço 15",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                74,
+                104
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0025",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 75, 105 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 75,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG16",
+            "description": "T81X Serviço 16",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                75,
+                105
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0026",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 76, 106 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 76,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG17",
+            "description": "T81X Serviço 17",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                76,
+                106
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0027",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 77, 107 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 77,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG18",
+            "description": "T81X Serviço 18",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                77,
+                107
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0028",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 78, 108 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 78,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG19",
+            "description": "T81X Serviço 19",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                78,
+                108
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0029",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 79, 109 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 79,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG20",
+            "description": "T81X Serviço 20",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                79,
+                109
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0030",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 80, 110 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 80,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG21",
+            "description": "T81X Serviço 21",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                80,
+                110
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0031",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 81, 111 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 81,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG22",
+            "description": "T81X Serviço 22",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                81,
+                111
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0032",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 82, 112 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 82,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG23",
+            "description": "T81X Serviço 23",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                82,
+                112
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0033",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 83, 113 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 83,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG24",
+            "description": "T81X Serviço 24",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                83,
+                113
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0034",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 84, 114 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 84,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG25",
+            "description": "T81X Serviço 25",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                84,
+                114
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0035",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 85, 115 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 85,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG26",
+            "description": "T81X Serviço 26",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                85,
+                115
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0036",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 86, 116 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 86,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG27",
+            "description": "T81X Serviço 27",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                86,
+                116
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0037",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 87, 117 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 87,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG28",
+            "description": "T81X Serviço 28",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                87,
+                117
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0038",
+            "severity": "warning",
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "title": "Item idêntico com preços diferentes",
+            "message": "O mesmo item aparece nas linhas 88, 118 com preços efetivos sem BDI diferentes: R$ 100,00, R$ 110,00.",
+            "action": "Confirme se a variação de preço é intencional e se cada ocorrência utiliza o valor correto.",
+            "rowNumber": 88,
+            "sheet": "01_Revisao",
+            "itemCode": "T81XG29",
+            "description": "T81X Serviço 29",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "code",
+              "source",
+              "description",
+              "unit",
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                88,
+                118
+              ],
+              "prices": [
+                100,
+                110
+              ]
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0039",
+            "severity": "warning",
+            "code": "SAME_DESCRIPTION_DIFFERENT_BDI",
+            "title": "Itens com a mesma descrição e BDI diferente",
+            "message": "A mesma descrição aparece nas linhas 45, 46 com percentuais de BDI diferentes: 20,00%, 30,00%. A verificação considera a descrição normalizada, independentemente do código, da fonte ou da unidade.",
+            "action": "Confirme se os diferentes percentuais de BDI são adequados para estas ocorrências do serviço. Este aviso permite prosseguir.",
+            "rowNumber": 45,
+            "sheet": "01_Revisao",
+            "itemCode": "T69X1",
+            "description": "T69X Tubo PVC",
+            "field": "bdi",
+            "fieldLabel": "BDI",
+            "relatedFields": [
+              "bdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                45,
+                46
+              ],
+              "bdiRates": [
+                0.2,
+                0.3
+              ],
+              "bdiByRow": [
+                {
+                  "rowNumber": 45,
+                  "rate": 0.2
+                },
+                {
+                  "rowNumber": 46,
+                  "rate": 0.3
+                }
+              ],
+              "derived": false
+            },
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0040",
+            "severity": "error",
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "title": "Total geral diverge da soma auditada",
+            "message": "O total geral digitado não corresponde à soma auditada a partir das colunas \"Quantidade\", \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" e o total geral da planilha.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "totalGeneral",
+            "fieldLabel": "Total geral do orçamento",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 22190.23,
+            "expected": 22180.23,
+            "difference": 10,
+            "details": null,
+            "category": "error"
+          },
+          {
+            "id": "REV-0006",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "title": "Item com quantidade ou valor vazio/zero",
+            "message": "Quantidade: célula vazia.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 9,
+            "sheet": "01_Revisao",
+            "itemCode": "T6X1",
+            "description": "T6X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "quantity"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T6X1",
+                "source": "SINAPI",
+                "description": "T6X Tubo PVC",
+                "unit": "m",
+                "quantity": "",
+                "price": "100 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0007",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "title": "Item com quantidade ou valor vazio/zero",
+            "message": "Quantidade: valor igual a zero.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 10,
+            "sheet": "01_Revisao",
+            "itemCode": "T7X1",
+            "description": "T7X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "quantity"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T7X1",
+                "source": "SINAPI",
+                "description": "T7X Tubo PVC",
+                "unit": "m",
+                "quantity": 0,
+                "price": "100 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0008",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "title": "Item com quantidade ou valor vazio/zero",
+            "message": "Preço sem BDI: célula vazia.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 11,
+            "sheet": "01_Revisao",
+            "itemCode": "T12X1",
+            "description": "T12X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "priceWithoutBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T12X1",
+                "source": "SINAPI",
+                "description": "T12X Tubo PVC",
+                "unit": "m",
+                "quantity": 2,
+                "price": "120"
+              }
+            }
+          },
+          {
+            "id": "REV-0009",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "title": "Item com quantidade ou valor vazio/zero",
+            "message": "Preço sem BDI: valor igual a zero.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 12,
+            "sheet": "01_Revisao",
+            "itemCode": "T13X1",
+            "description": "T13X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "priceWithoutBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T13X1",
+                "source": "SINAPI",
+                "description": "T13X Tubo PVC",
+                "unit": "m",
+                "quantity": 2,
+                "price": "0 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0010",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "title": "Item com quantidade ou valor vazio/zero",
+            "message": "BDI: célula vazia.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 13,
+            "sheet": "01_Revisao",
+            "itemCode": "T18X1",
+            "description": "T18X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "bdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T18X1",
+                "source": "SINAPI",
+                "description": "T18X Tubo PVC",
+                "unit": "m",
+                "quantity": 2,
+                "price": "100 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0011",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "title": "Item com quantidade ou valor vazio/zero",
+            "message": "BDI: valor igual a zero.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 14,
+            "sheet": "01_Revisao",
+            "itemCode": "T19X1",
+            "description": "T19X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "bdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T19X1",
+                "source": "SINAPI",
+                "description": "T19X Tubo PVC",
+                "unit": "m",
+                "quantity": 2,
+                "price": "100 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0012",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "title": "Item com quantidade ou valor vazio/zero",
+            "message": "Preço com BDI: célula vazia.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 15,
+            "sheet": "01_Revisao",
+            "itemCode": "T24X1",
+            "description": "T24X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T24X1",
+                "source": "SINAPI",
+                "description": "T24X Tubo PVC",
+                "unit": "m",
+                "quantity": 2,
+                "price": "100"
+              }
+            }
+          },
+          {
+            "id": "REV-0013",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "title": "Item com quantidade ou valor vazio/zero",
+            "message": "Preço com BDI: valor igual a zero.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 16,
+            "sheet": "01_Revisao",
+            "itemCode": "T25X1",
+            "description": "T25X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T25X1",
+                "source": "SINAPI",
+                "description": "T25X Tubo PVC",
+                "unit": "m",
+                "quantity": 2,
+                "price": "100 / 0"
+              }
+            }
+          },
+          {
+            "id": "REV-0014",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "title": "Item com quantidade ou valor vazio/zero",
+            "message": "Total do item: célula vazia.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 17,
+            "sheet": "01_Revisao",
+            "itemCode": "T30X1",
+            "description": "T30X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "totalWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T30X1",
+                "source": "SINAPI",
+                "description": "T30X Tubo PVC",
+                "unit": "m",
+                "quantity": 2,
+                "price": "100 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0015",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "title": "Item com quantidade ou valor vazio/zero",
+            "message": "Total do item: valor igual a zero.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 18,
+            "sheet": "01_Revisao",
+            "itemCode": "T31X1",
+            "description": "T31X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "totalWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T31X1",
+                "source": "SINAPI",
+                "description": "T31X Tubo PVC",
+                "unit": "m",
+                "quantity": 2,
+                "price": "100 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0016",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "title": "Item com quantidade ou valor vazio/zero",
+            "message": "Quantidade: valor igual a zero.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 19,
+            "sheet": "01_Revisao",
+            "itemCode": "T36X1",
+            "description": "T36X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "quantity"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T36X1",
+                "source": "SINAPI",
+                "description": "T36X Tubo PVC",
+                "unit": "m",
+                "quantity": 0,
+                "price": "-1 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0001",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BEFORE_HEADER",
+            "title": "Antes do cabeçalho",
+            "message": "Linha anterior ao cabeçalho selecionado; exibida apenas como contexto na pré-visualização.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 2,
+            "sheet": "01_Revisao",
+            "itemCode": "Revisão conjunta: exclusões, erros e avisos",
+            "description": "",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "Revisão conjunta: exclusões, erros e avisos",
+                "source": "",
+                "description": "",
+                "unit": "",
+                "quantity": "",
+                "price": ""
+              }
+            }
+          },
+          {
+            "id": "REV-0002",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "STRUCTURAL_ROW",
+            "title": "Linha estrutural",
+            "message": "A linha não possui Código, Fonte/Base, Descrição e Unidade suficientes para ser tratada como item do orçamento e não participa da conferência item a item.",
+            "action": "Nenhuma correção é necessária se a linha for apenas parte da estrutura do orçamento.",
+            "rowNumber": 5,
+            "sheet": "01_Revisao",
+            "itemCode": "",
+            "description": "T2X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "",
+                "source": "SINAPI",
+                "description": "T2X Tubo PVC",
+                "unit": "m",
+                "quantity": 2,
+                "price": "100 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0003",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "STRUCTURAL_ROW",
+            "title": "Linha estrutural",
+            "message": "A linha não possui Código, Fonte/Base, Descrição e Unidade suficientes para ser tratada como item do orçamento e não participa da conferência item a item.",
+            "action": "Nenhuma correção é necessária se a linha for apenas parte da estrutura do orçamento.",
+            "rowNumber": 6,
+            "sheet": "01_Revisao",
+            "itemCode": "T3X1",
+            "description": "T3X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T3X1",
+                "source": "",
+                "description": "T3X Tubo PVC",
+                "unit": "m",
+                "quantity": 2,
+                "price": "100 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0004",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "STRUCTURAL_ROW",
+            "title": "Linha estrutural",
+            "message": "A linha não possui Código, Fonte/Base, Descrição e Unidade suficientes para ser tratada como item do orçamento e não participa da conferência item a item.",
+            "action": "Nenhuma correção é necessária se a linha for apenas parte da estrutura do orçamento.",
+            "rowNumber": 7,
+            "sheet": "01_Revisao",
+            "itemCode": "T4X1",
+            "description": "",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T4X1",
+                "source": "SINAPI",
+                "description": "",
+                "unit": "m",
+                "quantity": 2,
+                "price": "100 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0005",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "STRUCTURAL_ROW",
+            "title": "Linha estrutural",
+            "message": "A linha não possui Código, Fonte/Base, Descrição e Unidade suficientes para ser tratada como item do orçamento e não participa da conferência item a item.",
+            "action": "Nenhuma correção é necessária se a linha for apenas parte da estrutura do orçamento.",
+            "rowNumber": 8,
+            "sheet": "01_Revisao",
+            "itemCode": "T5X1",
+            "description": "T5X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T5X1",
+                "source": "SINAPI",
+                "description": "T5X Tubo PVC",
+                "unit": "",
+                "quantity": 2,
+                "price": "100 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0017",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "STRUCTURAL_ROW",
+            "title": "Linha estrutural",
+            "message": "A linha não possui Código, Fonte/Base, Descrição e Unidade suficientes para ser tratada como item do orçamento e não participa da conferência item a item.",
+            "action": "Nenhuma correção é necessária se a linha for apenas parte da estrutura do orçamento.",
+            "rowNumber": 20,
+            "sheet": "01_Revisao",
+            "itemCode": "",
+            "description": "T37X Título",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "",
+                "source": "SINAPI",
+                "description": "T37X Título",
+                "unit": "",
+                "quantity": -1,
+                "price": "abc / 0"
+              }
+            }
+          },
+          {
+            "id": "REV-0018",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "REPEATED_HEADER",
+            "title": "Cabeçalho repetido",
+            "message": "A linha foi classificada como “Cabeçalho repetido” e não será usada na comparação.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 23,
+            "sheet": "01_Revisao",
+            "itemCode": "Código",
+            "description": "Descrição",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "Código",
+                "source": "Fonte",
+                "description": "Descrição",
+                "unit": "Unidade",
+                "quantity": "Quantidade",
+                "price": "Preço sem BDI / Preço com BDI"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "budget/02_Impedimentos",
+      "status": "passed",
+      "expected": {
+        "accepted": 20,
+        "codes": [
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_WITHOUT_VALUE",
+          "MAPPED_VALUE_NEGATIVE",
+          "MAPPED_VALUE_NOT_NUMERIC",
+          "MAPPED_FORMULA_ERROR",
+          "MAPPED_FORMULA_WITHOUT_VALUE"
+        ],
+        "reasons": [],
+        "conflicts": 0,
+        "canProceed": false
+      },
+      "observed": {
+        "summary": {
+          "total": 20,
+          "blockers": 20,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 20,
+          "generalTotalTolerance": 0.2,
+          "complete": false
+        },
+        "canProceed": false,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "blocker",
+            "code": "MAPPED_VALUE_NEGATIVE",
+            "title": "Quantidade negativo",
+            "message": "O valor informado na coluna \"Quantidade\" é -1. Itens do orçamento exigem valores numéricos válidos e maiores que zero nas colunas mapeadas.",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 2,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T8X1",
+            "description": "T8X Tubo PVC",
+            "field": "quantity",
+            "fieldLabel": "Quantidade",
+            "relatedFields": [
+              "quantity"
+            ],
+            "informed": -1,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0002",
+            "severity": "blocker",
+            "code": "MAPPED_VALUE_NOT_NUMERIC",
+            "title": "Quantidade não numérico",
+            "message": "O conteúdo “abc” não é um número válido. Verifique a coluna \"Quantidade\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 3,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T9X1",
+            "description": "T9X Tubo PVC",
+            "field": "quantity",
+            "fieldLabel": "Quantidade",
+            "relatedFields": [
+              "quantity"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0003",
+            "severity": "blocker",
+            "code": "MAPPED_FORMULA_ERROR",
+            "title": "Quantidade com erro de fórmula",
+            "message": "A célula contém o erro #DIV/0!. Verifique a coluna \"Quantidade\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 4,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T10X1",
+            "description": "T10X Tubo PVC",
+            "field": "quantity",
+            "fieldLabel": "Quantidade",
+            "relatedFields": [
+              "quantity"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0004",
+            "severity": "blocker",
+            "code": "MAPPED_FORMULA_WITHOUT_VALUE",
+            "title": "Quantidade com fórmula sem resultado válido",
+            "message": "A célula está vazia. Verifique a coluna \"Quantidade\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 5,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T11X1",
+            "description": "T11X Tubo PVC",
+            "field": "quantity",
+            "fieldLabel": "Quantidade",
+            "relatedFields": [
+              "quantity"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0005",
+            "severity": "blocker",
+            "code": "MAPPED_VALUE_NEGATIVE",
+            "title": "Preço sem BDI negativo",
+            "message": "O valor informado na coluna \"Preço sem BDI\" é -1. Itens do orçamento exigem valores numéricos válidos e maiores que zero nas colunas mapeadas.",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 6,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T14X1",
+            "description": "T14X Tubo PVC",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "priceWithoutBdi"
+            ],
+            "informed": -1,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0006",
+            "severity": "blocker",
+            "code": "MAPPED_VALUE_NOT_NUMERIC",
+            "title": "Preço sem BDI não numérico",
+            "message": "O conteúdo “abc” não é um número válido. Verifique a coluna \"Preço sem BDI\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 7,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T15X1",
+            "description": "T15X Tubo PVC",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "priceWithoutBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0007",
+            "severity": "blocker",
+            "code": "MAPPED_FORMULA_ERROR",
+            "title": "Preço sem BDI com erro de fórmula",
+            "message": "A célula contém o erro #DIV/0!. Verifique a coluna \"Preço sem BDI\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 8,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T16X1",
+            "description": "T16X Tubo PVC",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "priceWithoutBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0008",
+            "severity": "blocker",
+            "code": "MAPPED_FORMULA_WITHOUT_VALUE",
+            "title": "Preço sem BDI com fórmula sem resultado válido",
+            "message": "A célula está vazia. Verifique a coluna \"Preço sem BDI\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 9,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T17X1",
+            "description": "T17X Tubo PVC",
+            "field": "priceWithoutBdi",
+            "fieldLabel": "Preço sem BDI",
+            "relatedFields": [
+              "priceWithoutBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0009",
+            "severity": "blocker",
+            "code": "MAPPED_VALUE_NEGATIVE",
+            "title": "BDI negativo",
+            "message": "O valor informado na coluna \"BDI\" é -0.2. Itens do orçamento exigem valores numéricos válidos e maiores que zero nas colunas mapeadas.",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 10,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T20X1",
+            "description": "T20X Tubo PVC",
+            "field": "bdi",
+            "fieldLabel": "BDI",
+            "relatedFields": [
+              "bdi"
+            ],
+            "informed": -0.2,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0010",
+            "severity": "blocker",
+            "code": "MAPPED_VALUE_NOT_NUMERIC",
+            "title": "BDI não numérico",
+            "message": "O conteúdo “abc” não é um número válido. Verifique a coluna \"BDI\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 11,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T21X1",
+            "description": "T21X Tubo PVC",
+            "field": "bdi",
+            "fieldLabel": "BDI",
+            "relatedFields": [
+              "bdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0011",
+            "severity": "blocker",
+            "code": "MAPPED_FORMULA_ERROR",
+            "title": "BDI com erro de fórmula",
+            "message": "A célula contém o erro #DIV/0!. Verifique a coluna \"BDI\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 12,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T22X1",
+            "description": "T22X Tubo PVC",
+            "field": "bdi",
+            "fieldLabel": "BDI",
+            "relatedFields": [
+              "bdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0012",
+            "severity": "blocker",
+            "code": "MAPPED_FORMULA_WITHOUT_VALUE",
+            "title": "BDI com fórmula sem resultado válido",
+            "message": "A célula está vazia. Verifique a coluna \"BDI\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 13,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T23X1",
+            "description": "T23X Tubo PVC",
+            "field": "bdi",
+            "fieldLabel": "BDI",
+            "relatedFields": [
+              "bdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0013",
+            "severity": "blocker",
+            "code": "MAPPED_VALUE_NEGATIVE",
+            "title": "Preço com BDI negativo",
+            "message": "O valor informado na coluna \"Preço com BDI\" é -1. Itens do orçamento exigem valores numéricos válidos e maiores que zero nas colunas mapeadas.",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 14,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T26X1",
+            "description": "T26X Tubo PVC",
+            "field": "priceWithBdi",
+            "fieldLabel": "Preço com BDI",
+            "relatedFields": [
+              "priceWithBdi"
+            ],
+            "informed": -1,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0014",
+            "severity": "blocker",
+            "code": "MAPPED_VALUE_NOT_NUMERIC",
+            "title": "Preço com BDI não numérico",
+            "message": "O conteúdo “abc” não é um número válido. Verifique a coluna \"Preço com BDI\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 15,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T27X1",
+            "description": "T27X Tubo PVC",
+            "field": "priceWithBdi",
+            "fieldLabel": "Preço com BDI",
+            "relatedFields": [
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0015",
+            "severity": "blocker",
+            "code": "MAPPED_FORMULA_ERROR",
+            "title": "Preço com BDI com erro de fórmula",
+            "message": "A célula contém o erro #DIV/0!. Verifique a coluna \"Preço com BDI\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 16,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T28X1",
+            "description": "T28X Tubo PVC",
+            "field": "priceWithBdi",
+            "fieldLabel": "Preço com BDI",
+            "relatedFields": [
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0016",
+            "severity": "blocker",
+            "code": "MAPPED_FORMULA_WITHOUT_VALUE",
+            "title": "Preço com BDI com fórmula sem resultado válido",
+            "message": "A célula está vazia. Verifique a coluna \"Preço com BDI\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 17,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T29X1",
+            "description": "T29X Tubo PVC",
+            "field": "priceWithBdi",
+            "fieldLabel": "Preço com BDI",
+            "relatedFields": [
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0017",
+            "severity": "blocker",
+            "code": "MAPPED_VALUE_NEGATIVE",
+            "title": "Total do item negativo",
+            "message": "O valor informado na coluna \"Total do item\" é -1. Itens do orçamento exigem valores numéricos válidos e maiores que zero nas colunas mapeadas.",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 18,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T32X1",
+            "description": "T32X Tubo PVC",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "totalWithBdi"
+            ],
+            "informed": -1,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0018",
+            "severity": "blocker",
+            "code": "MAPPED_VALUE_NOT_NUMERIC",
+            "title": "Total do item não numérico",
+            "message": "O conteúdo “abc” não é um número válido. Verifique a coluna \"Total do item\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 19,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T33X1",
+            "description": "T33X Tubo PVC",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "totalWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0019",
+            "severity": "blocker",
+            "code": "MAPPED_FORMULA_ERROR",
+            "title": "Total do item com erro de fórmula",
+            "message": "A célula contém o erro #DIV/0!. Verifique a coluna \"Total do item\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 20,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T34X1",
+            "description": "T34X Tubo PVC",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "totalWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0020",
+            "severity": "blocker",
+            "code": "MAPPED_FORMULA_WITHOUT_VALUE",
+            "title": "Total do item com fórmula sem resultado válido",
+            "message": "A célula está vazia. Verifique a coluna \"Total do item\".",
+            "action": "Corrija a planilha original e carregue o arquivo novamente.",
+            "rowNumber": 21,
+            "sheet": "02_Impedimentos",
+            "itemCode": "T35X1",
+            "description": "T35X Tubo PVC",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "totalWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          }
+        ]
+      }
+    },
+    {
+      "id": "budget/03_Formulas",
+      "status": "passed",
+      "expected": {
+        "accepted": 15,
+        "codes": [
+          "MANUAL_VALUE_IN_FORMULA_COLUMN",
+          "FORMULA_PATTERN_MISMATCH"
+        ],
+        "reasons": [],
+        "conflicts": 0,
+        "canProceed": true,
+        "auditedSum": 3600
+      },
+      "observed": {
+        "summary": {
+          "total": 2,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 2,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 3600,
+          "informedSum": 3600,
+          "auditedSum": 3600,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 15,
+          "generalTotalTolerance": 0.15,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "warning",
+            "code": "MANUAL_VALUE_IN_FORMULA_COLUMN",
+            "title": "Valor manual em coluna predominantemente calculada",
+            "message": "O valor da coluna \"Total do item\" foi digitado diretamente, enquanto a maioria das células equivalentes contém fórmulas.",
+            "action": "Confirme se a substituição manual foi intencional.",
+            "rowNumber": 6,
+            "sheet": "03_Formulas",
+            "itemCode": "T72X5",
+            "description": "T72X Item 5",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "totalWithBdi"
+            ],
+            "informed": 240,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0002",
+            "severity": "warning",
+            "code": "FORMULA_PATTERN_MISMATCH",
+            "title": "Fórmula diferente do padrão dominante",
+            "message": "A coluna \"Total do item\" utiliza uma fórmula estruturalmente diferente da maioria das linhas.",
+            "action": "Verifique se a fórmula excepcional é adequada para este item.",
+            "rowNumber": 16,
+            "sheet": "03_Formulas",
+            "itemCode": "T74X5",
+            "description": "T74X Item 5",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "totalWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "formula": "SUM(H16,H16)",
+              "dominantSignature": "E{R}*H{R}"
+            },
+            "category": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "id": "budget/04_Sem_itens",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "STRUCTURAL_ROW",
+          "NO_BUDGET_ITEMS",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false,
+        "auditedSum": 0
+      },
+      "observed": {
+        "summary": {
+          "total": 4,
+          "blockers": 1,
+          "errors": 1,
+          "warnings": 0,
+          "discarded": 2
+        },
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        },
+        "canProceed": false,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "blocker",
+            "code": "NO_BUDGET_ITEMS",
+            "title": "Nenhum item orçamentário foi identificado",
+            "message": "Não há linhas de item suficientes para realizar a conferência dos cálculos.",
+            "action": "Revise o cabeçalho e o mapeamento das colunas antes de continuar.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0002",
+            "severity": "error",
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "title": "Total geral diverge da soma auditada",
+            "message": "O total geral digitado não corresponde à soma auditada a partir das colunas \"Quantidade\", \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" e o total geral da planilha.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "totalGeneral",
+            "fieldLabel": "Total geral do orçamento",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 240,
+            "expected": 0,
+            "difference": 240,
+            "details": null,
+            "category": "error"
+          },
+          {
+            "id": "REV-0001",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "title": "Item com quantidade ou valor vazio/zero",
+            "message": "Quantidade: célula vazia.",
+            "action": "Confirme se a linha deve permanecer fora dos itens do orçamento.",
+            "rowNumber": 2,
+            "sheet": "04_Sem_itens",
+            "itemCode": "T6X1",
+            "description": "T6X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [
+              "quantity"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "T6X1",
+                "source": "SINAPI",
+                "description": "T6X Tubo PVC",
+                "unit": "m",
+                "quantity": "",
+                "price": "100 / 120"
+              }
+            }
+          },
+          {
+            "id": "REV-0002",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "STRUCTURAL_ROW",
+            "title": "Linha estrutural",
+            "message": "A linha não possui Código, Fonte/Base, Descrição e Unidade suficientes para ser tratada como item do orçamento e não participa da conferência item a item.",
+            "action": "Nenhuma correção é necessária se a linha for apenas parte da estrutura do orçamento.",
+            "rowNumber": 3,
+            "sheet": "04_Sem_itens",
+            "itemCode": "",
+            "description": "T2X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "",
+                "source": "SINAPI",
+                "description": "T2X Tubo PVC",
+                "unit": "m",
+                "quantity": 2,
+                "price": "100 / 120"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "budget/05_Derivados",
+      "status": "passed",
+      "expected": {
+        "accepted": 5,
+        "codes": [
+          "SAME_DESCRIPTION_DIFFERENT_BDI"
+        ],
+        "canProceed": true,
+        "auditedSum": 881
+      },
+      "observed": {
+        "summary": {
+          "total": 1,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 1,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 881,
+          "informedSum": 881,
+          "auditedSum": 881,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 5,
+          "generalTotalTolerance": 0.05,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "warning",
+            "code": "SAME_DESCRIPTION_DIFFERENT_BDI",
+            "title": "Itens com a mesma descrição e BDI diferente",
+            "message": "A mesma descrição aparece nas linhas 5, 6 com percentuais de BDI diferentes: 20,00%, 30,00%. A verificação considera a descrição normalizada, independentemente do código, da fonte ou da unidade. O BDI foi calculado a partir dos preços sem e com BDI, pois a coluna de BDI não foi mapeada.",
+            "action": "Confirme se os diferentes percentuais de BDI são adequados para estas ocorrências do serviço. Este aviso permite prosseguir.",
+            "rowNumber": 5,
+            "sheet": "05_Derivados",
+            "itemCode": "T70X1",
+            "description": "T70X Tubo PVC",
+            "field": "bdi",
+            "fieldLabel": "BDI",
+            "relatedFields": [
+              "priceWithoutBdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "rowNumbers": [
+                5,
+                6
+              ],
+              "bdiRates": [
+                0.2,
+                0.3
+              ],
+              "bdiByRow": [
+                {
+                  "rowNumber": 5,
+                  "rate": 0.2
+                },
+                {
+                  "rowNumber": 6,
+                  "rate": 0.3
+                }
+              ],
+              "derived": true
+            },
+            "category": "warning"
+          }
+        ]
+      }
+    },
+    {
+      "id": "budget/06_Controle",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "codes": [],
+        "canProceed": true,
+        "auditedSum": 480
+      },
+      "observed": {
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 480,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": []
+      }
+    },
+    {
+      "id": "budget/07_Coluna_oculta",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "STRUCTURAL_ROW",
+          "NO_BUDGET_ITEMS",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false,
+        "auditedSum": 0
+      },
+      "observed": {
+        "summary": {
+          "total": 3,
+          "blockers": 1,
+          "errors": 1,
+          "warnings": 0,
+          "discarded": 1
+        },
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        },
+        "canProceed": false,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "blocker",
+            "code": "NO_BUDGET_ITEMS",
+            "title": "Nenhum item orçamentário foi identificado",
+            "message": "Não há linhas de item suficientes para realizar a conferência dos cálculos.",
+            "action": "Revise o cabeçalho e o mapeamento das colunas antes de continuar.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0002",
+            "severity": "error",
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "title": "Total geral diverge da soma auditada",
+            "message": "O total geral digitado não corresponde à soma auditada a partir das colunas \"Quantidade\", \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" e o total geral da planilha.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "totalGeneral",
+            "fieldLabel": "Total geral do orçamento",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 240,
+            "expected": 0,
+            "difference": 240,
+            "details": null,
+            "category": "error"
+          },
+          {
+            "id": "REV-0001",
+            "category": "discarded",
+            "severity": "discarded",
+            "code": "STRUCTURAL_ROW",
+            "title": "Linha estrutural",
+            "message": "A linha não possui Código, Fonte/Base, Descrição e Unidade suficientes para ser tratada como item do orçamento e não participa da conferência item a item.",
+            "action": "Nenhuma correção é necessária se a linha for apenas parte da estrutura do orçamento.",
+            "rowNumber": 2,
+            "sheet": "07_Coluna_oculta",
+            "itemCode": "",
+            "description": "T76X Tubo PVC",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": {
+              "treatment": "Removida",
+              "values": {
+                "code": "",
+                "source": "SINAPI",
+                "description": "T76X Tubo PVC",
+                "unit": "m",
+                "quantity": 2,
+                "price": "100 / 120"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "base/01_Revisao",
+      "status": "passed",
+      "expected": {
+        "accepted": 8,
+        "codes": [],
+        "reasons": [
+          "Preço ausente",
+          "Preço zero",
+          "Preço negativo",
+          "Preço não numérico",
+          "Erro de fórmula no preço",
+          "Fórmula do preço sem resultado válido",
+          "Linha estrutural",
+          "Linha estrutural",
+          "Linha estrutural",
+          "Cabeçalho repetido",
+          "Antes do cabeçalho"
+        ],
+        "conflicts": 0,
+        "canProceed": true
+      },
+      "observed": {
+        "stats": {
+          "accepted": 8,
+          "reviewed": 11,
+          "conflicts": 0
+        },
+        "reviewRows": [
+          {
+            "treatment": "Removida",
+            "reason": "Antes do cabeçalho",
+            "reasonDetails": [
+              "Linha anterior ao cabeçalho selecionado; exibida apenas como contexto na pré-visualização."
+            ],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "01_Revisao",
+              "rowNumber": 1
+            },
+            "values": {
+              "code": "Todas as exclusões e contraprovas de base",
+              "source": "SINAPI",
+              "description": "",
+              "unit": "",
+              "price": ""
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Preço ausente",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "01_Revisao",
+              "rowNumber": 4
+            },
+            "values": {
+              "code": "T83X1",
+              "source": "SINAPI",
+              "description": "T83X Tubo PVC",
+              "unit": "m",
+              "price": ""
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Preço zero",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "01_Revisao",
+              "rowNumber": 5
+            },
+            "values": {
+              "code": "T84X1",
+              "source": "SINAPI",
+              "description": "T84X Tubo PVC",
+              "unit": "m",
+              "price": 0
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Preço negativo",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "01_Revisao",
+              "rowNumber": 6
+            },
+            "values": {
+              "code": "T85X1",
+              "source": "SINAPI",
+              "description": "T85X Tubo PVC",
+              "unit": "m",
+              "price": -1
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Preço não numérico",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "01_Revisao",
+              "rowNumber": 7
+            },
+            "values": {
+              "code": "T86X1",
+              "source": "SINAPI",
+              "description": "T86X Tubo PVC",
+              "unit": "m",
+              "price": "abc"
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Erro de fórmula no preço",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "01_Revisao",
+              "rowNumber": 8
+            },
+            "values": {
+              "code": "T87X1",
+              "source": "SINAPI",
+              "description": "T87X Tubo PVC",
+              "unit": "m",
+              "price": "#DIV/0!"
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Fórmula do preço sem resultado válido",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "01_Revisao",
+              "rowNumber": 9
+            },
+            "values": {
+              "code": "T88X1",
+              "source": "SINAPI",
+              "description": "T88X Tubo PVC",
+              "unit": "m",
+              "price": ""
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Linha estrutural",
+            "reasonDetails": [
+              "Código ausente"
+            ],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "01_Revisao",
+              "rowNumber": 10
+            },
+            "values": {
+              "code": "",
+              "source": "SINAPI",
+              "description": "T89X Tubo PVC",
+              "unit": "m",
+              "price": 100
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Linha estrutural",
+            "reasonDetails": [
+              "Descrição ausente"
+            ],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "01_Revisao",
+              "rowNumber": 11
+            },
+            "values": {
+              "code": "T90X1",
+              "source": "SINAPI",
+              "description": "",
+              "unit": "m",
+              "price": 100
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Linha estrutural",
+            "reasonDetails": [
+              "Unidade ausente"
+            ],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "01_Revisao",
+              "rowNumber": 12
+            },
+            "values": {
+              "code": "T91X1",
+              "source": "SINAPI",
+              "description": "T91X Tubo PVC",
+              "unit": "",
+              "price": 100
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Cabeçalho repetido",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "01_Revisao",
+              "rowNumber": 13
+            },
+            "values": {
+              "code": "Código",
+              "source": "SINAPI",
+              "description": "Descrição",
+              "unit": "Unidade",
+              "price": "Preço"
+            }
+          }
+        ],
+        "conflicts": []
+      }
+    },
+    {
+      "id": "base/02_Conflitos",
+      "status": "passed",
+      "expected": {
+        "accepted": 4,
+        "codes": [],
+        "reasons": [],
+        "conflicts": 2,
+        "canProceed": true
+      },
+      "observed": {
+        "stats": {
+          "accepted": 4,
+          "reviewed": 0,
+          "conflicts": 2
+        },
+        "reviewRows": [],
+        "conflicts": [
+          {
+            "source": "SINAPI",
+            "sourceKey": "sinapi",
+            "code": "T96X1",
+            "description": "T96X Tubo PVC",
+            "reasons": [
+              "valor referencial"
+            ],
+            "occurrences": [
+              {
+                "baseName": "02_Conflitos",
+                "description": "T96X Tubo PVC",
+                "unit": "m",
+                "price": {
+                  "raw": 100,
+                  "value": 100,
+                  "issue": ""
+                },
+                "origins": [
+                  {
+                    "fileName": "bases-agrupadas.xlsx",
+                    "sheet": "02_Conflitos",
+                    "rowNumber": 2
+                  }
+                ]
+              },
+              {
+                "baseName": "02_Conflitos",
+                "description": "T96X Tubo PVC",
+                "unit": "m",
+                "price": {
+                  "raw": 101,
+                  "value": 101,
+                  "issue": ""
+                },
+                "origins": [
+                  {
+                    "fileName": "bases-agrupadas.xlsx",
+                    "sheet": "02_Conflitos",
+                    "rowNumber": 3
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "source": "SINAPI",
+            "sourceKey": "sinapi",
+            "code": "T97X1",
+            "description": "T97X Tubo PVC",
+            "reasons": [
+              "unidade"
+            ],
+            "occurrences": [
+              {
+                "baseName": "02_Conflitos",
+                "description": "T97X Tubo PVC",
+                "unit": "m",
+                "price": {
+                  "raw": 100,
+                  "value": 100,
+                  "issue": ""
+                },
+                "origins": [
+                  {
+                    "fileName": "bases-agrupadas.xlsx",
+                    "sheet": "02_Conflitos",
+                    "rowNumber": 4
+                  }
+                ]
+              },
+              {
+                "baseName": "02_Conflitos",
+                "description": "T97X Tubo PVC",
+                "unit": "un",
+                "price": {
+                  "raw": 100,
+                  "value": 100,
+                  "issue": ""
+                },
+                "origins": [
+                  {
+                    "fileName": "bases-agrupadas.xlsx",
+                    "sheet": "02_Conflitos",
+                    "rowNumber": 5
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "id": "base/03_Sem_validos",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [],
+        "reasons": [
+          "Preço ausente",
+          "Preço zero",
+          "Preço negativo",
+          "Preço não numérico",
+          "Erro de fórmula no preço",
+          "Fórmula do preço sem resultado válido",
+          "Linha estrutural",
+          "Linha estrutural",
+          "Linha estrutural"
+        ],
+        "conflicts": 0,
+        "canProceed": true
+      },
+      "observed": {
+        "stats": {
+          "accepted": 0,
+          "reviewed": 9,
+          "conflicts": 0
+        },
+        "reviewRows": [
+          {
+            "treatment": "Removida",
+            "reason": "Preço ausente",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "03_Sem_validos",
+              "rowNumber": 2
+            },
+            "values": {
+              "code": "T83X1",
+              "source": "SINAPI",
+              "description": "T83X Tubo PVC",
+              "unit": "m",
+              "price": ""
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Preço zero",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "03_Sem_validos",
+              "rowNumber": 3
+            },
+            "values": {
+              "code": "T84X1",
+              "source": "SINAPI",
+              "description": "T84X Tubo PVC",
+              "unit": "m",
+              "price": 0
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Preço negativo",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "03_Sem_validos",
+              "rowNumber": 4
+            },
+            "values": {
+              "code": "T85X1",
+              "source": "SINAPI",
+              "description": "T85X Tubo PVC",
+              "unit": "m",
+              "price": -1
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Preço não numérico",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "03_Sem_validos",
+              "rowNumber": 5
+            },
+            "values": {
+              "code": "T86X1",
+              "source": "SINAPI",
+              "description": "T86X Tubo PVC",
+              "unit": "m",
+              "price": "abc"
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Erro de fórmula no preço",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "03_Sem_validos",
+              "rowNumber": 6
+            },
+            "values": {
+              "code": "T87X1",
+              "source": "SINAPI",
+              "description": "T87X Tubo PVC",
+              "unit": "m",
+              "price": "#DIV/0!"
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Fórmula do preço sem resultado válido",
+            "reasonDetails": [],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "03_Sem_validos",
+              "rowNumber": 7
+            },
+            "values": {
+              "code": "T88X1",
+              "source": "SINAPI",
+              "description": "T88X Tubo PVC",
+              "unit": "m",
+              "price": ""
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Linha estrutural",
+            "reasonDetails": [
+              "Código ausente"
+            ],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "03_Sem_validos",
+              "rowNumber": 8
+            },
+            "values": {
+              "code": "",
+              "source": "SINAPI",
+              "description": "T89X Tubo PVC",
+              "unit": "m",
+              "price": 100
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Linha estrutural",
+            "reasonDetails": [
+              "Descrição ausente"
+            ],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "03_Sem_validos",
+              "rowNumber": 9
+            },
+            "values": {
+              "code": "T90X1",
+              "source": "SINAPI",
+              "description": "",
+              "unit": "m",
+              "price": 100
+            }
+          },
+          {
+            "treatment": "Removida",
+            "reason": "Linha estrutural",
+            "reasonDetails": [
+              "Unidade ausente"
+            ],
+            "origin": {
+              "fileName": "bases-agrupadas.xlsx",
+              "sheet": "03_Sem_validos",
+              "rowNumber": 10
+            },
+            "values": {
+              "code": "T91X1",
+              "source": "SINAPI",
+              "description": "T91X Tubo PVC",
+              "unit": "",
+              "price": 100
+            }
+          }
+        ],
+        "conflicts": []
+      }
+    },
+    {
+      "id": "comparison/01_Comparacao",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "abaixo",
+          "igual",
+          "acima",
+          "nao-encontrado",
+          "igual",
+          "nao-encontrado",
+          "igual",
+          "igual",
+          "igual",
+          "acima",
+          "abaixo",
+          "igual",
+          "igual",
+          "nao-encontrado",
+          "nao-encontrado",
+          "nao-encontrado",
+          "igual",
+          "igual",
+          "nao-encontrado"
+        ],
+        "total": 3337.67
+      },
+      "observed": {
+        "stats": {
+          "total": 19,
+          "matched": 13,
+          "compared": 13,
+          "below": 2,
+          "equal": 9,
+          "above": 2,
+          "notFound": 6,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 3337.67,
+        "statuses": [
+          "abaixo",
+          "igual",
+          "acima",
+          "nao-encontrado",
+          "igual",
+          "nao-encontrado",
+          "igual",
+          "igual",
+          "igual",
+          "acima",
+          "abaixo",
+          "igual",
+          "igual",
+          "nao-encontrado",
+          "nao-encontrado",
+          "nao-encontrado",
+          "igual",
+          "igual",
+          "nao-encontrado"
+        ]
+      }
+    },
+    {
+      "id": "comparison/02_ABC_limites",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "abaixo",
+          "igual",
+          "acima",
+          "nao-encontrado"
+        ],
+        "differences": [
+          -10,
+          0,
+          5,
+          null
+        ],
+        "total": 120,
+        "abc": [
+          "A",
+          "B",
+          "C",
+          "C"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 4,
+          "matched": 3,
+          "compared": 3,
+          "below": 1,
+          "equal": 1,
+          "above": 1,
+          "notFound": 1,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 120,
+        "statuses": [
+          "abaixo",
+          "igual",
+          "acima",
+          "nao-encontrado"
+        ]
+      }
+    },
+    {
+      "id": "comparison/03_ABC_cruzamento",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "igual",
+          "nao-encontrado"
+        ],
+        "total": 100,
+        "abc": [
+          "B",
+          "C"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 2,
+          "matched": 1,
+          "compared": 1,
+          "below": 0,
+          "equal": 1,
+          "above": 0,
+          "notFound": 1,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 100,
+        "statuses": [
+          "igual",
+          "nao-encontrado"
+        ]
+      }
+    },
+    {
+      "id": "CTRL-OK",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-OK",
+        "sheet": "06_Controle",
+        "total": 480,
+        "covers": [
+          "ORC-OK-001"
+        ],
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 480,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": []
+      }
+    },
+    {
+      "id": "CTRL-DER-SEM",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-DER-SEM",
+        "sheet": "06_Controle",
+        "total": 480,
+        "mapping": {
+          "code": 0,
+          "source": 1,
+          "description": 2,
+          "unit": 3,
+          "quantity": 4,
+          "priceWithoutBdi": null,
+          "bdi": 6,
+          "priceWithBdi": 7,
+          "totalWithBdi": 8
+        },
+        "covers": [
+          "ORC-DER-SEM"
+        ],
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 480,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": []
+      }
+    },
+    {
+      "id": "CTRL-DER-COM",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-DER-COM",
+        "sheet": "06_Controle",
+        "total": 480,
+        "mapping": {
+          "code": 0,
+          "source": 1,
+          "description": 2,
+          "unit": 3,
+          "quantity": 4,
+          "priceWithoutBdi": 5,
+          "bdi": 6,
+          "priceWithBdi": null,
+          "totalWithBdi": 8
+        },
+        "covers": [
+          "ORC-DER-COM"
+        ],
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 480,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": []
+      }
+    },
+    {
+      "id": "CTRL-DER-BDI",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-DER-BDI",
+        "sheet": "06_Controle",
+        "total": 480,
+        "mapping": {
+          "code": 0,
+          "source": 1,
+          "description": 2,
+          "unit": 3,
+          "quantity": 4,
+          "priceWithoutBdi": 5,
+          "bdi": null,
+          "priceWithBdi": 7,
+          "totalWithBdi": 8
+        },
+        "covers": [
+          "ORC-DER-BDI"
+        ],
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 480,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": []
+      }
+    },
+    {
+      "id": "CTRL-TOT-VAZ",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-TOT-VAZ",
+        "sheet": "06_Controle",
+        "total": "",
+        "covers": [
+          "ORC-TOT-VAZ"
+        ],
+        "codes": [
+          "GENERAL_TOTAL_INVALID"
+        ],
+        "canProceed": false,
+        "prerequisite": true
+      },
+      "observed": {
+        "summary": {
+          "total": 1,
+          "blockers": 1,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": null,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        },
+        "canProceed": false,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "blocker",
+            "code": "GENERAL_TOTAL_INVALID",
+            "title": "Total geral ausente ou inválido",
+            "message": "O total geral do orçamento deve ser digitado como um número válido.",
+            "action": "Informe o total geral exibido na planilha antes de continuar.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "totalGeneral",
+            "fieldLabel": "Total geral do orçamento",
+            "relatedFields": [
+              "totalGeneral"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CTRL-TOT-TXT",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-TOT-TXT",
+        "sheet": "06_Controle",
+        "total": "abc",
+        "covers": [
+          "ORC-TOT-TXT"
+        ],
+        "codes": [
+          "GENERAL_TOTAL_INVALID"
+        ],
+        "canProceed": false,
+        "prerequisite": true
+      },
+      "observed": {
+        "summary": {
+          "total": 1,
+          "blockers": 1,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": null,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        },
+        "canProceed": false,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "blocker",
+            "code": "GENERAL_TOTAL_INVALID",
+            "title": "Total geral ausente ou inválido",
+            "message": "O total geral do orçamento deve ser digitado como um número válido.",
+            "action": "Informe o total geral exibido na planilha antes de continuar.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "totalGeneral",
+            "fieldLabel": "Total geral do orçamento",
+            "relatedFields": [
+              "totalGeneral"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CTRL-TOT-ZERO",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-TOT-ZERO",
+        "sheet": "06_Controle",
+        "total": 0,
+        "covers": [
+          "ORC-TOT-ZERO"
+        ],
+        "codes": [
+          "NON_POSITIVE_VALUE",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": true,
+        "prerequisite": false
+      },
+      "observed": {
+        "summary": {
+          "total": 2,
+          "blockers": 0,
+          "errors": 1,
+          "warnings": 1,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 0,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": -480,
+          "differenceFromAudited": -480,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "warning",
+            "code": "NON_POSITIVE_VALUE",
+            "title": "Total geral igual a zero ou negativo",
+            "message": "O Total geral digitado é 0.",
+            "action": "Confirme se o valor é intencional.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "totalGeneral",
+            "fieldLabel": "Total geral do orçamento",
+            "relatedFields": [
+              "totalGeneral"
+            ],
+            "informed": 0,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0002",
+            "severity": "error",
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "title": "Total geral diverge da soma auditada",
+            "message": "O total geral digitado não corresponde à soma auditada a partir das colunas \"Quantidade\", \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" e o total geral da planilha.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "totalGeneral",
+            "fieldLabel": "Total geral do orçamento",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 0,
+            "expected": 480,
+            "difference": -480,
+            "details": null,
+            "category": "error"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CTRL-TOT-NEG",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-TOT-NEG",
+        "sheet": "06_Controle",
+        "total": -1,
+        "covers": [
+          "ORC-TOT-NEG"
+        ],
+        "codes": [
+          "NON_POSITIVE_VALUE",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": true,
+        "prerequisite": false
+      },
+      "observed": {
+        "summary": {
+          "total": 2,
+          "blockers": 0,
+          "errors": 1,
+          "warnings": 1,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": -1,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": -481,
+          "differenceFromAudited": -481,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "warning",
+            "code": "NON_POSITIVE_VALUE",
+            "title": "Total geral igual a zero ou negativo",
+            "message": "O Total geral digitado é -1.",
+            "action": "Confirme se o valor é intencional.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "totalGeneral",
+            "fieldLabel": "Total geral do orçamento",
+            "relatedFields": [
+              "totalGeneral"
+            ],
+            "informed": -1,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "warning"
+          },
+          {
+            "id": "AUD-0002",
+            "severity": "error",
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "title": "Total geral diverge da soma auditada",
+            "message": "O total geral digitado não corresponde à soma auditada a partir das colunas \"Quantidade\", \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" e o total geral da planilha.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "totalGeneral",
+            "fieldLabel": "Total geral do orçamento",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": -1,
+            "expected": 480,
+            "difference": -481,
+            "details": null,
+            "category": "error"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CTRL-ORC-LIM-GERAL",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-ORC-LIM-GERAL",
+        "sheet": "06_Controle",
+        "total": 480.02,
+        "covers": [
+          "ORC-LIM-GERAL"
+        ],
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "summary": {
+          "total": 0,
+          "blockers": 0,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 480.02,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 0.02,
+          "differenceFromAudited": 0.02,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": []
+      }
+    },
+    {
+      "id": "CTRL-ORC-LIM-GERAL-FORA",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-ORC-LIM-GERAL-FORA",
+        "sheet": "06_Controle",
+        "total": 480.03,
+        "covers": [
+          "ORC-LIM-GERAL-FORA"
+        ],
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "summary": {
+          "total": 1,
+          "blockers": 0,
+          "errors": 1,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 480.03,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 0.03,
+          "differenceFromAudited": 0.03,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "error",
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "title": "Total geral diverge da soma auditada",
+            "message": "O total geral digitado não corresponde à soma auditada a partir das colunas \"Quantidade\", \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" e o total geral da planilha.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "totalGeneral",
+            "fieldLabel": "Total geral do orçamento",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 480.03,
+            "expected": 480,
+            "difference": 0.03,
+            "details": null,
+            "category": "error"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CTRL-ORC-ERR-GERAL",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-ORC-ERR-GERAL",
+        "sheet": "06_Controle",
+        "total": 481,
+        "covers": [
+          "ORC-ERR-GERAL"
+        ],
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "summary": {
+          "total": 1,
+          "blockers": 0,
+          "errors": 1,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 481,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 1,
+          "differenceFromAudited": 1,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        },
+        "canProceed": true,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "error",
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "title": "Total geral diverge da soma auditada",
+            "message": "O total geral digitado não corresponde à soma auditada a partir das colunas \"Quantidade\", \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" e o total geral da planilha.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "totalGeneral",
+            "fieldLabel": "Total geral do orçamento",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 481,
+            "expected": 480,
+            "difference": 1,
+            "details": null,
+            "category": "error"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CTRL-MAP-001",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-MAP-001",
+        "sheet": "06_Controle",
+        "total": 480,
+        "mapping": {
+          "code": 0,
+          "source": 1,
+          "description": 2,
+          "unit": 3,
+          "quantity": 4,
+          "priceWithoutBdi": 5,
+          "bdi": null,
+          "priceWithBdi": null,
+          "totalWithBdi": 8
+        },
+        "covers": [
+          "ORC-MAP-001"
+        ],
+        "codes": [
+          "PRICE_COMPONENTS_INSUFFICIENT"
+        ],
+        "canProceed": false,
+        "prerequisite": true
+      },
+      "observed": {
+        "summary": {
+          "total": 1,
+          "blockers": 1,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 480,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": false
+        },
+        "canProceed": false,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "blocker",
+            "code": "PRICE_COMPONENTS_INSUFFICIENT",
+            "title": "Mapeamento de preços insuficiente",
+            "message": "É necessário mapear pelo menos dois entre preço sem BDI, BDI e preço com BDI.",
+            "action": "Revise o mapeamento das colunas antes de continuar.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "",
+            "fieldLabel": "",
+            "relatedFields": [],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          }
+        ]
+      }
+    },
+    {
+      "id": "CTRL-MAP-002",
+      "status": "passed",
+      "expected": {
+        "id": "CTRL-MAP-002",
+        "sheet": "06_Controle",
+        "total": 480,
+        "mapping": {
+          "code": 0,
+          "source": 1,
+          "description": 2,
+          "unit": 3,
+          "quantity": 4,
+          "priceWithoutBdi": 5,
+          "bdi": 6,
+          "priceWithBdi": 7,
+          "totalWithBdi": null
+        },
+        "covers": [
+          "ORC-MAP-002"
+        ],
+        "codes": [
+          "ITEM_TOTAL_COLUMN_MISSING"
+        ],
+        "canProceed": false,
+        "prerequisite": true
+      },
+      "observed": {
+        "summary": {
+          "total": 1,
+          "blockers": 1,
+          "errors": 0,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 480,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": false
+        },
+        "canProceed": false,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "blocker",
+            "code": "ITEM_TOTAL_COLUMN_MISSING",
+            "title": "Coluna de valor total com BDI não mapeada",
+            "message": "A auditoria e os resultados da v4.4.0 dependem da coluna \"Valor total com BDI\".",
+            "action": "Mapeie a coluna \"Valor total com BDI\" antes de continuar.",
+            "rowNumber": null,
+            "sheet": "",
+            "itemCode": "",
+            "description": "",
+            "field": "totalWithBdi",
+            "fieldLabel": "Valor total com BDI",
+            "relatedFields": [
+              "totalWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          }
+        ]
+      }
+    },
+    {
+      "id": "DER-ESTOURO",
+      "status": "passed",
+      "expected": {
+        "id": "DER-ESTOURO",
+        "sheet": "05_Derivados",
+        "total": 881,
+        "mapping": {
+          "code": 0,
+          "source": 1,
+          "description": 2,
+          "unit": 3,
+          "quantity": 4,
+          "priceWithoutBdi": 5,
+          "bdi": 6,
+          "priceWithBdi": null,
+          "totalWithBdi": 8
+        },
+        "covers": [
+          "ORC-DER-INF"
+        ],
+        "codes": [
+          "PRICE_COMPONENT_DERIVATION_IMPOSSIBLE",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "summary": {
+          "total": 4,
+          "blockers": 1,
+          "errors": 3,
+          "warnings": 0,
+          "discarded": 0
+        },
+        "totals": {
+          "declared": 881,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 5,
+          "generalTotalTolerance": 0.05,
+          "complete": false
+        },
+        "canProceed": false,
+        "findings": [
+          {
+            "id": "AUD-0001",
+            "severity": "error",
+            "code": "ITEM_TOTAL_MISMATCH",
+            "title": "Valor total do item divergente",
+            "message": "O valor de \"Total do item\" não corresponde a \"Quantidade\" multiplicada por \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" na planilha.",
+            "rowNumber": 2,
+            "sheet": "05_Derivados",
+            "itemCode": "T50X1",
+            "description": "T50X Tubo PVC",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 200,
+            "expected": 240,
+            "difference": -40,
+            "details": null,
+            "category": "error"
+          },
+          {
+            "id": "AUD-0002",
+            "severity": "error",
+            "code": "ITEM_TOTAL_MISMATCH",
+            "title": "Valor total do item divergente",
+            "message": "O valor de \"Total do item\" não corresponde a \"Quantidade\" multiplicada por \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" na planilha.",
+            "rowNumber": 3,
+            "sheet": "05_Derivados",
+            "itemCode": "T51X1",
+            "description": "T51X Tubo PVC",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 180,
+            "expected": 240,
+            "difference": -60,
+            "details": null,
+            "category": "error"
+          },
+          {
+            "id": "AUD-0003",
+            "severity": "blocker",
+            "code": "PRICE_COMPONENT_DERIVATION_IMPOSSIBLE",
+            "title": "Não foi possível calcular o componente de preço ausente",
+            "message": "A combinação de valores das colunas \"Preço sem BDI\", \"BDI\", \"Preço com BDI\" não permite calcular com segurança o componente que não foi mapeado.",
+            "action": "Corrija a planilha original ou mapeie outra combinação de colunas e carregue o arquivo novamente.",
+            "rowNumber": 4,
+            "sheet": "05_Derivados",
+            "itemCode": "T52X1",
+            "description": "T52X Estouro",
+            "field": "priceWithBdi",
+            "fieldLabel": "Preço com BDI",
+            "relatedFields": [
+              "priceWithoutBdi",
+              "bdi",
+              "priceWithBdi"
+            ],
+            "informed": null,
+            "expected": null,
+            "difference": null,
+            "details": null,
+            "category": "blocker"
+          },
+          {
+            "id": "AUD-0004",
+            "severity": "error",
+            "code": "ITEM_TOTAL_MISMATCH",
+            "title": "Valor total do item divergente",
+            "message": "O valor de \"Total do item\" não corresponde a \"Quantidade\" multiplicada por \"Preço com BDI\".",
+            "action": "Revise as colunas \"Quantidade\", \"Preço com BDI\", \"Total do item\" na planilha.",
+            "rowNumber": 6,
+            "sheet": "05_Derivados",
+            "itemCode": "T70X2",
+            "description": "T70X Túbo PVC",
+            "field": "totalWithBdi",
+            "fieldLabel": "Total do item",
+            "relatedFields": [
+              "quantity",
+              "priceWithBdi",
+              "totalWithBdi"
+            ],
+            "informed": 260,
+            "expected": 240,
+            "difference": 20,
+            "details": null,
+            "category": "error"
+          }
+        ]
+      }
+    }
+  ]
+}

@@ -4,7 +4,9 @@ Aplicação offline para conferir cálculos de orçamentos de obras e comparar p
 
 **Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).**
 
-A candidata atual é **v4.4.0-rc.19**. O HTML está em [dist/](dist/sicorp_comparador_orcamento_v4.4.0-rc.19.html), com hash em [SHA256SUMS.txt](dist/SHA256SUMS.txt). Baixar e abrir o arquivo no navegador; o uso do programa não requer Node.js ou servidor. A versão continua beta, sujeita à conferência pelo analista. Não foi promovida a versão final.
+A candidata atual é **v4.4.0-rc.20**. O HTML está em [dist/](dist/sicorp_comparador_orcamento_v4.4.0-rc.20.html), com hash em [SHA256SUMS.txt](dist/SHA256SUMS.txt). Baixar e abrir o arquivo no navegador; o uso do programa não requer Node.js ou servidor. A versão continua beta, sujeita à conferência pelo analista. Não foi promovida a versão final.
+
+A rc.20 amplia também a revisão das bases, mantém uma pequena margem ao redor das duas janelas e abre diretamente na importação, sem o diálogo inicial. Ver [ajustes da rc.20](docs/AJUSTES_INTERFACE_RC20.md).
 
 A rc.19 amplia a revisão do orçamento para toda a tela e move versão e autoria para um rodapé discreto, retirando “Offline” do cabeçalho. Ver [ajustes da interface](docs/AJUSTES_INTERFACE_RC19.md).
 

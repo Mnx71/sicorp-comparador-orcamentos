@@ -5291,12 +5291,4 @@
     renderBaseList();
     renderConflictAudit();
     goToPage(1);
-    const betaNoticeDialog = el("betaNoticeDialog");
-    betaNoticeDialog.addEventListener("cancel", (event) => event.preventDefault());
-    el("betaNoticeContinue").addEventListener("click", () => {
-      if (typeof betaNoticeDialog.close === "function") betaNoticeDialog.close();
-      else betaNoticeDialog.removeAttribute("open");
-    });
-    if (typeof betaNoticeDialog.showModal === "function") betaNoticeDialog.showModal();
-    else betaNoticeDialog.setAttribute("open", "");
   

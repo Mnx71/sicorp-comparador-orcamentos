@@ -56,7 +56,7 @@ async function download(button,name) {
  const target=`${output}/${name}`;await d.saveAs(target);return target;
 }
 try {
- await page.goto(url);await page.click('#betaNoticeContinue');
+ await page.goto(url);
  await record('HTML-CMP-ORACULOS',async()=>{
   for(const c of cases.filter(c=>c.kind==='comparison')) {
    const actual=await page.evaluate(c=>{
@@ -168,7 +168,7 @@ try {
   assert.equal(await page.evaluate(()=>state.bases.length),1);assert.equal(await page.evaluate(()=>state.results.length),0);
  });
  await record('UI-PERSISTENCIA',async()=>{
-  await page.close();page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.accept());await page.goto(url);await page.click('#betaNoticeContinue');
+  await page.close();page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));page.on('dialog',d=>d.accept());await page.goto(url);
   assert.deepEqual(await page.evaluate(()=>visibleComparisonColumnDefinitions().map(c=>c.key)),['code','status','projectDescription','baseDescription']);
  });
  await record('UI-ORSE-OFFLINE',async()=>{
@@ -202,7 +202,7 @@ try {
  await record('UI-ARMAZENAMENTO-FALHA',async()=>{
   const isolated=await browser.newContext();await isolated.setOffline(true);
   await isolated.addInitScript(()=>{Storage.prototype.getItem=()=>{throw new Error('armazenamento indisponível')};Storage.prototype.setItem=()=>{throw new Error('armazenamento indisponível')};});
-  const p=await isolated.newPage();p.on('pageerror',e=>errors.push(e.message));await p.goto(url);await p.click('#betaNoticeContinue');
+  const p=await isolated.newPage();p.on('pageerror',e=>errors.push(e.message));await p.goto(url);
   assert.equal(await p.evaluate(()=>visibleComparisonColumnDefinitions().length),17);
   await p.evaluate(()=>saveResultColumnConfiguration(allResultColumnKeys(),['code']));assert.equal(await p.evaluate(()=>visibleComparisonColumnDefinitions()[0].key),'code');await isolated.close();
  });
@@ -211,10 +211,10 @@ try {
   let persistent;
   try {
    persistent=await playwright.chromium.launchPersistentContext(profile,launch);await persistent.setOffline(true);
-   let p=persistent.pages()[0]||await persistent.newPage();p.on('pageerror',e=>errors.push(e.message));await p.goto(url);await p.click('#betaNoticeContinue');
+   let p=persistent.pages()[0]||await persistent.newPage();p.on('pageerror',e=>errors.push(e.message));await p.goto(url);
    await p.evaluate(()=>saveResultColumnConfiguration(allResultColumnKeys().reverse(),['code','status']));await persistent.close();persistent=null;
    persistent=await playwright.chromium.launchPersistentContext(profile,launch);await persistent.setOffline(true);
-   p=persistent.pages()[0]||await persistent.newPage();p.on('pageerror',e=>errors.push(e.message));await p.goto(url);await p.click('#betaNoticeContinue');
+   p=persistent.pages()[0]||await persistent.newPage();p.on('pageerror',e=>errors.push(e.message));await p.goto(url);
    assert.deepEqual(await p.evaluate(()=>visibleComparisonColumnDefinitions().map(c=>c.key)),['code','status']);
    assert.equal(await p.evaluate(()=>resultColumnOrderKeys().length),17);
   } finally {if(persistent)await persistent.close();fs.rmSync(profile,{recursive:true,force:true});}
