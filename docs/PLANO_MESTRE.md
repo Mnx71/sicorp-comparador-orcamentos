@@ -6,6 +6,8 @@ Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Depart
 
 ## Estado atual — 04/11/2026
 
+**Requisito esclarecido pelo usuário:** o tutorial deve acompanhar o uso real, destacando campos e orientando conforme as ações. O guia de consulta da 4.5.0-rc.1 é introdutório e não conclui esse requisito. Implementar na 4.5.0-rc.2, preservando as versões existentes. Escopo e aceitação em `handoffs/HANDOFF_03_DOCUMENTACAO_DISTRIBUICAO.md`.
+
 O PR #1 foi integrado à main em `93a7f510c9c61446a54cb675339c2d90f55c2ab7`. Manual em `manual/MANUAL_USUARIO.md`; tutorial opcional e não destrutivo implementado em **4.5.0-rc.1**, em branch separada. A final 4.4.0 foi preservada. Continuidade em `handoffs/HANDOFF_03_DOCUMENTACAO_DISTRIBUICAO.md`. As indicações anteriores de integração/manual/tutorial pendentes são históricas.
 
 **Versão final 4.4.0**, promovida por solicitação expressa do responsável. Distribuir `dist/sicorp_comparador_orcamento_v4.4.0.html`. Registro: `releases/v4.4.0.md`. Commit da promoção: `c2ab5dc6af2f02e6a704bfd9d2de15b080a1d933`. Origem funcional testada: `d1ea4f92087b07c899f5e826408aa7e2c01a4175`.
@@ -22,10 +24,10 @@ A promoção altera apenas o número da versão no rodapé e os metadados de ger
 | Regressão real da origem aprovada | 424 itens e R$ 1.990.067,18, com cálculo decimal independente |
 | Validação manual | Usuário relatou orçamento e bases agrupadas funcionando; homologação integral pendente |
 | Windows e inspeção no Excel/LibreOffice | Verificação complementar pendente |
-| Manual do usuário e tutorial | Manual produzido; guia de sete etapas na candidata 4.5.0-rc.1 |
+| Manual do usuário e tutorial | Manual produzido; guia introdutório na rc.1; acompanhamento contextual ainda a implementar |
 | Integração da 4.4.0 na main e licença | Integração concluída; licença pendente |
 
-As etapas 1 a 3 foram concluídas no escopo automatizado documentado. A finalização da versão foi autorizada antes do manual e tutorial; as restrições de promoção das candidatas ficam superadas por essa decisão. A inclusão posterior de tutorial no HTML deverá usar uma nova versão. O handoff vigente é `handoffs/HANDOFF_02_TUTORIAL_MANUAL.md`.
+As etapas 1 a 3 foram concluídas no escopo automatizado documentado. A finalização da versão foi autorizada antes do manual e tutorial; as restrições de promoção das candidatas ficam superadas por essa decisão. A inclusão posterior de tutorial no HTML deverá usar uma nova versão. O handoff vigente é `handoffs/HANDOFF_03_DOCUMENTACAO_DISTRIBUICAO.md`.
 
 A sequência abaixo conserva o planejamento e o histórico. As situações datadas das candidatas descrevem aquelas execuções, não substituem o estado atual acima.
 

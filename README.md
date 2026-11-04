@@ -20,7 +20,7 @@ A rc.16 e o pacote histórico da v4.3 permanecem intactos em `baseline/` e `refe
 
 ## Em desenvolvimento
 
-A candidata **4.5.0-rc.1**, em `dist/sicorp_comparador_orcamento_v4.5.0-rc.1.html`, acrescenta o tutorial opcional de sete etapas. A final 4.4.0 permanece preservada. O [manual do usuário](docs/manual/MANUAL_USUARIO.md) descreve o fluxo de ambas as versões. O tutorial não carrega exemplos automaticamente nem altera a sessão.
+A candidata **4.5.0-rc.1**, em `dist/sicorp_comparador_orcamento_v4.5.0-rc.1.html`, acrescenta o tutorial opcional de sete etapas. A final 4.4.0 permanece preservada. O [manual do usuário](docs/manual/MANUAL_USUARIO.md) descreve o fluxo de ambas as versões. O guia atual não carrega exemplos automaticamente nem altera a sessão. O acompanhamento ao longo do uso ainda será desenvolvido; seu requisito está no [Handoff 03](docs/handoffs/HANDOFF_03_DOCUMENTACAO_DISTRIBUICAO.md).
 
 ## Entregas
 
