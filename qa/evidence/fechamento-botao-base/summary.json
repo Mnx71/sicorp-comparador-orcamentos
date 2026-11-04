@@ -1,0 +1,50 @@
+{
+  "version": "4.4.0-rc.20",
+  "baseCommit": "d1d033bda646f0af9f3c423b5a28578f7675ab23",
+  "scope": {
+    "onlyRequestedProductChange": true,
+    "removedLines": 2,
+    "versionUnchanged": "4.4.0-rc.20",
+    "beforeSha256": "fe75bc7f44acb2c441d0a5d065a3bc6789270284966578797f7cb279611a094c",
+    "afterSha256": "6f2f5e8fef769eacd48890772622194c5f9c1e537ec977d54de582677bf17e2d"
+  },
+  "commands": [
+    {
+      "command": "npm run check",
+      "exitCode": 0,
+      "tests": 363,
+      "browserChecks": 103,
+      "groupedFileCases": 27,
+      "groupedBrowserChecks": 27,
+      "layoutCombinations": 84
+    },
+    {
+      "command": "npm run audit:cases",
+      "exitCode": 0,
+      "cases": 114
+    },
+    {
+      "command": "npm run regression:real",
+      "exitCode": 0,
+      "accepted": 424,
+      "excluded": 114,
+      "matched": 183,
+      "notFound": 241,
+      "independentArithmetic": {
+        "checkedItems": 424,
+        "auditedTotal": 1990067.18,
+        "itemMismatches": 0,
+        "bdiMismatches": 0
+      }
+    }
+  ],
+  "limitations": [
+    "Cobertura limitada aos cenários executados; ausência absoluta de bugs não é demonstrável pelos testes.",
+    "Execução local em Chromium/Linux; conferência direta em Windows e Excel/LibreOffice não executada."
+  ],
+  "notes": [
+    "O HTML final difere do anterior exclusivamente pela remoção do botão superior e de seu evento.",
+    "Versão, demais elementos da interface, regras e cálculos preservados.",
+    "Resultados foram produzidos antes do commit, com o mesmo hash de HTML indicado em scope."
+  ]
+}

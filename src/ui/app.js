@@ -3879,7 +3879,6 @@
         updateBaseData(previewBase);
         openBaseReview(previewBase, { auditBases: [...state.bases, previewBase] });
       });
-      el("reviewCloseBtn").addEventListener("click", closeReviewDialog);
       el("reviewReturnBtn").addEventListener("click", closeReviewDialog);
       el("reviewConfirmAddBtn").addEventListener("click", commitPendingBaseDraft);
       el("reviewDialog").addEventListener("cancel", (evt) => {

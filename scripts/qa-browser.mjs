@@ -182,7 +182,7 @@ try {
   await select('baseSheet','BASE-ZERO');await select('baseSourceIdentifier','sinapi');
   for(const [id,v] of Object.entries({baseCodeCol:0,baseDescCol:1,baseUnitCol:2,baseValueCol:3}))await select(id,v);
   assert.equal(await page.locator('#addBaseBtn').isEnabled(),false);
-  await page.click('#baseReviewBtn');await page.locator('#reviewDialog[open]').waitFor();assert.match(await page.locator('#reviewDialog').textContent(),/Preço zero/);await page.click('#reviewCloseBtn');
+  await page.click('#baseReviewBtn');await page.locator('#reviewDialog[open]').waitFor();assert.match(await page.locator('#reviewDialog').textContent(),/Preço zero/);await page.click('#reviewReturnBtn');
   assert.equal(await page.evaluate(()=>state.bases.length),0);
   await select('baseSheet','BASE-CON-PRECO');await select('baseSourceIdentifier','sinapi');
   for(const [id,v] of Object.entries({baseCodeCol:0,baseDescCol:1,baseUnitCol:2,baseValueCol:3}))await select(id,v);

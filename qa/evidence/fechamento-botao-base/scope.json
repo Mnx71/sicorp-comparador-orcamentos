@@ -1,0 +1,7 @@
+{
+  "onlyRequestedProductChange": true,
+  "removedLines": 2,
+  "versionUnchanged": "4.4.0-rc.20",
+  "beforeSha256": "fe75bc7f44acb2c441d0a5d065a3bc6789270284966578797f7cb279611a094c",
+  "afterSha256": "6f2f5e8fef769eacd48890772622194c5f9c1e537ec977d54de582677bf17e2d"
+}
