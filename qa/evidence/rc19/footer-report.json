@@ -1,0 +1,32 @@
+{
+  "version": "4.4.0-rc.19",
+  "browser": "141.0.7390.0",
+  "results": [
+    {
+      "width": 1600,
+      "height": 1000,
+      "status": "passed",
+      "footer": {
+        "text": "SICORP · v4.4.0-rc.19\n\nDesenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).",
+        "fontSize": "10.4px",
+        "left": 160,
+        "right": 1440,
+        "top": 559.875,
+        "mainBottom": 559.875
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "status": "passed",
+      "footer": {
+        "text": "SICORP · v4.4.0-rc.19\n\nDesenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).",
+        "fontSize": "10.4px",
+        "left": 0,
+        "right": 390,
+        "top": 724.625,
+        "mainBottom": 724.625
+      }
+    }
+  ]
+}

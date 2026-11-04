@@ -1,0 +1,6 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> sicorp-comparador-orcamentos@4.4.0-rc.19 qa:layout
+> node scripts/qa-budget-layout.mjs
+
+56 verificações de layout aprovadas.

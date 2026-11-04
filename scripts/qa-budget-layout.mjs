@@ -73,7 +73,8 @@ try {
     }
     await p.locator('#budgetAuditReturnBtn').scrollIntoViewIfNeeded();
     const bounds=await p.locator('#budgetAuditDialog').boundingBox();
-    assert.ok(bounds.y>=0&&bounds.y+bounds.height<=height+1);
+    assert.ok(Math.abs(bounds.x)<=1&&Math.abs(bounds.y)<=1, 'Revisão deve começar no canto da tela');
+    assert.ok(Math.abs(bounds.width-width)<=1&&Math.abs(bounds.height-height)<=1, 'Revisão deve ocupar toda a tela');
     results.push({sheet,width,height,category,status:'passed'});
    }
   }
