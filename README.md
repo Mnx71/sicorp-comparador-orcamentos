@@ -18,6 +18,10 @@ A rc.18 corrige o recorte da revisão do orçamento em telas menores, preserva o
 
 A rc.16 e o pacote histórico da v4.3 permanecem intactos em `baseline/` e `reference/`. A extração inicial reproduziu a rc.16 byte a byte. A rc.17 contém os fontes separados, geração determinística, quatro correções documentadas e o kit sintético de auditoria.
 
+## Em desenvolvimento
+
+A candidata **4.5.0-rc.1**, em `dist/sicorp_comparador_orcamento_v4.5.0-rc.1.html`, acrescenta o tutorial opcional de sete etapas. A final 4.4.0 permanece preservada. O [manual do usuário](docs/manual/MANUAL_USUARIO.md) descreve o fluxo de ambas as versões. O tutorial não carrega exemplos automaticamente nem altera a sessão.
+
 ## Entregas
 
 | Local | Conteúdo |
@@ -51,4 +55,4 @@ npm run audit:cases
 
 `npm run fixtures:build` regenera os exemplos individuais no ambiente de autoria com Artifact Tool. `npm run fixtures:grouped` gera o percurso principal de testes agrupados e seu roteiro. `npm run regression:real` utiliza os arquivos reais do projeto, quando presentes; eles não fazem parte do repositório. Ausência de arquivo produz falha explícita.
 
-Os relatórios distinguem resultado automatizado, observação do código e homologação por pessoa. O usuário relatou funcionamento satisfatório dos arquivos de orçamento e bases agrupadas; a homologação integral, a conferência visual em Excel/LibreOffice e a execução direta pela automação no Windows permanecem pendentes. O manual e o tutorial serão desenvolvidos na próxima etapa. Alterações no HTML serão publicadas em outra versão, após nova regressão. A escolha da licença do projeto continua separada.
+Os relatórios distinguem resultado automatizado, observação do código e homologação por pessoa. O usuário relatou funcionamento satisfatório dos arquivos de orçamento e bases agrupadas; a homologação integral, a conferência visual em Excel/LibreOffice e a execução direta pela automação no Windows permanecem pendentes. O manual foi preparado e o tutorial foi implementado na candidata 4.5.0-rc.1. Alterações no HTML serão publicadas em outra versão, após nova regressão. A escolha da licença do projeto continua separada.

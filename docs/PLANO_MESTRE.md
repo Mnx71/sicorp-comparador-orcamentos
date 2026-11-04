@@ -6,6 +6,8 @@ Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Depart
 
 ## Estado atual — 04/11/2026
 
+O PR #1 foi integrado à main em `93a7f510c9c61446a54cb675339c2d90f55c2ab7`. Manual em `manual/MANUAL_USUARIO.md`; tutorial opcional e não destrutivo implementado em **4.5.0-rc.1**, em branch separada. A final 4.4.0 foi preservada. Continuidade em `handoffs/HANDOFF_03_DOCUMENTACAO_DISTRIBUICAO.md`. As indicações anteriores de integração/manual/tutorial pendentes são históricas.
+
 **Versão final 4.4.0**, promovida por solicitação expressa do responsável. Distribuir `dist/sicorp_comparador_orcamento_v4.4.0.html`. Registro: `releases/v4.4.0.md`. Commit da promoção: `c2ab5dc6af2f02e6a704bfd9d2de15b080a1d933`. Origem funcional testada: `d1ea4f92087b07c899f5e826408aa7e2c01a4175`.
 
 A promoção altera apenas o número da versão no rodapé e os metadados de geração. O HTML anterior foi preservado. Qualquer mudança futura do programa exige novo número e outro arquivo; a versão final não deve ser sobrescrita. A aprovação da versão não equivale a concluir verificações manuais que não foram executadas.
@@ -20,8 +22,8 @@ A promoção altera apenas o número da versão no rodapé e os metadados de ger
 | Regressão real da origem aprovada | 424 itens e R$ 1.990.067,18, com cálculo decimal independente |
 | Validação manual | Usuário relatou orçamento e bases agrupadas funcionando; homologação integral pendente |
 | Windows e inspeção no Excel/LibreOffice | Verificação complementar pendente |
-| Manual do usuário e tutorial | Próxima etapa |
-| Integração na main e licença | Pendentes |
+| Manual do usuário e tutorial | Manual produzido; guia de sete etapas na candidata 4.5.0-rc.1 |
+| Integração da 4.4.0 na main e licença | Integração concluída; licença pendente |
 
 As etapas 1 a 3 foram concluídas no escopo automatizado documentado. A finalização da versão foi autorizada antes do manual e tutorial; as restrições de promoção das candidatas ficam superadas por essa decisão. A inclusão posterior de tutorial no HTML deverá usar uma nova versão. O handoff vigente é `handoffs/HANDOFF_02_TUTORIAL_MANUAL.md`.
 

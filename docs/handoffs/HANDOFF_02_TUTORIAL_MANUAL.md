@@ -4,6 +4,10 @@ SICORP – Sistema de Comparação de Referenciais de Preços.
 
 Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).
 
+## Etapa executada
+
+O PR #1 foi integrado em `93a7f510c9c61446a54cb675339c2d90f55c2ab7`. Manual e tutorial foram preparados na candidata 4.5.0-rc.1. A continuidade vigente passa a ser `HANDOFF_03_DOCUMENTACAO_DISTRIBUICAO.md`; o texto abaixo conserva o estado de entrada desta etapa.
+
 ## Ponto de continuidade — 04/11/2026
 
 O responsável solicitou expressamente salvar o programa como versão final. A versão vigente é **4.4.0**, no arquivo `dist/sicorp_comparador_orcamento_v4.4.0.html`. SHA-256: `75cabf1c665b4c356e918d94ea5dc62169b111558a35f43e6ffeb886c8d364d2`.

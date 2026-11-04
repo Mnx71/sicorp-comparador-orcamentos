@@ -671,6 +671,17 @@
     h1 { color: #0f172a; margin: 0 0 3px; font-size: 1.35rem; }
     .subtitle { color: var(--muted); font-size: .9rem; }
     main { max-width: 1280px; padding: 24px; }
+    .header-inner { flex-wrap: wrap; }
+    .header-inner > div:nth-child(2) { flex: 1 1 190px; min-width: 0; }
+    .header-tutorial { margin-left: auto; flex-shrink: 0; }
+    .tutorial-dialog { width: min(760px, calc(100vw - 24px)); max-height: calc(100dvh - 24px); border: 0; border-radius: 16px; padding: 0; color: #172033; background: #fff; overflow: auto; }
+    .tutorial-dialog::backdrop { background: rgba(15,23,42,.58); }
+    .tutorial-head, .tutorial-actions { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 16px 20px; flex-wrap: wrap; }
+    .tutorial-head { border-bottom: 1px solid #e2e8f0; }
+    .tutorial-head h2 { margin: 0; font-size: 1rem; color: #1e3a8a; }
+    .tutorial-content { padding: 8px 20px 20px; line-height: 1.6; }
+    .tutorial-content h3 { color: #1e3a8a; outline-offset: 4px; }
+    .tutorial-progress { padding: 16px 20px 0; margin: 0; color: #64748b; font-size: .8rem; }
     .site-footer {
       max-width: 1280px; margin: 0 auto; padding: 12px 24px 20px;
       color: var(--muted); font-size: .65rem; line-height: 1.5; text-align: center;
@@ -1904,6 +1915,7 @@
         <h1>SICORP – Sistema de Comparação de Referenciais de Preços</h1>
         <p class="subtitle">Importe o orçamento detalhado, organize as bases referenciais e compare os preços sem BDI.</p>
       </div>
+      <button id="tutorialOpenBtn" class="secondary header-tutorial" type="button">Tutorial</button>
     </div>
   </header>
 
@@ -2355,8 +2367,15 @@
     </section>
   </main>
 
+  <dialog id="tutorialDialog" class="tutorial-dialog" aria-labelledby="tutorialTitle">
+    <div class="tutorial-head"><h2 id="tutorialTitle">Como usar o SICORP</h2><button id="tutorialCloseBtn" class="secondary" type="button">Fechar tutorial</button></div>
+    <p id="tutorialProgress" class="tutorial-progress"></p>
+    <article id="tutorialContent" class="tutorial-content" aria-live="polite"></article>
+    <div class="tutorial-actions"><button id="tutorialPreviousBtn" class="secondary" type="button">Anterior</button><button id="tutorialNextBtn" type="button">Próximo</button></div>
+  </dialog>
+
   <footer class="site-footer">
-    <p>SICORP · v4.4.0</p>
+    <p>SICORP · v4.5.0-rc.1</p>
     <p>Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).</p>
   </footer>
 
@@ -2416,5 +2435,6 @@
   <script id="sicorpV42PriceSourceUi">{{src/ui/price-source-ui.js}}</script>
   <!-- SICORP_V42_PRICE_SOURCE_RUNTIME_END -->
   <script>{{src/ui/app.js}}</script>
+  <script>{{src/ui/tutorial.js}}</script>
 </body>
 </html>

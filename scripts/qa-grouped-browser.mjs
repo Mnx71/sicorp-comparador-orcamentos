@@ -38,6 +38,31 @@ async function record(id,fn) {
  try{results.push({id,status:'passed',observed:await fn()});console.log('PASS '+id);}
  catch(e){results.push({id,status:'failed',error:e.message});throw e;}
 }
+async function tutorial(p) {
+ const before=await p.evaluate(()=>JSON.stringify(state));
+ const storage=await p.evaluate(()=>JSON.stringify({...localStorage}));
+ let pages=0;
+ for(const [width,height] of [[1600,1000],[390,844],[320,568]]) {
+  await p.setViewportSize({width,height});
+  assert.equal(await p.locator('#tutorialDialog').evaluate(e=>e.open),false);
+  await p.click('#tutorialOpenBtn');
+  assert.equal(await p.locator('#tutorialPreviousBtn').isDisabled(),true);
+  for(let i=1;i<=7;i++) {
+   assert.equal(await p.locator('#tutorialProgress').innerText(),`Etapa ${i} de 7`);
+   const b=await p.locator('#tutorialDialog').boundingBox();assert.ok(b.x>=0&&b.y>=0&&b.x+b.width<=width+1&&b.y+b.height<=height+1);
+   if(i===2) {await p.click('#tutorialPreviousBtn');assert.equal(await p.locator('#tutorialProgress').innerText(),'Etapa 1 de 7');await p.click('#tutorialNextBtn');}
+   await p.click('#tutorialNextBtn');pages++;
+  }
+  assert.equal(await p.locator('#tutorialDialog').evaluate(e=>e.open),false);
+  assert.equal(await p.evaluate(()=>document.activeElement.id),'tutorialOpenBtn');
+  await p.click('#tutorialOpenBtn');assert.equal(await p.locator('#tutorialProgress').innerText(),'Etapa 1 de 7');
+  await p.keyboard.press('Escape');assert.equal(await p.locator('#tutorialDialog').evaluate(e=>e.open),false);
+  await p.click('#tutorialOpenBtn');await p.locator('#tutorialDialog').screenshot({path:`${out}/tutorial-${width}.png`});await p.click('#tutorialCloseBtn');
+  assert.equal(await p.evaluate(()=>JSON.stringify(state)),before,'Tutorial deve preservar todos os dados e resultados da sessão');
+  assert.equal(await p.evaluate(()=>JSON.stringify({...localStorage})),storage);
+ }
+ await p.setViewportSize({width:1600,height:1000});return {pages,statePreserved:true,storagePreserved:true};
+}
 async function baseConfig(p,sheet,source,file=books.base) {
  await p.setInputFiles('#baseFile',path.resolve('testkit/agrupados/'+file));await p.locator('#baseConfigArea:not(.hidden)').waitFor();
  await p.selectOption('#baseSheet',sheet);await p.selectOption('#baseSourceIdentifier',source.toLowerCase());
@@ -77,6 +102,7 @@ try {
   await p.waitForFunction(n=>state.results.length===n,g.expected.statuses.length);
   const a=await p.evaluate(()=>({statuses:state.results.map(r=>r.statusKey),abc:[...curveAbcClassMap(state.results).values()]}));
   assert.deepEqual(a.statuses,g.expected.statuses);if(g.expected.abc)assert.deepEqual(a.abc,g.expected.abc);
+  if(g.name==='01_Comparacao')a.tutorial=await tutorial(p);
   await p.locator('#resultTable').screenshot({path:`${out}/${g.name}.png`});await p.context().close();return a;
  });
  assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);

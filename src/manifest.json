@@ -1,12 +1,13 @@
 {
-  "version": "4.4.0",
+  "version": "4.5.0-rc.1",
   "parts": [
     "src/vendor/legacy-xls-runtime.b64",
     "CORE",
     "src/ui/price-source-ui.js",
-    "src/ui/app.js"
+    "src/ui/app.js",
+    "src/ui/tutorial.js"
   ],
-  "output": "dist/sicorp_comparador_orcamento_v4.4.0.html",
+  "output": "dist/sicorp_comparador_orcamento_v4.5.0-rc.1.html",
   "coreParts": [
     "src/core/00-runtime-start.part.js",
     "src/core/01-convert-orse.part.js",

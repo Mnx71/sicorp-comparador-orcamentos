@@ -1,6 +1,6 @@
 {
   "name": "sicorp-comparador-orcamentos",
-  "version": "4.4.0",
+  "version": "4.5.0-rc.1",
   "private": true,
   "type": "module",
   "description": "Comparação e conferência de orçamentos de obras, com funcionamento offline.",
