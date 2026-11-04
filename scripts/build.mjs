@@ -19,6 +19,15 @@ for (const [i, m] of executable.entries()) new vm.Script(m[2], { filename: `scri
 if (process.argv.includes('--check')) {
   if (await readFile(manifest.output, 'utf8') !== html) throw new Error('HTML distribuído diverge dos fontes. Execute npm run build.');
 } else {
+  // A final release may be rebuilt identically, but never silently overwritten.
+  if (/^\d+\.\d+\.\d+$/.test(manifest.version)) {
+    let existing;
+    try { existing = await readFile(manifest.output, 'utf8'); }
+    catch (error) { if (error.code !== 'ENOENT') throw error; }
+    if (existing !== undefined && existing !== html) {
+      throw new Error(`A versão final ${manifest.version} já existe com outro conteúdo. Defina uma nova versão e outro arquivo de saída; o arquivo existente foi preservado.`);
+    }
+  }
   await mkdir('dist', { recursive: true });
   await writeFile(manifest.output, html);
   await writeFile('dist/SHA256SUMS.txt', `${hash(html)}  ${manifest.output.split('/').at(-1)}\n`);

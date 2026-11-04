@@ -1,0 +1,549 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> sicorp-comparador-orcamentos@4.4.0 check
+> npm run validate:baseline && npm run validate && npm test && npm run qa:browser && npm run audit:grouped && npm run qa:grouped && npm run qa:layout
+
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> sicorp-comparador-orcamentos@4.4.0 validate:baseline
+> node scripts/verify-baseline.mjs
+
+Integridade OK: baseline/sicorp_comparador_orcamento_v4.4.0-rc.16.html
+Integridade OK: reference/SICORP_v4.3.0_RELEASE_FONTE_E_TESTES.zip
+Sintaxe OK: 3 scripts executáveis.
+Integridade e sintaxe conferidas. Este comando não executa a auditoria funcional.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> sicorp-comparador-orcamentos@4.4.0 validate
+> node scripts/build.mjs --check
+
+{"version":"4.4.0","path":"dist/sicorp_comparador_orcamento_v4.4.0.html","sha256":"75cabf1c665b4c356e918d94ea5dc62169b111558a35f43e6ffeb886c8d364d2","executableScripts":3}
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> sicorp-comparador-orcamentos@4.4.0 test
+> node --test tests/historical/*.test.js tests/audit/*.test.mjs
+
+✔ ORC-OK-001: Fluxo válido: 2 × 100 × (1 + 20%) = 240 (8.944524ms)
+✔ ORC-EST-1: Identidade ausente: code (1.288696ms)
+✔ ORC-EST-2: Identidade ausente: source (0.485113ms)
+✔ ORC-EST-3: Identidade ausente: description (0.442748ms)
+✔ ORC-EST-4: Identidade ausente: unit (0.610372ms)
+✔ ORC-4-VAZ: quantity: VAZ (1.172851ms)
+✔ ORC-4-ZERO: quantity: ZERO (0.366263ms)
+✔ ORC-4-NEG: quantity: NEG (0.440014ms)
+✔ ORC-4-TXT: quantity: TXT (0.996144ms)
+✔ ORC-4-ERR: quantity: ERR (0.543671ms)
+✔ ORC-4-CACHE: quantity: CACHE (0.287073ms)
+✔ ORC-5-VAZ: priceWithoutBdi: VAZ (0.502769ms)
+✔ ORC-5-ZERO: priceWithoutBdi: ZERO (0.203747ms)
+✔ ORC-5-NEG: priceWithoutBdi: NEG (0.235575ms)
+✔ ORC-5-TXT: priceWithoutBdi: TXT (0.218049ms)
+✔ ORC-5-ERR: priceWithoutBdi: ERR (0.315547ms)
+✔ ORC-5-CACHE: priceWithoutBdi: CACHE (0.2386ms)
+✔ ORC-6-VAZ: bdi: VAZ (0.26535ms)
+✔ ORC-6-ZERO: bdi: ZERO (0.188054ms)
+✔ ORC-6-NEG: bdi: NEG (0.21838ms)
+✔ ORC-6-TXT: bdi: TXT (0.166131ms)
+✔ ORC-6-ERR: bdi: ERR (0.161814ms)
+✔ ORC-6-CACHE: bdi: CACHE (0.149776ms)
+✔ ORC-7-VAZ: priceWithBdi: VAZ (0.163898ms)
+✔ ORC-7-ZERO: priceWithBdi: ZERO (0.193302ms)
+✔ ORC-7-NEG: priceWithBdi: NEG (0.194674ms)
+✔ ORC-7-TXT: priceWithBdi: TXT (0.168174ms)
+✔ ORC-7-ERR: priceWithBdi: ERR (0.157518ms)
+✔ ORC-7-CACHE: priceWithBdi: CACHE (0.20544ms)
+✔ ORC-8-VAZ: totalWithBdi: VAZ (0.151669ms)
+✔ ORC-8-ZERO: totalWithBdi: ZERO (0.139941ms)
+✔ ORC-8-NEG: totalWithBdi: NEG (0.147592ms)
+✔ ORC-8-TXT: totalWithBdi: TXT (0.207674ms)
+✔ ORC-8-ERR: totalWithBdi: ERR (0.206993ms)
+✔ ORC-8-CACHE: totalWithBdi: CACHE (0.164518ms)
+✔ ORC-EXC-001: Vazio/zero exclui antes de avaliar outro campo negativo (0.151098ms)
+✔ ORC-EXC-002: Estrutural tem precedência sobre finanças inválidas (0.224258ms)
+✔ ORC-EXC-003: Linha vazia é ignorada (0.194073ms)
+✔ ORC-EXC-004: Cabeçalho repetido desconsiderado (0.279672ms)
+✔ ORC-EXC-005: Conteúdo antes do cabeçalho desconsiderado (0.2582ms)
+✔ ORC-TOT-VAZ: Total geral VAZ (0.220262ms)
+✔ ORC-TOT-TXT: Total geral TXT (0.241274ms)
+✔ ORC-TOT-ZERO: Total geral ZERO (0.539465ms)
+✔ ORC-TOT-NEG: Total geral NEG (0.234444ms)
+✔ ORC-MAP-001: Menos de dois componentes mapeados (0.526745ms)
+✔ ORC-MAP-002: Total do item não mapeado (0.275656ms)
+✔ ORC-DER-SEM: Derivação de priceWithoutBdi (0.262076ms)
+✔ ORC-DER-COM: Derivação de priceWithBdi (0.17926ms)
+✔ ORC-DER-BDI: Derivação de bdi (0.166542ms)
+✔ ORC-DER-ZERO: Caracterização: BDI derivado ZERO (0.224509ms)
+✔ ORC-DER-NEG: Caracterização: BDI derivado NEG (0.328676ms)
+✔ ORC-DER-INF: Derivação impossível por estouro numérico (0.197728ms)
+✔ ORC-ERR-BDI: BDI: 100 × 1,2 = 120, informado 121 (0.20514ms)
+✔ ORC-ERR-ITEM: Total: 2 × 120 = 240, informado 241 (0.459284ms)
+✔ ORC-ERR-GERAL: Total geral 241 diverge da soma 240 (0.220613ms)
+✔ ORC-ERR-COMP: Erros dos itens se compensam no geral (0.275275ms)
+✔ ORC-ROUND-MEIO: Arredondamento decimal no meio centavo (0.890315ms)
+✔ ORC-ROUND-ABAIXO: Arredondamento decimal no meio centavo (0.255666ms)
+✔ ORC-ROUND-ACIMA: Arredondamento decimal no meio centavo (0.197438ms)
+✔ ORC-LIM-DENTRO: Tolerância do total do item R$ 0,01 (0.201714ms)
+✔ ORC-LIM-IGUAL: Tolerância do total do item R$ 0,01 (0.146171ms)
+✔ ORC-LIM-FORA: Tolerância do total do item R$ 0,01 (0.230068ms)
+✔ ORC-LIM-GERAL: Tolerância geral = 2 × 0,01 (0.179201ms)
+✔ ORC-LIM-GERAL-FORA: Tolerância geral = 2 × 0,01 (0.311911ms)
+✔ ORC-AV-DUP: Duplicidade física consecutiva (0.508849ms)
+✔ ORC-CP-DUP: Duplicidade não consecutiva (0.234283ms)
+✔ ORC-AV-PRECO: Mesmo item com preços diferentes (17.406169ms)
+✔ ORC-CP-PRECO: Outro código permite preço diferente (0.31172ms)
+✔ ORC-AV-BDI: Descrição normalizada comum com BDI diferente (0.597121ms)
+✔ ORC-AV-BDI-DER: Aviso usa BDI derivado (0.4708ms)
+✔ ORC-CP-BDI: 20%, 20 e 0,2 são equivalentes (0.265751ms)
+✔ ORC-AV-MANUAL: 4 de 5 células calculadas e uma manual (0.475417ms)
+✔ ORC-CP-MANUAL: Todas as 5 fórmulas seguem o padrão (0.353434ms)
+✔ ORC-AV-PADRAO: Uma fórmula diferente do padrão (0.392152ms)
+✔ ORC-VIS-001: Linha oculta não participa do total (0.371261ms)
+✔ ORC-VIS-002: Coluna obrigatória oculta retira identidade (0.246191ms)
+✔ ORC-VIS-ANTES: Linha oculta antes do cabeçalho é ignorada (0.207743ms)
+✔ ORC-VIS-INTERVALO: Intervalo de linhas ocultas ignora valores inválidos (0.250859ms)
+✔ ORC-VIS-MESCLA: Título mesclado anterior é estrutural e mantém contexto (4.230588ms)
+✔ ORC-VIS-FORMULA: Fórmula visível mantém cache mesmo referindo linha oculta (0.315707ms)
+✔ ORC-AV-GRUPOS: 30 achados com linhas relacionadas intercaladas (5.555137ms)
+✔ BASE-OK-001: Preço positivo e identidade completa (1.447025ms)
+✔ BASE-VAZ: Preço ausente (0.365032ms)
+✔ BASE-ZERO: Preço zero (0.169326ms)
+✔ BASE-NEG: Preço negativo (0.242466ms)
+✔ BASE-TXT: Preço não numérico (0.186021ms)
+✔ BASE-ERR: Erro de fórmula no preço (0.142455ms)
+✔ BASE-CACHE: Fórmula do preço sem resultado válido (0.170437ms)
+✔ BASE-EST-1: Identidade incompleta (0.141634ms)
+✔ BASE-EST-2: Identidade incompleta (0.134423ms)
+✔ BASE-EST-3: Identidade incompleta (0.141003ms)
+✔ BASE-CAB: Cabeçalho repetido (0.187122ms)
+✔ BASE-ANTES: Linha anterior ao cabeçalho (0.168715ms)
+✔ BASE-VAZIA: Linhas vazias não geram revisão (0.111789ms)
+✔ BASE-EQUIV: Consolidar 2 origens equivalentes (0.254885ms)
+✔ BASE-CON-PRECO: Duas referências com preço diferente (0.214334ms)
+✔ BASE-CON-UNID: Duas referências com unidade diferente (0.143306ms)
+✔ BASE-CP-DESC: Descrições diferentes não conflitam (0.12578ms)
+✔ BASE-VIS: Conflito somente na linha oculta é ignorado (0.134243ms)
+✔ CMP-FLUXO: Quatro resultados e ABC 50/80/95/100 (1.457901ms)
+✔ CMP-CRUZA-FONTES: Item cruza 50% e barras usam o total do filtro (0.429639ms)
+✔ CMP-IGUAL: Limite absoluto de comparação (0.260303ms)
+✔ CMP-LIM: Limite absoluto de comparação (0.28477ms)
+✔ CMP-MENOS: Limite absoluto de comparação (0.346744ms)
+✔ CMP-MAIS: Limite absoluto de comparação (0.289817ms)
+✔ CMP-ABAIXO: Limite absoluto de comparação (0.275766ms)
+✔ CMP-UNICO: Busca restrita a fonte/código; descrição resolve múltiplos (0.257629ms)
+✔ CMP-MULTI: Busca restrita a fonte/código; descrição resolve múltiplos (0.302827ms)
+✔ CMP-MULTI-AUS: Busca restrita a fonte/código; descrição resolve múltiplos (0.282928ms)
+✔ CMP-SEM-DESC: Busca restrita a fonte/código; descrição resolve múltiplos (0.253122ms)
+✔ CMP-FONTE: Busca restrita a fonte/código; descrição resolve múltiplos (0.217799ms)
+✔ CMP-ORSE-UNICO: Busca restrita a fonte/código; descrição resolve múltiplos (0.24493ms)
+✔ CMP-ORSE-MULTI: Busca restrita a fonte/código; descrição resolve múltiplos (0.223608ms)
+✔ CMP-ORSE-AUS: Busca restrita a fonte/código; descrição resolve múltiplos (0.305321ms)
+✔ XLSX/ORC-OK-001: leitura do arquivo efetivo (0.353454ms)
+✔ XLSX/ORC-EST-1: leitura do arquivo efetivo (0.176677ms)
+✔ XLSX/ORC-EST-2: leitura do arquivo efetivo (0.153562ms)
+✔ XLSX/ORC-EST-3: leitura do arquivo efetivo (0.19833ms)
+✔ XLSX/ORC-EST-4: leitura do arquivo efetivo (0.1391ms)
+✔ XLSX/ORC-4-VAZ: leitura do arquivo efetivo (0.141313ms)
+✔ XLSX/ORC-4-ZERO: leitura do arquivo efetivo (0.228044ms)
+✔ XLSX/ORC-4-NEG: leitura do arquivo efetivo (0.152781ms)
+✔ XLSX/ORC-4-TXT: leitura do arquivo efetivo (0.225991ms)
+✔ XLSX/ORC-4-ERR: leitura do arquivo efetivo (0.159621ms)
+✔ XLSX/ORC-4-CACHE: leitura do arquivo efetivo (0.184348ms)
+✔ XLSX/ORC-5-VAZ: leitura do arquivo efetivo (0.166842ms)
+✔ XLSX/ORC-5-ZERO: leitura do arquivo efetivo (0.160432ms)
+✔ XLSX/ORC-5-NEG: leitura do arquivo efetivo (0.237499ms)
+✔ XLSX/ORC-5-TXT: leitura do arquivo efetivo (0.170407ms)
+✔ XLSX/ORC-5-ERR: leitura do arquivo efetivo (0.209526ms)
+✔ XLSX/ORC-5-CACHE: leitura do arquivo efetivo (0.168224ms)
+✔ XLSX/ORC-6-VAZ: leitura do arquivo efetivo (0.191439ms)
+✔ XLSX/ORC-6-ZERO: leitura do arquivo efetivo (0.165059ms)
+✔ XLSX/ORC-6-NEG: leitura do arquivo efetivo (0.154603ms)
+✔ XLSX/ORC-6-TXT: leitura do arquivo efetivo (0.155235ms)
+✔ XLSX/ORC-6-ERR: leitura do arquivo efetivo (0.159902ms)
+✔ XLSX/ORC-6-CACHE: leitura do arquivo efetivo (0.249066ms)
+✔ XLSX/ORC-7-VAZ: leitura do arquivo efetivo (0.166371ms)
+✔ XLSX/ORC-7-ZERO: leitura do arquivo efetivo (0.155795ms)
+✔ XLSX/ORC-7-NEG: leitura do arquivo efetivo (0.161283ms)
+✔ XLSX/ORC-7-TXT: leitura do arquivo efetivo (0.15881ms)
+✔ XLSX/ORC-7-ERR: leitura do arquivo efetivo (0.221154ms)
+✔ XLSX/ORC-7-CACHE: leitura do arquivo efetivo (0.158609ms)
+✔ XLSX/ORC-8-VAZ: leitura do arquivo efetivo (0.183407ms)
+✔ XLSX/ORC-8-ZERO: leitura do arquivo efetivo (0.143917ms)
+✔ XLSX/ORC-8-NEG: leitura do arquivo efetivo (0.150738ms)
+✔ XLSX/ORC-8-TXT: leitura do arquivo efetivo (0.268004ms)
+✔ XLSX/ORC-8-ERR: leitura do arquivo efetivo (0.162906ms)
+✔ XLSX/ORC-8-CACHE: leitura do arquivo efetivo (0.167844ms)
+✔ XLSX/ORC-EXC-001: leitura do arquivo efetivo (0.173953ms)
+✔ XLSX/ORC-EXC-002: leitura do arquivo efetivo (0.153662ms)
+✔ XLSX/ORC-EXC-003: leitura do arquivo efetivo (0.190768ms)
+✔ XLSX/ORC-EXC-004: leitura do arquivo efetivo (0.195815ms)
+✔ XLSX/ORC-EXC-005: leitura do arquivo efetivo (0.15874ms)
+✔ XLSX/ORC-TOT-VAZ: leitura do arquivo efetivo (0.155124ms)
+✔ XLSX/ORC-TOT-TXT: leitura do arquivo efetivo (0.150467ms)
+✔ XLSX/ORC-TOT-ZERO: leitura do arquivo efetivo (0.187663ms)
+✔ XLSX/ORC-TOT-NEG: leitura do arquivo efetivo (0.168244ms)
+✔ XLSX/ORC-MAP-001: leitura do arquivo efetivo (0.182255ms)
+✔ XLSX/ORC-MAP-002: leitura do arquivo efetivo (0.165961ms)
+✔ XLSX/ORC-DER-SEM: leitura do arquivo efetivo (0.168885ms)
+✔ XLSX/ORC-DER-COM: leitura do arquivo efetivo (0.23834ms)
+✔ XLSX/ORC-DER-BDI: leitura do arquivo efetivo (0.219751ms)
+✔ XLSX/ORC-DER-ZERO: leitura do arquivo efetivo (0.18529ms)
+✔ XLSX/ORC-DER-NEG: leitura do arquivo efetivo (0.205461ms)
+✔ XLSX/ORC-DER-INF: leitura do arquivo efetivo (0.241444ms)
+✔ XLSX/ORC-ERR-BDI: leitura do arquivo efetivo (0.226612ms)
+✔ XLSX/ORC-ERR-ITEM: leitura do arquivo efetivo (0.248916ms)
+✔ XLSX/ORC-ERR-GERAL: leitura do arquivo efetivo (0.185229ms)
+✔ XLSX/ORC-ERR-COMP: leitura do arquivo efetivo (0.306353ms)
+✔ XLSX/ORC-ROUND-MEIO: leitura do arquivo efetivo (0.26502ms)
+✔ XLSX/ORC-ROUND-ABAIXO: leitura do arquivo efetivo (0.226922ms)
+✔ XLSX/ORC-ROUND-ACIMA: leitura do arquivo efetivo (0.171559ms)
+✔ XLSX/ORC-LIM-DENTRO: leitura do arquivo efetivo (0.178089ms)
+✔ XLSX/ORC-LIM-IGUAL: leitura do arquivo efetivo (0.173512ms)
+✔ XLSX/ORC-LIM-FORA: leitura do arquivo efetivo (0.190678ms)
+✔ XLSX/ORC-LIM-GERAL: leitura do arquivo efetivo (0.206301ms)
+✔ XLSX/ORC-LIM-GERAL-FORA: leitura do arquivo efetivo (0.245461ms)
+✔ XLSX/ORC-AV-DUP: leitura do arquivo efetivo (0.319332ms)
+✔ XLSX/ORC-CP-DUP: leitura do arquivo efetivo (0.20502ms)
+✔ XLSX/ORC-AV-PRECO: leitura do arquivo efetivo (0.464381ms)
+✔ XLSX/ORC-CP-PRECO: leitura do arquivo efetivo (0.256708ms)
+✔ XLSX/ORC-AV-BDI: leitura do arquivo efetivo (0.341195ms)
+✔ XLSX/ORC-AV-BDI-DER: leitura do arquivo efetivo (0.263488ms)
+✔ XLSX/ORC-CP-BDI: leitura do arquivo efetivo (0.224188ms)
+✔ XLSX/ORC-AV-MANUAL: leitura do arquivo efetivo (0.311981ms)
+✔ XLSX/ORC-CP-MANUAL: leitura do arquivo efetivo (0.371151ms)
+✔ XLSX/ORC-AV-PADRAO: leitura do arquivo efetivo (0.327044ms)
+✔ XLSX/ORC-VIS-001: leitura do arquivo efetivo (0.233873ms)
+✔ XLSX/ORC-VIS-002: leitura do arquivo efetivo (0.179531ms)
+✔ XLSX/ORC-VIS-ANTES: leitura do arquivo efetivo (0.187754ms)
+✔ XLSX/ORC-VIS-INTERVALO: leitura do arquivo efetivo (0.201595ms)
+✔ XLSX/ORC-VIS-MESCLA: leitura do arquivo efetivo (0.202045ms)
+✔ XLSX/ORC-VIS-FORMULA: leitura do arquivo efetivo (0.224569ms)
+✔ XLSX/ORC-AV-GRUPOS: leitura do arquivo efetivo (11.317147ms)
+✔ XLSX/BASE-OK-001: leitura do arquivo efetivo (0.190087ms)
+✔ XLSX/BASE-VAZ: leitura do arquivo efetivo (0.144688ms)
+✔ XLSX/BASE-ZERO: leitura do arquivo efetivo (0.091558ms)
+✔ XLSX/BASE-NEG: leitura do arquivo efetivo (0.064057ms)
+✔ XLSX/BASE-TXT: leitura do arquivo efetivo (0.145579ms)
+✔ XLSX/BASE-ERR: leitura do arquivo efetivo (0.063105ms)
+✔ XLSX/BASE-CACHE: leitura do arquivo efetivo (0.062294ms)
+✔ XLSX/BASE-EST-1: leitura do arquivo efetivo (0.09274ms)
+✔ XLSX/BASE-EST-2: leitura do arquivo efetivo (0.070547ms)
+✔ XLSX/BASE-EST-3: leitura do arquivo efetivo (0.106531ms)
+✔ XLSX/BASE-CAB: leitura do arquivo efetivo (0.248716ms)
+✔ XLSX/BASE-ANTES: leitura do arquivo efetivo (0.172831ms)
+✔ XLSX/BASE-VAZIA: leitura do arquivo efetivo (0.075874ms)
+✔ XLSX/BASE-EQUIV: leitura do arquivo efetivo (0.104397ms)
+✔ XLSX/BASE-CON-PRECO: leitura do arquivo efetivo (0.098549ms)
+✔ XLSX/BASE-CON-UNID: leitura do arquivo efetivo (0.07935ms)
+✔ XLSX/BASE-CP-DESC: leitura do arquivo efetivo (0.084087ms)
+✔ XLSX/BASE-VIS: leitura do arquivo efetivo (0.072559ms)
+✔ XLSX/CMP-FLUXO: leitura do arquivo efetivo (0.464271ms)
+✔ XLSX/CMP-CRUZA-FONTES: leitura do arquivo efetivo (0.22513ms)
+✔ XLSX/CMP-IGUAL: leitura do arquivo efetivo (0.186302ms)
+✔ XLSX/CMP-LIM: leitura do arquivo efetivo (0.240513ms)
+✔ XLSX/CMP-MENOS: leitura do arquivo efetivo (0.290408ms)
+✔ XLSX/CMP-MAIS: leitura do arquivo efetivo (0.223297ms)
+✔ XLSX/CMP-ABAIXO: leitura do arquivo efetivo (0.189757ms)
+✔ XLSX/CMP-UNICO: leitura do arquivo efetivo (0.182084ms)
+✔ XLSX/CMP-MULTI: leitura do arquivo efetivo (0.22542ms)
+✔ XLSX/CMP-MULTI-AUS: leitura do arquivo efetivo (0.182075ms)
+✔ XLSX/CMP-SEM-DESC: leitura do arquivo efetivo (0.221965ms)
+✔ XLSX/CMP-FONTE: leitura do arquivo efetivo (0.187883ms)
+✔ XLSX/CMP-ORSE-UNICO: leitura do arquivo efetivo (0.18505ms)
+✔ XLSX/CMP-ORSE-MULTI: leitura do arquivo efetivo (0.137658ms)
+✔ XLSX/CMP-ORSE-AUS: leitura do arquivo efetivo (0.119981ms)
+✔ BASE-ENTRE: equivalências e conflitos entre arquivos (0.528548ms)
+✔ BUILD-PARIDADE: núcleo distribuído idêntico ao núcleo fonte (10.823801ms)
+✔ LEIT-biff5: arquivo binário real, códigos e ocultação (17.99584ms)
+✔ LEIT-biff8: arquivo binário real, códigos e ocultação (7.653245ms)
+✔ LEIT-CSV-TXT: decimais brasileiros, aspas, código textual e tabulação (1.946088ms)
+✔ LEIT-ORSE: pacote sintético completo, ativos, preços e rejeição (160.491771ms)
+✔ AGRUPADO/budget/01_Revisao (38.689403ms)
+✔ AGRUPADO/budget/02_Impedimentos (1.640276ms)
+✔ AGRUPADO/budget/03_Formulas (1.139741ms)
+✔ AGRUPADO/budget/04_Sem_itens (0.36435ms)
+✔ AGRUPADO/budget/05_Derivados (0.650472ms)
+✔ AGRUPADO/budget/06_Controle (0.303739ms)
+✔ AGRUPADO/budget/07_Coluna_oculta (0.315256ms)
+✔ AGRUPADO/base/01_Revisao (1.815221ms)
+✔ AGRUPADO/base/02_Conflitos (0.459553ms)
+✔ AGRUPADO/base/03_Sem_validos (0.411742ms)
+✔ AGRUPADO/comparison/01_Comparacao (3.301054ms)
+✔ AGRUPADO/comparison/02_ABC_limites (1.88112ms)
+✔ AGRUPADO/comparison/03_ABC_cruzamento (0.745766ms)
+✔ AGRUPADO/CTRL-OK (0.347274ms)
+✔ AGRUPADO/CTRL-DER-SEM (0.212441ms)
+✔ AGRUPADO/CTRL-DER-COM (0.235175ms)
+✔ AGRUPADO/CTRL-DER-BDI (0.242827ms)
+✔ AGRUPADO/CTRL-TOT-VAZ (0.275156ms)
+✔ AGRUPADO/CTRL-TOT-TXT (0.263929ms)
+✔ AGRUPADO/CTRL-TOT-ZERO (0.252491ms)
+✔ AGRUPADO/CTRL-TOT-NEG (0.248355ms)
+✔ AGRUPADO/CTRL-ORC-LIM-GERAL (0.27828ms)
+✔ AGRUPADO/CTRL-ORC-LIM-GERAL-FORA (0.329408ms)
+✔ AGRUPADO/CTRL-ORC-ERR-GERAL (0.243588ms)
+✔ AGRUPADO/CTRL-MAP-001 (0.285882ms)
+✔ AGRUPADO/CTRL-MAP-002 (0.265812ms)
+✔ AGRUPADO/DER-ESTOURO (0.451412ms)
+✔ AGRUPADO/cobertura de todos os IDs originais (0.220263ms)
+✔ AGRUPADO/contraprovas não adquirem achados de outros casos (13.112666ms)
+✔ AGRUPADO/achados permanecem ligados às linhas de cada caso (11.100649ms)
+✔ AGRUPADO/códigos textuais e zeros sobrevivem no arquivo salvo (0.158279ms)
+✔ versão final admite reprodução idêntica e rejeita sobrescrita com outro conteúdo (352.57176ms)
+✔ resultado canônico completo é adaptado para todos os campos da linha legada (4.345971ms)
+✔ bases equivalentes consolidadas preservam nomes e todas as origens na visão (2.398982ms)
+✔ motivos de indisponibilidade mantêm campos legados vazios ou não numéricos (0.692545ms)
+✔ cartões recebem quantidade, total, participação e indicação de parcialidade (0.742752ms)
+✔ visão fornece a ordenação ABC e o sort padrão esperados pela tabela (8.370112ms)
+✔ adaptação não modifica o resultado canônico recebido (2.058818ms)
+✔ orçamento com uma linha válida produz um item normalizado e rastreável (5.233572ms)
+✔ linha estrutural é removida e quantidade negativa segue para auditoria (0.718364ms)
+✔ preço sem BDI é calculado pelo preço com BDI e arredondado para duas casas (0.541738ms)
+✔ preço com BDI é calculado pelo preço sem BDI e arredondado para duas casas (2.175845ms)
+✔ repetição posterior do cabeçalho é removida como Cabeçalho repetido (0.383009ms)
+✔ linha não vazia anterior ao cabeçalho é enviada à revisão como Antes do cabeçalho (0.271811ms)
+✔ rótulos equivalentes ao cabeçalho principal também são removidos como Cabeçalho repetido (0.846899ms)
+✔ preço com separador brasileiro de milhar e decimal é normalizado (0.739286ms)
+✔ preço em notação científica textual é normalizado (0.491342ms)
+✔ uma correspondência exata com preços iguais produz resultado canônico (3.177097ms)
+✔ preço do orçamento abaixo da referência é classificado como Abaixo (6.582573ms)
+✔ preço do orçamento acima da referência é classificado como Acima (1.352211ms)
+✔ diferença dentro da tolerância absoluta é classificada como Igual (2.449609ms)
+✔ código existente em outra fonte não corresponde ao item do orçamento (0.569019ms)
+✔ código repetido é resolvido pela descrição normalizada (0.908051ms)
+✔ código repetido sem descrição correspondente é tratado como não encontrado (0.435608ms)
+✔ entre ocorrências selecionadas é priorizado o primeiro preço utilizável (0.580366ms)
+✔ preço indisponível no orçamento é distinguido dentro de Não encontrado (0.598894ms)
+✔ preço indisponível na base é distinguido dentro de Não encontrado (1.037216ms)
+✔ conflitos bloqueantes do catálogo impedem a comparação (0.571784ms)
+✔ os três seams compõem uma comparação completa usando matrizes sintéticas (7.160662ms)
+✔ quantidade e preço com BDI produzem o total financeiro arredondado do item (0.25163ms)
+✔ total conhecido do orçamento e participação de cada item são calculados (0.241314ms)
+✔ item sem total disponível torna o valor consolidado parcial (0.700487ms)
+✔ métricas financeiras são agregadas por status (0.354365ms)
+✔ motivos de indisponibilidade também recebem métricas financeiras próprias (0.213021ms)
+✔ Curva ABC ordena totais decrescentes, preserva empates e envia indisponíveis ao final (0.942914ms)
+✔ orçamento sem qualquer total conhecido mantém total zero e participações indisponíveis (0.203928ms)
+✔ regras v1.3.0 mantêm somente materiais e serviços ORSE ativos (2.63608ms)
+✔ workbook de download possui Resumo, Insumos e Servicos; visão interna omite Resumo (20.145736ms)
+✔ nome de saída preserva o nome original e acrescenta somente o sufixo ORSE (0.688169ms)
+✔ arquivo inválido ou com extensão incorreta é rejeitado antes da conversão (9.121035ms)
+✔ XLSX ORSE reproduz cores, fontes, dimensões e congelamento do conversor v1.3.0 (5.85441ms)
+✔ serialização rejeita workbook que não possui as três abas ORSE esperadas (0.290549ms)
+✔ visão adaptada produz tabela tipada com as 17 colunas da interface (19.841517ms)
+✔ CSV preserva BOM, separador, decimal brasileiro e aspas escapadas (1.366403ms)
+✔ clipboard usa tabulação e quebra de linha simples (1.837054ms)
+✔ nomes de arquivo são saneados e mantêm as extensões esperadas (1.009954ms)
+✔ valores indisponíveis preservam o texto bruto e não inventam totais (0.589389ms)
+✔ XLSX mantém números tipados, filtros, linha congelada e cores por status (1.425892ms)
+✔ XLSX serializa a fonte do cabeçalho na ordem canônica aceita pelo Excel (0.958697ms)
+✔ seleção vazia produz artefatos vazios sinalizados sem lançar erro (0.611183ms)
+✔ uma linha válida de base produz um item canônico e rastreável (13.578255ms)
+✔ preço inválido é excluído: Preço ausente (2.084528ms)
+✔ preço inválido é excluído: Preço não numérico (0.392903ms)
+✔ preço inválido é excluído: Preço zero (0.206632ms)
+✔ preço inválido é excluído: Preço negativo (0.245681ms)
+✔ uma linha de base sem código é removida como Linha estrutural (0.356478ms)
+✔ uma linha de base sem descrição é removida como Linha estrutural (0.306964ms)
+✔ uma linha de base sem unidade é removida como Linha estrutural (1.226342ms)
+✔ uma linha de base informa todos os campos de identidade ausentes (0.333353ms)
+✔ cabeçalhos exatos ou equivalentes dentro dos dados são removidos como Cabeçalho repetido (1.056526ms)
+✔ linha não vazia anterior ao cabeçalho da base é enviada à revisão (0.379573ms)
+✔ contagens agregam revisão estrutural, cabeçalho repetido e preço indisponível (0.352462ms)
+✔ duplicidades equivalentes são consolidadas com todas as origens (0.529269ms)
+✔ o mesmo código com descrições diferentes permanece como itens distintos (0.321916ms)
+✔ a mesma fonte, código e descrição com unidades diferentes gera conflito bloqueante (0.400614ms)
+✔ a mesma fonte, código e descrição com preços diferentes gera conflito bloqueante (1.998728ms)
+✔ códigos iguais de fontes diferentes não são duplicidades (0.34426ms)
+✔ duplicidades sem preço são excluídas individualmente (0.235435ms)
+✔ catálogo inicial preserva as 20 bases federais e estaduais aprovadas (12.572452ms)
+✔ visão inicial mostra somente as bases identificadas no orçamento (1.75552ms)
+✔ fonte genérica DER sugere todos os DERs e fonte específica sugere somente um (1.772126ms)
+✔ sigla sem separadores é reconhecida apenas quando aponta para uma base (2.221925ms)
+✔ complementos de estado e ano são reconhecidos sem aliases (4.791594ms)
+✔ sigla composta expõe seus próprios identificadores sem consultar o órgão (3.236125ms)
+✔ nova base com sigla estadual entra automaticamente na família correspondente (4.419702ms)
+✔ renomear uma base remove o identificador antigo e aplica a regra ao novo nome (6.639464ms)
+✔ base criada pelo usuário recebe automaticamente a mesma pesquisa por sigla (3.792195ms)
+✔ fonte não cadastrada é ignorada e Ver outras libera o catálogo (1.990495ms)
+✔ pesquisa consulta todo o catálogo ignorando acentos e caixa (1.089655ms)
+✔ edição aceita link em qualquer formato e o preserva no JSON completo (4.103125ms)
+✔ uma nova base pode ser adicionada, pesquisada, exportada e removida (5.69574ms)
+✔ validação exige link, não bloqueia seu formato e ainda rejeita sigla duplicada (4.363288ms)
+✔ importação incompatível ou incompleta não altera o catálogo atual (1.860149ms)
+✔ JSON legível sem versão pode ser editado diretamente e importado novamente (4.67624ms)
+✔ estado local anterior e JSON sem o marcador do formato são rejeitados (0.326623ms)
+✔ bases padrão podem ser excluídas e somente a restauração global as recupera (2.061492ms)
+✔ CSV com BOM preserva delimitador brasileiro, aspas, quebras internas e linhas (3.541878ms)
+✔ detecção de delimitador ignora separadores dentro de campos entre aspas (0.398943ms)
+✔ TXT tabulado é lido pelo mesmo contrato canônico (0.578012ms)
+✔ XLSX usa runtime injetado e preserva células tipadas, formatos e hyperlink (4.026479ms)
+✔ XLS reutiliza o contrato binário sem modificar o workbook do runtime (1.242766ms)
+✔ arquivo binário sem runtime produz erro explícito (0.817815ms)
+✔ workbook binário sem aba utilizável produz erro explícito (0.400996ms)
+✔ extensão não suportada e entrada sem bytes são rejeitadas (1.134573ms)
+✔ estado legado completo percorre os três seams e produz a visão da interface (7.493674ms)
+✔ cada aba configurada de uma base é convertida em uma entrada canônica (1.723021ms)
+✔ política de normalização selecionada na interface é respeitada (0.80173ms)
+✔ linhas de revisão do orçamento e das bases permanecem disponíveis (0.893329ms)
+✔ aba ausente no estado legado produz erro explícito (0.901892ms)
+✔ conflitos produzidos pelas bases continuam bloqueando a execução (0.625164ms)
+ℹ tests 364
+ℹ suites 0
+ℹ pass 364
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 623.047494
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> sicorp-comparador-orcamentos@4.4.0 qa:browser
+> node scripts/qa-browser.mjs
+
+PASS HTML-CMP-ORACULOS
+PASS UI-PRE-001
+PASS UI/ORC-OK-001
+PASS UI/ORC-EST-1
+PASS UI/ORC-EST-2
+PASS UI/ORC-EST-3
+PASS UI/ORC-EST-4
+PASS UI/ORC-4-VAZ
+PASS UI/ORC-4-ZERO
+PASS UI/ORC-4-NEG
+PASS UI/ORC-4-TXT
+PASS UI/ORC-4-ERR
+PASS UI/ORC-4-CACHE
+PASS UI/ORC-5-VAZ
+PASS UI/ORC-5-ZERO
+PASS UI/ORC-5-NEG
+PASS UI/ORC-5-TXT
+PASS UI/ORC-5-ERR
+PASS UI/ORC-5-CACHE
+PASS UI/ORC-6-VAZ
+PASS UI/ORC-6-ZERO
+PASS UI/ORC-6-NEG
+PASS UI/ORC-6-TXT
+PASS UI/ORC-6-ERR
+PASS UI/ORC-6-CACHE
+PASS UI/ORC-7-VAZ
+PASS UI/ORC-7-ZERO
+PASS UI/ORC-7-NEG
+PASS UI/ORC-7-TXT
+PASS UI/ORC-7-ERR
+PASS UI/ORC-7-CACHE
+PASS UI/ORC-8-VAZ
+PASS UI/ORC-8-ZERO
+PASS UI/ORC-8-NEG
+PASS UI/ORC-8-TXT
+PASS UI/ORC-8-ERR
+PASS UI/ORC-8-CACHE
+PASS UI/ORC-EXC-001
+PASS UI/ORC-EXC-002
+PASS UI/ORC-EXC-003
+PASS UI/ORC-EXC-004
+PASS UI/ORC-EXC-005
+PASS UI/ORC-TOT-VAZ
+PASS UI/ORC-TOT-TXT
+PASS UI/ORC-TOT-ZERO
+PASS UI/ORC-TOT-NEG
+PASS UI/ORC-MAP-001
+PASS UI/ORC-MAP-002
+PASS UI/ORC-DER-SEM
+PASS UI/ORC-DER-COM
+PASS UI/ORC-DER-BDI
+PASS UI/ORC-DER-ZERO
+PASS UI/ORC-DER-NEG
+PASS UI/ORC-DER-INF
+PASS UI/ORC-ERR-BDI
+PASS UI/ORC-ERR-ITEM
+PASS UI/ORC-ERR-GERAL
+PASS UI/ORC-ERR-COMP
+PASS UI/ORC-ROUND-MEIO
+PASS UI/ORC-ROUND-ABAIXO
+PASS UI/ORC-ROUND-ACIMA
+PASS UI/ORC-LIM-DENTRO
+PASS UI/ORC-LIM-IGUAL
+PASS UI/ORC-LIM-FORA
+PASS UI/ORC-LIM-GERAL
+PASS UI/ORC-LIM-GERAL-FORA
+PASS UI/ORC-AV-DUP
+PASS UI/ORC-CP-DUP
+PASS UI/ORC-AV-PRECO
+PASS UI/ORC-CP-PRECO
+PASS UI/ORC-AV-BDI
+PASS UI/ORC-AV-BDI-DER
+PASS UI/ORC-CP-BDI
+PASS UI/ORC-AV-MANUAL
+PASS UI/ORC-CP-MANUAL
+PASS UI/ORC-AV-PADRAO
+PASS UI/ORC-VIS-001
+PASS UI/ORC-VIS-002
+PASS UI/ORC-VIS-ANTES
+PASS UI/ORC-VIS-INTERVALO
+PASS UI/ORC-VIS-MESCLA
+PASS UI/ORC-VIS-FORMULA
+PASS UI/ORC-AV-GRUPOS
+PASS UI-MAP-PREVIEW
+PASS UI-REVISAO-GRUPOS
+PASS UI-BASE-PREREQ
+PASS UI-BASE-MAP-PREVIEW
+PASS UI-BASE-REVISAO
+PASS UI-CMP-FLUXO
+PASS UI-EXPORT-COMPLETO
+PASS UI-COLUNAS
+PASS UI-FILTROS-EXPORT
+PASS UI-TROCA-ORCAMENTO
+PASS UI-PERSISTENCIA
+PASS UI-ORSE-OFFLINE
+PASS UI-BASE-EXCLUSAO-CONFLITO
+PASS UI-LEITOR-biff5
+PASS UI-LEITOR-biff8
+PASS UI-LEITOR-txt
+PASS UI-LEITOR-csv
+PASS UI-ARMAZENAMENTO-FALHA
+PASS UI-PERSISTENCIA-REINICIO
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> sicorp-comparador-orcamentos@4.4.0 audit:grouped
+> node scripts/audit-grouped.mjs
+
+27 execuções agrupadas, 0 falhas.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> sicorp-comparador-orcamentos@4.4.0 qa:grouped
+> node scripts/qa-grouped-browser.mjs
+
+PASS UI/01_Revisao
+PASS UI/02_Impedimentos
+PASS UI/03_Formulas
+PASS UI/04_Sem_itens
+PASS UI/05_Derivados
+PASS UI/06_Controle
+PASS UI/07_Coluna_oculta
+PASS UI/CTRL-OK
+PASS UI/CTRL-DER-SEM
+PASS UI/CTRL-DER-COM
+PASS UI/CTRL-DER-BDI
+PASS UI/CTRL-TOT-VAZ
+PASS UI/CTRL-TOT-TXT
+PASS UI/CTRL-TOT-ZERO
+PASS UI/CTRL-TOT-NEG
+PASS UI/CTRL-ORC-LIM-GERAL
+PASS UI/CTRL-ORC-LIM-GERAL-FORA
+PASS UI/CTRL-ORC-ERR-GERAL
+PASS UI/CTRL-MAP-001
+PASS UI/CTRL-MAP-002
+PASS UI/DER-ESTOURO
+PASS UI/BASE/01_Revisao
+PASS UI/BASE/02_Conflitos
+PASS UI/BASE/03_Sem_validos
+PASS UI/CMP/01_Comparacao
+PASS UI/CMP/02_ABC_limites
+PASS UI/CMP/03_ABC_cruzamento
+27 verificações agrupadas no HTML efetivo.
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> sicorp-comparador-orcamentos@4.4.0 qa:layout
+> node scripts/qa-budget-layout.mjs
+
+84 verificações de layout aprovadas.
