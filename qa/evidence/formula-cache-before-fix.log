@@ -1,0 +1,358 @@
+✔ ORC-OK-001: Fluxo válido: 2 × 100 × (1 + 20%) = 240 (9.016704ms)
+✔ ORC-EST-1: Identidade ausente: code (1.055359ms)
+✔ ORC-EST-2: Identidade ausente: source (0.309365ms)
+✔ ORC-EST-3: Identidade ausente: description (0.360603ms)
+✔ ORC-EST-4: Identidade ausente: unit (0.468765ms)
+✔ ORC-4-VAZ: quantity: VAZ (0.363337ms)
+✔ ORC-4-ZERO: quantity: ZERO (0.294083ms)
+✔ ORC-4-NEG: quantity: NEG (0.533263ms)
+✔ ORC-4-TXT: quantity: TXT (0.694656ms)
+✔ ORC-4-ERR: quantity: ERR (0.419131ms)
+✔ ORC-4-CACHE: quantity: CACHE (0.226261ms)
+✔ ORC-5-VAZ: priceWithoutBdi: VAZ (0.273461ms)
+✔ ORC-5-ZERO: priceWithoutBdi: ZERO (0.155895ms)
+✔ ORC-5-NEG: priceWithoutBdi: NEG (0.185029ms)
+✔ ORC-5-TXT: priceWithoutBdi: TXT (0.149285ms)
+✔ ORC-5-ERR: priceWithoutBdi: ERR (0.532231ms)
+✔ ORC-5-CACHE: priceWithoutBdi: CACHE (0.198278ms)
+✔ ORC-6-VAZ: bdi: VAZ (0.169025ms)
+✔ ORC-6-ZERO: bdi: ZERO (0.382697ms)
+✔ ORC-6-NEG: bdi: NEG (0.147222ms)
+✔ ORC-6-TXT: bdi: TXT (0.125469ms)
+✔ ORC-6-ERR: bdi: ERR (0.120011ms)
+✔ ORC-6-CACHE: bdi: CACHE (0.694405ms)
+✔ ORC-7-VAZ: priceWithBdi: VAZ (0.295064ms)
+✔ ORC-7-ZERO: priceWithBdi: ZERO (0.324659ms)
+✔ ORC-7-NEG: priceWithBdi: NEG (0.128854ms)
+✔ ORC-7-TXT: priceWithBdi: TXT (0.127862ms)
+✔ ORC-7-ERR: priceWithBdi: ERR (0.124037ms)
+✔ ORC-7-CACHE: priceWithBdi: CACHE (0.193161ms)
+✔ ORC-8-VAZ: totalWithBdi: VAZ (0.201042ms)
+✔ ORC-8-ZERO: totalWithBdi: ZERO (0.12597ms)
+✔ ORC-8-NEG: totalWithBdi: NEG (0.720955ms)
+✔ ORC-8-TXT: totalWithBdi: TXT (0.316116ms)
+✔ ORC-8-ERR: totalWithBdi: ERR (0.138648ms)
+✔ ORC-8-CACHE: totalWithBdi: CACHE (0.263757ms)
+✔ ORC-EXC-001: Vazio/zero exclui antes de avaliar outro campo negativo (0.184748ms)
+✔ ORC-EXC-002: Estrutural tem precedência sobre finanças inválidas (0.135704ms)
+✔ ORC-EXC-003: Linha vazia é ignorada (0.138919ms)
+✔ ORC-EXC-004: Cabeçalho repetido desconsiderado (0.170837ms)
+✔ ORC-EXC-005: Conteúdo antes do cabeçalho desconsiderado (0.177497ms)
+✔ ORC-TOT-VAZ: Total geral VAZ (0.179911ms)
+✔ ORC-TOT-TXT: Total geral TXT (0.1329ms)
+✔ ORC-TOT-ZERO: Total geral ZERO (0.250227ms)
+✔ ORC-TOT-NEG: Total geral NEG (0.333863ms)
+✔ ORC-MAP-001: Menos de dois componentes mapeados (0.180542ms)
+✔ ORC-MAP-002: Total do item não mapeado (0.257277ms)
+✔ ORC-DER-SEM: Derivação de priceWithoutBdi (0.162635ms)
+✔ ORC-DER-COM: Derivação de priceWithBdi (0.121073ms)
+✔ ORC-DER-BDI: Derivação de bdi (0.216346ms)
+✔ ORC-DER-ZERO: Caracterização: BDI derivado ZERO (0.118408ms)
+✔ ORC-DER-NEG: Caracterização: BDI derivado NEG (0.110076ms)
+✔ ORC-DER-INF: Derivação impossível por estouro numérico (0.127592ms)
+✔ ORC-ERR-BDI: BDI: 100 × 1,2 = 120, informado 121 (0.141523ms)
+✔ ORC-ERR-ITEM: Total: 2 × 120 = 240, informado 241 (0.180462ms)
+✔ ORC-ERR-GERAL: Total geral 241 diverge da soma 240 (0.299531ms)
+✔ ORC-ERR-COMP: Erros dos itens se compensam no geral (0.196145ms)
+✔ ORC-LIM-DENTRO: Tolerância do total do item R$ 0,01 (0.204848ms)
+✔ ORC-LIM-IGUAL: Tolerância do total do item R$ 0,01 (0.39834ms)
+✔ ORC-LIM-FORA: Tolerância do total do item R$ 0,01 (0.149595ms)
+✔ ORC-LIM-GERAL: Tolerância geral = 2 × 0,01 (0.129155ms)
+✔ ORC-LIM-GERAL-FORA: Tolerância geral = 2 × 0,01 (0.141954ms)
+✔ ORC-AV-DUP: Duplicidade física consecutiva (0.328004ms)
+✔ ORC-CP-DUP: Duplicidade não consecutiva (0.202545ms)
+✔ ORC-AV-PRECO: Mesmo item com preços diferentes (13.790371ms)
+✔ ORC-CP-PRECO: Outro código permite preço diferente (0.23921ms)
+✔ ORC-AV-BDI: Descrição normalizada comum com BDI diferente (0.396898ms)
+✔ ORC-AV-BDI-DER: Aviso usa BDI derivado (0.407063ms)
+✔ ORC-CP-BDI: 20%, 20 e 0,2 são equivalentes (0.168564ms)
+✔ ORC-AV-MANUAL: 4 de 5 células calculadas e uma manual (0.354293ms)
+✔ ORC-CP-MANUAL: Todas as 5 fórmulas seguem o padrão (0.397599ms)
+✔ ORC-AV-PADRAO: Uma fórmula diferente do padrão (0.252661ms)
+✔ ORC-VIS-001: Linha oculta não participa do total (0.21252ms)
+✔ ORC-VIS-002: Coluna obrigatória oculta retira identidade (0.361575ms)
+✔ BASE-OK-001: Preço positivo e identidade completa (1.06972ms)
+✔ BASE-VAZ: Preço ausente (0.598721ms)
+✔ BASE-ZERO: Preço zero (0.135213ms)
+✔ BASE-NEG: Preço negativo (0.139821ms)
+✔ BASE-TXT: Preço não numérico (0.142324ms)
+✔ BASE-ERR: Erro de fórmula no preço (0.251679ms)
+✔ BASE-CACHE: Fórmula do preço sem resultado válido (0.124908ms)
+✔ BASE-EST-1: Identidade incompleta (0.09312ms)
+✔ BASE-EST-2: Identidade incompleta (0.217938ms)
+✔ BASE-EST-3: Identidade incompleta (0.208103ms)
+✔ BASE-CAB: Cabeçalho repetido (0.121693ms)
+✔ BASE-ANTES: Linha anterior ao cabeçalho (0.117507ms)
+✔ BASE-VAZIA: Linhas vazias não geram revisão (0.087372ms)
+✔ BASE-EQUIV: Consolidar 2 origens equivalentes (0.238299ms)
+✔ BASE-CON-PRECO: Duas referências com preço diferente (0.140542ms)
+✔ BASE-CON-UNID: Duas referências com unidade diferente (0.086741ms)
+✔ BASE-CP-DESC: Descrições diferentes não conflitam (0.059239ms)
+✔ BASE-VIS: Conflito somente na linha oculta é ignorado (0.069013ms)
+✔ CMP-FLUXO: Quatro resultados e ABC 50/80/95/100 (1.258294ms)
+✔ CMP-IGUAL: Limite absoluto de comparação (0.264508ms)
+✔ CMP-LIM: Limite absoluto de comparação (0.227723ms)
+✔ CMP-MENOS: Limite absoluto de comparação (0.319501ms)
+✔ CMP-MAIS: Limite absoluto de comparação (0.269266ms)
+✔ CMP-ABAIXO: Limite absoluto de comparação (0.196777ms)
+✔ CMP-UNICO: Busca restrita a fonte/código; descrição resolve múltiplos (0.450398ms)
+✔ CMP-MULTI: Busca restrita a fonte/código; descrição resolve múltiplos (0.259951ms)
+✔ CMP-MULTI-AUS: Busca restrita a fonte/código; descrição resolve múltiplos (0.202785ms)
+✔ CMP-SEM-DESC: Busca restrita a fonte/código; descrição resolve múltiplos (0.157407ms)
+✔ CMP-FONTE: Busca restrita a fonte/código; descrição resolve múltiplos (0.136375ms)
+✔ CMP-ORSE-UNICO: Busca restrita a fonte/código; descrição resolve múltiplos (0.180842ms)
+✔ CMP-ORSE-MULTI: Busca restrita a fonte/código; descrição resolve múltiplos (0.165339ms)
+✔ CMP-ORSE-AUS: Busca restrita a fonte/código; descrição resolve múltiplos (0.142534ms)
+✔ XLSX/ORC-OK-001: leitura do arquivo efetivo (0.290287ms)
+✔ XLSX/ORC-EST-1: leitura do arquivo efetivo (0.228724ms)
+✔ XLSX/ORC-EST-2: leitura do arquivo efetivo (0.519453ms)
+✔ XLSX/ORC-EST-3: leitura do arquivo efetivo (0.151668ms)
+✔ XLSX/ORC-EST-4: leitura do arquivo efetivo (0.264298ms)
+✔ XLSX/ORC-4-VAZ: leitura do arquivo efetivo (0.182385ms)
+✔ XLSX/ORC-4-ZERO: leitura do arquivo efetivo (0.170817ms)
+✔ XLSX/ORC-4-NEG: leitura do arquivo efetivo (0.115854ms)
+✔ XLSX/ORC-4-TXT: leitura do arquivo efetivo (0.11244ms)
+✔ XLSX/ORC-4-ERR: leitura do arquivo efetivo (0.109645ms)
+✖ XLSX/ORC-4-CACHE: leitura do arquivo efetivo (0.969089ms)
+✔ XLSX/ORC-5-VAZ: leitura do arquivo efetivo (0.141082ms)
+✔ XLSX/ORC-5-ZERO: leitura do arquivo efetivo (0.167292ms)
+✔ XLSX/ORC-5-NEG: leitura do arquivo efetivo (0.110156ms)
+✔ XLSX/ORC-5-TXT: leitura do arquivo efetivo (0.105308ms)
+✔ XLSX/ORC-5-ERR: leitura do arquivo efetivo (0.332781ms)
+✖ XLSX/ORC-5-CACHE: leitura do arquivo efetivo (0.53174ms)
+✔ XLSX/ORC-6-VAZ: leitura do arquivo efetivo (0.127381ms)
+✔ XLSX/ORC-6-ZERO: leitura do arquivo efetivo (0.101183ms)
+✔ XLSX/ORC-6-NEG: leitura do arquivo efetivo (0.312811ms)
+✔ XLSX/ORC-6-TXT: leitura do arquivo efetivo (0.187172ms)
+✔ XLSX/ORC-6-ERR: leitura do arquivo efetivo (0.122385ms)
+✖ XLSX/ORC-6-CACHE: leitura do arquivo efetivo (0.209205ms)
+✔ XLSX/ORC-7-VAZ: leitura do arquivo efetivo (0.199531ms)
+✔ XLSX/ORC-7-ZERO: leitura do arquivo efetivo (0.157266ms)
+✔ XLSX/ORC-7-NEG: leitura do arquivo efetivo (0.143176ms)
+✔ XLSX/ORC-7-TXT: leitura do arquivo efetivo (0.387093ms)
+✔ XLSX/ORC-7-ERR: leitura do arquivo efetivo (0.134172ms)
+✖ XLSX/ORC-7-CACHE: leitura do arquivo efetivo (0.169585ms)
+✔ XLSX/ORC-8-VAZ: leitura do arquivo efetivo (0.118669ms)
+✔ XLSX/ORC-8-ZERO: leitura do arquivo efetivo (0.091407ms)
+✔ XLSX/ORC-8-NEG: leitura do arquivo efetivo (0.243306ms)
+✔ XLSX/ORC-8-TXT: leitura do arquivo efetivo (1.870676ms)
+✔ XLSX/ORC-8-ERR: leitura do arquivo efetivo (0.197968ms)
+✖ XLSX/ORC-8-CACHE: leitura do arquivo efetivo (0.250257ms)
+✔ XLSX/ORC-EXC-001: leitura do arquivo efetivo (0.157758ms)
+✔ XLSX/ORC-EXC-002: leitura do arquivo efetivo (0.106841ms)
+✔ XLSX/ORC-EXC-003: leitura do arquivo efetivo (0.096275ms)
+✔ XLSX/ORC-EXC-004: leitura do arquivo efetivo (0.120952ms)
+✔ XLSX/ORC-EXC-005: leitura do arquivo efetivo (0.104317ms)
+✔ XLSX/ORC-TOT-VAZ: leitura do arquivo efetivo (0.091919ms)
+✔ XLSX/ORC-TOT-TXT: leitura do arquivo efetivo (0.091057ms)
+✔ XLSX/ORC-TOT-ZERO: leitura do arquivo efetivo (0.098578ms)
+✔ XLSX/ORC-TOT-NEG: leitura do arquivo efetivo (0.210006ms)
+✔ XLSX/ORC-MAP-001: leitura do arquivo efetivo (0.124357ms)
+✔ XLSX/ORC-MAP-002: leitura do arquivo efetivo (0.125699ms)
+✔ XLSX/ORC-DER-SEM: leitura do arquivo efetivo (0.126931ms)
+✔ XLSX/ORC-DER-COM: leitura do arquivo efetivo (0.150617ms)
+✔ XLSX/ORC-DER-BDI: leitura do arquivo efetivo (0.187212ms)
+✔ XLSX/ORC-DER-ZERO: leitura do arquivo efetivo (0.158559ms)
+✔ XLSX/ORC-DER-NEG: leitura do arquivo efetivo (0.093871ms)
+✔ XLSX/ORC-DER-INF: leitura do arquivo efetivo (0.210928ms)
+✔ XLSX/ORC-ERR-BDI: leitura do arquivo efetivo (0.155945ms)
+✔ XLSX/ORC-ERR-ITEM: leitura do arquivo efetivo (0.11338ms)
+✔ XLSX/ORC-ERR-GERAL: leitura do arquivo efetivo (0.145639ms)
+✔ XLSX/ORC-ERR-COMP: leitura do arquivo efetivo (0.297548ms)
+✔ XLSX/ORC-LIM-DENTRO: leitura do arquivo efetivo (0.104388ms)
+✔ XLSX/ORC-LIM-IGUAL: leitura do arquivo efetivo (0.090707ms)
+✔ XLSX/ORC-LIM-FORA: leitura do arquivo efetivo (0.098738ms)
+✔ XLSX/ORC-LIM-GERAL: leitura do arquivo efetivo (0.105239ms)
+✔ XLSX/ORC-LIM-GERAL-FORA: leitura do arquivo efetivo (0.104918ms)
+✔ XLSX/ORC-AV-DUP: leitura do arquivo efetivo (0.124467ms)
+✔ XLSX/ORC-CP-DUP: leitura do arquivo efetivo (0.188143ms)
+✔ XLSX/ORC-AV-PRECO: leitura do arquivo efetivo (0.400953ms)
+✔ XLSX/ORC-CP-PRECO: leitura do arquivo efetivo (0.29174ms)
+✔ XLSX/ORC-AV-BDI: leitura do arquivo efetivo (0.404779ms)
+✔ XLSX/ORC-AV-BDI-DER: leitura do arquivo efetivo (0.386122ms)
+✔ XLSX/ORC-CP-BDI: leitura do arquivo efetivo (0.185129ms)
+✔ XLSX/ORC-AV-MANUAL: leitura do arquivo efetivo (0.257547ms)
+✔ XLSX/ORC-CP-MANUAL: leitura do arquivo efetivo (0.32518ms)
+✔ XLSX/ORC-AV-PADRAO: leitura do arquivo efetivo (0.174653ms)
+✔ XLSX/ORC-VIS-001: leitura do arquivo efetivo (0.125689ms)
+✔ XLSX/ORC-VIS-002: leitura do arquivo efetivo (0.146461ms)
+✔ XLSX/BASE-OK-001: leitura do arquivo efetivo (0.081072ms)
+✔ XLSX/BASE-VAZ: leitura do arquivo efetivo (0.054492ms)
+✔ XLSX/BASE-ZERO: leitura do arquivo efetivo (0.041823ms)
+✔ XLSX/BASE-NEG: leitura do arquivo efetivo (0.038367ms)
+✔ XLSX/BASE-TXT: leitura do arquivo efetivo (0.047201ms)
+✔ XLSX/BASE-ERR: leitura do arquivo efetivo (0.043495ms)
+✖ XLSX/BASE-CACHE: leitura do arquivo efetivo (0.593774ms)
+✔ XLSX/BASE-EST-1: leitura do arquivo efetivo (0.149825ms)
+✔ XLSX/BASE-EST-2: leitura do arquivo efetivo (0.097657ms)
+✔ XLSX/BASE-EST-3: leitura do arquivo efetivo (0.085238ms)
+✔ XLSX/BASE-CAB: leitura do arquivo efetivo (0.181573ms)
+✔ XLSX/BASE-ANTES: leitura do arquivo efetivo (0.071918ms)
+✔ XLSX/BASE-VAZIA: leitura do arquivo efetivo (0.048113ms)
+✔ XLSX/BASE-EQUIV: leitura do arquivo efetivo (0.064607ms)
+✔ XLSX/BASE-CON-PRECO: leitura do arquivo efetivo (0.10652ms)
+✔ XLSX/BASE-CON-UNID: leitura do arquivo efetivo (0.062475ms)
+✔ XLSX/BASE-CP-DESC: leitura do arquivo efetivo (0.045098ms)
+✔ XLSX/BASE-VIS: leitura do arquivo efetivo (0.045018ms)
+✔ XLSX/CMP-FLUXO: leitura do arquivo efetivo (0.470218ms)
+✔ XLSX/CMP-IGUAL: leitura do arquivo efetivo (0.163085ms)
+✔ XLSX/CMP-LIM: leitura do arquivo efetivo (0.195284ms)
+✔ XLSX/CMP-MENOS: leitura do arquivo efetivo (0.190777ms)
+✔ XLSX/CMP-MAIS: leitura do arquivo efetivo (0.221183ms)
+✔ XLSX/CMP-ABAIXO: leitura do arquivo efetivo (0.250557ms)
+✔ XLSX/CMP-UNICO: leitura do arquivo efetivo (0.249325ms)
+✔ XLSX/CMP-MULTI: leitura do arquivo efetivo (0.21915ms)
+✔ XLSX/CMP-MULTI-AUS: leitura do arquivo efetivo (0.206651ms)
+✔ XLSX/CMP-SEM-DESC: leitura do arquivo efetivo (0.240281ms)
+✔ XLSX/CMP-FONTE: leitura do arquivo efetivo (0.27921ms)
+✔ XLSX/CMP-ORSE-UNICO: leitura do arquivo efetivo (0.226111ms)
+✔ XLSX/CMP-ORSE-MULTI: leitura do arquivo efetivo (0.173862ms)
+✔ XLSX/CMP-ORSE-AUS: leitura do arquivo efetivo (0.301113ms)
+✔ BASE-ENTRE: equivalências e conflitos entre arquivos (0.589197ms)
+✔ BUILD-PARIDADE: núcleo distribuído idêntico ao núcleo fonte (9.616127ms)
+ℹ tests 212
+ℹ suites 0
+ℹ pass 206
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 411.875236
+
+✖ failing tests:
+
+test at tests/audit/cases.test.mjs:36:23
+✖ XLSX/ORC-4-CACHE: leitura do arquivo efetivo (0.969089ms)
+  AssertionError [ERR_ASSERTION]: itens aceitos
+  
+  0 !== 1
+  
+      at verify (file:///workspace/scratch/400a74293283/sicorp/tests/audit/cases.test.mjs:18:10)
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/audit/cases.test.mjs:40:2)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/audit/cases.test.mjs:36:23
+✖ XLSX/ORC-5-CACHE: leitura do arquivo efetivo (0.53174ms)
+  AssertionError [ERR_ASSERTION]: itens aceitos
+  
+  0 !== 1
+  
+      at verify (file:///workspace/scratch/400a74293283/sicorp/tests/audit/cases.test.mjs:18:10)
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/audit/cases.test.mjs:40:2)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/audit/cases.test.mjs:36:23
+✖ XLSX/ORC-6-CACHE: leitura do arquivo efetivo (0.209205ms)
+  AssertionError [ERR_ASSERTION]: itens aceitos
+  
+  0 !== 1
+  
+      at verify (file:///workspace/scratch/400a74293283/sicorp/tests/audit/cases.test.mjs:18:10)
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/audit/cases.test.mjs:40:2)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/audit/cases.test.mjs:36:23
+✖ XLSX/ORC-7-CACHE: leitura do arquivo efetivo (0.169585ms)
+  AssertionError [ERR_ASSERTION]: itens aceitos
+  
+  0 !== 1
+  
+      at verify (file:///workspace/scratch/400a74293283/sicorp/tests/audit/cases.test.mjs:18:10)
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/audit/cases.test.mjs:40:2)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/audit/cases.test.mjs:36:23
+✖ XLSX/ORC-8-CACHE: leitura do arquivo efetivo (0.250257ms)
+  AssertionError [ERR_ASSERTION]: itens aceitos
+  
+  0 !== 1
+  
+      at verify (file:///workspace/scratch/400a74293283/sicorp/tests/audit/cases.test.mjs:18:10)
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/audit/cases.test.mjs:40:2)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/audit/cases.test.mjs:36:23
+✖ XLSX/BASE-CACHE: leitura do arquivo efetivo (0.593774ms)
+  AssertionError [ERR_ASSERTION]: exclusões da base
+  + actual - expected
+  
+    [
+  +   'Preço zero'
+  -   'Fórmula do preço sem resultado válido'
+    ]
+  
+      at verify (file:///workspace/scratch/400a74293283/sicorp/tests/audit/cases.test.mjs:24:10)
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/audit/cases.test.mjs:40:2)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: [ 'Preço zero' ],
+    expected: [ 'Fórmula do preço sem resultado válido' ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }

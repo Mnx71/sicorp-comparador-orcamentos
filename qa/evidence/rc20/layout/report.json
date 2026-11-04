@@ -1,0 +1,626 @@
+{
+  "date": "2026-11-04T15:43:52.038Z",
+  "version": "4.4.0-rc.20",
+  "browser": "141.0.7390.0",
+  "htmlSha256": "fe75bc7f44acb2c441d0a5d065a3bc6789270284966578797f7cb279611a094c",
+  "results": [
+    {
+      "sheet": "01_Revisao",
+      "width": 1600,
+      "height": 1000,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 1600,
+      "height": 1000,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 1600,
+      "height": 1000,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 1600,
+      "height": 1000,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 1366,
+      "height": 768,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 1366,
+      "height": 768,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 1366,
+      "height": 768,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 1366,
+      "height": 768,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 1024,
+      "height": 600,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 1024,
+      "height": 600,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 1024,
+      "height": 600,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 1024,
+      "height": 600,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 800,
+      "height": 450,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 800,
+      "height": 450,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 800,
+      "height": 450,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 800,
+      "height": 450,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 640,
+      "height": 360,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 640,
+      "height": 360,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 640,
+      "height": 360,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 640,
+      "height": 360,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 390,
+      "height": 844,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 390,
+      "height": 844,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 390,
+      "height": 844,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 390,
+      "height": 844,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 320,
+      "height": 568,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 320,
+      "height": 568,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 320,
+      "height": 568,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "01_Revisao",
+      "width": 320,
+      "height": 568,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 1600,
+      "height": 1000,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 1600,
+      "height": 1000,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 1600,
+      "height": 1000,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 1600,
+      "height": 1000,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 1366,
+      "height": 768,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 1366,
+      "height": 768,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 1366,
+      "height": 768,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 1366,
+      "height": 768,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 1024,
+      "height": 600,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 1024,
+      "height": 600,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 1024,
+      "height": 600,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 1024,
+      "height": 600,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 800,
+      "height": 450,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 800,
+      "height": 450,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 800,
+      "height": 450,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 800,
+      "height": 450,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 640,
+      "height": 360,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 640,
+      "height": 360,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 640,
+      "height": 360,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 640,
+      "height": 360,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 390,
+      "height": 844,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 390,
+      "height": 844,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 390,
+      "height": 844,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 390,
+      "height": 844,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 320,
+      "height": 568,
+      "category": "error",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 320,
+      "height": 568,
+      "category": "warning",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 320,
+      "height": 568,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "sheet": "02_Impedimentos",
+      "width": 320,
+      "height": 568,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 1600,
+      "height": 1000,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 1600,
+      "height": 1000,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 1366,
+      "height": 768,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 1366,
+      "height": 768,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 1024,
+      "height": 600,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 1024,
+      "height": 600,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 800,
+      "height": 450,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 800,
+      "height": 450,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 640,
+      "height": 360,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 640,
+      "height": 360,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 390,
+      "height": 844,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 390,
+      "height": 844,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 320,
+      "height": 568,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "01_Revisao",
+      "width": 320,
+      "height": 568,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 1600,
+      "height": 1000,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 1600,
+      "height": 1000,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 1366,
+      "height": 768,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 1366,
+      "height": 768,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 1024,
+      "height": 600,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 1024,
+      "height": 600,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 800,
+      "height": 450,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 800,
+      "height": 450,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 640,
+      "height": 360,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 640,
+      "height": 360,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 390,
+      "height": 844,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 390,
+      "height": 844,
+      "category": "blocker",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 320,
+      "height": 568,
+      "category": "discarded",
+      "status": "passed"
+    },
+    {
+      "kind": "base",
+      "sheet": "02_Conflitos",
+      "width": 320,
+      "height": 568,
+      "category": "blocker",
+      "status": "passed"
+    }
+  ],
+  "errors": [],
+  "requests": []
+}

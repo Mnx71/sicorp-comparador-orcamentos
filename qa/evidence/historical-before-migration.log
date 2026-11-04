@@ -1,0 +1,915 @@
+✖ resultado canônico completo é adaptado para todos os campos da linha legada (5.952434ms)
+✔ bases equivalentes consolidadas preservam nomes e todas as origens na visão (3.996289ms)
+✔ motivos de indisponibilidade mantêm campos legados vazios ou não numéricos (0.450779ms)
+✔ cartões recebem quantidade, total, participação e indicação de parcialidade (1.472077ms)
+✔ visão fornece a ordenação ABC e o sort padrão esperados pela tabela (0.684841ms)
+✔ adaptação não modifica o resultado canônico recebido (1.191554ms)
+✔ orçamento com uma linha válida produz um item normalizado e rastreável (8.836438ms)
+✖ linha estrutural com código é removida como Título/categoria e preserva a origem (2.673967ms)
+✖ item com identidade completa e quantidade inválida é removido como Item incompleto (0.981829ms)
+✔ preço sem BDI é calculado pelo preço com BDI e arredondado para duas casas (0.450828ms)
+✔ preço com BDI é calculado pelo preço sem BDI e arredondado para duas casas (0.381585ms)
+✔ repetição posterior do cabeçalho é removida como Cabeçalho repetido (0.400893ms)
+✔ linha não vazia anterior ao cabeçalho é enviada à revisão como Antes do cabeçalho (0.262245ms)
+✔ rótulos equivalentes ao cabeçalho principal também são removidos como Cabeçalho repetido (1.368901ms)
+✔ preço com separador brasileiro de milhar e decimal é normalizado (0.762418ms)
+✔ preço em notação científica textual é normalizado (0.561135ms)
+✔ uma correspondência exata com preços iguais produz resultado canônico (5.931923ms)
+✔ preço do orçamento abaixo da referência é classificado como Abaixo (0.308224ms)
+✔ preço do orçamento acima da referência é classificado como Acima (0.288485ms)
+✔ diferença dentro da tolerância absoluta é classificada como Igual (0.234524ms)
+✔ código existente em outra fonte não corresponde ao item do orçamento (0.507485ms)
+✔ código repetido é resolvido pela descrição normalizada (5.054722ms)
+✔ código repetido sem descrição correspondente é tratado como não encontrado (0.47152ms)
+✔ entre ocorrências selecionadas é priorizado o primeiro preço utilizável (0.609548ms)
+✔ preço indisponível no orçamento é distinguido dentro de Não encontrado (0.337288ms)
+✔ preço indisponível na base é distinguido dentro de Não encontrado (2.312262ms)
+✔ conflitos bloqueantes do catálogo impedem a comparação (0.691982ms)
+✔ os três seams compõem uma comparação completa usando matrizes sintéticas (3.377266ms)
+✔ quantidade e preço com BDI produzem o total financeiro arredondado do item (0.198789ms)
+✔ total conhecido do orçamento e participação de cada item são calculados (0.299061ms)
+✔ item sem total disponível torna o valor consolidado parcial (0.307573ms)
+✔ métricas financeiras são agregadas por status (0.317588ms)
+✔ motivos de indisponibilidade também recebem métricas financeiras próprias (0.233702ms)
+✔ Curva ABC ordena totais decrescentes, preserva empates e envia indisponíveis ao final (0.312311ms)
+✔ orçamento sem qualquer total conhecido mantém total zero e participações indisponíveis (0.177287ms)
+✔ regras v1.3.0 mantêm somente materiais e serviços ORSE ativos (2.783562ms)
+✔ workbook de download possui Resumo, Insumos e Servicos; visão interna omite Resumo (21.333478ms)
+✔ nome de saída preserva o nome original e acrescenta somente o sufixo ORSE (0.875909ms)
+✔ arquivo inválido ou com extensão incorreta é rejeitado antes da conversão (10.235043ms)
+✔ XLSX ORSE reproduz cores, fontes, dimensões e congelamento do conversor v1.3.0 (6.278805ms)
+✔ serialização rejeita workbook que não possui as três abas ORSE esperadas (0.264168ms)
+✖ visão adaptada produz tabela tipada com as 18 colunas da interface (31.08932ms)
+✔ CSV preserva BOM, separador, decimal brasileiro e aspas escapadas (2.580176ms)
+✔ clipboard usa tabulação e quebra de linha simples (5.636768ms)
+✔ nomes de arquivo são saneados e mantêm as extensões esperadas (6.510655ms)
+✔ valores indisponíveis preservam o texto bruto e não inventam totais (3.741174ms)
+✖ XLSX mantém números tipados, filtros, linha congelada e cores por status (1.799821ms)
+✔ XLSX serializa a fonte do cabeçalho na ordem canônica aceita pelo Excel (1.236452ms)
+✔ seleção vazia produz artefatos vazios sinalizados sem lançar erro (1.476314ms)
+✖ uma linha válida de base produz um item canônico e rastreável (5.385861ms)
+✖ uma linha de base com identidade completa e preço ausente é mantida com alerta (1.339977ms)
+✖ uma linha de base com identidade completa e preço não numérico é mantida com alerta (1.398626ms)
+✖ uma linha de base com identidade completa e preço zero é mantida com alerta (2.208576ms)
+✖ uma linha de base com identidade completa e preço negativo é mantida com alerta (0.843681ms)
+✖ uma linha de base sem código é removida como Título/categoria (0.560494ms)
+✖ uma linha de base sem descrição é removida como Título/categoria (0.428726ms)
+✖ uma linha de base sem unidade é removida como Título/categoria (0.429347ms)
+✖ uma linha de base informa todos os campos de identidade ausentes (0.553513ms)
+✖ cabeçalhos exatos ou equivalentes dentro dos dados são removidos como Cabeçalho repetido (1.181729ms)
+✔ linha não vazia anterior ao cabeçalho da base é enviada à revisão (0.389717ms)
+✖ contagens agregam revisão estrutural, cabeçalho repetido e preço indisponível (0.596468ms)
+✔ duplicidades equivalentes são consolidadas com todas as origens (0.894267ms)
+✖ o mesmo código com descrições diferentes permanece como itens distintos (0.35818ms)
+✔ a mesma fonte, código e descrição com unidades diferentes gera conflito bloqueante (1.164183ms)
+✔ a mesma fonte, código e descrição com preços diferentes gera conflito bloqueante (0.305911ms)
+✔ códigos iguais de fontes diferentes não são duplicidades (0.330238ms)
+✖ duplicidades equivalentes sem preço são consolidadas e preservam os alertas de origem (0.281795ms)
+✔ catálogo inicial preserva as 20 bases federais e estaduais aprovadas (13.854744ms)
+✔ visão inicial mostra somente as bases identificadas no orçamento (2.387877ms)
+✔ fonte genérica DER sugere todos os DERs e fonte específica sugere somente um (9.569471ms)
+✔ sigla sem separadores é reconhecida apenas quando aponta para uma base (1.97225ms)
+✔ complementos de estado e ano são reconhecidos sem aliases (7.375568ms)
+✔ sigla composta expõe seus próprios identificadores sem consultar o órgão (3.245698ms)
+✔ nova base com sigla estadual entra automaticamente na família correspondente (2.065ms)
+✔ renomear uma base remove o identificador antigo e aplica a regra ao novo nome (6.137753ms)
+✔ base criada pelo usuário recebe automaticamente a mesma pesquisa por sigla (2.242256ms)
+✔ fonte não cadastrada é ignorada e Ver outras libera o catálogo (1.458016ms)
+✔ pesquisa consulta todo o catálogo ignorando acentos e caixa (0.758693ms)
+✔ edição aceita link em qualquer formato e o preserva no JSON completo (2.17825ms)
+✔ uma nova base pode ser adicionada, pesquisada, exportada e removida (3.622305ms)
+✔ validação exige link, não bloqueia seu formato e ainda rejeita sigla duplicada (3.627212ms)
+✔ importação incompatível ou incompleta não altera o catálogo atual (1.138805ms)
+✔ JSON legível sem versão pode ser editado diretamente e importado novamente (2.718173ms)
+✔ estado local anterior e JSON sem o marcador do formato são rejeitados (0.211959ms)
+✔ bases padrão podem ser excluídas e somente a restauração global as recupera (1.054959ms)
+✖ CSV com BOM preserva delimitador brasileiro, aspas, quebras internas e linhas (4.309861ms)
+✔ detecção de delimitador ignora separadores dentro de campos entre aspas (0.453173ms)
+✔ TXT tabulado é lido pelo mesmo contrato canônico (0.27216ms)
+✖ XLSX usa runtime injetado e preserva células tipadas, formatos e hyperlink (2.047022ms)
+✔ XLS reutiliza o contrato binário sem modificar o workbook do runtime (0.50452ms)
+✔ arquivo binário sem runtime produz erro explícito (0.510208ms)
+✔ workbook binário sem aba utilizável produz erro explícito (0.326461ms)
+✔ extensão não suportada e entrada sem bytes são rejeitadas (0.320442ms)
+✔ estado legado completo percorre os três seams e produz a visão da interface (27.032268ms)
+✔ cada aba configurada de uma base é convertida em uma entrada canônica (2.034764ms)
+✖ política de normalização selecionada na interface é respeitada (1.092395ms)
+✔ linhas de revisão do orçamento e das bases permanecem disponíveis (0.714085ms)
+✔ aba ausente no estado legado produz erro explícito (0.839905ms)
+✔ conflitos produzidos pelas bases continuam bloqueando a execução (0.57791ms)
+ℹ tests 99
+ℹ suites 0
+ℹ pass 78
+ℹ fail 21
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 340.967827
+
+✖ failing tests:
+
+test at tests/historical/adapt-comparison-to-legacy-view.test.js:79:1
+✖ resultado canônico completo é adaptado para todos os campos da linha legada (5.952434ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      availabilityKey: 'available',
+      baseDescription: 'Tubo PVC',
+      baseFile: 'sinapi.xlsx',
+      baseName: 'SINAPI sintética',
+      baseRow: 'sinapi.xlsx / PREÇOS, linha 12',
+      baseSheet: 'PREÇOS',
+  +   baseSource: 'SINAPI',
+  +   baseSourceKey: 'sinapi',
+      baseUnit: 'm',
+      baseValue: 100,
+      baseValueRaw: '100',
+      code: '001.001',
+      codeMatchCount: 1,
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/adapt-comparison-to-legacy-view.test.js:83:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { statusKey: 'acima', status: 'Acima', availabilityKey: 'available', projectRow: 7, code: '001.001', normalizedCode: '1001', projectDescription: 'Tubo PVC', projectUnit: 'm', projectQuantityRaw: '2', projectQuantity: 2, projectSource: 'SINAPI', projectSourceKey: 'sinapi', projectValueRaw: '110', projectValue: 110, projectValueSource: 'Informado', projectBdiRaw: '10%', projectBdiRate: 0.1, projectWithBdiRaw: '121', projectWithBdi: 121, projectWithBdiSource: 'Informado', projectTotalWithBdi: 242, projectTotalShare: 1, baseSource: 'SINAPI', baseSourceKey: 'sinapi', baseName: 'SINAPI sintética', baseFile: 'sinapi.xlsx', baseSheet: 'PREÇOS', baseRow: 'sinapi.xlsx / PREÇOS, linha 12', baseDescription: 'Tubo PVC', baseUnit: 'm', baseValueRaw: '100', baseValue: 100, comparisonPerformed: true, difference: 10, percentDifference: 0.1, matchCount: 1, codeMatchCount: 1, matchingBaseCount: 1, resolvedByDescription: false },
+    expected: { statusKey: 'acima', status: 'Acima', availabilityKey: 'available', projectRow: 7, code: '001.001', normalizedCode: '1001', projectDescription: 'Tubo PVC', projectUnit: 'm', projectQuantityRaw: '2', projectQuantity: 2, projectSource: 'SINAPI', projectSourceKey: 'sinapi', projectValueRaw: '110', projectValue: 110, projectValueSource: 'Informado', projectBdiRaw: '10%', projectBdiRate: 0.1, projectWithBdiRaw: '121', projectWithBdi: 121, projectWithBdiSource: 'Informado', projectTotalWithBdi: 242, projectTotalShare: 1, baseName: 'SINAPI sintética', baseFile: 'sinapi.xlsx', baseSheet: 'PREÇOS', baseRow: 'sinapi.xlsx / PREÇOS, linha 12', baseDescription: 'Tubo PVC', baseUnit: 'm', baseValueRaw: '100', baseValue: 100, comparisonPerformed: true, difference: 10, percentDifference: 0.1, matchCount: 1, codeMatchCount: 1, matchingBaseCount: 1, resolvedByDescription: false },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/analyze-budget.test.js:69:1
+✖ linha estrutural com código é removida como Título/categoria e preserva a origem (2.673967ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    {
+      items: [],
+      reviewRows: [
+        {
+          origin: {
+  ...
+          },
+  +       reason: 'Linha estrutural',
+  -       reason: 'Título/categoria',
+          reasonDetails: [
+            'Unidade ausente',
+  -         'Quantidade ausente, negativa ou não numérica',
+  -         'Preço unitário utilizável não encontrado'
+          ],
+          treatment: 'Removida',
+          values: {
+            code: '2',
+            description: 'TUBULAÇÃO',
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/analyze-budget.test.js:96:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { items: [], reviewRows: [ [Object] ], stats: { accepted: 0, reviewed: 1 } },
+    expected: { items: [], reviewRows: [ [Object] ], stats: { accepted: 0, reviewed: 1 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/analyze-budget.test.js:129:1
+✖ item com identidade completa e quantidade inválida é removido como Item incompleto (0.981829ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+  +   items: [
+  -   items: [],
+  -   reviewRows: [
+        {
+  +       code: 'A1',
+  +       codeRaw: 'A1',
+  +       description: 'Tubo PVC',
+          origin: {
+            fileName: 'orcamento_sintetico.xlsx',
+            rowNumber: 2,
+            sheet: 'PLANILHA ORCAMENTARIA'
+          },
+  +       price: {
+  +         bdiRate: 0.2,
+  +         bdiRaw: '20%',
+  +         withBdi: 120,
+  +         withBdiRaw: '120,00',
+  +         withBdiSource: 'Informado',
+  +         withoutBdi: 100,
+  +         withoutBdiRaw: '100,00',
+  +         withoutBdiSource: 'Informado'
+  -       reason: 'Item incompleto',
+  -       reasonDetails: [
+  -         'Quantidade ausente, negativa ou não numérica'
+  -       ],
+  -       treatment: 'Removida',
+  -       values: {
+  -         code: 'A1',
+  -         description: 'Tubo PVC',
+  -         price: '100,00 / 120,00',
+  -         quantity: '-1',
+  -         source: 'SINAPI',
+  -         unit: 'm'
+          },
+  +       quantity: -1,
+  +       quantityRaw: '-1',
+  +       source: 'SINAPI',
+  +       sourceKey: 'sinapi',
+  +       unit: 'm'
+        }
+      ],
+  +   reviewRows: [],
+      stats: {
+  +     accepted: 1,
+  +     reviewed: 0
+  -     accepted: 0,
+  -     reviewed: 1
+      }
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/analyze-budget.test.js:156:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { items: [ [Object] ], reviewRows: [], stats: { accepted: 1, reviewed: 0 } },
+    expected: { items: [], reviewRows: [ [Object] ], stats: { accepted: 0, reviewed: 1 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-comparison-export.test.js:55:1
+✖ visão adaptada produz tabela tipada com as 18 colunas da interface (31.08932ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  17 !== 18
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-comparison-export.test.js:65:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 17,
+    expected: 18,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-comparison-export.test.js:146:1
+✖ XLSX mantém números tipados, filtros, linha congelada e cores por status (1.799821ms)
+  AssertionError [ERR_ASSERTION]: The input did not match the regular expression /<autoFilter ref="A1:R2"\/>/. Input:
+  
+  '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n' +
+    '      <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">\n' +
+    '        <dimension ref="A1:Q2"/>\n' +
+    '        <sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews>\n' +
+    '        <sheetFormatPr defaultRowHeight="18"/>\n' +
+    '        <cols><col min="1" max="1" width="34" customWidth="1"/><col min="2" max="2" width="16" customWidth="1"/><col min="3" max="3" width="18" customWidth="1"/><col min="4" max="4" width="22" customWidth="1"/><col min="5" max="5" width="48" customWidth="1"/><col min="6" max="6" width="18" customWidth="1"/><col min="7" max="7" width="18" customWidth="1"/><col min="8" max="8" width="13" customWidth="1"/><col min="9" max="9" width="14" customWidth="1"/><col min="10" max="10" width="22" customWidth="1"/><col min="11" max="11" width="18" customWidth="1"/><col min="12" max="12" width="38" customWidth="1"/><col min="13" max="13" width="48" customWidth="1"/><col min="14" max="14" width="15" customWidth="1"/><col min="15" max="15" width="16" customWidth="1"/><col min="16" max="16" width="16" customWidth="1"/><col min="17" max="17" width="15" customWidth="1"/></cols>\n' +
+    '        <sheetData><row r="1" ht="24" customHeight="1"><c r="A1" t="inlineStr" s="1"><is><t>Status</t></is></c><c r="B1" t="inlineStr" s="1"><is><t>Linha orçamento</t></is></c><c r="C1" t="inlineStr" s="1"><is><t>Código</t></is></c><c r="D1" t="inlineStr" s="1"><is><t>Base / referência</t></is></c><c r="E1" t="inlineStr" s="1"><is><t>Descrição orçamento</t></is></c><c r="F1" t="inlineStr" s="1"><is><t>Unid. orçamento</t></is></c><c r="G1" t="inlineStr" s="1"><is><t>Preço sem BDI</t></is></c><c r="H1" t="inlineStr" s="1"><is><t>BDI</t></is></c><c r="I1" t="inlineStr" s="1"><is><t>Quantidade</t></is></c><c r="J1" t="inlineStr" s="1"><is><t>Valor total com BDI</t></is></c><c r="K1" t="inlineStr" s="1"><is><t>Participação (%)</t></is></c><c r="L1" t="inlineStr" s="1"><is><t>Origem / linha da base</t></is></c><c r="M1" t="inlineStr" s="1"><is><t>Descrição base</t></is></c><c r="N1" t="inlineStr" s="1"><is><t>Unid. base</t></is></c><c r="O1" t="inlineStr" s="1"><is><t>Preço base</t></is></c><c r="P1" t="inlineStr" s="1"><is><t>Diferença</t></is></c><c r="Q1" t="inlineStr" s="1"><is><t>Diferença %</t></is></c></row><row r="2"><c r="A2" t="inlineStr" s="13"><is><t xml:space="preserve">Igual</t></is></c><c r="B2" s="16"><v>7</v></c><c r="C2" t="inlineStr" s="13"><is><t xml:space="preserve">001.001</t></is></c><c r="D2" t="inlineStr" s="13"><is><t xml:space="preserve">SINAPI</t></is></c><c r="E2" t="inlineStr" s="21"><is><t xml:space="preserve">Tubo PVC &quot;série A&quot; &amp; conexões</t></is></c><c r="F2" t="inlineStr" s="13"><is><t xml:space="preserve">m</t></is></c><c r="G2" s="14"><v>110</v></c><c r="H2" s="15"><v>0.1</v></c><c r="I2" s="13"><v>2.5</v></c><c r="J2" s="14"><v>242</v></c><c r="K2" s="15"><v>0.125</v></c><c r="L2" t="inlineStr" s="13"><is><t xml:space="preserve">sinapi.xlsx / PREÇOS, linha 2</t></is></c><c r="M2" t="inlineStr" s="21"><is><t xml:space="preserve">Tubo PVC &lt;série A&gt;</t></is></c><c r="N2" t="inlineStr" s="13"><is><t xml:space="preserve">m</t></is></c><c r="O2" s="14"><v>110</v></c><c r="P2" s="14"><v>0</v></c><c r="Q2" s="15"><v>0</v></c></row></sheetData>\n' +
+    '        <autoFilter ref="A1:Q2"/>\n' +
+    '      </worksheet>'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-comparison-export.test.js:164:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>\n      <worksheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main">\n        <dimension ref="A1:Q2"/>\n        <sheetViews><sheetView workbookViewId="0"><pane ySplit="1" topLeftCell="A2" activePane="bottomLeft" state="frozen"/></sheetView></sheetViews>\n        <sheetFormatPr defaultRowHeight="18"/>\n        <cols><col min="1" max="1" width="34" customWidth="1"/><col min="2" max="2" width="16" customWidth="1"/><col min="3" max="3" width="18" customWidth="1"/><col min="4" max="4" width="22" customWidth="1"/><col min="5" max="5" width="48" customWidth="1"/><col min="6" max="6" width="18" customWidth="1"/><col min="7" max="7" width="18" customWidth="1"/><col min="8" max="8" width="13" customWidth="1"/><col min="9" max="9" width="14" customWidth="1"/><col min="10" max="10" width="22" customWidth="1"/><col min="11" max="11" width="18" customWidth="1"/><col min="12" max="12" width="38" customWidth="1"/><col min="13" max="13" width="48" customWidth="1"/><col min="14" max="14" width="15" customWidth="1"/><col min="15" max="15" width="16" customWidth="1"/><col min="16" max="16" width="16" customWidth="1"/><col min="17" max="17" width="15" customWidth="1"/></cols>\n        <sheetData><row r="1" ht="24" customHeight="1"><c r="A1" t="inlineStr" s="1"><is><t>Status</t></is></c><c r="B1" t="inlineStr" s="1"><is><t>Linha orçamento</t></is></c><c r="C1" t="inlineStr" s="1"><is><t>Código</t></is></c><c r="D1" t="inlineStr" s="1"><is><t>Base / referência</t></is></c><c r="E1" t="inlineStr" s="1"><is><t>Descrição orçamento</t></is></c><c r="F1" t="inlineStr" s="1"><is><t>Unid. orçamento</t></is></c><c r="G1" t="inlineStr" s="1"><is><t>Preço sem BDI</t></is></c><c r="H1" t="inlineStr" s="1"><is><t>BDI</t></is></c><c r="I1" t="inlineStr" s="1"><is><t>Quantidade</t></is></c><c r="J1" t="inlineStr" s="1"><is><t>Valor total com BDI</t></is></c><c r="K1" t="inlineStr" s="1"><is><t>Participação (%)</t></is></c><c r="L1" t="inlineStr" s="1"><is><t>Origem / linha da base</t></is></c><c r="M1" t="inlineStr" s="1"><is><t>Descrição base</t></is></c><c r="N1" t="inlineStr" s="1"><is><t>Unid. base</t></is></c><c r="O1" t="inlineStr" s="1"><is><t>Preço base</t></is></c><c r="P1" t="inlineStr" s="1"><is><t>Diferença</t></is></c><c r="Q1" t="inlineStr" s="1"><is><t>Diferença %</t></is></c></row><row r="2"><c r="A2" t="inlineStr" s="13"><is><t xml:space="preserve">Igual</t></is></c><c r="B2" s="16"><v>7</v></c><c r="C2" t="inlineStr" s="13"><is><t xml:space="preserve">001.001</t></is></c><c r="D2" t="inlineStr" s="13"><is><t xml:space="preserve">SINAPI</t></is></c><c r="E2" t="inlineStr" s="21"><is><t xml:space="preserve">Tubo PVC &quot;série A&quot; &amp; conexões</t></is></c><c r="F2" t="inlineStr" s="13"><is><t xml:space="preserve">m</t></is></c><c r="G2" s="14"><v>110</v></c><c r="H2" s="15"><v>0.1</v></c><c r="I2" s="13"><v>2.5</v></c><c r="J2" s="14"><v>242</v></c><c r="K2" s="15"><v>0.125</v></c><c r="L2" t="inlineStr" s="13"><is><t xml:space="preserve">sinapi.xlsx / PREÇOS, linha 2</t></is></c><c r="M2" t="inlineStr" s="21"><is><t xml:space="preserve">Tubo PVC &lt;série A&gt;</t></is></c><c r="N2" t="inlineStr" s="13"><is><t xml:space="preserve">m</t></is></c><c r="O2" s="14"><v>110</v></c><c r="P2" s="14"><v>0</v></c><c r="Q2" s="15"><v>0</v></c></row></sheetData>\n        <autoFilter ref="A1:Q2"/>\n      </worksheet>',
+    expected: /<autoFilter ref="A1:R2"\/>/,
+    operator: 'match',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:71:1
+✖ uma linha válida de base produz um item canônico e rastreável (5.385861ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    {
+      conflicts: [],
+      items: [
+        {
+          baseName: 'SINAPI sintética',
+  ...
+        reviewed: 0,
+  -     unavailablePrices: 0
+      }
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:100:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { items: [ [Object] ], reviewRows: [], conflicts: [], stats: { accepted: 1, reviewed: 0, conflicts: 0 } },
+    expected: { items: [ [Object] ], reviewRows: [], conflicts: [], stats: { accepted: 1, reviewed: 0, unavailablePrices: 0, conflicts: 0 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:135:1
+✖ uma linha de base com identidade completa e preço ausente é mantida com alerta (1.339977ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    {
+      conflicts: [],
+  +   items: [],
+  -   items: [
+  -     {
+  -       baseName: 'SINAPI sintética',
+  -       code: '1003',
+  -       codeRaw: '001.003',
+  -       description: 'Registro de gaveta',
+  -       origins: [
+  -         {
+  -           fileName: 'sinapi_sintetica.xlsx',
+  -           rowNumber: 2,
+  -           sheet: 'PREÇOS'
+  -         }
+  -       ],
+  -       price: {
+  -         issue: 'Preço ausente',
+  -         raw: '',
+  -         value: NaN
+  -       },
+  -       source: 'SINAPI',
+  -       sourceKey: 'sinapi',
+  -       unit: 'un'
+  -     }
+  -   ],
+      reviewRows: [
+        {
+          origin: {
+            fileName: 'sinapi_sintetica.xlsx',
+            rowNumber: 2,
+  ...
+          reasonDetails: [],
+  +       treatment: 'Removida',
+  -       treatment: 'Mantida com alerta',
+          values: {
+            code: '001.003',
+            description: 'Registro de gaveta',
+            price: '',
+            source: 'SINAPI',
+  ...
+      stats: {
+  +     accepted: 0,
+  -     accepted: 1,
+        conflicts: 0,
+        reviewed: 1,
+  -     unavailablePrices: 1
+      }
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:164:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { items: [], reviewRows: [ [Object] ], conflicts: [], stats: { accepted: 0, reviewed: 1, conflicts: 0 } },
+    expected: { items: [ [Object] ], reviewRows: [ [Object] ], conflicts: [], stats: { accepted: 1, reviewed: 1, unavailablePrices: 1, conflicts: 0 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:217:1
+✖ uma linha de base com identidade completa e preço não numérico é mantida com alerta (1.398626ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    {
+      conflicts: [],
+  +   items: [],
+  -   items: [
+  -     {
+  -       baseName: 'SINAPI sintética',
+  -       code: '1004',
+  -       codeRaw: '001.004',
+  -       description: 'Joelho PVC',
+  -       origins: [
+  -         {
+  -           fileName: 'sinapi_sintetica.xlsx',
+  -           rowNumber: 2,
+  -           sheet: 'PREÇOS'
+  -         }
+  -       ],
+  -       price: {
+  -         issue: 'Preço não numérico',
+  -         raw: 'a combinar',
+  -         value: NaN
+  -       },
+  -       source: 'SINAPI',
+  -       sourceKey: 'sinapi',
+  -       unit: 'un'
+  -     }
+  -   ],
+      reviewRows: [
+        {
+          origin: {
+            fileName: 'sinapi_sintetica.xlsx',
+            rowNumber: 2,
+  ...
+          reasonDetails: [],
+  +       treatment: 'Removida',
+  -       treatment: 'Mantida com alerta',
+          values: {
+            code: '001.004',
+            description: 'Joelho PVC',
+            price: 'a combinar',
+            source: 'SINAPI',
+  ...
+      stats: {
+  +     accepted: 0,
+  -     accepted: 1,
+        conflicts: 0,
+        reviewed: 1,
+  -     unavailablePrices: 1
+      }
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:246:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { items: [], reviewRows: [ [Object] ], conflicts: [], stats: { accepted: 0, reviewed: 1, conflicts: 0 } },
+    expected: { items: [ [Object] ], reviewRows: [ [Object] ], conflicts: [], stats: { accepted: 1, reviewed: 1, unavailablePrices: 1, conflicts: 0 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:299:1
+✖ uma linha de base com identidade completa e preço zero é mantida com alerta (2.208576ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    {
+      conflicts: [],
+  +   items: [],
+  -   items: [
+  -     {
+  -       baseName: 'SINAPI sintética',
+  -       code: '1005',
+  -       codeRaw: '001.005',
+  -       description: 'Tê PVC',
+  -       origins: [
+  -         {
+  -           fileName: 'sinapi_sintetica.xlsx',
+  -           rowNumber: 2,
+  -           sheet: 'PREÇOS'
+  -         }
+  -       ],
+  -       price: {
+  -         issue: 'Preço zero',
+  -         raw: 0,
+  -         value: NaN
+  -       },
+  -       source: 'SINAPI',
+  -       sourceKey: 'sinapi',
+  -       unit: 'un'
+  -     }
+  -   ],
+      reviewRows: [
+        {
+          origin: {
+            fileName: 'sinapi_sintetica.xlsx',
+            rowNumber: 2,
+  ...
+          reasonDetails: [],
+  +       treatment: 'Removida',
+  -       treatment: 'Mantida com alerta',
+          values: {
+            code: '001.005',
+            description: 'Tê PVC',
+            price: 0,
+            source: 'SINAPI',
+  ...
+      stats: {
+  +     accepted: 0,
+  -     accepted: 1,
+        conflicts: 0,
+        reviewed: 1,
+  -     unavailablePrices: 1
+      }
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:328:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { items: [], reviewRows: [ [Object] ], conflicts: [], stats: { accepted: 0, reviewed: 1, conflicts: 0 } },
+    expected: { items: [ [Object] ], reviewRows: [ [Object] ], conflicts: [], stats: { accepted: 1, reviewed: 1, unavailablePrices: 1, conflicts: 0 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:381:1
+✖ uma linha de base com identidade completa e preço negativo é mantida com alerta (0.843681ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    {
+      conflicts: [],
+  +   items: [],
+  -   items: [
+  -     {
+  -       baseName: 'SINAPI sintética',
+  -       code: '1006',
+  -       codeRaw: '001.006',
+  -       description: 'Luva PVC',
+  -       origins: [
+  -         {
+  -           fileName: 'sinapi_sintetica.xlsx',
+  -           rowNumber: 2,
+  -           sheet: 'PREÇOS'
+  -         }
+  -       ],
+  -       price: {
+  -         issue: 'Preço negativo',
+  -         raw: '-12,50',
+  -         value: NaN
+  -       },
+  -       source: 'SINAPI',
+  -       sourceKey: 'sinapi',
+  -       unit: 'un'
+  -     }
+  -   ],
+      reviewRows: [
+        {
+          origin: {
+            fileName: 'sinapi_sintetica.xlsx',
+            rowNumber: 2,
+  ...
+          reasonDetails: [],
+  +       treatment: 'Removida',
+  -       treatment: 'Mantida com alerta',
+          values: {
+            code: '001.006',
+            description: 'Luva PVC',
+            price: '-12,50',
+            source: 'SINAPI',
+  ...
+      stats: {
+  +     accepted: 0,
+  -     accepted: 1,
+        conflicts: 0,
+        reviewed: 1,
+  -     unavailablePrices: 1
+      }
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:410:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { items: [], reviewRows: [ [Object] ], conflicts: [], stats: { accepted: 0, reviewed: 1, conflicts: 0 } },
+    expected: { items: [ [Object] ], reviewRows: [ [Object] ], conflicts: [], stats: { accepted: 1, reviewed: 1, unavailablePrices: 1, conflicts: 0 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:463:1
+✖ uma linha de base sem código é removida como Título/categoria (0.560494ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  ... Skipped lines
+  
+    {
+      conflicts: [],
+      items: [],
+      reviewRows: [
+        {
+  ...
+          },
+  +       reason: 'Linha estrutural',
+  -       reason: 'Título/categoria',
+          reasonDetails: [
+            'Código ausente'
+          ],
+          treatment: 'Removida',
+          values: {
+  ...
+        reviewed: 1,
+  -     unavailablePrices: 0
+      }
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:469:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { items: [], reviewRows: [ [Object] ], conflicts: [], stats: { accepted: 0, reviewed: 1, conflicts: 0 } },
+    expected: { items: [], reviewRows: [ [Object] ], conflicts: [], stats: { accepted: 0, reviewed: 1, unavailablePrices: 0, conflicts: 0 } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:500:1
+✖ uma linha de base sem descrição é removida como Título/categoria (0.428726ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      {
+        origin: {
+          fileName: 'sinapi_sintetica.xlsx',
+          rowNumber: 2,
+          sheet: 'PREÇOS'
+        },
+  +     reason: 'Linha estrutural',
+  -     reason: 'Título/categoria',
+        reasonDetails: [
+          'Descrição ausente'
+        ],
+        treatment: 'Removida',
+        values: {
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:506:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { treatment: 'Removida', reason: 'Linha estrutural', reasonDetails: [Array], origin: [Object], values: [Object] } ],
+    expected: [ { treatment: 'Removida', reason: 'Título/categoria', reasonDetails: [Array], origin: [Object], values: [Object] } ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:534:1
+✖ uma linha de base sem unidade é removida como Título/categoria (0.429347ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      origin: {
+        fileName: 'sinapi_sintetica.xlsx',
+        rowNumber: 2,
+        sheet: 'PREÇOS'
+      },
+  +   reason: 'Linha estrutural',
+  -   reason: 'Título/categoria',
+      reasonDetails: [
+        'Unidade ausente'
+      ],
+      treatment: 'Removida',
+      values: {
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:540:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { treatment: 'Removida', reason: 'Linha estrutural', reasonDetails: [ 'Unidade ausente' ], origin: { fileName: 'sinapi_sintetica.xlsx', sheet: 'PREÇOS', rowNumber: 2 }, values: { code: '001.011', source: 'SINAPI', description: 'Tubo PVC', unit: '', price: '10,00' } },
+    expected: { treatment: 'Removida', reason: 'Título/categoria', reasonDetails: [ 'Unidade ausente' ], origin: { fileName: 'sinapi_sintetica.xlsx', sheet: 'PREÇOS', rowNumber: 2 }, values: { code: '001.011', source: 'SINAPI', description: 'Tubo PVC', unit: '', price: '10,00' } },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:561:1
+✖ uma linha de base informa todos os campos de identidade ausentes (0.553513ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+  
+  + 'Linha estrutural'
+  - 'Título/categoria'
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:572:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'Linha estrutural',
+    expected: 'Título/categoria',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:577:1
+✖ cabeçalhos exatos ou equivalentes dentro dos dados são removidos como Cabeçalho repetido (1.181729ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      accepted: 0,
+      conflicts: 0,
+      reviewed: 2,
+  -   unavailablePrices: 0
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:621:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { accepted: 0, reviewed: 2, conflicts: 0 },
+    expected: { accepted: 0, reviewed: 2, unavailablePrices: 0, conflicts: 0 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:660:1
+✖ contagens agregam revisão estrutural, cabeçalho repetido e preço indisponível (0.596468ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:670:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:730:1
+✖ o mesmo código com descrições diferentes permanece como itens distintos (0.35818ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      accepted: 2,
+      conflicts: 0,
+      reviewed: 0,
+  -   unavailablePrices: 0
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:746:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { accepted: 2, reviewed: 0, conflicts: 0 },
+    expected: { accepted: 2, reviewed: 0, unavailablePrices: 0, conflicts: 0 },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/prepare-reference-catalog.test.js:841:1
+✖ duplicidades equivalentes sem preço são consolidadas e preservam os alertas de origem (0.281795ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/prepare-reference-catalog.test.js:851:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/read-workbook-file.test.js:58:1
+✖ CSV com BOM preserva delimitador brasileiro, aspas, quebras internas e linhas (4.309861ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    [
+      {
+  +     cellErrors: [],
+  +     formulas: [],
+  +     hiddenColumns: [],
+  +     hiddenRows: [],
+  +     merges: [],
+        name: 'CSV',
+        numberFormats: [],
+        rows: [
+          [
+            'Código',
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/read-workbook-file.test.js:68:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: [ { name: 'CSV', rows: [Array], numberFormats: [], formulas: [], cellErrors: [], hiddenRows: [], hiddenColumns: [], merges: [] } ],
+    expected: [ { name: 'CSV', rows: [Array], numberFormats: [] } ],
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/read-workbook-file.test.js:101:1
+✖ XLSX usa runtime injetado e preserva células tipadas, formatos e hyperlink (2.047022ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    {
+      cellDates: false,
+      cellFormula: true,
+      cellNF: true,
+  +   cellStyles: true,
+      cellText: true,
+      type: 'array'
+    }
+  
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/read-workbook-file.test.js:122:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: { type: 'array', cellFormula: true, cellNF: true, cellStyles: true, cellText: true, cellDates: false },
+    expected: { type: 'array', cellFormula: true, cellNF: true, cellText: true, cellDates: false },
+    operator: 'deepStrictEqual',
+    diff: 'simple'
+  }
+
+test at tests/historical/run-comparison-from-legacy-state.test.js:143:1
+✖ política de normalização selecionada na interface é respeitada (1.092395ms)
+  TypeError [Error]: Cannot read properties of undefined (reading 'statusKey')
+      at TestContext.<anonymous> (file:///workspace/scratch/400a74293283/sicorp/tests/historical/run-comparison-from-legacy-state.test.js:165:43)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7)

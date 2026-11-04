@@ -1,28 +1,41 @@
 # Plano mestre: auditoria, tutorial e documentação
 
-Referência inicial: `v4.4.0-rc.16`. Data: 28/10/2026.
+SICORP – Sistema de Comparação de Referenciais de Preços.
 
-## Objetivo
+Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).
 
-Entregar uma versão verificável do SICORP, acompanhada de fontes reproduzíveis, testes automatizados, planilhas de exemplo, resultados esperados, roteiro de validação manual, manual objetivo e tutorial guiado embutido.
+## Estado atual — 04/11/2026
 
-A rc.16 é uma candidata preservada. Sua aprovação depende da auditoria; se houver correções, a versão aprovada será a revisão corrigida. O tutorial exigirá nova regressão antes da distribuição final.
+**Versão final 4.4.0**, promovida por solicitação expressa do responsável. Distribuir `dist/sicorp_comparador_orcamento_v4.4.0.html`. Registro: `releases/v4.4.0.md`. Commit da promoção: `c2ab5dc6af2f02e6a704bfd9d2de15b080a1d933`. Origem funcional testada: `d1ea4f92087b07c899f5e826408aa7e2c01a4175`.
 
-## Situação inicial
+A promoção altera apenas o número da versão no rodapé e os metadados de geração. O HTML anterior foi preservado. Qualquer mudança futura do programa exige novo número e outro arquivo; a versão final não deve ser sobrescrita. A aprovação da versão não equivale a concluir verificações manuais que não foram executadas.
 
-| Entrega | Situação |
+| Entrega | Estado atual |
 | --- | --- |
-| HTML da rc.16 e pacote histórico da v4.3 | Preservados, com integridade registrada |
-| Fontes atuais separados e geração reproduzível | Pendentes de consolidação |
-| Matriz completa das regras e casos | Pendente |
-| Testes automatizados atualizados para a rc.16 | Pendentes |
-| Kit manual com todas as detecções e contraprovas | Pendente |
-| Auditoria completa e relatório | Pendentes |
-| Manual do usuário | Pendente |
-| Tutorial guiado | Pendente |
-| Documentação técnica final e distribuição | Pendentes |
+| Baseline rc.16 e pacote histórico | Preservados |
+| Fontes e geração reproduzível | Concluídos; final 4.4.0 identificada por hash |
+| Auditoria e correções | Concluídas no escopo automatizado documentado |
+| Kit de testes | 114 cenários, arquivos agrupados e contraprovas preservados |
+| Testes da promoção | 364 testes, 130 fluxos de navegador, 27 casos agrupados de arquivo e 84 combinações de layout aprovados localmente |
+| Regressão real da origem aprovada | 424 itens e R$ 1.990.067,18, com cálculo decimal independente |
+| Validação manual | Usuário relatou orçamento e bases agrupadas funcionando; homologação integral pendente |
+| Windows e inspeção no Excel/LibreOffice | Verificação complementar pendente |
+| Manual do usuário e tutorial | Próxima etapa |
+| Integração na main e licença | Pendentes |
+
+As etapas 1 a 3 foram concluídas no escopo automatizado documentado. A finalização da versão foi autorizada antes do manual e tutorial; as restrições de promoção das candidatas ficam superadas por essa decisão. A inclusão posterior de tutorial no HTML deverá usar uma nova versão. O handoff vigente é `handoffs/HANDOFF_02_TUTORIAL_MANUAL.md`.
+
+A sequência abaixo conserva o planejamento e o histórico. As situações datadas das candidatas descrevem aquelas execuções, não substituem o estado atual acima.
 
 ## Etapas e critérios de aceitação
+
+### Complemento de 02/11/2026: homologação por grupos
+
+O percurso principal passa a ser `testkit/agrupados/LEIA-ME.md`: três XLSX, 15 abas (7 orçamento, 3 base, 5 comparação, incluindo duas fontes). Os 114 IDs possuem rastreabilidade em `cobertura.csv`; casos compatíveis compartilham a mesma conferência. Parâmetros globais são reconfigurados na mesma aba. As separações restantes decorrem de conflitos documentados. Os arquivos individuais e as evidências da auditoria original permanecem preservados.
+
+Nenhuma regra ou código da aplicação mudou. A versão e o SHA do HTML permanecem os da rc.17. A homologação por pessoa continua pendente; `testkit/agrupados/execucao-manual.csv` inicia sem aprovação. Geradores e novas verificações de arquivos/HTML são parte da suíte; evidências deste complemento ficam em `qa/evidence/grouped/`.
+
+Execução do complemento: `npm run check` aprovado com 363 testes, 103 verificações originais no navegador, 27 execuções agrupadas de arquivo e 27 verificações agrupadas no HTML. Relatório: `COMPLEMENTO_KIT_AGRUPADO.md`.
 
 ### 1. Consolidar a versão de referência
 
@@ -39,7 +52,7 @@ Aceitação: comandos documentados e executáveis; fontes atuais identificados; 
 - Criar casos com identificadores estáveis e resultados esperados definidos independentemente do SICORP.
 - Produzir tabelas e arquivos sintéticos pequenos para cada aviso, erro de cálculo, impedimento, exclusão e resultado da comparação.
 - Incluir casos normais, limites, falsos positivos e combinações de problemas.
-- Separar cenários bloqueantes para que um impedimento não impeça a execução dos demais testes manuais.
+- Agrupar casos compatíveis na mesma aba. Separar impedimentos quando a soma incompleta ocultar o fechamento, fórmulas quando a proporção global mudar o aviso, ausência de itens e conflitos de base. Reutilizar a mesma aba para parâmetros globais e documentar cada configuração.
 - Vincular regra, caso, arquivo, execução e evidência. Seguir `VALIDACAO_MANUAL.md`.
 
 Aceitação: cada comportamento possui caso reproduzível ou lacuna explícita; arquivos, mapeamentos, valores esperados e consequências estão descritos; nenhuma expectativa é copiada automaticamente da saída do programa.
@@ -97,4 +110,4 @@ Este documento é a referência mestre. Os handoffs são sequenciais: cada chat 
 
 ## Publicação de exemplos
 
-O kit público deve utilizar dados sintéticos e explicações técnicas. Planilhas reais usadas na análise não entram automaticamente no repositório; sua eventual inclusão deve ser decidida separadamente. A autoria deve permanecer: desenvolvido pela CGSOB, do DOH, da SNSH.
+O kit público utiliza dados sintéticos e explicações técnicas. Planilhas reais usadas na análise não entram automaticamente no repositório; sua eventual inclusão deve ser decidida separadamente. A autoria institucional completa consta no início deste documento.

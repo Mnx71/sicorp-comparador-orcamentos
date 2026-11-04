@@ -1,0 +1,76 @@
+{
+  "version": "4.4.0-rc.17",
+  "date": "2026-10-28T19:33:36.508Z",
+  "files": {
+    "budget": {
+      "name": "02-PLANILHA-OR-AMENT-RIA-COMPLETA-Original-1-.xlsx",
+      "sha256": "008e4f58d8a96b7c0213b8129ccee88a240b2fe09a3cadbac851486dde48ccd2"
+    },
+    "services": {
+      "name": "01-Planos-de-Servicos-028-ENC.-SOCIAIS-114-15.xls",
+      "sha256": "ea604cd172dfb199009465abd54d2b8d39c7c18f87de55f70ddb70a9acceab9f"
+    },
+    "inputs": {
+      "name": "03-Tabela-de-Insumos-028-ENC.-SOCIAIS-114-15.xls",
+      "sha256": "13f21afd7edb32a1879ab3c477f15a4f818bc7f1422f840f2292bd3681d394ac"
+    },
+    "sinapi": {
+      "name": "04-SINAPI_Refer-ncia_2025_07-1-.xlsx",
+      "sha256": "f51ce8996be9df6d60af60fc1159694e12d7ebe61a8a20d3c1a7a72b45d75aad"
+    },
+    "orse": {
+      "name": "06-20260601-00-2-.ORSE",
+      "sha256": "f1384a72398fb571b31de0fe0b0db918c90914c4362c3b75faa88170cb3bba90"
+    }
+  },
+  "budget": {
+    "accepted": 424,
+    "reviewed": 114
+  },
+  "reviewReasons": {
+    "Linha estrutural": 114
+  },
+  "catalog": {
+    "accepted": 18986,
+    "reviewed": 2485,
+    "conflicts": 0
+  },
+  "comparison": {
+    "total": 424,
+    "matched": 183,
+    "compared": 183,
+    "below": 0,
+    "equal": 183,
+    "above": 0,
+    "notFound": 241,
+    "budgetPriceUnavailable": 0,
+    "basePriceUnavailable": 0
+  },
+  "baselineParity": "full canonical budget/catalog/comparison equality",
+  "independentArithmetic": {
+    "checkedItems": 424,
+    "auditedTotal": 1990067.18,
+    "itemMismatches": 0,
+    "bdiMismatches": 0
+  },
+  "audit": {
+    "findings": {},
+    "canProceed": true,
+    "totalGeneralInput": "soma independente para a regressão; não representa conferência do total impresso"
+  },
+  "orse": {
+    "inputs": {
+      "total": 8087,
+      "withPrice": 8087,
+      "withoutPrice": 0
+    },
+    "services": {
+      "total": 9931,
+      "withPrice": 9929,
+      "withoutPrice": 2
+    }
+  },
+  "commit": "90d447e32e000389ae2158c6b2260a31543b1b7b",
+  "htmlSha256": "7a275c849c2508ba64369a89e3470ecb863919f449836a98e6817f1fa73ff50b",
+  "codeDirty": false
+}

@@ -19,4 +19,4 @@ const scripts = [...html.matchAll(/<script\b([^>]*)>([\s\S]*?)<\/script>/gi)]
 if (scripts.length !== 3) throw new Error('Quantidade inesperada de scripts executáveis no HTML preservado.');
 for (const [index, script] of scripts.entries()) new Script(script[2], { filename: `rc.16#${index + 1}` });
 console.log(`Sintaxe OK: ${scripts.length} scripts executáveis.`);
-console.log('Verificação inicial concluída. A auditoria funcional completa permanece pendente.');
+console.log('Integridade e sintaxe conferidas. Este comando não executa a auditoria funcional.');

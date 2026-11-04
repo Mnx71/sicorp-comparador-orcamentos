@@ -1,0 +1,1042 @@
+{
+  "version": "4.4.0-rc.17",
+  "commit": "90d447e32e000389ae2158c6b2260a31543b1b7b",
+  "codeDirty": false,
+  "htmlSha256": "7a275c849c2508ba64369a89e3470ecb863919f449836a98e6817f1fa73ff50b",
+  "browser": "141.0.7390.0",
+  "playwright": "1.62.1",
+  "date": "2026-10-28T19:33:43.319Z",
+  "offline": true,
+  "results": [
+    {
+      "id": "HTML-CMP-ORACULOS",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-PRE-001",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI/ORC-OK-001",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-EST-1",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS",
+          "STRUCTURAL_ROW"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-EST-2",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS",
+          "STRUCTURAL_ROW"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-EST-3",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS",
+          "STRUCTURAL_ROW"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-EST-4",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS",
+          "STRUCTURAL_ROW"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-4-VAZ",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-4-ZERO",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-4-NEG",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_VALUE_NEGATIVE"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-4-TXT",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_VALUE_NOT_NUMERIC"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-4-ERR",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_FORMULA_ERROR"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-4-CACHE",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_FORMULA_WITHOUT_VALUE"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-5-VAZ",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-5-ZERO",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-5-NEG",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_VALUE_NEGATIVE"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-5-TXT",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_VALUE_NOT_NUMERIC"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-5-ERR",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_FORMULA_ERROR"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-5-CACHE",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_FORMULA_WITHOUT_VALUE"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-6-VAZ",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-6-ZERO",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-6-NEG",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_VALUE_NEGATIVE"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-6-TXT",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_VALUE_NOT_NUMERIC"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-6-ERR",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_FORMULA_ERROR"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-6-CACHE",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_FORMULA_WITHOUT_VALUE"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-7-VAZ",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-7-ZERO",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-7-NEG",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_VALUE_NEGATIVE"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-7-TXT",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_VALUE_NOT_NUMERIC"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-7-ERR",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_FORMULA_ERROR"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-7-CACHE",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_FORMULA_WITHOUT_VALUE"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-8-VAZ",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-8-ZERO",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-8-NEG",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_VALUE_NEGATIVE"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-8-TXT",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_VALUE_NOT_NUMERIC"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-8-ERR",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_FORMULA_ERROR"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-8-CACHE",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MAPPED_FORMULA_WITHOUT_VALUE"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-EXC-001",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-EXC-002",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NO_BUDGET_ITEMS",
+          "STRUCTURAL_ROW"
+        ],
+        "accepted": 0,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-EXC-003",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-EXC-004",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "REPEATED_HEADER"
+        ],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-EXC-005",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BEFORE_HEADER"
+        ],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-TOT-VAZ",
+      "status": "passed",
+      "observed": {
+        "prerequisite": true
+      }
+    },
+    {
+      "id": "UI/ORC-TOT-TXT",
+      "status": "passed",
+      "observed": {
+        "prerequisite": true
+      }
+    },
+    {
+      "id": "UI/ORC-TOT-ZERO",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NON_POSITIVE_VALUE"
+        ],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-TOT-NEG",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH",
+          "NON_POSITIVE_VALUE"
+        ],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-MAP-001",
+      "status": "passed",
+      "observed": {
+        "prerequisite": true
+      }
+    },
+    {
+      "id": "UI/ORC-MAP-002",
+      "status": "passed",
+      "observed": {
+        "prerequisite": true
+      }
+    },
+    {
+      "id": "UI/ORC-DER-SEM",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-DER-COM",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-DER-BDI",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-DER-ZERO",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-DER-NEG",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-DER-INF",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "PRICE_COMPONENT_DERIVATION_IMPOSSIBLE"
+        ],
+        "accepted": 1,
+        "canProceed": false
+      }
+    },
+    {
+      "id": "UI/ORC-ERR-BDI",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BDI_APPLICATION_MISMATCH"
+        ],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-ERR-ITEM",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "ITEM_TOTAL_MISMATCH"
+        ],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-ERR-GERAL",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-ERR-COMP",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH"
+        ],
+        "accepted": 2,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-ROUND-MEIO",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-ROUND-ABAIXO",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-ROUND-ACIMA",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-LIM-DENTRO",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-LIM-IGUAL",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-LIM-FORA",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "ITEM_TOTAL_MISMATCH"
+        ],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-LIM-GERAL",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 2,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-LIM-GERAL-FORA",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "accepted": 2,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-AV-DUP",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "CONSECUTIVE_DUPLICATE_ITEM"
+        ],
+        "accepted": 2,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-CP-DUP",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 2,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-AV-PRECO",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "IDENTICAL_ITEM_DIFFERENT_PRICES"
+        ],
+        "accepted": 2,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-CP-PRECO",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 2,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-AV-BDI",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "SAME_DESCRIPTION_DIFFERENT_BDI"
+        ],
+        "accepted": 2,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-AV-BDI-DER",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "SAME_DESCRIPTION_DIFFERENT_BDI"
+        ],
+        "accepted": 2,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-CP-BDI",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 3,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-AV-MANUAL",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "MANUAL_VALUE_IN_FORMULA_COLUMN"
+        ],
+        "accepted": 5,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-CP-MANUAL",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 5,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-AV-PADRAO",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "FORMULA_PATTERN_MISMATCH"
+        ],
+        "accepted": 5,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-VIS-001",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-VIS-002",
+      "status": "passed",
+      "observed": {
+        "prerequisite": true
+      }
+    },
+    {
+      "id": "UI/ORC-VIS-ANTES",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-VIS-INTERVALO",
+      "status": "passed",
+      "observed": {
+        "codes": [],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-VIS-MESCLA",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "BEFORE_HEADER"
+        ],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-VIS-FORMULA",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "ITEM_TOTAL_MISMATCH"
+        ],
+        "accepted": 1,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI/ORC-AV-GRUPOS",
+      "status": "passed",
+      "observed": {
+        "codes": [
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES"
+        ],
+        "accepted": 60,
+        "canProceed": true
+      }
+    },
+    {
+      "id": "UI-MAP-PREVIEW",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-REVISAO-GRUPOS",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-BASE-PREREQ",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-BASE-MAP-PREVIEW",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-BASE-REVISAO",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-CMP-FLUXO",
+      "status": "passed",
+      "observed": {
+        "statuses": [
+          "abaixo",
+          "igual",
+          "acima",
+          "nao-encontrado"
+        ],
+        "codes": [
+          "0001",
+          "002.0",
+          "A3",
+          "404"
+        ],
+        "abc": [
+          "A",
+          "B",
+          "C",
+          "C"
+        ],
+        "columns": 17
+      }
+    },
+    {
+      "id": "UI-EXPORT-COMPLETO",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-COLUNAS",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-FILTROS-EXPORT",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-TROCA-ORCAMENTO",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-PERSISTENCIA",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-ORSE-OFFLINE",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-BASE-EXCLUSAO-CONFLITO",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-LEITOR-biff5",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-LEITOR-biff8",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-LEITOR-txt",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-LEITOR-csv",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-ARMAZENAMENTO-FALHA",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "UI-PERSISTENCIA-REINICIO",
+      "status": "passed",
+      "observed": null
+    },
+    {
+      "id": "OFFLINE",
+      "status": "passed",
+      "observed": {
+        "httpRequests": 0,
+        "pageErrors": 0
+      }
+    }
+  ],
+  "errors": [],
+  "requests": []
+}

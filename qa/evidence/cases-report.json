@@ -1,0 +1,3968 @@
+{
+  "version": "4.4.0-rc.17",
+  "commit": "90d447e32e000389ae2158c6b2260a31543b1b7b",
+  "codeDirty": false,
+  "htmlSha256": "7a275c849c2508ba64369a89e3470ecb863919f449836a98e6817f1fa73ff50b",
+  "date": "2026-10-28T19:33:05.031Z",
+  "executor": "Node.js v24.22.1",
+  "results": [
+    {
+      "id": "ORC-OK-001",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-EST-1",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "STRUCTURAL_ROW",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "STRUCTURAL_ROW",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-EST-2",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "STRUCTURAL_ROW",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "STRUCTURAL_ROW",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-EST-3",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "STRUCTURAL_ROW",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "STRUCTURAL_ROW",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-EST-4",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "STRUCTURAL_ROW",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "STRUCTURAL_ROW",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-4-VAZ",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-4-ZERO",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-4-NEG",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_VALUE_NEGATIVE"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_VALUE_NEGATIVE",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": -1
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-4-TXT",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_VALUE_NOT_NUMERIC"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_VALUE_NOT_NUMERIC",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-4-ERR",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_FORMULA_ERROR"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_FORMULA_ERROR",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-4-CACHE",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_FORMULA_WITHOUT_VALUE"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_FORMULA_WITHOUT_VALUE",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-5-VAZ",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-5-ZERO",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-5-NEG",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_VALUE_NEGATIVE"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_VALUE_NEGATIVE",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": -1
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-5-TXT",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_VALUE_NOT_NUMERIC"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_VALUE_NOT_NUMERIC",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-5-ERR",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_FORMULA_ERROR"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_FORMULA_ERROR",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-5-CACHE",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_FORMULA_WITHOUT_VALUE"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_FORMULA_WITHOUT_VALUE",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-6-VAZ",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-6-ZERO",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-6-NEG",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_VALUE_NEGATIVE"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_VALUE_NEGATIVE",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": -0.2
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-6-TXT",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_VALUE_NOT_NUMERIC"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_VALUE_NOT_NUMERIC",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-6-ERR",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_FORMULA_ERROR"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_FORMULA_ERROR",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-6-CACHE",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_FORMULA_WITHOUT_VALUE"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_FORMULA_WITHOUT_VALUE",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-7-VAZ",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-7-ZERO",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-7-NEG",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_VALUE_NEGATIVE"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_VALUE_NEGATIVE",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": -1
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-7-TXT",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_VALUE_NOT_NUMERIC"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_VALUE_NOT_NUMERIC",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-7-ERR",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_FORMULA_ERROR"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_FORMULA_ERROR",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-7-CACHE",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_FORMULA_WITHOUT_VALUE"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_FORMULA_WITHOUT_VALUE",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-8-VAZ",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-8-ZERO",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-8-NEG",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_VALUE_NEGATIVE"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_VALUE_NEGATIVE",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": -1
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-8-TXT",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_VALUE_NOT_NUMERIC"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_VALUE_NOT_NUMERIC",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-8-ERR",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_FORMULA_ERROR"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_FORMULA_ERROR",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-8-CACHE",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "MAPPED_FORMULA_WITHOUT_VALUE"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "MAPPED_FORMULA_WITHOUT_VALUE",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-EXC-001",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "BUDGET_ITEM_EMPTY_OR_ZERO",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "BUDGET_ITEM_EMPTY_OR_ZERO",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-EXC-002",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "STRUCTURAL_ROW",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "STRUCTURAL_ROW",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-EXC-003",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-EXC-004",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "REPEATED_HEADER"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "REPEATED_HEADER",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-EXC-005",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "BEFORE_HEADER"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "BEFORE_HEADER",
+            "severity": "discarded",
+            "row": 1,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-TOT-VAZ",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "GENERAL_TOTAL_INVALID"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "GENERAL_TOTAL_INVALID",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": null,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-TOT-TXT",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "GENERAL_TOTAL_INVALID"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "GENERAL_TOTAL_INVALID",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": null,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-TOT-ZERO",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "NON_POSITIVE_VALUE",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "NON_POSITIVE_VALUE",
+            "severity": "warning",
+            "row": null,
+            "expected": null,
+            "informed": 0
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 240,
+            "informed": 0
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 0,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": -240,
+          "differenceFromAudited": -240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-TOT-NEG",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "NON_POSITIVE_VALUE",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "NON_POSITIVE_VALUE",
+            "severity": "warning",
+            "row": null,
+            "expected": null,
+            "informed": -1
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 240,
+            "informed": -1
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": -1,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": -241,
+          "differenceFromAudited": -241,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-MAP-001",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "PRICE_COMPONENTS_INSUFFICIENT"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "PRICE_COMPONENTS_INSUFFICIENT",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-MAP-002",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "ITEM_TOTAL_COLUMN_MISSING"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "ITEM_TOTAL_COLUMN_MISSING",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-DER-SEM",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true,
+        "prices": [
+          100,
+          0.2,
+          120
+        ]
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-DER-COM",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true,
+        "prices": [
+          100,
+          0.2,
+          120
+        ]
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-DER-BDI",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true,
+        "prices": [
+          100,
+          0.2,
+          120
+        ]
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-DER-ZERO",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true,
+        "prices": [
+          100,
+          0,
+          100
+        ]
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 200,
+          "informedSum": 200,
+          "auditedSum": 200,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-DER-NEG",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true,
+        "prices": [
+          100,
+          -0.1,
+          90
+        ]
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 180,
+          "informedSum": 180,
+          "auditedSum": 180,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-DER-INF",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "PRICE_COMPONENT_DERIVATION_IMPOSSIBLE"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "PRICE_COMPONENT_DERIVATION_IMPOSSIBLE",
+            "severity": "blocker",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 1,
+          "informedSum": null,
+          "auditedSum": null,
+          "differenceFromInformed": null,
+          "differenceFromAudited": null,
+          "absoluteItemDifferenceSum": null,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": false
+        }
+      }
+    },
+    {
+      "id": "ORC-ERR-BDI",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "BDI_APPLICATION_MISMATCH"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "BDI_APPLICATION_MISMATCH",
+            "severity": "error",
+            "row": 2,
+            "expected": 120,
+            "informed": 121
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 242,
+          "informedSum": 242,
+          "auditedSum": 242,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-ERR-ITEM",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "ITEM_TOTAL_MISMATCH"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "ITEM_TOTAL_MISMATCH",
+            "severity": "error",
+            "row": 2,
+            "expected": 240,
+            "informed": 241
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 241,
+          "auditedSum": 240,
+          "differenceFromInformed": -1,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 1,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-ERR-GERAL",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 240,
+            "informed": 241
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 241,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": 1,
+          "differenceFromAudited": 1,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-ERR-COMP",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "codes": [
+          "ITEM_TOTAL_MISMATCH",
+          "ITEM_TOTAL_MISMATCH"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 2,
+        "findings": [
+          {
+            "code": "ITEM_TOTAL_MISMATCH",
+            "severity": "error",
+            "row": 2,
+            "expected": 240,
+            "informed": 241
+          },
+          {
+            "code": "ITEM_TOTAL_MISMATCH",
+            "severity": "error",
+            "row": 3,
+            "expected": 240,
+            "informed": 239
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 480,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 2,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-ROUND-MEIO",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true,
+        "auditedSum": 10.08
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 10.08,
+          "informedSum": 10.08,
+          "auditedSum": 10.08,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-ROUND-ABAIXO",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true,
+        "auditedSum": 10.07
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 10.07,
+          "informedSum": 10.07,
+          "auditedSum": 10.07,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-ROUND-ACIMA",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true,
+        "auditedSum": 10.08
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 10.08,
+          "informedSum": 10.08,
+          "auditedSum": 10.08,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-LIM-DENTRO",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240.01,
+          "auditedSum": 240,
+          "differenceFromInformed": -0.01,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0.01,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-LIM-IGUAL",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240.01,
+          "auditedSum": 240,
+          "differenceFromInformed": -0.01,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0.01,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-LIM-FORA",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "ITEM_TOTAL_MISMATCH"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "ITEM_TOTAL_MISMATCH",
+            "severity": "error",
+            "row": 2,
+            "expected": 240,
+            "informed": 240.02
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240.02,
+          "auditedSum": 240,
+          "differenceFromInformed": -0.02,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0.02,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-LIM-GERAL",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 2,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 480.02,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 0.02,
+          "differenceFromAudited": 0.02,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-LIM-GERAL-FORA",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "codes": [
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 2,
+        "findings": [
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 480,
+            "informed": 480.03
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 480.03,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 0.03,
+          "differenceFromAudited": 0.03,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-AV-DUP",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "codes": [
+          "CONSECUTIVE_DUPLICATE_ITEM"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 2,
+        "findings": [
+          {
+            "code": "CONSECUTIVE_DUPLICATE_ITEM",
+            "severity": "warning",
+            "row": 3,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 480,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-CP-DUP",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 2,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 480,
+          "informedSum": 480,
+          "auditedSum": 480,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-AV-PRECO",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "codes": [
+          "IDENTICAL_ITEM_DIFFERENT_PRICES"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 2,
+        "findings": [
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 504,
+          "informedSum": 504,
+          "auditedSum": 504,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-CP-PRECO",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 2,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 504,
+          "informedSum": 504,
+          "auditedSum": 504,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-AV-BDI",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "codes": [
+          "SAME_DESCRIPTION_DIFFERENT_BDI"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 2,
+        "findings": [
+          {
+            "code": "SAME_DESCRIPTION_DIFFERENT_BDI",
+            "severity": "warning",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 500,
+          "informedSum": 500,
+          "auditedSum": 500,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-AV-BDI-DER",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "codes": [
+          "SAME_DESCRIPTION_DIFFERENT_BDI"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 2,
+        "findings": [
+          {
+            "code": "SAME_DESCRIPTION_DIFFERENT_BDI",
+            "severity": "warning",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 500,
+          "informedSum": 500,
+          "auditedSum": 500,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 2,
+          "generalTotalTolerance": 0.02,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-CP-BDI",
+      "status": "passed",
+      "expected": {
+        "accepted": 3,
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 3,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 720,
+          "informedSum": 720,
+          "auditedSum": 720,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 3,
+          "generalTotalTolerance": 0.03,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-AV-MANUAL",
+      "status": "passed",
+      "expected": {
+        "accepted": 5,
+        "codes": [
+          "MANUAL_VALUE_IN_FORMULA_COLUMN"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 5,
+        "findings": [
+          {
+            "code": "MANUAL_VALUE_IN_FORMULA_COLUMN",
+            "severity": "warning",
+            "row": 6,
+            "expected": null,
+            "informed": 240
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 1200,
+          "informedSum": 1200,
+          "auditedSum": 1200,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 5,
+          "generalTotalTolerance": 0.05,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-CP-MANUAL",
+      "status": "passed",
+      "expected": {
+        "accepted": 5,
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 5,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 1200,
+          "informedSum": 1200,
+          "auditedSum": 1200,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 5,
+          "generalTotalTolerance": 0.05,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-AV-PADRAO",
+      "status": "passed",
+      "expected": {
+        "accepted": 5,
+        "codes": [
+          "FORMULA_PATTERN_MISMATCH"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 5,
+        "findings": [
+          {
+            "code": "FORMULA_PATTERN_MISMATCH",
+            "severity": "warning",
+            "row": 6,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 1200,
+          "informedSum": 1200,
+          "auditedSum": 1200,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 5,
+          "generalTotalTolerance": 0.05,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-VIS-001",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-VIS-002",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "codes": [
+          "NO_BUDGET_ITEMS",
+          "STRUCTURAL_ROW",
+          "GENERAL_TOTAL_AUDITED_MISMATCH"
+        ],
+        "canProceed": false
+      },
+      "observed": {
+        "accepted": 0,
+        "findings": [
+          {
+            "code": "NO_BUDGET_ITEMS",
+            "severity": "blocker",
+            "row": null,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "GENERAL_TOTAL_AUDITED_MISMATCH",
+            "severity": "error",
+            "row": null,
+            "expected": 0,
+            "informed": 240
+          },
+          {
+            "code": "STRUCTURAL_ROW",
+            "severity": "discarded",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": false,
+        "totals": {
+          "declared": 240,
+          "informedSum": 0,
+          "auditedSum": 0,
+          "differenceFromInformed": 240,
+          "differenceFromAudited": 240,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 0,
+          "generalTotalTolerance": 0,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-VIS-ANTES",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-VIS-INTERVALO",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-VIS-MESCLA",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "BEFORE_HEADER"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "BEFORE_HEADER",
+            "severity": "discarded",
+            "row": 1,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 240,
+          "auditedSum": 240,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-VIS-FORMULA",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "codes": [
+          "ITEM_TOTAL_MISMATCH"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 1,
+        "findings": [
+          {
+            "code": "ITEM_TOTAL_MISMATCH",
+            "severity": "error",
+            "row": 2,
+            "expected": 240,
+            "informed": 500
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 240,
+          "informedSum": 500,
+          "auditedSum": 240,
+          "differenceFromInformed": -260,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 260,
+          "itemCount": 1,
+          "generalTotalTolerance": 0.01,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "ORC-AV-GRUPOS",
+      "status": "passed",
+      "expected": {
+        "accepted": 60,
+        "codes": [
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES",
+          "IDENTICAL_ITEM_DIFFERENT_PRICES"
+        ],
+        "canProceed": true
+      },
+      "observed": {
+        "accepted": 60,
+        "findings": [
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 2,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 3,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 4,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 5,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 6,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 7,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 8,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 9,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 10,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 11,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 12,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 13,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 14,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 15,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 16,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 17,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 18,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 19,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 20,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 21,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 22,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 23,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 24,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 25,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 26,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 27,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 28,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 29,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 30,
+            "expected": null,
+            "informed": null
+          },
+          {
+            "code": "IDENTICAL_ITEM_DIFFERENT_PRICES",
+            "severity": "warning",
+            "row": 31,
+            "expected": null,
+            "informed": null
+          }
+        ],
+        "canProceed": true,
+        "totals": {
+          "declared": 15120,
+          "informedSum": 15120,
+          "auditedSum": 15120,
+          "differenceFromInformed": 0,
+          "differenceFromAudited": 0,
+          "absoluteItemDifferenceSum": 0,
+          "itemCount": 60,
+          "generalTotalTolerance": 0.6,
+          "complete": true
+        }
+      }
+    },
+    {
+      "id": "BASE-OK-001",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "reasons": [],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 1,
+          "reviewed": 0,
+          "conflicts": 0
+        },
+        "reasons": []
+      }
+    },
+    {
+      "id": "BASE-VAZ",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "reasons": [
+          "Preço ausente"
+        ],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 0,
+          "reviewed": 1,
+          "conflicts": 0
+        },
+        "reasons": [
+          "Preço ausente"
+        ]
+      }
+    },
+    {
+      "id": "BASE-ZERO",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "reasons": [
+          "Preço zero"
+        ],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 0,
+          "reviewed": 1,
+          "conflicts": 0
+        },
+        "reasons": [
+          "Preço zero"
+        ]
+      }
+    },
+    {
+      "id": "BASE-NEG",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "reasons": [
+          "Preço negativo"
+        ],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 0,
+          "reviewed": 1,
+          "conflicts": 0
+        },
+        "reasons": [
+          "Preço negativo"
+        ]
+      }
+    },
+    {
+      "id": "BASE-TXT",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "reasons": [
+          "Preço não numérico"
+        ],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 0,
+          "reviewed": 1,
+          "conflicts": 0
+        },
+        "reasons": [
+          "Preço não numérico"
+        ]
+      }
+    },
+    {
+      "id": "BASE-ERR",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "reasons": [
+          "Erro de fórmula no preço"
+        ],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 0,
+          "reviewed": 1,
+          "conflicts": 0
+        },
+        "reasons": [
+          "Erro de fórmula no preço"
+        ]
+      }
+    },
+    {
+      "id": "BASE-CACHE",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "reasons": [
+          "Fórmula do preço sem resultado válido"
+        ],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 0,
+          "reviewed": 1,
+          "conflicts": 0
+        },
+        "reasons": [
+          "Fórmula do preço sem resultado válido"
+        ]
+      }
+    },
+    {
+      "id": "BASE-EST-1",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "reasons": [
+          "Linha estrutural"
+        ],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 0,
+          "reviewed": 1,
+          "conflicts": 0
+        },
+        "reasons": [
+          "Linha estrutural"
+        ]
+      }
+    },
+    {
+      "id": "BASE-EST-2",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "reasons": [
+          "Linha estrutural"
+        ],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 0,
+          "reviewed": 1,
+          "conflicts": 0
+        },
+        "reasons": [
+          "Linha estrutural"
+        ]
+      }
+    },
+    {
+      "id": "BASE-EST-3",
+      "status": "passed",
+      "expected": {
+        "accepted": 0,
+        "reasons": [
+          "Linha estrutural"
+        ],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 0,
+          "reviewed": 1,
+          "conflicts": 0
+        },
+        "reasons": [
+          "Linha estrutural"
+        ]
+      }
+    },
+    {
+      "id": "BASE-CAB",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "reasons": [
+          "Cabeçalho repetido"
+        ],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 1,
+          "reviewed": 1,
+          "conflicts": 0
+        },
+        "reasons": [
+          "Cabeçalho repetido"
+        ]
+      }
+    },
+    {
+      "id": "BASE-ANTES",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "reasons": [
+          "Antes do cabeçalho"
+        ],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 1,
+          "reviewed": 1,
+          "conflicts": 0
+        },
+        "reasons": [
+          "Antes do cabeçalho"
+        ]
+      }
+    },
+    {
+      "id": "BASE-VAZIA",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "reasons": [],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 1,
+          "reviewed": 0,
+          "conflicts": 0
+        },
+        "reasons": []
+      }
+    },
+    {
+      "id": "BASE-EQUIV",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "reasons": [],
+        "conflicts": 0,
+        "origins": 2
+      },
+      "observed": {
+        "stats": {
+          "accepted": 1,
+          "reviewed": 0,
+          "conflicts": 0
+        },
+        "reasons": []
+      }
+    },
+    {
+      "id": "BASE-CON-PRECO",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "reasons": [],
+        "conflicts": 1
+      },
+      "observed": {
+        "stats": {
+          "accepted": 2,
+          "reviewed": 0,
+          "conflicts": 1
+        },
+        "reasons": []
+      }
+    },
+    {
+      "id": "BASE-CON-UNID",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "reasons": [],
+        "conflicts": 1
+      },
+      "observed": {
+        "stats": {
+          "accepted": 2,
+          "reviewed": 0,
+          "conflicts": 1
+        },
+        "reasons": []
+      }
+    },
+    {
+      "id": "BASE-CP-DESC",
+      "status": "passed",
+      "expected": {
+        "accepted": 2,
+        "reasons": [],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 2,
+          "reviewed": 0,
+          "conflicts": 0
+        },
+        "reasons": []
+      }
+    },
+    {
+      "id": "BASE-VIS",
+      "status": "passed",
+      "expected": {
+        "accepted": 1,
+        "reasons": [],
+        "conflicts": 0
+      },
+      "observed": {
+        "stats": {
+          "accepted": 1,
+          "reviewed": 0,
+          "conflicts": 0
+        },
+        "reasons": []
+      }
+    },
+    {
+      "id": "CMP-FLUXO",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "abaixo",
+          "igual",
+          "acima",
+          "nao-encontrado"
+        ],
+        "differences": [
+          -10,
+          0,
+          5,
+          null
+        ],
+        "total": 120,
+        "abc": [
+          "A",
+          "B",
+          "C",
+          "C"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 4,
+          "matched": 3,
+          "compared": 3,
+          "below": 1,
+          "equal": 1,
+          "above": 1,
+          "notFound": 1,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 120,
+        "statuses": [
+          "abaixo",
+          "igual",
+          "acima",
+          "nao-encontrado"
+        ]
+      }
+    },
+    {
+      "id": "CMP-CRUZA-FONTES",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "igual",
+          "nao-encontrado"
+        ],
+        "total": 100,
+        "abc": [
+          "B",
+          "C"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 2,
+          "matched": 1,
+          "compared": 1,
+          "below": 0,
+          "equal": 1,
+          "above": 0,
+          "notFound": 1,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 100,
+        "statuses": [
+          "igual",
+          "nao-encontrado"
+        ]
+      }
+    },
+    {
+      "id": "CMP-IGUAL",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "igual"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 1,
+          "compared": 1,
+          "below": 0,
+          "equal": 1,
+          "above": 0,
+          "notFound": 0,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 240,
+        "statuses": [
+          "igual"
+        ]
+      }
+    },
+    {
+      "id": "CMP-LIM",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "igual"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 1,
+          "compared": 1,
+          "below": 0,
+          "equal": 1,
+          "above": 0,
+          "notFound": 0,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 240.02,
+        "statuses": [
+          "igual"
+        ]
+      }
+    },
+    {
+      "id": "CMP-MENOS",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "igual"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 1,
+          "compared": 1,
+          "below": 0,
+          "equal": 1,
+          "above": 0,
+          "notFound": 0,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 240.02,
+        "statuses": [
+          "igual"
+        ]
+      }
+    },
+    {
+      "id": "CMP-MAIS",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "acima"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 1,
+          "compared": 1,
+          "below": 0,
+          "equal": 0,
+          "above": 1,
+          "notFound": 0,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 240.03,
+        "statuses": [
+          "acima"
+        ]
+      }
+    },
+    {
+      "id": "CMP-ABAIXO",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "abaixo"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 1,
+          "compared": 1,
+          "below": 1,
+          "equal": 0,
+          "above": 0,
+          "notFound": 0,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 237.6,
+        "statuses": [
+          "abaixo"
+        ]
+      }
+    },
+    {
+      "id": "CMP-UNICO",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "igual"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 1,
+          "compared": 1,
+          "below": 0,
+          "equal": 1,
+          "above": 0,
+          "notFound": 0,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 240,
+        "statuses": [
+          "igual"
+        ]
+      }
+    },
+    {
+      "id": "CMP-MULTI",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "igual"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 1,
+          "compared": 1,
+          "below": 0,
+          "equal": 1,
+          "above": 0,
+          "notFound": 0,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 240,
+        "statuses": [
+          "igual"
+        ]
+      }
+    },
+    {
+      "id": "CMP-MULTI-AUS",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "nao-encontrado"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 0,
+          "compared": 0,
+          "below": 0,
+          "equal": 0,
+          "above": 0,
+          "notFound": 1,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 240,
+        "statuses": [
+          "nao-encontrado"
+        ]
+      }
+    },
+    {
+      "id": "CMP-SEM-DESC",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "nao-encontrado"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 0,
+          "compared": 0,
+          "below": 0,
+          "equal": 0,
+          "above": 0,
+          "notFound": 1,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 240,
+        "statuses": [
+          "nao-encontrado"
+        ]
+      }
+    },
+    {
+      "id": "CMP-FONTE",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "nao-encontrado"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 0,
+          "compared": 0,
+          "below": 0,
+          "equal": 0,
+          "above": 0,
+          "notFound": 1,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 240,
+        "statuses": [
+          "nao-encontrado"
+        ]
+      }
+    },
+    {
+      "id": "CMP-ORSE-UNICO",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "igual"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 1,
+          "compared": 1,
+          "below": 0,
+          "equal": 1,
+          "above": 0,
+          "notFound": 0,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 240,
+        "statuses": [
+          "igual"
+        ]
+      }
+    },
+    {
+      "id": "CMP-ORSE-MULTI",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "igual"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 1,
+          "compared": 1,
+          "below": 0,
+          "equal": 1,
+          "above": 0,
+          "notFound": 0,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 240,
+        "statuses": [
+          "igual"
+        ]
+      }
+    },
+    {
+      "id": "CMP-ORSE-AUS",
+      "status": "passed",
+      "expected": {
+        "statuses": [
+          "nao-encontrado"
+        ]
+      },
+      "observed": {
+        "stats": {
+          "total": 1,
+          "matched": 0,
+          "compared": 0,
+          "below": 0,
+          "equal": 0,
+          "above": 0,
+          "notFound": 1,
+          "budgetPriceUnavailable": 0,
+          "basePriceUnavailable": 0
+        },
+        "total": 240,
+        "statuses": [
+          "nao-encontrado"
+        ]
+      }
+    }
+  ]
+}

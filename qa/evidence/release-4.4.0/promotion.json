@@ -1,0 +1,11 @@
+{
+  "version": "4.4.0",
+  "file": "dist/sicorp_comparador_orcamento_v4.4.0.html",
+  "sha256": "75cabf1c665b4c356e918d94ea5dc62169b111558a35f43e6ffeb886c8d364d2",
+  "sourceCommit": "d1ea4f92087b07c899f5e826408aa7e2c01a4175",
+  "sourceFile": "dist/sicorp_comparador_orcamento_v4.4.0-rc.20.html",
+  "sourceSha256": "6f2f5e8fef769eacd48890772622194c5f9c1e537ec977d54de582677bf17e2d",
+  "onlyHtmlChange": "v4.4.0-rc.20 → v4.4.0, uma ocorrência no rodapé",
+  "sourceArtifactPreserved": true,
+  "packageManifestAndFooterAgree": true
+}
