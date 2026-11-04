@@ -4,7 +4,11 @@ Aplicação offline para conferir cálculos de orçamentos de obras e comparar p
 
 **Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).**
 
-A candidata atual é **v4.4.0-rc.20**. O HTML está em [dist/](dist/sicorp_comparador_orcamento_v4.4.0-rc.20.html), com hash em [SHA256SUMS.txt](dist/SHA256SUMS.txt). Baixar e abrir o arquivo no navegador; o uso do programa não requer Node.js ou servidor. A versão continua beta, sujeita à conferência pelo analista. Não foi promovida a versão final.
+A versão final atual é **v4.4.0**, promovida por solicitação do responsável em 04/11/2026. O arquivo para distribuição é [sicorp_comparador_orcamento_v4.4.0.html](dist/sicorp_comparador_orcamento_v4.4.0.html), com hash em [SHA256SUMS.txt](dist/SHA256SUMS.txt) e identificação completa no [registro da versão final](docs/releases/v4.4.0.md). Baixar e abrir no navegador; o uso não requer Node.js ou servidor.
+
+A versão final deriva do commit `d1ea4f92087b07c899f5e826408aa7e2c01a4175`, após a remoção do botão superior da revisão das bases. O HTML mudou apenas no número exibido no rodapé. A rc.20 permanece preservada. Para futuras mudanças, criar outra versão e outro arquivo; o gerador rejeita sobrescrever uma versão final com conteúdo diferente.
+
+Os parágrafos seguintes descrevem o histórico das candidatas.
 
 A rc.20 amplia também a revisão das bases, mantém uma pequena margem ao redor das duas janelas e abre diretamente na importação, sem o diálogo inicial. Ver [ajustes da rc.20](docs/AJUSTES_INTERFACE_RC20.md).
 
@@ -18,6 +22,7 @@ A rc.16 e o pacote histórico da v4.3 permanecem intactos em `baseline/` e `refe
 
 | Local | Conteúdo |
 | --- | --- |
+| [Versão final 4.4.0](docs/releases/v4.4.0.md) | Arquivo aprovado, hash, origem e política de versionamento |
 | [Plano mestre](docs/PLANO_MESTRE.md) | Situação real e critérios das próximas etapas |
 | [Arquitetura e comandos](docs/ARQUITETURA_E_COMANDOS.md) | Composição dos fontes, geração e execução |
 | [Matriz](docs/MATRIZ_AUDITORIA.md) | 114 casos, dados, mapeamentos, expectativas e contraprovas |
@@ -46,4 +51,4 @@ npm run audit:cases
 
 `npm run fixtures:build` regenera os exemplos individuais no ambiente de autoria com Artifact Tool. `npm run fixtures:grouped` gera o percurso principal de testes agrupados e seu roteiro. `npm run regression:real` utiliza os arquivos reais do projeto, quando presentes; eles não fazem parte do repositório. Ausência de arquivo produz falha explícita.
 
-Os relatórios distinguem resultado automatizado, observação do código e homologação por pessoa. A validação manual por pessoa, a conferência visual em Excel/LibreOffice e a execução no Windows permanecem pendentes. O tutorial será desenvolvido na próxima etapa, seguido de nova regressão. A escolha da licença do projeto continua separada.
+Os relatórios distinguem resultado automatizado, observação do código e homologação por pessoa. O usuário relatou funcionamento satisfatório dos arquivos de orçamento e bases agrupadas; a homologação integral, a conferência visual em Excel/LibreOffice e a execução direta pela automação no Windows permanecem pendentes. O manual e o tutorial serão desenvolvidos na próxima etapa. Alterações no HTML serão publicadas em outra versão, após nova regressão. A escolha da licença do projeto continua separada.

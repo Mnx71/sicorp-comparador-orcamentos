@@ -4,37 +4,28 @@ SICORP – Sistema de Comparação de Referenciais de Preços.
 
 Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).
 
-Referência inicial: `v4.4.0-rc.16`. Saída da auditoria: `v4.4.0-rc.17`. Data: 28/10/2026. Commit e evidências: `handoffs/HANDOFF_02_TUTORIAL_MANUAL.md` e `RELATORIO_AUDITORIA_RC17.md`.
+## Estado atual — 04/11/2026
 
-## Objetivo
+**Versão final 4.4.0**, promovida por solicitação expressa do responsável. Distribuir `dist/sicorp_comparador_orcamento_v4.4.0.html`. Registro: `releases/v4.4.0.md`. Commit da promoção: `c2ab5dc6af2f02e6a704bfd9d2de15b080a1d933`. Origem funcional testada: `d1ea4f92087b07c899f5e826408aa7e2c01a4175`.
 
-Entregar uma versão verificável do SICORP, acompanhada de fontes reproduzíveis, testes automatizados, planilhas de exemplo, resultados esperados, roteiro de validação manual, manual objetivo e tutorial guiado embutido.
+A promoção altera apenas o número da versão no rodapé e os metadados de geração. O HTML anterior foi preservado. Qualquer mudança futura do programa exige novo número e outro arquivo; a versão final não deve ser sobrescrita. A aprovação da versão não equivale a concluir verificações manuais que não foram executadas.
 
-A rc.16 é uma candidata preservada. Sua aprovação depende da auditoria; se houver correções, a versão aprovada será a revisão corrigida. O tutorial exigirá nova regressão antes da distribuição final.
-
-## Situação após a auditoria
-
-Atualização de 04/11/2026: candidata atual **v4.4.0-rc.20**. Revisões do orçamento e bases ampliadas, com margem de 8 a 16 px e rolagem integral; abertura direta, sem introdução. `npm run check` passou: 363 testes, 103 fluxos originais de navegador, 27 casos agrupados de arquivo, 27 fluxos agrupados no navegador e 84 combinações de layout. Ver `AJUSTES_INTERFACE_RC20.md`.
-
-Atualização de 04/11/2026: candidata atual **v4.4.0-rc.19**. Revisão do orçamento em toda a tela; versão e autoria em rodapé discreto, sem “Offline” no cabeçalho. Passaram a integridade, a paridade do HTML, 363 testes automatizados e 56 combinações de layout, além da conferência do cabeçalho/rodapé em duas larguras. Ver `AJUSTES_INTERFACE_RC19.md`.
-
-Atualização de 02/11/2026: candidata atual **v4.4.0-rc.18**, com correção de rolagem, altura da explicação e remoção do botão superior “Fechar” na revisão do orçamento. A rc.17 permanece em `dist/`. As regras e os XLSX agrupados foram preservados. Validação local: 363 testes, 103 verificações originais de navegador, 27 execuções agrupadas de arquivo, 27 verificações agrupadas de navegador e 56 combinações de layout aprovadas, além dos 114 casos individuais. Commit dos fontes e evidências: `c9f81374a4bb37958d05563f4c82d692d380648c`. Ver `CORRECAO_REVISAO_RC18.md`. Homologação humana e Windows continuam pendentes.
-
-| Entrega | Situação |
+| Entrega | Estado atual |
 | --- | --- |
-| HTML da rc.16 e pacote histórico da v4.3 | Preservados, com integridade registrada |
-| Fontes atuais separados e geração reproduzível | Concluídos; extração com paridade e geração rc.17 |
-| Matriz das regras e casos | 114 casos, contraprovas e lacunas explícitas |
-| Testes automatizados atualizados | 332 testes executados; navegador e regressão real registrados |
-| Kit manual e contraprovas | Produzidos; execução por pessoa pendente |
-| Auditoria e relatório | Automação concluída, quatro defeitos corrigidos; limitações documentadas |
-| Manual do usuário | Pendente |
-| Tutorial guiado | Pendente |
-| Documentação técnica final e distribuição | Pendentes |
+| Baseline rc.16 e pacote histórico | Preservados |
+| Fontes e geração reproduzível | Concluídos; final 4.4.0 identificada por hash |
+| Auditoria e correções | Concluídas no escopo automatizado documentado |
+| Kit de testes | 114 cenários, arquivos agrupados e contraprovas preservados |
+| Testes da promoção | 364 testes, 130 fluxos de navegador, 27 casos agrupados de arquivo e 84 combinações de layout aprovados localmente |
+| Regressão real da origem aprovada | 424 itens e R$ 1.990.067,18, com cálculo decimal independente |
+| Validação manual | Usuário relatou orçamento e bases agrupadas funcionando; homologação integral pendente |
+| Windows e inspeção no Excel/LibreOffice | Verificação complementar pendente |
+| Manual do usuário e tutorial | Próxima etapa |
+| Integração na main e licença | Pendentes |
 
-Etapas 1 e 2 concluídas. Etapa 3 concluída no escopo automatizado documentado. A homologação por pessoa, o Excel/LibreOffice e os navegadores Windows não foram executados. O tutorial e o manual podem ser preparados a partir da saída, sem promover versão final nem converter essas pendências em aprovações. Os três pontos de regra controversa foram caracterizados e preservados em `DECISOES_AUDITORIA.md`.
+As etapas 1 a 3 foram concluídas no escopo automatizado documentado. A finalização da versão foi autorizada antes do manual e tutorial; as restrições de promoção das candidatas ficam superadas por essa decisão. A inclusão posterior de tutorial no HTML deverá usar uma nova versão. O handoff vigente é `handoffs/HANDOFF_02_TUTORIAL_MANUAL.md`.
 
-Código de saída validado: `90d447e32e000389ae2158c6b2260a31543b1b7b`, branch `audit/consolidacao-rc17`. Execução final: 332 testes, 114 cenários de arquivos e 103 verificações no navegador aprovados. GitHub Actions também aprovado. Continuidade: `handoffs/HANDOFF_02_TUTORIAL_MANUAL.md`.
+A sequência abaixo conserva o planejamento e o histórico. As situações datadas das candidatas descrevem aquelas execuções, não substituem o estado atual acima.
 
 ## Etapas e critérios de aceitação
 

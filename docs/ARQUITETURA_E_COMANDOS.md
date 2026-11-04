@@ -1,6 +1,6 @@
 # Fontes e execução do SICORP
 
-Candidata atual: rc.18. A composição permanece a da rc.17; as correções posteriores estão em `CORRECAO_REVISAO_RC18.md`. `npm run qa:layout` integra o comando `npm run check`.
+Versão final atual: **4.4.0**. A composição permanece a da rc.17, com ajustes posteriores documentados. Identificação e origem em `releases/v4.4.0.md`. `npm run qa:layout` integra o comando `npm run check`. Uma versão final pode ser reproduzida com conteúdo idêntico; para alterá-la, mudar a versão e o arquivo de saída, pois o gerador bloqueia sua sobrescrita com outros bytes.
 
 SICORP – Sistema de Comparação de Referenciais de Preços.
 

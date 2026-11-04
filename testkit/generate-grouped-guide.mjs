@@ -1,13 +1,13 @@
 import fs from 'node:fs';
 import {groups,runs,books,coverage,mapping} from './grouped-spec.mjs';
 const count=xs=>Object.entries(xs.reduce((a,x)=>(a[x]=(a[x]||0)+1,a),{})).map(([x,n])=>`${n} × ${x}`).join('; ')||'Nenhum';
-let text=`# Testes agrupados — SICORP rc.17
+let text=`# Testes agrupados — SICORP
 
 SICORP – Sistema de Comparação de Referenciais de Preços.
 
 Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).
 
-Este é o percurso principal de homologação. O kit anterior, com uma aba por caso, permanece para diagnóstico. Os 114 IDs originais têm localização ou reexecução em [cobertura.csv](cobertura.csv). As expectativas são declaradas em \`testkit/grouped-spec.mjs\`, sem consulta ao motor. O HTML continua rc.17, SHA-256 \`7a275c849c2508ba64369a89e3470ecb863919f449836a98e6817f1fa73ff50b\`.
+Este é o percurso principal de homologação. O kit anterior, com uma aba por caso, permanece para diagnóstico. Os 114 IDs originais têm localização ou reexecução em [cobertura.csv](cobertura.csv). As expectativas são declaradas em \`testkit/grouped-spec.mjs\`, sem consulta ao motor. O kit foi criado na rc.17 e permanece compatível com as versões posteriores. Usar o HTML atual indicado em \`src/manifest.json\` e conferir seu hash em \`dist/SHA256SUMS.txt\`.
 
 ## Começar por três revisões conjuntas
 
