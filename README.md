@@ -58,8 +58,6 @@ O programa inclui um **tutorial interativo**, que acompanha as principais etapas
 4. Adicione as bases de preços que deseja utilizar e faça a comparação.
 5. Consulte, filtre ou exporte os resultados.
 
-**Não é necessário instalar outro programa nem ter conhecimentos de programação.** A análise funciona sem conexão à internet; somente o acesso a páginas externas, como os sites de obtenção de bases, depende de conexão.
-
 ## Downloads e orientações
 
 - **[Baixar o SICORP 4.5.0 — pacote do usuário](https://github.com/Mnx71/sicorp-comparador-orcamentos/releases/download/v4.5.0/SICORP_v4.5.0_USUARIO.zip)** — programa e manual em um único ZIP.
