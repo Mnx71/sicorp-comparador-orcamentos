@@ -1,0 +1,71 @@
+{
+  "sha256ApprovedHtml": "33807e74bdb45c0bb081bb2001a40cb1c16394144dfad7c9930e2cde4aaa6905",
+  "segments": [
+    {
+      "marker": "__SICORP_EXTRACTED_01__",
+      "file": "src/extracted/styles/base.css",
+      "bytes": 17630,
+      "sha256": "0ecdd849c31b9541dc42e24539ef1ce3579bce43ead52a51cd56a0626cb053f3"
+    },
+    {
+      "marker": "__SICORP_EXTRACTED_03__",
+      "file": "src/extracted/styles/light-wizard.css",
+      "bytes": 58135,
+      "sha256": "a8614af53d43e09c74bd5ca5a688683f81ed29e5cc0ab0e389f060d1b7d54ff8"
+    },
+    {
+      "marker": "__SICORP_EXTRACTED_05__",
+      "file": "src/extracted/scripts/legacy-xls-runtime.base64",
+      "bytes": 419888,
+      "sha256": "b4fbb63482cbcd9ced11dbb43be92a51f95a53a3845e42dc0e17413170d2b4e1"
+    },
+    {
+      "marker": "__SICORP_EXTRACTED_07__",
+      "file": "src/extracted/scripts/orse-core.js",
+      "bytes": 189821,
+      "sha256": "4481a2b1102fda0fdd12f5e037e29e2e6c98ba2170022e8cbdb51e50e54be1ef"
+    },
+    {
+      "marker": "__SICORP_EXTRACTED_09__",
+      "file": "src/extracted/scripts/price-source-ui.js",
+      "bytes": 18499,
+      "sha256": "f21fd56cde5f309928690fa62184b4c126e6553ced7a5bb2286c189c6002350f"
+    },
+    {
+      "marker": "__SICORP_EXTRACTED_11__",
+      "file": "src/extracted/scripts/app-main.js",
+      "bytes": 252986,
+      "sha256": "2d4afda2ce88ded0f6b4c41b81de3ed892b3152f2078c5f54c459b86c62f7c3f"
+    },
+    {
+      "marker": "__SICORP_EXTRACTED_13__",
+      "file": "src/extracted/scripts/tutorial-tasks.js",
+      "bytes": 12167,
+      "sha256": "a2f2613dd6578b19d94edbeca528aaff98f00c9e2fba0db108ab0b958c75ce02"
+    },
+    {
+      "marker": "__SICORP_EXTRACTED_15__",
+      "file": "src/extracted/scripts/tutorial-flow.js",
+      "bytes": 1880,
+      "sha256": "4d14d1665fe8bcc9bb47dd2ade6f657cb4ce2c6d34e4f0098dd511b373de9864"
+    },
+    {
+      "marker": "__SICORP_EXTRACTED_17__",
+      "file": "src/extracted/scripts/tutorial-position.js",
+      "bytes": 1381,
+      "sha256": "665c1f94a803821805ddc1edb7cbcdfd47dbf99d934a96454357dbff6bc975b7"
+    },
+    {
+      "marker": "__SICORP_EXTRACTED_19__",
+      "file": "src/extracted/scripts/tutorial-welcome.js",
+      "bytes": 923,
+      "sha256": "17480ba9d1904959605c49bd4edf22fb2bc28110e0f801c09f14912cddaa8887"
+    },
+    {
+      "marker": "__SICORP_EXTRACTED_21__",
+      "file": "src/extracted/scripts/tutorial-controller.js",
+      "bytes": 15050,
+      "sha256": "88e745d8d20002337b999c0c8e798712cecd3da697ab8ed3347f2cb801677358"
+    }
+  ]
+}

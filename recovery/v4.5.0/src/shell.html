@@ -1,0 +1,574 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SICORP – Sistema de Comparação de Referenciais de Preços</title>
+  <style>__SICORP_EXTRACTED_01__</style>
+  <style id="lightWizardTheme">__SICORP_EXTRACTED_03__</style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <div class="brand-mark">SC</div>
+      <div>
+        <h1>SICORP – Sistema de Comparação de Referenciais de Preços</h1>
+        <p class="subtitle">Importe o orçamento detalhado, organize as bases referenciais e compare os preços sem BDI.</p>
+      </div>
+      <button id="tutorialOpenBtn" class="secondary header-tutorial" type="button">Tutorial</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="wizard-shell">
+      <nav class="stepper" aria-label="Etapas da análise">
+        <button class="step-button active" data-step-target="1"><span class="step-number">1</span><span class="step-copy"><strong>Orçamento</strong><small>Importar e mapear</small></span></button>
+        <button class="step-button" data-step-target="2"><span class="step-number">2</span><span class="step-copy"><strong>Bases</strong><small>Adicionar e auditar</small></span></button>
+        <button class="step-button" data-step-target="3"><span class="step-number">3</span><span class="step-copy"><strong>Comparação</strong><small>Analisar e exportar</small></span></button>
+      </nav>
+    </div>
+
+    <div id="errorBox" class="error-box"></div>
+
+    <div id="loadingOverlay" class="loading-overlay hidden" role="status" aria-live="polite" aria-hidden="true">
+      <div class="loading-card">
+        <div class="loading-spinner" aria-hidden="true"></div>
+        <strong id="loadingTitle">Carregando arquivo…</strong>
+        <span id="loadingDetail"></span>
+      </div>
+    </div>
+
+
+    <!-- SICORP_V43_BLOCKING_DIALOG_START -->
+    <dialog id="blockingDialog" class="blocking-dialog" aria-labelledby="blockingDialogTitle" aria-describedby="blockingDialogMessage">
+      <div class="blocking-dialog-card">
+        <div class="blocking-dialog-head">
+          <span class="blocking-dialog-icon" aria-hidden="true">!</span>
+          <h3 id="blockingDialogTitle">Não é possível continuar</h3>
+        </div>
+        <form method="dialog" class="blocking-dialog-body">
+          <p id="blockingDialogMessage"></p>
+          <div class="blocking-dialog-actions">
+            <button id="blockingDialogReturn" type="submit" value="return">Retornar</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
+    <!-- SICORP_V43_BLOCKING_DIALOG_END -->
+
+    <!-- SICORP_V44_BUDGET_AUDIT_DIALOG_START -->
+    <dialog id="budgetAuditDialog" class="budget-audit-dialog" aria-labelledby="budgetAuditTitle">
+      <div class="budget-audit-head">
+        <h2 id="budgetAuditTitle">Revisão e conferência do orçamento</h2>
+      </div>
+      <div class="budget-audit-body">
+        <div id="budgetAuditCards" class="budget-audit-cards" role="group" aria-label="Filtrar achados da auditoria"></div>
+        <div id="budgetAuditGroups" class="budget-audit-groups" role="region" aria-label="Ocorrências agrupadas da auditoria"></div>
+        <div id="budgetAuditTotals" class="budget-audit-totals"></div>
+        <div id="budgetAuditExplanation" class="budget-audit-explanation" aria-live="polite"></div>
+        <div class="budget-audit-actions">
+          <button id="budgetAuditReturnBtn" type="button" class="secondary">Retornar para corrigir</button>
+          <button id="budgetAuditProceedBtn" type="button">Continuar para as bases</button>
+        </div>
+      </div>
+    </dialog>
+    <!-- SICORP_V44_BUDGET_AUDIT_DIALOG_END -->
+    <div id="sourceGrid" class="grid">
+      <section class="wizard-page" data-page="1">
+        <h2>1. Selecione o arquivo de orçamento</h2>
+        <div class="content">
+          <p class="section-intro">Escolha a planilha orçamentária detalhada em <code>.xlsx</code>, <code>.xls</code> ou <code>.csv</code>. Os dados ficam somente neste navegador.</p>
+          <label id="projectDropzone" class="dropzone" for="projectFile">
+            <input id="projectFile" type="file" accept=".xlsx,.xls,.csv,.txt" />
+            <span><span class="dropzone-icon">↑</span><strong>Clique para selecionar ou arraste o orçamento para cá</strong><span>Planilhas XLSX, XLS, CSV ou TXT</span></span>
+          </label>
+
+          <div id="projectConfigArea" class="config-panel hidden">
+            <div id="projectStatus" class="status-bar"></div>
+            <div class="mapping-grid base-primary-grid" style="margin-top: 16px;">
+              <div class="sheet-selection-block"><label for="projectSheet">Aba do orçamento</label><select id="projectSheet" disabled></select></div>
+              <div>
+                <label for="projectHeaderRow">Linha do cabeçalho</label>
+                <div class="line-picker">
+                  <input id="projectHeaderRow" type="number" min="1" value="1" />
+                  <div class="line-arrows">
+                    <button type="button" data-line-target="projectHeaderRow" data-line-delta="-1" aria-label="Diminuir número da linha">↑</button>
+                    <button type="button" data-line-target="projectHeaderRow" data-line-delta="1" aria-label="Aumentar número da linha">↓</button>
+                  </div>
+                </div>
+              </div>
+              <div class="project-general-total-block">
+                <label for="projectGeneralTotal">Total geral do orçamento</label>
+                <input id="projectGeneralTotal" type="text" inputmode="decimal" autocomplete="off" placeholder="Ex.: R$ 1.234.567,89" />
+                <div class="small" style="margin-top: 6px;">Digite o total exatamente como apresentado na planilha.</div>
+              </div>
+            </div>
+            <div class="project-mapper" aria-labelledby="projectMapperTitle">
+              <div class="project-mapper-head">
+                <div>
+                  <h3 id="projectMapperTitle">Mapeamento das colunas do orçamento</h3>
+                  <p>Escolha uma função e depois clique na coluna correspondente da pré-visualização.</p>
+                </div>
+                <div class="project-mapper-actions">
+                  <button id="projectAutoMapBtn" type="button" disabled>Mapear automaticamente</button>
+                  <button id="projectClearMappingBtn" type="button" class="secondary" disabled>Limpar tudo</button>
+                </div>
+              </div>
+              <div id="projectMappingFieldPool" class="project-field-pool">
+                <div class="project-field-row" data-project-mapping-row="identification">
+                  <div class="project-field-chip" data-project-mapping-field="code"><button type="button" class="project-field-chip-main" aria-label="Selecionar Código"><span>Código</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Código">×</button></div>
+                  <div class="project-field-chip" data-project-mapping-field="source"><button type="button" class="project-field-chip-main" aria-label="Selecionar Base"><span>Base</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Base">×</button></div>
+                  <div class="project-field-chip" data-project-mapping-field="description"><button type="button" class="project-field-chip-main" aria-label="Selecionar Descrição"><span>Descrição</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Descrição">×</button></div>
+                  <div class="project-field-chip" data-project-mapping-field="unit"><button type="button" class="project-field-chip-main" aria-label="Selecionar Unidade"><span>Unidade</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Unidade">×</button></div>
+                </div>
+                <div class="project-field-row" data-project-mapping-row="financial">
+                  <div class="project-field-chip" data-project-mapping-field="quantity"><button type="button" class="project-field-chip-main" aria-label="Selecionar Quantidade"><span>Quantidade</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Quantidade">×</button></div>
+                  <div id="projectBdiMappingGroup" class="project-bdi-mapping-group">
+                    <div class="project-field-chip" data-project-mapping-field="priceWithoutBdi"><button type="button" class="project-field-chip-main" aria-label="Selecionar Preço sem BDI"><span>Preço sem BDI</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Preço sem BDI">×</button></div>
+                    <div class="project-field-chip" data-project-mapping-field="bdi"><button type="button" class="project-field-chip-main" aria-label="Selecionar BDI"><span>BDI (%)</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de BDI">×</button></div>
+                    <div class="project-field-chip" data-project-mapping-field="priceWithBdi"><button type="button" class="project-field-chip-main" aria-label="Selecionar Preço com BDI"><span>Preço com BDI</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Preço com BDI">×</button></div>
+                  </div>
+                  <div class="project-field-chip" data-project-mapping-field="totalWithBdi"><button type="button" class="project-field-chip-main" aria-label="Selecionar Valor total com BDI"><span>Valor total com BDI</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Valor total com BDI">×</button></div>
+                </div>
+              </div>
+              <div class="project-mapping-legend" aria-hidden="true">
+                <span><i class="project-mapping-legend-dot mapped"></i>Mapeado</span>
+                <span><i class="project-mapping-legend-dot active"></i>Selecionado, aguardando coluna</span>
+                <span><i class="project-mapping-legend-dot hover"></i>Conferência por destaque</span>
+              </div>
+              <div id="projectMappingInstruction" class="project-mapping-instruction" aria-live="polite"></div>
+              <div id="projectPriceRule" class="audit-message" style="margin-top: 12px;" aria-live="polite"></div>
+              <div class="project-mapping-selects" aria-hidden="true">
+                <select id="projectCodeCol" disabled><option value=""></option></select>
+                <select id="projectSourceCol" disabled><option value=""></option></select>
+                <select id="projectDescCol" disabled><option value=""></option></select>
+                <select id="projectUnitCol" disabled><option value=""></option></select>
+                <select id="projectQuantityCol" disabled><option value=""></option></select>
+                <select id="projectWithoutBdiCol" disabled><option value=""></option></select>
+                <select id="projectBdiCol" disabled><option value=""></option></select>
+                <select id="projectWithBdiCol" disabled><option value=""></option></select>
+                <select id="projectTotalWithBdiCol" disabled><option value=""></option></select>
+              </div>
+              <div id="projectColumnSummary" class="hidden" aria-hidden="true"></div>
+            </div>
+            <div id="projectSourceIdentifiers" class="hidden" aria-hidden="true"></div>
+
+            <div id="projectPreviewBlock" class="preview-block">
+              <div class="preview-head"><h3 class="preview-title">Pré-visualização e seleção das colunas</h3><div class="preview-actions"><span class="small">Até 2 linhas anteriores + cabeçalho + até 11 itens</span></div></div>
+              <div class="compact-table-wrap"><table id="projectPreviewTable" class="preview-table"><thead></thead><tbody></tbody></table></div>
+              <div id="projectFilterSummary" class="filter-summary" aria-live="polite"></div>
+            </div>
+          </div>
+
+          <div id="projectPrerequisiteMessage" class="project-prerequisite-message hidden" role="alert">Revise os campos destacados em vermelho antes de iniciar a conferência.</div>
+          <div class="page-actions"><span></span><div class="right"><button id="projectNextBtn" data-go-page="2">Conferir e continuar</button></div></div>
+        </div>
+      </section>
+
+      <section class="wizard-page page-hidden" data-page="2">
+        <h2>2. Obtenha e adicione bases referenciais</h2>
+        <div class="content">
+          
+          
+          <!-- SICORP_V42_PRICE_SOURCE_UI_START -->
+          <div id="priceSourceCentral" class="price-source-central">
+            <div class="price-source-central-head">
+              <div>
+                <h3>Obter bases de preços</h3>
+                <p>Abra a página oficial da base, faça o download e depois carregue o arquivo manualmente no comparador abaixo.</p>
+              </div>
+              <div class="price-source-portable-actions" aria-label="Ações do catálogo">
+                <button id="priceSourceSettingsOpen" type="button" class="secondary" aria-haspopup="dialog" aria-controls="priceSourceSettingsDialog"><span aria-hidden="true">⚙</span> Configurar</button>
+              </div>
+            </div>
+            <div class="price-source-search">
+              <label for="priceSourceSearch">Pesquisar base de preços</label>
+              <input id="priceSourceSearch" type="search" placeholder="Pesquise pela sigla ou pelo órgão responsável" autocomplete="off" />
+            </div>
+            <div id="priceSourceSummary" class="price-source-summary" aria-live="polite"></div>
+            <div id="priceSourceUnknown" class="price-source-unknown hidden" aria-live="polite"></div>
+            <div id="priceSourceLinks" class="price-source-links" role="list"></div>
+            <div id="priceSourceEmpty" class="price-source-empty hidden">Nenhuma base cadastrada corresponde à pesquisa.</div>
+            <div class="price-source-footer">
+              <button id="priceSourceShowAll" type="button" class="secondary"></button>
+            </div>
+            <div id="priceSourceStatus" class="price-source-status" aria-live="polite"></div>
+
+            <dialog id="priceSourceSettingsDialog" class="price-source-list-dialog" aria-labelledby="priceSourceSettingsTitle" aria-describedby="priceSourceSettingsIntro">
+              <div class="price-source-dialog-head">
+                <h3 id="priceSourceSettingsTitle">Configurar lista de bases</h3>
+                <button id="priceSourceSettingsClose" type="button" class="price-source-dialog-close" aria-label="Fechar configuração da lista">×</button>
+              </div>
+              <div class="price-source-list-body">
+                <p id="priceSourceSettingsIntro">Gerencie sua lista de fontes e links. Você pode salvar uma cópia, carregar uma lista salva ou recuperar a lista original do SICORP.</p>
+                <div class="price-source-list-action">
+                  <button id="priceSourceExport" type="button" class="secondary" aria-describedby="priceSourceExportHelp">Exportar lista</button>
+                  <p id="priceSourceExportHelp">Salva a lista atual para guardar suas alterações ou utilizá-la em outro computador.</p>
+                </div>
+                <div class="price-source-list-action">
+                  <button id="priceSourceImportButton" type="button" class="secondary" aria-describedby="priceSourceImportHelp">Importar lista</button>
+                  <p id="priceSourceImportHelp">Carrega uma lista salva e substitui a lista atual. A substituição só acontece após sua confirmação.</p>
+                  <input id="priceSourceImportFile" class="hidden" type="file" accept=".json,application/json" />
+                </div>
+                <div class="price-source-list-action price-source-list-reset">
+                  <button id="priceSourceResetAll" type="button" class="secondary" aria-describedby="priceSourceResetHelp">Restaurar padrão</button>
+                  <p id="priceSourceResetHelp">Recupera a lista original do SICORP e remove suas personalizações, mediante confirmação.</p>
+                </div>
+                <div id="priceSourceSettingsStatus" class="price-source-status" role="status" aria-live="polite"></div>
+              </div>
+            </dialog>
+
+            <dialog id="priceSourceEditorDialog" class="price-source-dialog" aria-labelledby="priceSourceEditorTitle">
+              <div class="price-source-dialog-card">
+                <div class="price-source-dialog-head">
+                  <h3 id="priceSourceEditorTitle">Configurar base</h3>
+                  <button id="priceSourceEditorClose" type="button" class="price-source-dialog-close" aria-label="Fechar janela">×</button>
+                </div>
+                <form id="priceSourceEditorForm" class="price-source-dialog-body">
+                  <div class="price-source-editor-grid">
+                    <div class="price-source-field">
+                      <label for="priceSourceAcronym">Sigla</label>
+                      <input id="priceSourceAcronym" type="text" required maxlength="60" autocomplete="off" placeholder="Ex.: SINAPI" />
+                    </div>
+                    <div class="price-source-field">
+                      <label for="priceSourceAgency">Órgão responsável</label>
+                      <input id="priceSourceAgency" type="text" required maxlength="180" autocomplete="off" placeholder="Nome do órgão responsável" />
+                    </div>
+                    <div class="price-source-field price-source-url-field">
+                      <label for="priceSourceUrl">Link oficial</label>
+                      <input id="priceSourceUrl" type="text" required autocomplete="off" placeholder="https://" />
+                      <small class="price-source-field-help">O conteúdo é salvo como foi digitado, sem exigir um formato específico de URL.</small>
+                    </div>
+                  </div>
+                  <div class="price-source-editor-actions">
+                    <button id="priceSourceSave" type="submit">Salvar alterações</button>
+                    <button id="priceSourceRemove" type="button" class="danger hidden">Excluir base</button>
+                    <button id="priceSourceCancel" type="button" class="secondary price-source-cancel">Cancelar</button>
+                  </div>
+                  <div id="priceSourceEditorStatus" class="price-source-editor-status" aria-live="polite"></div>
+                </form>
+              </div>
+            </dialog>
+          </div>
+          <p class="section-intro price-source-upload-intro">Adicione as bases uma por uma e associe cada uma à fonte correspondente encontrada no orçamento. Linhas estruturais e itens com preço ausente, zero, negativo ou inválido são desconsiderados antes da comparação; sem outra referência válida, o item correspondente do orçamento será tratado como “Não encontrado”.</p>
+          <!-- SICORP_V42_PRICE_SOURCE_UI_END -->
+<label id="baseDropzone" class="dropzone" for="baseFile">
+            <input id="baseFile" type="file" accept=".xlsx,.xls,.csv,.txt,.orse" />
+            <span><span class="dropzone-icon">＋</span><strong>Clique para selecionar ou arraste uma base para cá</strong><span>Planilhas XLSX, XLS, CSV, TXT ou ORSE</span></span>
+          </label>
+
+          <div id="baseConfigArea" class="config-panel hidden">
+            <div id="baseStatus" class="status-bar"></div>
+            <div class="mapping-grid base-primary-grid" style="margin-top: 16px;">
+              <div><label for="baseSourceIdentifier">Identificador da fonte</label><select id="baseSourceIdentifier" disabled></select><div id="baseSourceFeedback" class="field-message" aria-live="polite"></div></div>
+              <div class="sheet-selection-block"><label for="baseSheet">Aba da base</label><select id="baseSheet" disabled></select></div>
+              <div>
+                <label for="baseHeaderRow">Linha do cabeçalho</label>
+                <div class="line-picker">
+                  <input id="baseHeaderRow" type="number" min="1" value="1" />
+                  <div class="line-arrows">
+                    <button type="button" data-line-target="baseHeaderRow" data-line-delta="-1" aria-label="Diminuir número da linha">↑</button>
+                    <button type="button" data-line-target="baseHeaderRow" data-line-delta="1" aria-label="Aumentar número da linha">↓</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="project-mapper" aria-labelledby="baseMapperTitle">
+              <div class="project-mapper-head">
+                <div>
+                  <h3 id="baseMapperTitle">Mapeamento das colunas da base</h3>
+                  <p>Escolha uma função e depois clique na coluna correspondente da pré-visualização.</p>
+                </div>
+                <div class="project-mapper-actions">
+                  <button id="baseAutoMapBtn" type="button" disabled>Mapear automaticamente</button>
+                  <button id="baseClearMappingBtn" type="button" class="secondary" disabled>Limpar tudo</button>
+                </div>
+              </div>
+              <div id="baseMappingFieldPool" class="project-field-pool">
+                <div class="project-field-row" data-base-mapping-row="fields">
+                  <div class="project-field-chip" data-base-mapping-field="code"><button type="button" class="project-field-chip-main" aria-label="Selecionar Código"><span>Código</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Código">×</button></div>
+                  <div class="project-field-chip" data-base-mapping-field="description"><button type="button" class="project-field-chip-main" aria-label="Selecionar Descrição"><span>Descrição</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Descrição">×</button></div>
+                  <div class="project-field-chip" data-base-mapping-field="unit"><button type="button" class="project-field-chip-main" aria-label="Selecionar Unidade"><span>Unidade</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Unidade">×</button></div>
+                  <div class="project-field-chip" data-base-mapping-field="price"><button type="button" class="project-field-chip-main" aria-label="Selecionar Preço"><span>Preço</span><span class="project-field-chip-code"></span></button><button type="button" class="project-field-chip-remove" title="Remover mapeamento" aria-label="Remover mapeamento de Preço">×</button></div>
+                </div>
+              </div>
+              <div class="project-mapping-legend" aria-hidden="true">
+                <span><i class="project-mapping-legend-dot mapped"></i>Mapeado</span>
+                <span><i class="project-mapping-legend-dot active"></i>Selecionado, aguardando coluna</span>
+                <span><i class="project-mapping-legend-dot hover"></i>Conferência por destaque</span>
+              </div>
+              <div id="baseMappingInstruction" class="project-mapping-instruction" aria-live="polite"></div>
+              <div class="project-mapping-selects" aria-hidden="true">
+                <select id="baseCodeCol" disabled><option value=""></option></select>
+                <select id="baseDescCol" disabled><option value=""></option></select>
+                <select id="baseUnitCol" disabled><option value=""></option></select>
+                <select id="baseValueCol" disabled><option value=""></option></select>
+              </div>
+              <div id="baseColumnSummary" class="hidden" aria-hidden="true"></div>
+            </div>
+
+            <div id="basePreviewBlock" class="preview-block">
+              <div class="preview-head"><h3 class="preview-title">Pré-visualização e seleção das colunas</h3><div class="preview-actions"><span class="small">Até 2 linhas anteriores + cabeçalho + até 11 itens</span><button id="baseReviewBtn" type="button" class="secondary" disabled>Revisar linhas (0)</button></div></div>
+              <div class="compact-table-wrap"><table id="basePreviewTable" class="preview-table"><thead></thead><tbody></tbody></table></div>
+              <div id="baseFilterSummary" class="filter-summary" aria-live="polite"></div>
+            </div>
+
+            <div id="baseAddFeedback" class="audit-message hidden" style="margin-top: 14px;" aria-live="polite"></div>
+            <div class="actions base-config-actions">
+              <div class="base-config-actions-main">
+                <button id="addBaseBtn" disabled>Adicionar configuração</button>
+                <span class="small">Após adicionar, selecione outra aba deste arquivo ou carregue uma nova base.</span>
+              </div>
+              <div class="base-config-actions-end">
+                <button id="cancelBaseBtn" class="secondary">Cancelar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section id="baseListPanel" class="section-spacer wizard-page page-hidden" data-page="2">
+      <h2>Bases adicionadas</h2>
+      <div class="content">
+        <p class="small">A comparação procura pelo identificador da fonte e pelo código. Quando o mesmo código representar itens diferentes, a descrição será usada para localizar a ocorrência correta.</p>
+        <div id="baseListEmpty" class="base-empty">Nenhuma base adicionada.</div>
+        <div id="baseListWrap" class="compact-table-wrap hidden">
+          <table id="baseListTable">
+            <thead>
+              <tr>
+                <th>Fonte associada</th><th>Arquivo / aba</th><th>Registros válidos</th>
+                <th>Linhas desconsideradas</th><th>Ações</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="baseAuditPanel" class="section-spacer wizard-page page-hidden" data-page="2">
+      <h2>Auditoria de códigos entre bases</h2>
+      <div class="content">
+        <div class="audit-summary">
+          <div class="metric"><div id="auditBases" class="n">0</div><div class="t">Bases cadastradas</div></div>
+          <div class="metric eq"><div id="auditRepeated" class="n">0</div><div class="t">Códigos repetidos na mesma fonte</div></div>
+          <div class="metric warn"><div id="auditConflicts" class="n">0</div><div class="t">Duplicidades bloqueantes</div></div>
+        </div>
+        <div class="audit-message-actions">
+          <div id="conflictMessage" class="audit-message">Adicione uma base para verificar códigos repetidos e possíveis conflitos.</div>
+          <button id="auditDetailsBtn" type="button" class="secondary hidden" aria-expanded="false">Ver detalhes das ocorrências</button>
+        </div>
+        <div id="conflictTableWrap" class="compact-table-wrap conflict-scroll-window hidden" role="region" aria-label="Ocorrências de códigos repetidos entre bases" tabindex="0">
+          <table id="conflictTable">
+            <thead><tr><th>Situação</th><th>Fonte</th><th>Código normalizado</th><th>Motivo</th><th>Ocorrências nas bases</th></tr></thead>
+            <tbody></tbody>
+          </table>
+        </div>
+        <div class="page-actions"><button class="secondary" data-go-page="1">← Voltar</button><div class="right"><button id="basesNextBtn" data-go-page="3">Continuar para comparação →</button></div></div>
+      </div>
+    </section>
+
+    <section class="section-spacer wizard-page page-hidden" data-page="3">
+      <h2>3. Compare os preços</h2>
+      <div class="content">
+        <p class="section-intro">A comparação localiza cada item pelo identificador da fonte e pelo código. Quando o código se repetir, a descrição identifica o item correto.</p>
+        <div class="results-toolbar">
+          <div class="tolerance-control">
+            <label for="tolerance">Tolerância da comparação (R$)</label>
+            <div class="comparison-run-row">
+              <input id="tolerance" type="number" step="0.01" value="0.01" />
+              <button id="compareBtn" disabled>Comparar</button>
+            </div>
+            <div class="hint">Diferenças até esse valor serão classificadas como equivalentes.</div>
+          </div>
+        </div>
+
+        <div class="comparison-options">
+          <div class="comparison-option">
+            <label class="checkline"><input id="normalizeCodes" type="checkbox" checked /> Normalizar códigos removendo espaços, pontos, barras e hífens antes de comparar.</label>
+            <button type="button" class="comparison-help-button" data-comparison-help="normalizeCodesHelp" aria-expanded="false" aria-controls="normalizeCodesHelp" aria-label="Explicar a normalização dos códigos">?</button>
+            <div id="normalizeCodesHelp" class="comparison-option-help hidden">
+              <p>Remove espaços, pontos, barras e hífens somente para localizar códigos equivalentes. O código original continua visível sem alterações.</p>
+              <p>Zeros à esquerda são ignorados durante a comparação. Somente linhas válidas do orçamento e das bases participam da busca.</p>
+            </div>
+          </div>
+          <div class="comparison-option">
+            <label class="checkline"><input id="caseInsensitive" type="checkbox" checked /> Comparar códigos sem diferenciar maiúsculas e minúsculas.</label>
+            <button type="button" class="comparison-help-button" data-comparison-help="caseInsensitiveHelp" aria-expanded="false" aria-controls="caseInsensitiveHelp" aria-label="Explicar a comparação entre maiúsculas e minúsculas">?</button>
+            <div id="caseInsensitiveHelp" class="comparison-option-help hidden">
+              <p>Considera letras maiúsculas e minúsculas equivalentes na procura pelo código. Ao alterar esta opção, os índices e a auditoria das bases são recalculados.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="page-actions"><button class="secondary" data-go-page="2">← Voltar</button><span></span></div>
+      </div>
+    </section>
+
+    <section id="summaryPanel" class="hidden wizard-page page-hidden" data-page="3">
+      <h2>Categorias do resultado</h2>
+      <div class="content">
+        <p class="section-intro summary-intro">Cada cartão mostra a quantidade de itens, o valor total com BDI e a porcentagem do total analisado. Clique em uma categoria para isolá-la. Um asterisco indica valor parcial, quando algum item da categoria não possui total disponível.</p>
+        <div id="summary" class="summary">
+          <button type="button" class="metric" data-summary-status="all"><span id="mTotal" class="n">0</span><span class="t">Itens analisados</span><span id="mTotalValue" class="v">R$ 0,00</span><span id="mTotalPercent" class="p">100,00%</span></button>
+          <button type="button" class="metric bad" data-summary-status="acima"><span id="mAbove" class="n">0</span><span class="t">Acima</span><span id="mAboveValue" class="v">R$ 0,00</span><span id="mAbovePercent" class="p">0,00%</span></button>
+          <button type="button" class="metric good" data-summary-status="abaixo"><span id="mBelow" class="n">0</span><span class="t">Abaixo</span><span id="mBelowValue" class="v">R$ 0,00</span><span id="mBelowPercent" class="p">0,00%</span></button>
+          <button type="button" class="metric eq" data-summary-status="igual"><span id="mEqual" class="n">0</span><span class="t">Iguais</span><span id="mEqualValue" class="v">R$ 0,00</span><span id="mEqualPercent" class="p">0,00%</span></button>
+          <button type="button" class="metric none" data-summary-status="nao-encontrado"><span id="mMissing" class="n">0</span><span class="t">Não encontrados</span><span id="mMissingValue" class="v">R$ 0,00</span><span id="mMissingPercent" class="p">0,00%</span></button>
+        </div>
+      </div>
+    </section>
+
+    <section id="resultPanel" class="hidden wizard-page page-hidden" data-page="3">
+      <h2>Resultado da comparação</h2>
+      <div class="content">
+        <label>Quais categorias deseja visualizar e exportar?</label>
+        <div class="status-filters" id="statusFilters">
+          <label class="status-toggle" data-status="acima"><input type="checkbox" checked /><span class="color-key above"></span>Acima <span class="count" data-count="acima">(0)</span></label>
+          <label class="status-toggle" data-status="abaixo"><input type="checkbox" checked /><span class="color-key below"></span>Abaixo <span class="count" data-count="abaixo">(0)</span></label>
+          <label class="status-toggle" data-status="igual"><input type="checkbox" checked /><span class="color-key equal"></span>Igual <span class="count" data-count="igual">(0)</span></label>
+          <label class="status-toggle" data-status="nao-encontrado"><input type="checkbox" checked /><span class="color-key missing"></span>Não encontrado <span class="count" data-count="nao-encontrado">(0)</span></label>
+          <button id="showAllStatuses" class="secondary" type="button">Mostrar todos</button>
+          <button id="hideAllStatuses" class="secondary" type="button">Ocultar todos</button>
+        </div>
+        <div class="result-search">
+          <label for="searchText">Buscar no resultado</label>
+          <input id="searchText" type="text" placeholder="Código, descrição, base ou aba..." />
+        </div>
+        <div class="result-view-options">
+          <button id="selectResultColumnsBtn" class="secondary" type="button">Selecionar e ordenar colunas</button>
+          <span id="resultColumnCount" class="result-column-count" aria-live="polite"></span>
+        </div>
+        <div class="result-difference-legend"><span class="result-difference-swatch" aria-hidden="true"></span>Células amarelas indicam divergência entre a descrição ou a unidade do orçamento e da base referencial.</div>
+      </div>
+      <div class="table-wrap">
+        <table id="resultTable">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="sourceValueChartPanel" class="hidden result-source-chart-panel">
+        <h2>Participação por Fonte declarada no orçamento</h2>
+        <div class="content">
+          <div class="source-value-chart-card">
+            <div class="source-value-chart-head">
+              <div>
+                <h3>Composição do valor de cada Fonte por resultado</h3>
+                <p id="sourceValueChartDescription">Distribuição calculada pelo valor total dos itens e agrupada pela Fonte declarada no orçamento.</p>
+              </div>
+              <div id="sourceValueChartFilters" class="source-value-chart-filters" role="group" aria-label="Filtrar o gráfico por classe da Curva ABC">
+                <button type="button" class="active" data-abc-filter="all" aria-pressed="true">Todos</button>
+                <button type="button" data-abc-filter="A" aria-pressed="false">A</button>
+                <button type="button" data-abc-filter="B" aria-pressed="false">B</button>
+                <button type="button" data-abc-filter="C" aria-pressed="false">C</button>
+              </div>
+            </div>
+            <div id="sourceValueChartSummary" class="source-value-chart-summary" aria-live="polite"></div>
+            <div class="source-value-chart-legend" aria-label="Legenda dos resultados">
+              <span><i class="status-acima" aria-hidden="true"></i>Acima</span>
+              <span><i class="status-abaixo" aria-hidden="true"></i>Abaixo</span>
+              <span><i class="status-igual" aria-hidden="true"></i>Igual</span>
+              <span><i class="status-nao-encontrado" aria-hidden="true"></i>Não encontrado</span>
+            </div>
+            <div id="sourceValueChartBars" class="source-value-chart-bars" role="img" aria-label="Gráfico de barras da composição do valor de cada Fonte declarada no orçamento"></div>
+            <p class="source-value-chart-note">O comprimento colorido representa a participação da Fonte no valor total do filtro; as cores dividem essa participação pelos resultados da comparação. Curva ABC: classe A até 50% do valor acumulado, classe B acima de 50% até 80% e classe C acima de 80%, conforme o critério adotado na planilha orçamentária de referência.</p>
+          </div>
+        </div>
+      </div>
+      <div class="content">
+        <p class="small">A exportação respeita as categorias, a busca e as colunas atualmente selecionadas. O arquivo .xlsx é uma planilha real do Excel.</p>
+        <div class="actions">
+          <button id="exportCsvBtn" class="secondary">Exportar seleção em CSV</button>
+          <button id="exportXlsxBtn" class="secondary">Exportar seleção em Excel (.xlsx)</button>
+          <button id="copyTableBtn" class="secondary">Copiar seleção</button>
+          <button id="clearBtn" class="danger">Limpar resultado</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <dialog id="welcomeDialog" class="confirm-dialog" aria-labelledby="welcomeTitle" aria-describedby="welcomeText">
+    <div class="confirm-dialog-head"><h2 id="welcomeTitle">Bem-vindo ao SICORP</h2></div>
+    <div class="confirm-dialog-body">
+      <p id="welcomeText">O SICORP confere os cálculos da planilha orçamentária e compara os preços dos serviços com bases referenciais. Importe seu orçamento, configure as bases e examine os resultados. Seus arquivos são processados no próprio navegador, com funcionamento offline.</p>
+      <div class="confirm-dialog-actions"><button id="welcomeSkipBtn" class="secondary" type="button">Seguir sem tutorial</button><button id="welcomeStartBtn" type="button">Iniciar tutorial</button></div>
+      <button id="welcomeHideBtn" class="welcome-hide" type="button">Não mostrar novamente</button>
+    </div>
+  </dialog>
+  <aside id="tutorialCard" class="tutorial-card" role="region" aria-label="Tutorial de acompanhamento" hidden>
+    <div class="tutorial-toolbar"><button id="tutorialDragHandle" class="tutorial-drag" type="button" aria-label="Mover cartão: arraste ou use as setas" title="Arraste para mover. Pelo teclado, use as setas.">⠿ Mover</button><button id="tutorialPauseBtn" class="secondary" type="button">Pausar</button><button id="tutorialCloseBtn" class="secondary" type="button">Encerrar</button></div>
+    <div id="tutorialScroll" class="tutorial-scroll" tabindex="0" role="region" aria-label="Texto do tutorial"><div aria-live="polite" aria-atomic="true"><h2 id="tutorialHeading" tabindex="-1"></h2><p id="tutorialText"></p><p id="tutorialCondition" class="tutorial-condition"></p></div></div>
+    <div class="tutorial-actions"><button id="tutorialPreviousBtn" class="secondary" type="button">Anterior</button><button id="tutorialNextBtn" type="button">Próximo</button></div>
+
+  </aside>
+  <button id="tutorialResumeBtn" class="tutorial-resume" type="button" hidden>Retomar tutorial</button>
+
+  <footer class="site-footer">
+    <p>SICORP · v4.5.0</p>
+    <p>Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).</p>
+  </footer>
+
+  <dialog id="resultColumnsDialog" class="column-selector-dialog" aria-labelledby="resultColumnsDialogTitle" aria-describedby="resultColumnsDialogDescription">
+    <div class="column-selector-head">
+      <h2 id="resultColumnsDialogTitle">Selecionar e ordenar colunas</h2>
+      <div class="column-selector-actions" style="margin-top: 0; flex-shrink: 0;">
+        <button id="resultColumnsCancelBtn" type="button" class="secondary">Cancelar</button>
+        <button id="resultColumnsApplyBtn" type="button">Aplicar</button>
+      </div>
+    </div>
+    <div class="column-selector-body">
+      <p id="resultColumnsDialogDescription">Marque as colunas que deseja usar e arraste-as para definir a ordem. As setas permitem ajustes precisos. A mesma seleção e ordem serão usadas na tabela, no Excel, no CSV e em “Copiar seleção”, ficando salvas neste navegador.</p>
+      <div class="column-selector-tools">
+        <button id="resultColumnsSelectAllBtn" type="button" class="secondary">Marcar todas</button>
+        <button id="resultColumnsClearAllBtn" type="button" class="secondary">Desmarcar todas</button>
+        <button id="resultColumnsResetOrderBtn" type="button" class="secondary">Restaurar ordem padrão</button>
+        <span id="resultColumnsDialogCount" class="column-selector-selection-count" aria-live="polite"></span>
+      </div>
+      <div id="resultColumnsGrid" class="column-selector-grid"></div>
+      <div id="resultColumnsError" class="column-selector-error" role="alert" aria-live="assertive"></div>
+    </div>
+  </dialog>
+
+  <dialog id="reviewDialog" class="review-dialog" aria-labelledby="reviewDialogTitle">
+    <div class="review-dialog-head">
+      <h2 id="reviewDialogTitle">Revisão de linhas</h2>
+    </div>
+    <div class="review-dialog-body">
+      <div id="reviewTreatmentCards" class="review-treatment-cards" role="group" aria-label="Selecionar categoria da revisão"></div>
+      <div id="reviewGroups" class="review-groups" role="region" aria-label="Ocorrências agrupadas da revisão"></div>
+      <div id="reviewExplanation" class="review-explanation" aria-live="polite"></div>
+      <div class="review-dialog-actions">
+        <button id="reviewReturnBtn" type="button" class="secondary">Fechar</button>
+        <button id="reviewConfirmAddBtn" type="button" class="hidden">Adicionar base</button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="duplicateBaseDialog" class="confirm-dialog" aria-labelledby="duplicateBaseDialogTitle">
+    <div class="confirm-dialog-head"><h2 id="duplicateBaseDialogTitle">Base já adicionada</h2></div>
+    <div class="confirm-dialog-body">
+      <p id="duplicateBaseDialogMessage"></p>
+      <div class="confirm-dialog-actions">
+        <button id="duplicateBaseCancelBtn" type="button" class="secondary">Cancelar</button>
+        <button id="duplicateBaseConfirmBtn" type="button" class="warn">Adicionar mesmo assim</button>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- Leitor offline de XLS legado: SheetJS Community Edition 0.18.5, Apache-2.0. -->
+  <script id="legacyXlsRuntime" type="application/octet-stream">__SICORP_EXTRACTED_05__</script>
+  <!-- SICORP_V42_CORE_START -->
+  <script id="sicorpV42Core">__SICORP_EXTRACTED_07__</script>
+  <!-- SICORP_V42_CORE_END -->
+  <!-- SICORP_V42_PRICE_SOURCE_RUNTIME_START -->
+  <script id="sicorpV42PriceSourceUi">__SICORP_EXTRACTED_09__</script>
+  <!-- SICORP_V42_PRICE_SOURCE_RUNTIME_END -->
+  <script>__SICORP_EXTRACTED_11__</script>
+  <script>__SICORP_EXTRACTED_13__</script>
+  <script>__SICORP_EXTRACTED_15__</script>
+  <script>__SICORP_EXTRACTED_17__</script>
+  <script>__SICORP_EXTRACTED_19__</script>
+  <script>__SICORP_EXTRACTED_21__</script>
+</body>
+</html>

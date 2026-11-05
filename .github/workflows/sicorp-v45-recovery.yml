@@ -1,0 +1,25 @@
+name: SICORP 4.5.0 - integridade da recuperacao
+on:
+  push:
+    paths:
+      - 'recovery/v4.5.0/**'
+      - 'dist/sicorp_comparador_orcamento_v4.5.0.html'
+      - '.github/workflows/sicorp-v45-recovery.yml'
+  pull_request:
+    paths:
+      - 'recovery/v4.5.0/**'
+      - 'dist/sicorp_comparador_orcamento_v4.5.0.html'
+      - '.github/workflows/sicorp-v45-recovery.yml'
+permissions:
+  contents: read
+jobs:
+  integrity:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Verificar hash, reconstruir e testar
+        run: npm --prefix recovery/v4.5.0 run check

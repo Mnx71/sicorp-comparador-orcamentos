@@ -1,0 +1,16 @@
+{
+  "name": "sicorp-4.5.0-recovery",
+  "version": "4.5.0",
+  "private": true,
+  "type": "module",
+  "description": "Código recuperado do HTML distribuído; não equivale aos fontes originais.",
+  "scripts": {
+    "build": "node scripts/rebuild-html.mjs",
+    "validate": "node scripts/validate-recovery.mjs",
+    "test": "node --test qa/recovery.test.mjs",
+    "check": "npm run validate && npm run build && npm test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
