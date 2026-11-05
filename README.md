@@ -4,7 +4,9 @@ Aplicação offline para conferir cálculos de orçamentos de obras e comparar p
 
 **Desenvolvido pela Coordenação-Geral de Supervisão de Obras (CGSOB), do Departamento de Obras Hídricas e Apoio a Estudos sobre Segurança Hídrica (DOH), da Secretaria Nacional de Segurança Hídrica (SNSH).**
 
-A versão final atual é **v4.4.0**, promovida por solicitação do responsável em 04/11/2026. O arquivo para distribuição é [sicorp_comparador_orcamento_v4.4.0.html](dist/sicorp_comparador_orcamento_v4.4.0.html), com hash em [SHA256SUMS.txt](dist/SHA256SUMS.txt) e identificação completa no [registro da versão final](docs/releases/v4.4.0.md). Baixar e abrir no navegador; o uso não requer Node.js ou servidor.
+A versão **v4.5.0** recuperada para distribuição está em [HTML final](dist/sicorp_comparador_orcamento_v4.5.0.html), com [registro de recuperação](docs/releases/v4.5.0-recuperacao.md) e [fontes extraídos verificáveis](recovery/v4.5.0/README.md). Seu pacote técnico original ainda não foi recuperado; por isso, os scripts e testes da raiz continuam sendo os da v4.4.0. A nova validação da v4.5.0 é executada separadamente em `recovery/v4.5.0`.
+
+A versão anterior homologada é **v4.4.0**, promovida por solicitação do responsável em 04/11/2026. O arquivo para distribuição é [sicorp_comparador_orcamento_v4.4.0.html](dist/sicorp_comparador_orcamento_v4.4.0.html), com hash em [SHA256SUMS.txt](dist/SHA256SUMS.txt) e identificação completa no [registro da versão final](docs/releases/v4.4.0.md). Baixar e abrir no navegador; o uso não requer Node.js ou servidor.
 
 A versão final deriva do commit `d1ea4f92087b07c899f5e826408aa7e2c01a4175`, após a remoção do botão superior da revisão das bases. O HTML mudou apenas no número exibido no rodapé. A rc.20 permanece preservada. Para futuras mudanças, criar outra versão e outro arquivo; o gerador rejeita sobrescrever uma versão final com conteúdo diferente.
 
