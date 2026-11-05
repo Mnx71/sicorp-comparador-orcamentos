@@ -1,0 +1,79 @@
+name: SICORP v4.5.0 - pacotes e release
+
+on:
+  pull_request:
+    paths:
+      - ".github/workflows/sicorp-v45-release.yml"
+      - "scripts/build_release_v4_5_0.py"
+      - "docs/RELATORIO_ENTREGA_E_VALIDACAO_v4.5.0.md"
+      - "docs/releases/v4.5.0-notas.md"
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/sicorp-v45-release.yml"
+      - "scripts/build_release_v4_5_0.py"
+      - "docs/RELATORIO_ENTREGA_E_VALIDACAO_v4.5.0.md"
+      - "docs/releases/v4.5.0-notas.md"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  construir:
+    name: Verificar e montar pacotes v4.5.0
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Conferir integridade da versao recuperada
+        run: npm --prefix recovery/v4.5.0 run check
+      - name: Preparar ferramenta de PDF
+        run: python -m pip install --disable-pip-version-check "reportlab>=4.2,<5"
+      - name: Gerar relatorio e pacotes de usuario/tecnico
+        run: python scripts/build_release_v4_5_0.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: SICORP-v4.5.0-pacotes
+          path: release/v4.5.0/*
+          if-no-files-found: error
+          retention-days: 30
+
+  publicar:
+    name: Publicar release v4.5.0
+    if: github.event_name != 'pull_request'
+    needs: construir
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          name: SICORP-v4.5.0-pacotes
+          path: release/v4.5.0
+      - name: Criar release sem sobrescrever versao ja publicada
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh release view v4.5.0 --repo "${{ github.repository }}" >/dev/null 2>&1; then
+            echo "A release v4.5.0 ja existe: nao substituir arquivos de uma versao final."
+            exit 0
+          fi
+          gh release create v4.5.0 \
+            release/v4.5.0/SICORP_v4.5.0_USUARIO.zip \
+            release/v4.5.0/SICORP_v4.5.0_TECNICO_RECUPERADO.zip \
+            release/v4.5.0/SICORP_Relatorio_Entrega_Validacao_v4.5.0.pdf \
+            dist/sicorp_comparador_orcamento_v4.5.0.html \
+            docs/manual/SICORP_Manual_Usuario_v4.5.0.pdf \
+            --repo "${{ github.repository }}" \
+            --target "${GITHUB_SHA}" \
+            --title "SICORP v4.5.0 - Versao final" \
+            --notes-file docs/releases/v4.5.0-notas.md
