@@ -24,10 +24,12 @@ As verificações atuais de recuperação e o teste pontual em navegador não su
 ## 5. Disponibilização
 Repositório: https://github.com/Mnx71/sicorp-comparador-orcamentos
 
+Release: https://github.com/Mnx71/sicorp-comparador-orcamentos/releases/tag/v4.5.0
+
 Aplicação: https://github.com/Mnx71/sicorp-comparador-orcamentos/blob/main/dist/sicorp_comparador_orcamento_v4.5.0.html
 
 Manual: https://github.com/Mnx71/sicorp-comparador-orcamentos/blob/main/docs/manual/SICORP_Manual_Usuario_v4.5.0.pdf
 
 A ferramenta executa localmente no navegador, sem envio das planilhas a servidor. O arquivo HTML pode ser utilizado sem instalação.
 
-**Providência remanescente:** criação da página da release `v4.5.0` com ZIPs de distribuição; eventual reconciliação posterior com o pacote técnico original, se recuperado.
+**Disponibilização final:** release `v4.5.0` com pacotes de distribuição e relatório em PDF no GitHub. A eventual recuperação dos fontes e do histórico técnico originais poderá ser tratada separadamente.
