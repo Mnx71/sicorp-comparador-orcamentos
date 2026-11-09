@@ -12,8 +12,7 @@ O programa funciona diretamente no navegador, **sem instalação**. As planilhas
 
 Ao importar uma planilha orçamentária, o SICORP verifica, entre outros pontos:
 
-- A aplicação do **BDI** sobre os preços;
-- O cálculo dos valores totais dos itens e do orçamento;
+- Os cálculos dos valores dos itens e do orçamento total;
 - Campos obrigatórios ausentes, vazios ou com valores inválidos;
 - Possíveis itens duplicados ou com preços diferentes;
 - Inconsistências em fórmulas e informações da planilha.
