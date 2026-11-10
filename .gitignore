@@ -160,3 +160,6 @@ node_modules/
 # Preserve audit logs as evidence, despite the generic Node log rule.
 !qa/evidence/*.log
 !qa/evidence/**/*.log
+
+# Cloudflare static assets gerados pelo build
+/public/
