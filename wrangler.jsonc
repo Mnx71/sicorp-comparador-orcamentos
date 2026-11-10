@@ -1,0 +1,8 @@
+{
+  "name": "sicorp",
+  "compatibility_date": "2026-11-10",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./public"
+  }
+}
